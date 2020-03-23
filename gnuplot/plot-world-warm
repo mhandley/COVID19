@@ -1,0 +1,100 @@
+arpop = 44.3 # argentina
+atpop = 9.0 # austria
+aupop = 25.6 # australia
+bepop = 11.5 # belgium
+bopop = 11.6 # bolivia
+brpop = 212 # brazil
+capop = 37.6 # canada
+chpop = 8.6 # switzerland
+clpop = 17.6 # chile
+czpop = 10.7 # czech republic
+copop = 5.7 # colombia
+dapop = 5.8 # danmark
+depop = 83.7 # germany
+ecpop = 17.6 # ecuador
+eepop = 1.33 # estonia
+egpop = 101.8 # egypt
+espop = 46.7 # spain
+fipop = 5.5 # finland
+frpop = 65.2 # france
+grpop = 10.4 # greece
+hupop = 9.6 # hungary
+iepop = 4.9  # ireland
+ilpop = 8.6  # israel
+irpop = 83   # iran
+ispop = 0.34 # iceland
+itpop = 60.5 # italy
+jppop = 126.6 # japan
+krpop = 51 # south korea
+lompop = 10 # lombardy
+lupop = 0.623 #luxembourg
+mxpop = 126 # mexico
+nlpop = 17.4 # netherlands
+nopop = 5.4 # norway
+pepop = 32.8 # peru
+pkpop = 208 # pakistan
+plpop = 37.8 # poland
+ptpop = 10.2 # portugal
+pypop = 7.1 # paraguay
+ropop = 19.3 # romania
+sepop = 10.2 # sweden
+sipop = 2.08 # slovenia
+sgpop = 5.8 # singapore
+testpop = 13.0 # testdata
+testpop = 16 # testdata
+testpop = 17 # testdata
+testpop = 3 # testdata
+trpop = 84 # turkey
+ukepop = 6.2 # UK East
+uklonpop = 8.9 # UK london
+ukmidpop = 10.7 # UK Midlands
+uknepop = 8.1 # UK NE
+uknipop = 1.8 # UK Northern Ireland
+uknwpop = 7.2 # UK NE
+ukpop = 67.7 # UK
+ukscpop = 5.3 # UK Scotland
+uksepop = 9.1 # UK SE
+ukswpop = 5.6 # UK SW
+ukwapop = 3.0 # UK Wales
+urpop = 35.3 # uruguay
+usflpop = 21.5 # US florida
+uslopop = 4.66 # US louisiana
+usmapop = 6.95 # US mass
+usmipop = 9.88 # US MI
+usnjpop = 8.9 # US New Jersey
+usnypop = 19.4 # US NY
+uscapop = 39.9 # US CA
+uscopop = 5.77 # US CO
+uspop = 330 # USA
+uswapop = 7.6 # US WA
+vepop = 28.4 # Venezuela
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/covid-world-warm.png"
+set logscale y
+set key at -18,90000
+set yrange [20:100000]
+set xrange [-35:]
+set ylabel "Confirmed SARS-CoV-2 cases"
+set xlabel "Days (from March 22th 2020)"
+set grid
+offset = 36
+plot "../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
+"../country_data/france" using ($0 + 1.5  - offset):2 w lp ps 0.5 lw 2 lc "black" t "France (8 days behind Italy)",\
+"../country_data/us" using ($0 + 0.0 - offset):3 w lp ps 0.5 lw 2 lc "magenta" t "USA (12 days behind Italy)", \
+"../country_data/brazil" using ($0 -10 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
+"../country_data/australia" using ($0 - 30.5 - offset):2 w lp ps 0.5 lw 2 lc "#00b0b0" t "Australia (22.5 days behind Italy)", \
+"../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
+"../country_data/qatar" using ($0 + 12.5 - offset):2 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
+"../country_data/thailand" using ($0 -51 - offset):1 w lp ps 0.5 lw 2 lc "#a0a000" t "Thailand  (4 days behind Qatar)", \
+"../country_data/bahrain" using ($0 -28 - offset):1 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
+"../country_data/indonesia" using ($0 -10.5 - offset):2 w lp ps 0.5 lw 2 lc "#00a000" t "Indonesia (7 days behind Qatar)", \
+"../country_data/kuwait" using ($0 -4 - offset):1 w lp ps 0.5 lw 2 lc "purple" t "Kuwait (7 days behind Malaysia)", \
+"../country_data/egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
+"../country_data/india" using ($0 -38 - offset):1 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
+1.38**(x+offset + 8) lc "grey" t "38% daily increase",\
+1.22**(x+offset + 22.5) lc "grey" dashtype 2 t "22% daily increase",\
+1.14**(x+offset + 19) lc "black" dt 3 t "14% daily increase"
+
+#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
+#"singapore" using ($0 - 24 - offset):1 w lp ps 0.5 lc "#909090" lw 2 t "Singapore", \

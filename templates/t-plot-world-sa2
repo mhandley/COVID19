@@ -9,32 +9,27 @@ set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
 jhuoffset = (OFFSET + 24)
-ecoff = 20
+ecoff = 19
 peoff = 23
 cloff = 20
-aroff = 30.5
+aroff = 30
 mxoff = 29
 uroff = 27
 pyoff = 28
 booff = 29.5
 cooff = 19.5
 veoff = 28.5
-plot "italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
-"colombia-jhu" using ($0 -cooff - jhuoffset):($2/copop) w lp ps 0.5 lw 2 lc "#b0b0b0" t sprintf("Colombia (%d days behind Italy)", cooff), \
-"chile-jhu" using ($0 -cloff - jhuoffset):($2/clpop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Chile (%d days behind Italy)", cloff), \
-"ecuador-jhu" using ($0 -ecoff - jhuoffset):($2/ecpop) w lp ps 0.5 lw 2 lc "red" t sprintf("Ecuador (%d days behind Italy)", ecoff), \
-"brazil" using ($0 -14 - offset):($2/brpop) w lp ps 0.5 lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
-"peru-jhu" using ($0 -peoff - jhuoffset):($2/pepop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Peru (%d days behind Italy)", peoff), \
-"uruguay-jhu" using ($0 -uroff - jhuoffset):($2/urpop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Uruguay (%d days behind Italy)", uroff), \
-"paraguay-jhu" using ($0 -pyoff - jhuoffset):($2/pypop) w lp ps 0.5 lw 2 lc "#00b0ff" t sprintf("Paraguay (%d days behind Italy)", pyoff), \
-"bolivia-jhu" using ($0 -booff - jhuoffset):($2/bopop) w lp ps 0.5 lw 2 lc "magenta" t sprintf("Bolivia (%d days behind Italy)", booff), \
-"venezuela-jhu" using ($0 -veoff - jhuoffset):($2/vepop) w lp ps 0.5 lw 2 lc "pink" t sprintf("Venezuela (%d days behind Italy)", veoff), \
-"argentina-jhu" using ($0 -aroff - jhuoffset):($2/arpop) w lp ps 0.5 lw 2 lc "black" t sprintf("Argentina (%d days behind Italy)", aroff), \
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
+"../jhu-data/colombia-jhu" using ($0 -cooff - jhuoffset):($2/copop) w lp ps 0.5 lw 2 lc "#b0b0b0" t sprintf("Colombia (%d days behind Italy)", cooff), \
+"../jhu-data/chile-jhu" using ($0 -cloff - jhuoffset):($2/clpop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Chile (%d days behind Italy)", cloff), \
+"../jhu-data/ecuador-jhu" using ($0 -ecoff - jhuoffset):($2/ecpop) w lp ps 0.5 lw 2 lc "red" t sprintf("Ecuador (%d days behind Italy)", ecoff), \
+"../country_data/brazil" using ($0 -14 - offset):($2/brpop) w lp ps 0.5 lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
+"../jhu-data/peru-jhu" using ($0 -peoff - jhuoffset):($2/pepop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Peru (%d days behind Italy)", peoff), \
+"../jhu-data/uruguay-jhu" using ($0 -uroff - jhuoffset):($2/urpop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Uruguay (%d days behind Italy)", uroff), \
+"../jhu-data/paraguay-jhu" using ($0 -pyoff - jhuoffset):($2/pypop) w lp ps 0.5 lw 2 lc "#00b0ff" t sprintf("Paraguay (%d days behind Italy)", pyoff), \
+"../jhu-data/bolivia-jhu" using ($0 -booff - jhuoffset):($2/bopop) w lp ps 0.5 lw 2 lc "magenta" t sprintf("Bolivia (%d days behind Italy)", booff), \
+"../jhu-data/venezuela-jhu" using ($0 -veoff - jhuoffset):($2/vepop) w lp ps 0.5 lw 2 lc "pink" t sprintf("Venezuela (%d days behind Italy)", veoff), \
+"../jhu-data/argentina-jhu" using ($0 -aroff - jhuoffset):($2/arpop) w lp ps 0.5 lw 2 lc "black" t sprintf("Argentina (%d days behind Italy)", aroff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
-#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
-#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
-
-#"france" using ($0 + 1.5 - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
-#"iran" using ($0 +1.5 - offset):($2/irpop) w lp lw 2 ps 0.5  lc "#6090ff" t "Iran (2.5 days behind Italy)", \

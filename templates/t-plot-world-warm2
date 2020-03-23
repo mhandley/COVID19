@@ -8,14 +8,12 @@ set ylabel "Confirmed SARS-CoV-2 cases"
 set xlabel "Days (from DATE March 2020)"
 set grid
 offset = OFFSET
-plot "malaysia" using ($0 -21 - offset):1 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
-"qatar" using ($0 + 12.5 - offset):1 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
-"thailand" using ($0 -51 - offset):1 w lp ps 0.5 lw 2 lc "#a0a000" t "Thailand  (4 days behind Qatar)", \
-"bahrain" using ($0 -28 - offset):1 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
-"indonesia" using ($0 -51 - offset):1 w lp ps 0.5 lw 2 lc "#00a000" t "Indonesia (7 days behind Qatar)", \
-"egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
-"india" using ($0 -38 - offset):1 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
-"kuwait" using ($0 +9 - offset):1 w lp ps 0.5 lw 2 lc "purple" t "Kuwait", \
+plot "../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
+"../country_data/qatar" using ($0 + 12.5 - offset):2 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
+"../country_data/bahrain" using ($0 -28 - offset):1 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
+"../country_data/egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
+"../country_data/india" using ($0 -38 - offset):1 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
+"../country_data/kuwait" using ($0 +9 - offset):1 w lp ps 0.5 lw 2 lc "purple" t "Kuwait", \
 1.13**(x+offset + 22.5) lc "black" dt 3 t "13% daily increase"
 
 #"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \

@@ -8,19 +8,19 @@ set ylabel "Confirmed SARS-CoV-2 cases"
 set xlabel "Days (from March DATEth 2020)"
 set grid
 offset = OFFSET
-plot "italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
-"france" using ($0 + 1.5  - offset):2 w lp ps 0.5 lw 2 lc "black" t "France (8 days behind Italy)",\
-"us" using ($0 + 0.0 - offset):3 w lp ps 0.5 lw 2 lc "magenta" t "USA (12 days behind Italy)", \
-"brazil" using ($0 -10 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
-"australia" using ($0 - 30.5 - offset):2 w lp ps 0.5 lw 2 lc "#00b0b0" t "Australia (22.5 days behind Italy)", \
-"malaysia" using ($0 -21 - offset):1 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
-"qatar" using ($0 + 12.5 - offset):1 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
-"thailand" using ($0 -51 - offset):1 w lp ps 0.5 lw 2 lc "#a0a000" t "Thailand  (4 days behind Qatar)", \
-"bahrain" using ($0 -28 - offset):1 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
-"indonesia" using ($0 -10.5 - offset):2 w lp ps 0.5 lw 2 lc "#00a000" t "Indonesia (7 days behind Qatar)", \
-"kuwait" using ($0 -4 - offset):1 w lp ps 0.5 lw 2 lc "purple" t "Kuwait (7 days behind Malaysia)", \
-"egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
-"india" using ($0 -38 - offset):1 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
+plot "../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
+"../country_data/france" using ($0 + 1.5  - offset):2 w lp ps 0.5 lw 2 lc "black" t "France (8 days behind Italy)",\
+"../country_data/us" using ($0 + 0.0 - offset):3 w lp ps 0.5 lw 2 lc "magenta" t "USA (12 days behind Italy)", \
+"../country_data/brazil" using ($0 -10 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
+"../country_data/australia" using ($0 - 30.5 - offset):2 w lp ps 0.5 lw 2 lc "#00b0b0" t "Australia (22.5 days behind Italy)", \
+"../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
+"../country_data/qatar" using ($0 + 12.5 - offset):2 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
+"../country_data/thailand" using ($0 -51 - offset):1 w lp ps 0.5 lw 2 lc "#a0a000" t "Thailand  (4 days behind Qatar)", \
+"../country_data/bahrain" using ($0 -28 - offset):1 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
+"../country_data/indonesia" using ($0 -10.5 - offset):2 w lp ps 0.5 lw 2 lc "#00a000" t "Indonesia (7 days behind Qatar)", \
+"../country_data/kuwait" using ($0 -4 - offset):1 w lp ps 0.5 lw 2 lc "purple" t "Kuwait (7 days behind Malaysia)", \
+"../country_data/egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
+"../country_data/india" using ($0 -38 - offset):1 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
 1.38**(x+offset + 8) lc "grey" t "38% daily increase",\
 1.22**(x+offset + 22.5) lc "grey" dashtype 2 t "22% daily increase",\
 1.14**(x+offset + 19) lc "black" dt 3 t "14% daily increase"

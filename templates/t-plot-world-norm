@@ -8,14 +8,14 @@ set xrange [-30:3]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from March DATEth 2020)"
 offset = OFFSET
-plot "italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
-"iran" using ($0 +1.5 - offset):($2/irpop) w lp lw 2 ps 0.5  lc "#6090ff" t "Iran (2.5 days behind Italy)", \
-"france" using ($0 + 1.5 - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
-"us" using ($0  -6 - offset):($3/uspop) w lp ps 0.5 lw 2 lc "orange" t "USA (18 days behind Italy)", \
-"australia" using ($0  -26.3 - offset):($2/aupop) w lp ps 0.5 lw 2 lc "black" t "Australia (18 days behind Italy)", \
-"skorea" using ($0 +7 - offset):($2/krpop) w lp ps 0.5 lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
-"singapore" using ($0 -24 - offset):($1/sgpop) w lp ps 0.5 lw 2 lc "#00b000" t "Singapore", \
-"japan" using ($0 -4 -offset):($2/jppop) w lp ps 0.5 lw 2 lc "#b08000" t "Japan", \
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
+"../country_data/iran" using ($0 +1.5 - offset):($2/irpop) w lp lw 2 ps 0.5  lc "#6090ff" t "Iran (2.5 days behind Italy)", \
+"../country_data/france" using ($0 + 1.5 - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
+"../country_data/us" using ($0  -6 - offset):($2/uspop) w lp ps 0.5 lw 2 lc "orange" t "USA (18 days behind Italy)", \
+"../country_data/australia" using ($0  -26.3 - offset):($2/aupop) w lp ps 0.5 lw 2 lc "black" t "Australia (18 days behind Italy)", \
+"../country_data/skorea" using ($0 +7 - offset):($2/krpop) w lp ps 0.5 lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
+"../country_data/singapore" using ($0 -24 - offset):($1/sgpop) w lp ps 0.5 lw 2 lc "#00b000" t "Singapore", \
+"../country_data/japan" using ($0 -4 -offset):($2/jppop) w lp ps 0.5 lw 2 lc "#b08000" t "Japan", \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
