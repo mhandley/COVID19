@@ -1,0 +1,19 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set grid
+set output "covid-world-linear.png"
+set key at 24,30000
+set yrange [40:82000]
+set xrange [-21:]
+set ylabel "Confirmed SARS-CoV-2 cases"
+set xlabel "Days (from March DATEth 2020)"
+offset = OFFSET
+plot "china" using ($0 +10 - offset):2 w lp ps 0.5 lw 2 lc "black" t "China (30 days ahead of Italy)",\
+"italy" using ($0 +5.5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
+"iran" using ($0 +2 - offset):2 w lp lw 2 ps 0.5 t "Iran (1 day behind Italy)", \
+"france" using ($0 + 1.5 - offset):2 w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
+"us" using ($0 +2  - offset):3 w lp ps 0.5 lw 2 lc "magenta" t "USA (10 days behind Italy)", \
+"skorea" using ($0 + 6.5 - offset):2 w lp ps 0.5 lw 2 t "S Korea (2.5 days ahead of Italy)", \
+"japan" using ($0 -4 -offset):2 w lp ps 0.5 lc "brown" lw 2 t "Japan"
+
+#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \

@@ -1,0 +1,44 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/covid-uk-linear.png"
+#set logscale y
+set key at -12,2100
+#set key at -22,100
+set yrange [1:2800]
+set xrange [-35:0]
+#set yrange [3:100]
+#set xrange [-30:-15]
+set ylabel "Confirmed COVID19 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = (OFFSET + 5.5)
+ukpop = 67.7
+frpop = 65.2
+depop = 83.7
+itpop = 60.5
+supop = 8.6
+espop = 46.7
+nopop = 5.4
+lompop = 10
+atpop = 9.0
+sepop = 9.1
+lonpop = 8.9
+nwpop = 7.2
+epop = 6.2
+swpop = 5.6
+nepop = 8.1
+midpop = 10.7
+set grid
+plot "lombardy" using ($0 +10.5 - offset):($2/lompop) w lp ps 0.5 lw 2 lc "black" t "Lombardy Region, Italy",\
+"italy" using ($0 +5 - offset):($2/itpop) w l lc "#a0a0a0" lw 3 t "All of Italy", \
+"uk-regions-cum" using ($0 -5.5 - offset):($3/lonpop) w l lw 3 lc "red" t "London, UK (18 days behind Lombardy)", \
+"uk-regions-cum" using ($0 -9.5 - offset):($7/sepop) w l lw 3 lc "#00a0ff" t "South East, UK (23 days behind Lombardy)", \
+"uk-regions-cum" using ($0 -11 - offset):($4/midpop) w l lw 3 lc "#00a000" t "Midlands, UK (24 days behind Lombardy)", \
+"uk-regions-cum" using ($0 -11 - offset):($5/nepop) w l lw 3 lc "blue" t "North East, UK (24 days behind Lombardy)", \
+"uk-regions-cum" using ($0 -11 - offset):($6/nwpop) w l lw 3 lc "brown" t "North West (24 days behind Lombardy)", \
+"uk-regions-cum" using ($0 -12 - offset):($2/epop) w l lw 3 lc "orange" t "UK, East (25 days behind Lombardy)", \
+"uk-regions-cum" using ($0 -11.5 - offset):($8/swpop) w l lw 3 lc "magenta" t "South West, UK, (25 days behind Lombardy)", \
+1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+
+#"switzerland" using ($0+3.5-offset):($2/supop) w lp ps 0.5 lw 3 lc "brown" t "Switzerland (11 days behind Lombardy, see comment)", \
+#"austria" using ($0 +4.5 - offset):($2/atpop) w lp ps 0.5 lw 3 lc "orange" t "Austria (14 days behind Lombardy)", \
+

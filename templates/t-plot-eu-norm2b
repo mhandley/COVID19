@@ -1,0 +1,41 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "covid-eu-norm2b.png"
+set grid
+set logscale y
+set key at -1,15
+set yrange [5:200]
+set xrange [-10:]
+set ylabel "SARS-CoV-2 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = OFFSET - 12
+ukpop = 67.7
+frpop = 65.2
+depop = 83.7
+itpop = 60.5
+supop = 8.6
+espop = 46.7
+nopop = 5.4
+dapop = 5.8
+sepop = 10.2
+fipop = 5.5
+ispop = 0.34
+lompop = 10
+krpop = 51
+testpop=3
+plot "denmark" using ($0 -0  - offset):(($2-650)/dapop) w lp ps 0.5 lw 2 lc "black" t "Denmark - 650", \
+"norway" using ($0 -3.0 - offset):(($2-1050)/nopop) w lp ps 0.5 lw 2 lc "red" t "Norway -1050 (2 days offset)", \
+"sweden" using ($0 -4.9 - offset):(($2-900)/sepop) w lp ps 0.5 lw 2 lc "blue" t "Sweden - 900 (4 days offset)", \
+"finland" using ($0 +0.8 - offset):(($2-120)/fipop) w lp ps 0.5 lw 2 lc "#00a000" t "Finland - 120 (3 days offset)", \
+1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+
+#"italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
+#"skorea" using ($0 +7 - offset):($2/krpop) w lp ps 0.5 lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
+#"iceland" using ($0 +15 - offset):($2/ispop) w lp ps 0.5 lw 2 lc "orange" t "Iceland (2 days ahead of Italy)" , \
+#"testchange3" using ($0 +15.1 - offset):($2/testpop) w l lw 2 lc "blue" t "Model (50% -> 15% sampling change)", \
+#"france" using ($0 + 1 - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t "France (9 days behind Italy)", \
+#"spain" using ($0 + 1  - offset):($2/espop) w lp ps 0.5 lw 2 t "Spain (9 days behind Italy)", \
+#"germany" using ($0 -1.5 - offset):($2/depop) w lp ps 0.5 lw 2 lc "#00b000" t "Germany (10.5 days behind Italy)", \
+#"uk" using ($0 -2 - offset):($2/ukpop) w lp ps 0.5 lw 2 lc "blue" t "UK (14 days behind Italy)", \
+
+

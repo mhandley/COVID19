@@ -1,0 +1,24 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/covid-world-norm2.png"
+set logscale y
+set grid
+set key at -12,1000
+set yrange [1:1000]
+set xrange [-30:3]
+set ylabel "SARS-CoV-2 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = OFFSET
+plot "italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
+"us" using ($0  -6.5 - offset):($3/uspop) w lp ps 0.5 lw 2 lc "orange" t "USA (17 days behind Italy)", \
+"skorea" using ($0 +7 - offset):($2/krpop) w lp ps 0.5 lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
+"canada" using ($0 -12.5 - offset):($2/capop) w lp ps 0.5 lw 2 lc "#00b000" t "Canada (18.5 days behind Italy)", \
+"israel" using ($0 -37 - offset):($1/ilpop) w lp ps 0.5 lw 2 lc "#b00000" t "Israel (14 days behind Italy)", \
+"chile" using ($0 -2.5 - offset):($2/clpop) w lp ps 0.5 lw 2 lc "blue" t "Chile (19.5 days behind Italy)", \
+"pakistan" using ($0 -3 - offset):($2/pkpop) w lp ps 0.5 lw 2 lc "red" t "Pakistan (27 days behind Italy)", \
+1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase"
+
+#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
+
+#"france" using ($0 + 1.5 - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
+#"iran" using ($0 +1.5 - offset):($2/irpop) w lp lw 2 ps 0.5  lc "#6090ff" t "Iran (2.5 days behind Italy)", \

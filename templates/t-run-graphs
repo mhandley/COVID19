@@ -1,0 +1,20 @@
+#!/bin/bash
+gnuplot plot-eu
+gnuplot plot-eu-norm
+gnuplot plot-eu-lom
+gnuplot plot-eu-norm2
+gnuplot plot-eu-norm2b
+gnuplot plot-eu-norm3
+gnuplot plot-eu-norm4
+gnuplot plot-eu-linear
+gnuplot plot-uk
+gnuplot plot-uk2
+gnuplot plot-uk3
+gnuplot plot-world
+gnuplot plot-world-norm
+gnuplot plot-us-norm
+gnuplot plot-world-norm2
+gnuplot plot-world-warm
+gnuplot plot-world-warm2
+gnuplot plot-world-linear
+cp covid*.png DATEmar2020/

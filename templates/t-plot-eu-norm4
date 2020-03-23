@@ -1,0 +1,28 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/covid-eu-norm4.png"
+set grid
+set logscale y
+set key at -1,12
+set yrange [0.5:1000]
+set xrange [-30:]
+set ylabel "SARS-CoV-2 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = OFFSET
+plot "italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
+"estonia" using ($0 +7 - offset):($2/eepop) w lp ps 0.5 lw 2 lc "brown" t "Estonia (9 days behind Italy)", \
+\
+"greece" using ($0 -2.5 - offset):($2/grpop) w lp ps 0.5 lw 2 lc "#8080ff" t "Greece (13.5 days offset from Italy)", \
+"czechia" using ($0 + 1 - offset):($2/czpop) w lp ps 0.5 lw 2 lc "blue" t "Czech Republic (14 days behind Italy)", \
+"slovenia" using ($0 +2 - offset):($2/sipop) w lp ps 0.5 lw 2 lc "#00b000" t "Slovenia (16 days offset from Italy)", \
+"romania" using ($0 -4 - offset):($2/ropop) w lp ps 0.5 lw 2 lc "orange" t "Romania (21 days behind Italy)", \
+"poland" using ($0 -4 - offset):($2/plpop) w lp ps 0.5 lw 2 lc "red" t "Poland (22 days behind Italy)", \
+"hungary" using ($0 -5 - offset):($2/hupop) w lp ps 0.5 lw 2 lc "magenta" t "Hungary (24 days behind Italy)", \
+1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+
+#"france" using ($0 + 1 - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t "France (9 days behind Italy)", \
+#"spain" using ($0 + 1  - offset):($2/espop) w lp ps 0.5 lw 2 t "Spain (9 days behind Italy)", \
+#"germany" using ($0 -1.5 - offset):($2/depop) w lp ps 0.5 lw 2 lc "#00b000" t "Germany (10.5 days behind Italy)", \
+#"uk" using ($0 -2 - offset):($2/ukpop) w lp ps 0.5 lw 2 lc "blue" t "UK (14 days behind Italy)", \
+
+
