@@ -1,4 +1,5 @@
 #!/bin/bash
+cd gnuplot
 gnuplot plot-eu
 gnuplot plot-eu-norm
 gnuplot plot-eu-lom
@@ -17,4 +18,5 @@ gnuplot plot-world-norm2
 gnuplot plot-world-warm
 gnuplot plot-world-warm2
 gnuplot plot-world-linear
-cp covid*.png DATEmar2020/
+cd ..
+cp graphs/covid*.png www/DATEmar2020/

@@ -14,13 +14,13 @@ froff = 8.5
 deoff = 10.5
 nloff = 10
 ukoff = 15.5
-plot "italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
-"switzerland" using ($0 +10 - choff-offset):($2/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \
-"spain" using ($0 + 10 - esoff  - offset):($2/espop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
-"france" using ($0 + 10 - froff - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
-"germany" using ($0 + 9 - deoff - offset):($2/depop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
-"netherlands" using ($0 + 12 - nloff -offset):($2/nlpop) w lp ps 0.5 lw 2 lc "#a0a0a0" t sprintf("Netherlands (%d days behind Italy)", nloff), \
-"uk" using ($0 +12 - ukoff - offset):($2/ukpop) w lp ps 0.75 lw 2 lc "blue" t sprintf("UK (%d days behind Italy)", ukoff), \
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
+"../country_data/switzerland" using ($0 +10 - choff-offset):($2/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \
+"../country_data/spain" using ($0 + 10 - esoff  - offset):($2/espop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
+"../country_data/france" using ($0 + 10 - froff - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
+"../country_data/germany" using ($0 + 9 - deoff - offset):($2/depop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
+"../country_data/netherlands" using ($0 + 12 - nloff -offset):($2/nlpop) w lp ps 0.5 lw 2 lc "#a0a0a0" t sprintf("Netherlands (%d days behind Italy)", nloff), \
+"../country_data/uk" using ($0 +12 - ukoff - offset):($2/ukpop) w lp ps 0.75 lw 2 lc "blue" t sprintf("UK (%d days behind Italy)", ukoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase",\
 1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase"

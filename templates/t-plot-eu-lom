@@ -3,24 +3,18 @@ set output "../graphs/covid-eu-lom.png"
 set logscale y
 set key at 4,20
 set yrange [3:2800]
-set xrange [-21:6]
+set xrange [-25:6]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
-ukpop = 67.7
-frpop = 65.2
-depop = 83.7
-itpop = 60.5
-supop = 8.6
-espop = 46.7
-nopop = 5.4
-lompop = 10
-atpop = 9.0
 set grid
-plot "italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
-"lombardy" using ($0 +10.5 - offset):($2/lompop) w lp ps 0.5 lw 2 lc "red" t "Lombardy (5.5 days ahead of Italy - see comment)", \
-"switzerland" using ($0+3.5-offset):($2/supop) w lp ps 0.5 lw 2 lc "brown" t "Switzerland (11 days behind Lombardy, see comment)", \
-"austria" using ($0 +4.5 - offset):($2/atpop) w lp ps 0.5 lw 2 lc "orange" t "Austria (14 days behind Lombardy)", \
+lomoff = 5.5
+choff = 5.5
+atoff = 10
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
+"../country_data/lombardy" using ($0 +5 + lomoff - offset):($2/lompop) w lp ps 0.5 lw 2 lc "red" t sprintf("Lombardy (%d days ahead of Italy - see comment)", lomoff), \
+"../country_data/switzerland" using ($0 + 10 - choff -offset):($2/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%d days behind Lombardy)", choff), \
+"../country_data/austria" using ($0 +14 - atoff - offset):($2/atpop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Austria (%d days behind Lombardy)", atoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
