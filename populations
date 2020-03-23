@@ -44,6 +44,7 @@ testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+trpop = 84 # turkey
 ukepop = 6.2 # UK East
 uklonpop = 8.9 # UK london
 ukmidpop = 10.7 # UK Midlands
