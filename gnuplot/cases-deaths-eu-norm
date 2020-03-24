@@ -1,0 +1,123 @@
+arpop = 44.3 # argentina
+atpop = 9.0 # austria
+aupop = 25.6 # australia
+bepop = 11.5 # belgium
+bopop = 11.6 # bolivia
+brpop = 212 # brazil
+capop = 37.6 # canada
+chpop = 8.6 # switzerland
+clpop = 17.6 # chile
+czpop = 10.7 # czech republic
+copop = 50.7 # colombia
+dapop = 5.8 # danmark
+depop = 83.7 # germany
+ecpop = 17.6 # ecuador
+eepop = 1.33 # estonia
+egpop = 101.8 # egypt
+espop = 46.7 # spain
+fipop = 5.5 # finland
+frpop = 65.2 # france
+grpop = 10.4 # greece
+hupop = 9.6 # hungary
+iepop = 4.9  # ireland
+ilpop = 8.6  # israel
+irpop = 83   # iran
+ispop = 0.34 # iceland
+itpop = 60.5 # italy
+jppop = 126.6 # japan
+krpop = 51 # south korea
+lompop = 10 # lombardy
+lupop = 0.623 #luxembourg
+mxpop = 126 # mexico
+nlpop = 17.4 # netherlands
+nopop = 5.4 # norway
+pepop = 32.8 # peru
+phpop = 109 # philippines
+pkpop = 208 # pakistan
+plpop = 37.8 # poland
+ptpop = 10.2 # portugal
+pypop = 7.1 # paraguay
+ropop = 19.3 # romania
+sepop = 10.2 # sweden
+sipop = 2.08 # slovenia
+sgpop = 5.8 # singapore
+testpop = 13.0 # testdata
+testpop = 16 # testdata
+testpop = 17 # testdata
+testpop = 3 # testdata
+trpop = 84 # turkey
+twpop = 23.8 # taiwan
+ukepop = 6.2 # UK East
+uklonpop = 8.9 # UK london
+ukmidpop = 10.7 # UK Midlands
+uknepop = 8.1 # UK NE
+uknipop = 1.8 # UK Northern Ireland
+uknwpop = 7.2 # UK NE
+ukpop = 67.7 # UK
+ukscpop = 5.3 # UK Scotland
+uksepop = 9.1 # UK SE
+ukswpop = 5.6 # UK SW
+ukwapop = 3.0 # UK Wales
+urpop = 35.3 # uruguay
+usflpop = 21.5 # US florida
+uslopop = 4.66 # US louisiana
+usmapop = 6.95 # US mass
+usmipop = 9.88 # US MI
+usnjpop = 8.9 # US New Jersey
+usnypop = 19.4 # US NY
+uscapop = 39.9 # US CA
+uscopop = 5.77 # US CO
+uspop = 330 # USA
+uswapop = 7.6 # US WA
+vepop = 28.4 # Venezuela
+vnpop = 96.2 # Vietnam
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/case-deaths-eu-norm.png"
+set logscale y
+set key at -12,600
+set yrange [:200]
+set xrange [-40:]
+set ylabel "COVID19 cases per million inhabitants"
+set xlabel "Days (from 23 March 2020)"
+offset = 37
+set grid
+choff = 2
+esoff = 5
+froff = 9.5
+deoff = 10.5
+nloff = 10
+ukoff = 15.5
+kroff = 3.5
+esdoff = 14
+nldoff = 18
+itdoff = 6.5
+frdoff = 6
+krdoff = 6
+itscale = 4.85
+esscale = 6
+nlscale = 6 
+frscale = 9.9
+krscale = 10
+set arrow from -itdoff, graph 0 to -itdoff, graph 1 nohead lc 1
+set arrow from -froff-frdoff, graph 0 to -froff-frdoff, graph 1 nohead
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 dt 2 t "Italy", \
+"../country_data/france" using ($0 + 10 - froff - offset):($2/frpop) w l lw 2 lc "red" dt 2 t sprintf("France (%d days behind Italy)", froff), \
+"../country_data/skorea" using ($0 +4 +kroff- offset):($2/krpop) w lp ps 0.5 lw 2  lc 6 dt 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
+"../country_data/italy" using ($0 + 5 - itdoff  - offset):($3*itscale/itpop) w lp ps 0.5 lw 2 lc 1 t sprintf("Italy Deaths (%d days behind Italy)", itdoff), \
+"../country_data/france" using ($0 + 10 - froff -frdoff - offset):($3*frscale/frpop) w lp ps 0.5 lw 2 lc "red" t sprintf("France Deaths (%d days behind France)", frdoff), \
+"../country_data/skorea" using ($0 + 4 + kroff -krdoff - offset):($3*krscale/krpop) w lp ps 0.5 lw 2 lc 6 t sprintf("Korea Deaths (%d days behind Korea)", krdoff), \
+1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase",\
+1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase"
+
+#"../country_data/spain" using ($0 + 10 - esoff  - offset):($2/espop) w lp ps 0.5 lw 2 lc "orange" dt 1 t sprintf("Spain (%d days behind Italy)", esoff), \
+#"../country_data/netherlands" using ($0 + 12 - nloff -offset):($2/nlpop) w lp ps 0.5 lw 2 lc "#a0a0a0" dt 1 t sprintf("Netherlands (%d days behind Italy)", nloff), \
+#"../country_data/spain" using ($0 + 10 - esdoff  - offset):($3*esscale/espop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Spain Deaths (%d days behind Spain)", esdoff - esoff), \
+#"../country_data/netherlands" using ($0 + 12 - nldoff -offset):($3*nlscale/nlpop) w lp ps 0.5 lw 2 lc "#a0a0a0" t sprintf("NL Deaths (%d days behind NL)", nldoff - nloff), \
+
+#"../country_data/uk" using ($0 +12 - ukoff - offset):($3/ukpop) w lp ps 0.75 lw 2 lc "blue" t sprintf("UK (%d days behind Italy)", ukoff), \
+#"../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
+#"../country_data/switzerland" using ($0 +10 - choff-offset):($3/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \
+#1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase"
+
+
