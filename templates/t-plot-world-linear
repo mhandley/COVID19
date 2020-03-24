@@ -4,14 +4,15 @@ set output "../graphs/covid-world-linear.png"
 set key at 24,30000
 set yrange [40:82000]
 set xrange [-21:]
-set ylabel "Confirmed SARS-CoV-2 cases"
+set ylabel "Confirmed COVID-19 cases"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
+usoff = 3
 plot "../country_data/china" using ($0 +10 - offset):2 w lp ps 0.5 lw 2 lc "black" t "China (30 days ahead of Italy)",\
 "../country_data/italy" using ($0 +5.5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
 "../country_data/iran" using ($0 +2 - offset):2 w lp lw 2 ps 0.5 t "Iran (1 day behind Italy)", \
 "../country_data/france" using ($0 + 1.5 - offset):2 w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
-"../country_data/us" using ($0 +2  - offset):3 w lp ps 0.5 lw 2 lc "magenta" t "USA (10 days behind Italy)", \
+"../country_data/us" using ($0 +11 - usoff  - offset):2 w lp ps 0.5 lw 2 lc "magenta" t sprintf("USA (%d days behind Italy)", usoff), \
 "../country_data/skorea" using ($0 + 6.5 - offset):2 w lp ps 0.5 lw 2 t "S Korea (2.5 days ahead of Italy)", \
 "../country_data/japan" using ($0 -4 -offset):2 w lp ps 0.5 lc "brown" lw 2 t "Japan"
 

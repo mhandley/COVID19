@@ -2,7 +2,7 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-lom.png"
 set logscale y
 set key at 4,20
-set yrange [3:2800]
+set yrange [3:3500]
 set xrange [-25:6]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"

@@ -12,8 +12,8 @@ jhuoffset = (OFFSET + 24)
 nyoff = 9.5
 waoff = 9.5
 maoff = 15
-cooff = 15
-njoff = 14.5
+cooff = 15.5
+njoff = 14
 caoff = 18.5
 floff = 19.5
 looff = 14.5
@@ -22,9 +22,9 @@ plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Ital
 "../country_data/switzerland" using ($0+3.5-offset):($2/chpop) w lp ps 0.5 lw 2 lc "purple" t "Switzerland (6.5 days behind Italy)", \
 "../jhu-data/us_d/Washington-jhu" using ($0 - waoff  - jhuoffset):($2/uswapop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Washington  State (%d days behind Italy)", waoff), \
 "../jhu-data/us_d/NewYork-jhu" using ($0 - nyoff  - jhuoffset):($2/usnypop) w lp ps 0.5 lw 2 lc "blue" t sprintf("New York (%d days offset from Italy)", nyoff),\
+"../jhu-data/us_d/NewJersey-jhu" using ($0 - njoff  - jhuoffset):($2/usnjpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("New Jersey (%d days behind Italy)", njoff), \
 "../jhu-data/us_d/Massachusetts-jhu" using ($0 - maoff  - jhuoffset):($2/usmapop) w lp ps 0.5 lw 2 lc "black" t sprintf("Massachusetts (%d days behind Italy)", maoff), \
 "../jhu-data/us_d/Colorado-jhu" using ($0 - cooff  - jhuoffset):($2/uscopop) w lp ps 0.5 lw 2 lc "#00a0ff" t sprintf("Colorado (%d days behind Italy)", cooff), \
-"../jhu-data/us_d/NewJersey-jhu" using ($0 - njoff  - jhuoffset):($2/usnjpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("New Jersey (%d days behind Italy)", njoff), \
 "../jhu-data/us_d/California-jhu" using ($0 - caoff  - jhuoffset):($2/uscapop) w lp ps 0.5 lw 2 lc "red" t sprintf("California (%d days behind Italy)", caoff), \
 "../jhu-data/us_d/Florida-jhu" using ($0 - floff  - jhuoffset):($2/usflpop) w lp ps 0.5 lw 2 lc "#00a000" t sprintf("Florida (%d days behind Italy)", floff), \
 "../jhu-data/us_d/Louisiana-jhu" using ($0 - looff  - jhuoffset):($2/uslopop) w lp ps 0.5 lw 2 lc "magenta" t sprintf("Louisiana (%d days behind Italy)", looff), \

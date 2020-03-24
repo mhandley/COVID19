@@ -5,8 +5,8 @@ set grid
 set key at -15,990
 set yrange [0.5:1000]
 set xrange [-30:3]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from March DATEth 2020)"
+set ylabel "COVID-19 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
 "../country_data/iran" using ($0 +1.5 - offset):($2/irpop) w lp lw 2 ps 0.5  lc "#6090ff" t "Iran (2.5 days behind Italy)", \

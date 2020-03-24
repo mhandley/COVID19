@@ -8,7 +8,7 @@ capop = 37.6 # canada
 chpop = 8.6 # switzerland
 clpop = 17.6 # chile
 czpop = 10.7 # czech republic
-copop = 5.7 # colombia
+copop = 50.7 # colombia
 dapop = 5.8 # danmark
 depop = 83.7 # germany
 ecpop = 17.6 # ecuador
@@ -32,6 +32,7 @@ mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
 pepop = 32.8 # peru
+phpop = 109 # philippines
 pkpop = 208 # pakistan
 plpop = 37.8 # poland
 ptpop = 10.2 # portugal
@@ -45,6 +46,7 @@ testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
 trpop = 84 # turkey
+twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
 uklonpop = 8.9 # UK london
 ukmidpop = 10.7 # UK Midlands
@@ -68,6 +70,7 @@ uscopop = 5.77 # US CO
 uspop = 330 # USA
 uswapop = 7.6 # US WA
 vepop = 28.4 # Venezuela
+vnpop = 96.2 # Vietnam
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-world-sa.png"
 set logscale y
@@ -76,8 +79,8 @@ set key at -1,10
 set yrange [1:1000]
 set xrange [-30:0]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 22 March 2020)"
-offset = 36
+set xlabel "Days (from 23 March 2020)"
+offset = 37
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7

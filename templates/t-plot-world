@@ -4,7 +4,7 @@ set logscale y
 set key at 4,600
 set yrange [30:100000]
 set xrange [-30:7]
-set ylabel "Confirmed SARS-CoV-2 cases"
+set ylabel "Confirmed COVID-19 cases"
 set xlabel "Days (from March DATEth 2020)"
 set grid
 offset = OFFSET

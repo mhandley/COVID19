@@ -1,0 +1,21 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/covid-world-seasia.png"
+set logscale y
+set grid
+set key at -1,30
+set yrange [0.5:1000]
+set xrange [-40:0]
+set ylabel "COVID-19 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = OFFSET
+jhuoffset = (OFFSET + 24)
+vnoff = 32
+twoff = 28
+phoff = 27.5
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
+"../jhu-data/taiwan-jhu" using ($0 -twoff - jhuoffset):($2/twpop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Taiwan (%d days behind Italy)", twoff), \
+"../jhu-data/philippines-jhu" using ($0 -phoff - jhuoffset):($2/phpop) w lp ps 0.5 lw 2 lc "blue" t sprintf("Philippines (%d days behind Italy)", phoff), \
+"../jhu-data/vietnam-jhu" using ($0 -vnoff - jhuoffset):($2/vnpop) w lp ps 0.5 lw 2 lc "red" t sprintf("Vietnam (%d days behind Italy)", vnoff), \
+1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+
