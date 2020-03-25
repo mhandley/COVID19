@@ -3,6 +3,8 @@ cd gnuplot
 gnuplot plot-eu
 gnuplot plot-eu-norm
 gnuplot deaths-eu-norm
+gnuplot deaths-eu-norm2
+gnuplot deaths-us
 gnuplot plot-eu-lom
 gnuplot plot-eu-norm2
 gnuplot plot-eu-norm2b
@@ -22,4 +24,4 @@ gnuplot plot-world-warm
 gnuplot plot-world-warm2
 gnuplot plot-world-linear
 cd ..
-cp graphs/covid*.png www/DATEmar2020/
+cp graphs/*.png www/DATEmar2020/

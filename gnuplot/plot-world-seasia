@@ -39,13 +39,16 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+sapop = 58.8 # south africa
 sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
 sgpop = 5.8 # singapore
 testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
@@ -80,14 +83,16 @@ set key at -1,30
 set yrange [0.5:1000]
 set xrange [-45:0]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 23 March 2020)"
-offset = 37
-jhuoffset = (37 + 24)
+set xlabel "Days (from 24 March 2020)"
+offset = 38
+jhuoffset = (38 + 24)
 vnoff = 37
 twoff = 28
 phoff = 27.5
 khoff = 27
+thoff = 25
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
+"../country_data/thailand" using ($0 -24 -thoff - offset):($2/thpop) w lp ps 0.5 lw 2 lc "#a0a000" t sprintf("Thailand (%d days behind Italy)", thoff), \
 "../jhu-data/taiwan-jhu" using ($0 -twoff - jhuoffset):($2/twpop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Taiwan (%d days behind Italy)", twoff), \
 "../jhu-data/philippines-jhu" using ($0 -phoff - jhuoffset):($2/phpop) w lp ps 0.5 lw 2 lc "blue" t sprintf("Philippines (%d days behind Italy)", phoff), \
 "../jhu-data/vietnam-jhu" using ($0 -vnoff - jhuoffset):($2/vnpop) w lp ps 0.5 lw 2 lc "red" t sprintf("Vietnam (%d days behind Italy)", vnoff), \

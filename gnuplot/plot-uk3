@@ -39,13 +39,16 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+sapop = 58.8 # south africa
 sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
 sgpop = 5.8 # singapore
 testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
@@ -82,8 +85,8 @@ set xrange [-35:0]
 #set yrange [3:100]
 #set xrange [-30:-15]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 23 March 2020)"
-offset = (37 + 5.5)
+set xlabel "Days (from 24 March 2020)"
+offset = (38 + 5.5)
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7
@@ -107,7 +110,7 @@ set grid
 plot "../country_data/lombardy" using ($0 +10.5 - offset):($2/lompop) w lp ps 0.5 lw 2 lc "black" t "Lombardy Region, Italy",\
 "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lc "#a0a0a0" lw 3 t "All of Italy", \
 "../country_data/uk-regions-cum" using ($0 -5 - offset):($3/lonpop) w l lw 3 lc "red" t "London (18 days behind Lombardy)", \
-"../country_data/uk-regions-cum" using ($0 -11 - offset):(($2+$4+$5+$6+$7)/(epop+midpop+nepop+nwpop+sepop+swpop)) w l lw 3 lc "magenta" t "Rest of England (23 days behind Lombardy)", \
+"../country_data/uk-regions-cum" using ($0 -11 - offset):(($2+$4+$5+$6+$7+$8)/(epop+midpop+nepop+nwpop+sepop+swpop)) w l lw 3 lc "magenta" t "Rest of England (23 days behind Lombardy)", \
 "../country_data/uk-regions-cum" using ($0 -10.5 - offset):($11/lonpop) w l lw 3 lc "blue" t "Scotland (23 days beind Lombardy)", \
 "../country_data/uk-regions-cum" using ($0 -11 - offset):($12/lonpop) w l lw 3 lc "#00b000" t "Wales (24 days behind Lombardy)", \
 "../country_data/uk-regions-cum" using ($0 -16.5 - offset):($10/lonpop) w l lw 3 lc "brown" t "Northen Ireland (29 days behind Lombardy)", \

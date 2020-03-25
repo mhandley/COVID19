@@ -39,13 +39,16 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+sapop = 58.8 # south africa
 sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
 sgpop = 5.8 # singapore
 testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
@@ -77,11 +80,11 @@ set output "../graphs/covid-eu-norm2.png"
 set grid
 set logscale y
 set key at 4,30
-set yrange [3:2000]
+set yrange [3:2500]
 set xrange [-25:]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 23 March 2020)"
-offset = 37
+set ylabel "COVID-19 cases per million inhabitants"
+set xlabel "Days (from 24 March 2020)"
+offset = 38
 testpop=3
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
 "../country_data/iceland" using ($0 +15 - offset):($2/ispop) w lp ps 0.5 lw 2 lc "orange" t "Iceland (2 days ahead of Italy)" , \

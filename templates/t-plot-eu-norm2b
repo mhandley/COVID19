@@ -3,9 +3,9 @@ set output "../graphs/covid-eu-norm2b.png"
 set grid
 set logscale y
 set key at -1,15
-set yrange [5:250]
+set yrange [5:350]
 set xrange [-14:]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
+set ylabel "COVID-10 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET - 12
 plot "../country_data/denmark" using ($0 -0  - offset):(($2-650)/dapop) w lp ps 0.5 lw 2 lc "black" t "Denmark - 650", \

@@ -39,13 +39,16 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+sapop = 58.8 # south africa
 sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
 sgpop = 5.8 # singapore
 testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
@@ -79,17 +82,17 @@ set key at -11,1190
 set yrange [20:1200]
 set xrange [-26:]
 set ylabel "Confirmed COVID-10 cases"
-set xlabel "Days (from 23 March 2020)"
+set xlabel "Days (from 24 March 2020)"
 set grid
-offset = 37
+offset = 38
 plot "../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
 "../country_data/qatar" using ($0 + 12.5 - offset):2 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
-"../country_data/bahrain" using ($0 -28 - offset):1 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
+"../country_data/bahrain" using ($0 -28 - offset):2 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
 "../country_data/egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
-"../country_data/india" using ($0 -38 - offset):1 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
-"../country_data/kuwait" using ($0 +9 - offset):1 w lp ps 0.5 lw 2 lc "purple" t "Kuwait", \
+"../country_data/india" using ($0 -38 - offset):2 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
+"../country_data/kuwait" using ($0 +9 - offset):2 w lp ps 0.5 lw 2 lc "purple" t "Kuwait", \
 1.13**(x+offset + 22.5) lc "black" dt 3 t "13% daily increase"
 
 #"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
-#"singapore" using ($0 - 24 - offset):1 w lp ps 0.5 lc "#909090" lw 2 t "Singapore", \
+#"singapore" using ($0 - 24 - offset):2 w lp ps 0.5 lc "#909090" lw 2 t "Singapore", \

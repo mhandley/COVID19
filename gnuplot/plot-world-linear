@@ -39,13 +39,16 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+sapop = 58.8 # south africa
 sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
 sgpop = 5.8 # singapore
 testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
@@ -79,15 +82,18 @@ set key at 24,30000
 set yrange [40:82000]
 set xrange [-21:]
 set ylabel "Confirmed COVID-19 cases"
-set xlabel "Days (from 23 March 2020)"
-offset = 37
+set xlabel "Days (from 24 March 2020)"
+offset = 38
 usoff = 3
-plot "../country_data/china" using ($0 +10 - offset):2 w lp ps 0.5 lw 2 lc "black" t "China (30 days ahead of Italy)",\
-"../country_data/italy" using ($0 +5.5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
-"../country_data/iran" using ($0 +2 - offset):2 w lp lw 2 ps 0.5 t "Iran (1 day behind Italy)", \
-"../country_data/france" using ($0 + 1.5 - offset):2 w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
-"../country_data/us" using ($0 +11 - usoff  - offset):2 w lp ps 0.5 lw 2 lc "magenta" t sprintf("USA (%d days behind Italy)", usoff), \
-"../country_data/skorea" using ($0 + 6.5 - offset):2 w lp ps 0.5 lw 2 t "S Korea (2.5 days ahead of Italy)", \
+iroff = 0
+froff = 10
+kroff = 2.5
+plot "../country_data/china" using ($0 +9.5 - offset):2 w lp ps 0.5 lw 2 lc "black" t "China (30 days ahead of Italy)",\
+"../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 lc 1 t "Italy", \
+"../country_data/iran" using ($0 +4 - iroff - offset):2 w lp lw 2 ps 0.5 t "Iran", \
+"../country_data/france" using ($0 + 10 - froff - offset):2 w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
+"../country_data/us" using ($0 +11 - usoff  - offset):2 w lp ps 0.5 lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
+"../country_data/skorea" using ($0 + 3.5 + kroff - offset):2 w lp ps 0.5 lw 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
 "../country_data/japan" using ($0 -4 -offset):2 w lp ps 0.5 lc "brown" lw 2 t "Japan"
 
 #"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \

@@ -39,13 +39,16 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+sapop = 58.8 # south africa
 sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
 sgpop = 5.8 # singapore
 testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
@@ -79,9 +82,9 @@ set key at -18,90000
 set yrange [20:100000]
 set xrange [-35:]
 set ylabel "Confirmed COVID-10 cases"
-set xlabel "Days (from 23 March 2020)"
+set xlabel "Days (from 24 March 2020)"
 set grid
-offset = 37
+offset = 38
 plot "../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
 "../country_data/france" using ($0 + 1.5  - offset):2 w lp ps 0.5 lw 2 lc "black" t "France (8 days behind Italy)",\
 "../country_data/us" using ($0 + 0.0 - offset):3 w lp ps 0.5 lw 2 lc "magenta" t "USA (12 days behind Italy)", \
@@ -89,16 +92,16 @@ plot "../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 t "Italy"
 "../country_data/australia" using ($0 - 30.5 - offset):2 w lp ps 0.5 lw 2 lc "#00b0b0" t "Australia (22.5 days behind Italy)", \
 "../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
 "../country_data/qatar" using ($0 + 12.5 - offset):2 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
-"../country_data/thailand" using ($0 -51 - offset):1 w lp ps 0.5 lw 2 lc "#a0a000" t "Thailand  (4 days behind Qatar)", \
-"../country_data/bahrain" using ($0 -28 - offset):1 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
+"../country_data/thailand" using ($0 -51 - offset):2 w lp ps 0.5 lw 2 lc "#a0a000" t "Thailand  (4 days behind Qatar)", \
+"../country_data/bahrain" using ($0 -28 - offset):2 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
 "../country_data/indonesia" using ($0 -10.5 - offset):2 w lp ps 0.5 lw 2 lc "#00a000" t "Indonesia (7 days behind Qatar)", \
-"../country_data/kuwait" using ($0 -4 - offset):1 w lp ps 0.5 lw 2 lc "purple" t "Kuwait (7 days behind Malaysia)", \
+"../country_data/kuwait" using ($0 -4 - offset):2 w lp ps 0.5 lw 2 lc "purple" t "Kuwait (7 days behind Malaysia)", \
 "../country_data/egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
-"../country_data/india" using ($0 -38 - offset):1 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
+"../country_data/india" using ($0 -38 - offset):2 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
 1.38**(x+offset + 8) lc "grey" t "38% daily increase",\
 1.22**(x+offset + 22.5) lc "grey" dashtype 2 t "22% daily increase",\
 1.14**(x+offset + 19) lc "black" dt 3 t "14% daily increase"
 
 #"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
-#"singapore" using ($0 - 24 - offset):1 w lp ps 0.5 lc "#909090" lw 2 t "Singapore", \
+#"singapore" using ($0 - 24 - offset):2 w lp ps 0.5 lc "#909090" lw 2 t "Singapore", \

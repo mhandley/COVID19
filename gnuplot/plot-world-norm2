@@ -39,13 +39,16 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+sapop = 58.8 # south africa
 sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
 sgpop = 5.8 # singapore
 testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
@@ -78,18 +81,21 @@ set logscale y
 set grid
 set key at 0,25
 set yrange [1:1200]
-set xrange [-30:3]
+set xrange [-35:3]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 23 March 2020)"
-offset = 37
+set xlabel "Days (from 24 March 2020)"
+offset = 38
+jhuoffset = (38 + 24)
 usoff = 17
+saoff = 27
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
 "../country_data/us" using ($0  +11 - usoff - offset):($2/uspop) w lp ps 0.5 lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
 "../country_data/skorea" using ($0 +7 - offset):($2/krpop) w lp ps 0.5 lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
 "../country_data/canada" using ($0 -12.5 - offset):($2/capop) w lp ps 0.5 lw 2 lc "#00b000" t "Canada (18.5 days behind Italy)", \
-"../country_data/israel" using ($0 -7 - offset):($2/ilpop) w lp ps 0.5 lw 2 lc "#b00000" t "Israel (14 days behind Italy)", \
-"../country_data/chile" using ($0 -2.5 - offset):($2/clpop) w lp ps 0.5 lw 2 lc "blue" t "Chile (19.5 days behind Italy)", \
 "../country_data/pakistan" using ($0 -4 - offset):($2/pkpop) w lp ps 0.5 lw 2 lc "black" t "Pakistan (28 days behind Italy)", \
 "../country_data/turkey" using ($0 +2 - offset):($2/trpop) w lp ps 0.5 lw 2 lc "red" t "Turkey (28 days behind Italy)", \
+"../jhu-data/southafrica-jhu" using ($0  - saoff - jhuoffset):($2/sapop) w lp ps 0.5 lw 2 lc "magenta" t sprintf("South Africa (%d days behind Italy)", saoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase"
 
+#"../country_data/chile" using ($0 -2.5 - offset):($2/clpop) w lp ps 0.5 lw 2 lc "blue" t "Chile (19.5 days behind Italy)", \
+#"../country_data/israel" using ($0 -7 - offset):($2/ilpop) w lp ps 0.5 lw 2 lc "#b00000" t "Israel (14 days behind Italy)", \

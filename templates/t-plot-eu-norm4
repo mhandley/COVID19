@@ -8,12 +8,13 @@ set xrange [-30:]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 
 offset = OFFSET
+skoff = 19.5
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
 "../country_data/estonia" using ($0 +7 - offset):($2/eepop) w lp ps 0.5 lw 2 lc "brown" t "Estonia (9 days behind Italy)", \
-\
 "../country_data/greece" using ($0 -2.5 - offset):($2/grpop) w lp ps 0.5 lw 2 lc "#8080ff" t "Greece (13.5 days offset from Italy)", \
 "../country_data/czechia" using ($0 + 1 - offset):($2/czpop) w lp ps 0.5 lw 2 lc "blue" t "Czech Republic (14 days behind Italy)", \
 "../country_data/slovenia" using ($0 +9 - offset):($2/sipop) w lp ps 0.5 lw 2 lc "#00b000" t "Slovenia (16 days offset from Italy)", \
+"../country_data/slovakia" using ($0 + 24 - skoff - offset):($2/skpop) w lp ps 0.5 lw 2 lc "black" t sprintf("Slovakia (%d days behind Italy)", skoff), \
 "../country_data/romania" using ($0 -4 - offset):($2/ropop) w lp ps 0.5 lw 2 lc "orange" t "Romania (21 days behind Italy)", \
 "../country_data/poland" using ($0 -4 - offset):($2/plpop) w lp ps 0.5 lw 2 lc "red" t "Poland (22 days behind Italy)", \
 "../country_data/hungary" using ($0 -5 - offset):($2/hupop) w lp ps 0.5 lw 2 lc "magenta" t "Hungary (24 days behind Italy)", \

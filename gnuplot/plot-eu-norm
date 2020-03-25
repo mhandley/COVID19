@@ -39,13 +39,16 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+sapop = 58.8 # south africa
 sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
 sgpop = 5.8 # singapore
 testpop = 13.0 # testdata
 testpop = 16 # testdata
 testpop = 17 # testdata
 testpop = 3 # testdata
+thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
 ukepop = 6.2 # UK East
@@ -79,8 +82,8 @@ set key at -1,50
 set yrange [10:1200]
 set xrange [-25:]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 23 March 2020)"
-offset = 37
+set xlabel "Days (from 24 March 2020)"
+offset = 38
 set grid
 choff = 1.5
 esoff = 5
