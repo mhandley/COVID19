@@ -7,7 +7,7 @@ set yrange [1:2800]
 set xrange [-37:0]
 #set yrange [3:100]
 #set xrange [-30:-15]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
+set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = (OFFSET + 5.5)
 ukpop = 67.7

@@ -1,8 +1,9 @@
 #/bin/sh
-DATE=24
-OFFSET=38
+DATE=25
+OFFSET=39
 cat populations templates/t-plot-eu | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu
 cat populations templates/t-plot-eu-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm
+cat populations templates/t-plot-rates | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-rates
 cat populations templates/t-deaths-eu-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/deaths-eu-norm
 cat populations templates/t-deaths-eu-norm2 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/deaths-eu-norm2
 cat populations templates/t-deaths-us | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/deaths-us
@@ -11,6 +12,7 @@ cat populations templates/t-plot-eu-norm2 | sed -e "s/DATE/${DATE}/g" | sed -e "
 cat populations templates/t-plot-eu-norm2b | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm2b
 cat populations templates/t-plot-eu-norm3 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm3
 cat populations templates/t-plot-eu-norm4 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm4
+cat populations templates/t-plot-eu-norm5 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm5
 cat populations templates/t-plot-eu-lom | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-lom
 cat populations templates/t-plot-eu-linear | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-linear
 cat populations templates/t-plot-uk | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-uk

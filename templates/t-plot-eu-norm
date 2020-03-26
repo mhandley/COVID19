@@ -2,7 +2,7 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-norm.png"
 set logscale y
 set key at -1,50
-set yrange [10:1200]
+set yrange [10:1500]
 set xrange [-25:]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
@@ -15,7 +15,7 @@ deoff = 10.5
 nloff = 10
 ukoff = 15.5
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
-"../country_data/switzerland" using ($0 +10 - choff-offset):($2/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%f days behind Italy)", choff), \
+"../country_data/switzerland" using ($0 +10 - choff-offset):($2/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \
 "../country_data/spain" using ($0 + 10 - esoff  - offset):($2/espop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
 "../country_data/france" using ($0 + 10 - froff - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
 "../country_data/germany" using ($0 + 9 - deoff - offset):($2/depop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \

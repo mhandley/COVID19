@@ -36,6 +36,7 @@ lvoff = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
+nzpop = 4.8 # new zealand
 pepop = 32.8 # peru
 phpop = 109 # philippines
 pkpop = 208 # pakistan
@@ -93,11 +94,11 @@ set xlabel "Days (from 25 March 2020)"
 offset = 39
 set grid
 choff = 11
-esoff = 8
-froff = 10.5
-deoff = 21.5
+esoff = 7
+froff = 12
+deoff = 21
 nloff = 12.5
-ukoff = 14.5
+ukoff = 16.75
 plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w lp lw 2 t "Italy", \
 "../country_data/spain" using ($0 + 10 - esoff  - offset):($3/espop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
 "../country_data/switzerland" using ($0 +10 - choff-offset):($3/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \

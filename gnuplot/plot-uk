@@ -36,6 +36,7 @@ lvoff = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
+nzpop = 4.8 # new zealand
 pepop = 32.8 # peru
 phpop = 109 # philippines
 pkpop = 208 # pakistan
@@ -91,7 +92,7 @@ set yrange [1:2800]
 set xrange [-37:0]
 #set yrange [3:100]
 #set xrange [-30:-15]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
+set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from 25 March 2020)"
 offset = (39 + 5.5)
 ukpop = 67.7

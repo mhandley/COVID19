@@ -2,6 +2,7 @@
 cd gnuplot
 gnuplot plot-eu
 gnuplot plot-eu-norm
+gnuplot plot-rates
 gnuplot deaths-eu-norm
 gnuplot deaths-eu-norm2
 gnuplot deaths-us
@@ -10,6 +11,7 @@ gnuplot plot-eu-norm2
 gnuplot plot-eu-norm2b
 gnuplot plot-eu-norm3
 gnuplot plot-eu-norm4
+gnuplot plot-eu-norm5
 gnuplot plot-eu-linear
 gnuplot plot-uk
 gnuplot plot-uk2
@@ -24,4 +26,4 @@ gnuplot plot-world-warm
 gnuplot plot-world-warm2
 gnuplot plot-world-linear
 cd ..
-cp graphs/*.png www/24mar2020/
+cp graphs/*.png www/25mar2020/

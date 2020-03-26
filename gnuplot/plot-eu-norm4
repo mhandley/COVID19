@@ -36,6 +36,7 @@ lvoff = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
+nzpop = 4.8 # new zealand
 pepop = 32.8 # peru
 phpop = 109 # philippines
 pkpop = 208 # pakistan
@@ -100,7 +101,7 @@ plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Ital
 "../country_data/slovenia" using ($0 +9 - offset):($2/sipop) w lp ps 0.5 lw 2 lc "#00b000" t "Slovenia (16 days offset from Italy)", \
 "../country_data/slovakia" using ($0 + 24 - skoff - offset):($2/skpop) w lp ps 0.5 lw 2 lc "black" t sprintf("Slovakia (%d days behind Italy)", skoff), \
 "../country_data/romania" using ($0 -4 - offset):($2/ropop) w lp ps 0.5 lw 2 lc "orange" t "Romania (21 days behind Italy)", \
-"../country_data/poland" using ($0 -4 - offset):($2/plpop) w lp ps 0.5 lw 2 lc "red" t "Poland (22 days behind Italy)", \
+"../country_data/poland" using ($0 -6 - offset):($2/plpop) w lp ps 0.5 lw 2 lc "red" t "Poland (23 days behind Italy)", \
 "../country_data/hungary" using ($0 -5 - offset):($2/hupop) w lp ps 0.5 lw 2 lc "#80a080" t "Hungary (24 days behind Italy)", \
 "../country_data/bulgaria" using ($0 + 22 - bgoff - offset):($2/bgpop) w lp ps 0.5 lw 2 lc "#ffa0c0" t sprintf("Bulgaria (%d days behind Italy)", bgoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
