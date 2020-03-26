@@ -1,25 +1,25 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-us-norm.png"
 set logscale y
-set key at 0,40
-set yrange [3:1000]
+set key at 0,60
+set yrange [5:1500]
 set xrange [-25:]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 set grid
 offset = OFFSET
-jhuoffset = (OFFSET + 24)
-nyoff = 9.5
-waoff = 9.5
-maoff = 15
+jhuoffset = (38 - 26)
+nyoff = 14.5
+waoff = 10
+maoff = 17
 cooff = 15.5
-njoff = 14
-caoff = 18.5
-floff = 19.5
-looff = 14.5
-mioff = 14.5
+njoff = 17
+caoff = 19
+floff = 20
+looff = 16.5
+mioff = 19.5
+iloff = 17
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
-"../country_data/switzerland" using ($0+3.5-offset):($2/chpop) w lp ps 0.5 lw 2 lc "purple" t "Switzerland (6.5 days behind Italy)", \
 "../jhu-data/us_d/Washington-jhu" using ($0 - waoff  - jhuoffset):($2/uswapop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Washington  State (%d days behind Italy)", waoff), \
 "../jhu-data/us_d/NewYork-jhu" using ($0 - nyoff  - jhuoffset):($2/usnypop) w lp ps 0.5 lw 2 lc "blue" t sprintf("New York (%d days offset from Italy)", nyoff),\
 "../jhu-data/us_d/NewJersey-jhu" using ($0 - njoff  - jhuoffset):($2/usnjpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("New Jersey (%d days behind Italy)", njoff), \
@@ -29,7 +29,9 @@ plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Ital
 "../jhu-data/us_d/Florida-jhu" using ($0 - floff  - jhuoffset):($2/usflpop) w lp ps 0.5 lw 2 lc "#00a000" t sprintf("Florida (%d days behind Italy)", floff), \
 "../jhu-data/us_d/Louisiana-jhu" using ($0 - looff  - jhuoffset):($2/uslopop) w lp ps 0.5 lw 2 lc "magenta" t sprintf("Louisiana (%d days behind Italy)", looff), \
 "../jhu-data/us_d/Michigan-jhu" using ($0 - mioff  - jhuoffset):($2/usmipop) w lp ps 0.5 lw 2 lc "#a0a0a0" t sprintf("Michigan (%d days behind Italy)", mioff), \
+"../jhu-data/us_d/Illinois-jhu" using ($0 - iloff  - jhuoffset):($2/usilpop) w lp ps 0.5 lw 2 lc "#00c0a0" t sprintf("Illinois (%d days behind Italy)", iloff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
 #"switzerland" using ($0-3-offset):2 w lp ps 0.5 lw 2 lc "brown" t "Switzerland (13 days behind Italy)", \
+#"../country_data/switzerland" using ($0+3.5-offset):($2/chpop) w lp ps 0.5 lw 2 lc "purple" t "Switzerland (6.5 days behind Italy)", \

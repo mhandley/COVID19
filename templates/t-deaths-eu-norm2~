@@ -1,0 +1,26 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/deaths-eu-norm2.png"
+set logscale y
+set key at -1,3
+set yrange [0.2:100]
+set xrange [-25:]
+set ylabel "COVID19 deaths per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = OFFSET
+set grid
+choff = 11
+esoff = 8
+froff = 10.5
+deoff = 21.5
+nloff = 12.5
+ukoff = 14.5
+luxoff = 20
+plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w lp lw 2 t "Italy", \
+"../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", fr"../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
+"../country_data/luxembourg" using ($0 + 9 - deoff - offset):($3/luxpop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Luxembourg (%d days behind Italy)", luxoff), \
+1.35**(x+offset - 16) lc "black"  dt 4 t "35% daily increase",\
+1.22**(x+offset -11.9) lc "black" dashtype 2 t "22% daily increase"
+
+#1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase"
+
+

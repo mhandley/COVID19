@@ -4,6 +4,8 @@ aupop = 25.6 # australia
 bepop = 11.5 # belgium
 bopop = 11.6 # bolivia
 brpop = 212 # brazil
+bgpop = 6.9 # bulgaria
+bypop = 9.45 # belarus
 capop = 37.6 # canada
 chpop = 8.6 # switzerland
 clpop = 17.6 # chile
@@ -28,7 +30,9 @@ jppop = 126.6 # japan
 khpop = 16.6 # Cambodia
 krpop = 51 # south korea
 lompop = 10 # lombardy
+ltoff = 2.9 # lithuania
 lupop = 0.623 #luxembourg
+lvoff = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
@@ -39,6 +43,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
 skpop = 5.46 # slovakia
@@ -51,6 +56,7 @@ testpop = 3 # testdata
 thpop = 69.7 # thailand
 trpop = 84 # turkey
 twpop = 23.8 # taiwan
+uapop = 43.8 # ukraine
 ukepop = 6.2 # UK East
 uklonpop = 8.9 # UK london
 ukmidpop = 10.7 # UK Midlands
@@ -64,6 +70,7 @@ ukswpop = 5.6 # UK SW
 ukwapop = 3.0 # UK Wales
 urpop = 35.3 # uruguay
 usflpop = 21.5 # US florida
+usilpop = 12.7 # US illinois
 uslopop = 4.66 # US louisiana
 usmapop = 6.95 # US mass
 usmipop = 9.88 # US MI
@@ -85,8 +92,8 @@ set xrange [-37:0]
 #set yrange [3:100]
 #set xrange [-30:-15]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 24 March 2020)"
-offset = (38 + 5.5)
+set xlabel "Days (from 25 March 2020)"
+offset = (39 + 5.5)
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7
