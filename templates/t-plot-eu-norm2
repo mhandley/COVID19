@@ -3,8 +3,8 @@ set output "../graphs/covid-eu-norm2.png"
 set grid
 set logscale y
 set key at 4,30
-set yrange [3:2500]
-set xrange [-25:]
+set yrange [3:3000]
+set xrange [-30:]
 set ylabel "COVID-19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET

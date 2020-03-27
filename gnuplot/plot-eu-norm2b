@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -88,11 +89,11 @@ set output "../graphs/covid-eu-norm2b.png"
 set grid
 set logscale y
 set key at -1,15
-set yrange [5:350]
-set xrange [-14:]
+set yrange [5:500]
+set xrange [-16:]
 set ylabel "COVID-10 cases per million inhabitants"
-set xlabel "Days (from 25 March 2020)"
-offset = 39 - 12
+set xlabel "Days (from 26 March 2020)"
+offset = 40 - 12
 plot "../country_data/denmark" using ($0 -0  - offset):(($2-650)/dapop) w lp ps 0.5 lw 2 lc "black" t "Denmark - 650", \
 "../country_data/norway" using ($0 -3.0 - offset):(($2-1050)/nopop) w lp ps 0.5 lw 2 lc "red" t "Norway -1050 (2 days offset)", \
 "../country_data/sweden" using ($0 -4.9 - offset):(($2-900)/sepop) w lp ps 0.5 lw 2 lc "blue" t "Sweden - 900 (4 days offset)", \

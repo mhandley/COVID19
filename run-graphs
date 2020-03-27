@@ -26,4 +26,4 @@ gnuplot plot-world-warm
 gnuplot plot-world-warm2
 gnuplot plot-world-linear
 cd ..
-cp graphs/*.png www/25mar2020/
+cp graphs/*.png www/26mar2020/

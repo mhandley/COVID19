@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -88,17 +89,18 @@ set output "../graphs/covid-world-warm.png"
 set logscale y
 set key at -18,90000
 set yrange [20:100000]
-set xrange [-35:]
+set xrange [-40:]
 set ylabel "Confirmed COVID-10 cases"
-set xlabel "Days (from 25 March 2020)"
+set xlabel "Days (from 26 March 2020)"
 set grid
-offset = 39
+offset = 40
+usoff = 12
 plot "../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
 "../country_data/france" using ($0 + 1.5  - offset):2 w lp ps 0.5 lw 2 lc "black" t "France (8 days behind Italy)",\
-"../country_data/us" using ($0 + 0.0 - offset):3 w lp ps 0.5 lw 2 lc "magenta" t "USA (12 days behind Italy)", \
+"../country_data/us" using ($0 + 11 - usoff - offset):2 w lp ps 0.5 lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
 "../country_data/brazil" using ($0 -10 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
 "../country_data/australia" using ($0 - 30.5 - offset):2 w lp ps 0.5 lw 2 lc "#00b0b0" t "Australia (22.5 days behind Italy)", \
-"../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
+"../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "magenta" t "Malaysia", \
 "../country_data/qatar" using ($0 + 12.5 - offset):2 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
 "../country_data/thailand" using ($0 -51 - offset):2 w lp ps 0.5 lw 2 lc "#a0a000" t "Thailand  (4 days behind Qatar)", \
 "../country_data/bahrain" using ($0 -28 - offset):2 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \

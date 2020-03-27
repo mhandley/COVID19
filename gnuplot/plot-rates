@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -91,8 +92,8 @@ set key at -25,900
 set yrange [0.2:]
 #set xrange [-21:]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
-set xlabel "Days (from 25 March 2020)"
-offset = 39
+set xlabel "Days (from 26 March 2020)"
+offset = 40
 usoff = 0
 iroff = 0
 froff = 0

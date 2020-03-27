@@ -91,8 +91,8 @@ set key at -1,10
 set yrange [1:1000]
 set xrange [-30:0]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 25 March 2020)"
-offset = 39
+set xlabel "Days (from 26 March 2020)"
+offset = 40
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7

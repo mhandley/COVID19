@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -88,12 +89,12 @@ set output "../graphs/covid-world-seasia.png"
 set logscale y
 set grid
 set key at -1,30
-set yrange [0.5:1000]
-set xrange [-45:0]
+set yrange [0.5:1500]
+set xrange [-45:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 25 March 2020)"
-offset = 39
-jhuoffset = (39 + 24)
+set xlabel "Days (from 26 March 2020)"
+offset = 40
+jhuoffset = (40 + 24)
 vnoff = 37
 twoff = 28
 phoff = 27.5
@@ -102,8 +103,8 @@ thoff = 25
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
 "../country_data/thailand" using ($0 -24 -thoff - offset):($2/thpop) w lp ps 0.5 lw 2 lc "#a0a000" t sprintf("Thailand (%d days behind Italy)", thoff), \
 "../jhu-data/taiwan-jhu" using ($0 -twoff - jhuoffset):($2/twpop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Taiwan (%d days behind Italy)", twoff), \
-"../jhu-data/philippines-jhu" using ($0 -phoff - jhuoffset):($2/phpop) w lp ps 0.5 lw 2 lc "blue" t sprintf("Philippines (%d days behind Italy)", phoff), \
-"../jhu-data/vietnam-jhu" using ($0 -vnoff - jhuoffset):($2/vnpop) w lp ps 0.5 lw 2 lc "red" t sprintf("Vietnam (%d days behind Italy)", vnoff), \
+"../jhu-data/philippines-wiki" using ($0 +39 -phoff - jhuoffset):($2/phpop) w lp ps 0.5 lw 2 lc "blue" t sprintf("Philippines (%d days behind Italy)", phoff), \
+"../jhu-data/vietnam-wiki" using ($0 +23 -vnoff - jhuoffset):($2/vnpop) w lp ps 0.5 lw 2 lc "red" t sprintf("Vietnam (%d days behind Italy)", vnoff), \
 "../jhu-data/cambodia-jhu" using ($0 -khoff - jhuoffset):($2/khpop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Cambodia (%d days behind Italy)", khoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"

@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -87,19 +88,24 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-world-warm2.png"
 set logscale y
 set key at -11,1190
-set yrange [20:1200]
+set yrange [50:1500]
 set xrange [-26:]
 set ylabel "Confirmed COVID-10 cases"
-set xlabel "Days (from 25 March 2020)"
+set xlabel "Days (from 26 March 2020)"
 set grid
-offset = 39
-plot "../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "orange" t "Malaysia", \
+offset = 40
+inoff = 9
+bhoff = 7
+bhoff = 0
+kwoff = 9
+plot "../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "magenta" t "Malaysia", \
 "../country_data/qatar" using ($0 + 12.5 - offset):2 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
-"../country_data/bahrain" using ($0 -28 - offset):2 w lp ps 0.5 lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
+"../country_data/bahrain" using ($0 -18 - offset):2 w lp ps 0.5 lw 2 lc "red" t "Bahrain", \
 "../country_data/egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
-"../country_data/india" using ($0 -38 - offset):2 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
-"../country_data/kuwait" using ($0 +9 - offset):2 w lp ps 0.5 lw 2 lc "purple" t "Kuwait", \
-1.13**(x+offset + 22.5) lc "black" dt 3 t "13% daily increase"
+"../country_data/india" using ($0 -25 -inoff - offset):2 w lp ps 0.5 lw 2 lc "brown" t sprintf("India (%d days behind Malaysia)", inoff), \
+"../country_data/kuwait" using ($0 +9 -kwoff - offset):2 w lp ps 0.5 lw 2 lc "purple" t "Kuwait", \
+1.13**(x+offset + 22.5) lc "black" dt 3 t "13% daily increase", \
+1.065**(x+offset + 55.5) lc "black" dt 4 t "6.5% daily increase"
 
 #"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \

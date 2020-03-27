@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -88,12 +89,12 @@ set output "../graphs/covid-world-norm2.png"
 set logscale y
 set grid
 set key at 0,25
-set yrange [1:1200]
+set yrange [1:1500]
 set xrange [-35:3]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 25 March 2020)"
-offset = 39
-jhuoffset = (39 + 24)
+set xlabel "Days (from 26 March 2020)"
+offset = 40
+jhuoffset = (40 + 24)
 usoff = 17
 saoff = 27
 nzoff = 22.5

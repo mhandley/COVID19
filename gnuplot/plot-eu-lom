@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -87,11 +88,11 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-lom.png"
 set logscale y
 set key at 4,20
-set yrange [3:3500]
+set yrange [3:4000]
 set xrange [-25:6]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 25 March 2020)"
-offset = 39
+set xlabel "Days (from 26 March 2020)"
+offset = 40
 set grid
 lomoff = 5.5
 choff = 5.5

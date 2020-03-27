@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -91,9 +92,9 @@ set key at -1,12
 set yrange [0.5:1500]
 set xrange [-40:]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 25 March 
-offset = 39
-jhuoffset = (39 + 24)
+set xlabel "Days (from 26 March 
+offset = 40
+jhuoffset = (40 + 24)
 eeoff = 9
 ltoff = 25
 lvoff = 25

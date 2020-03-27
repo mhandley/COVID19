@@ -1,18 +1,18 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-us-norm.png"
 set logscale y
-set key at 0,60
-set yrange [5:1500]
+set key at 0,100
+set yrange [5:2000]
 set xrange [-30:]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 set grid
 offset = OFFSET
-jhuoffset = (38 - 26)
+jhuoffset = (OFFSET - 27)
 nyoff = 11
 waoff = 10
 maoff = 17
-cooff = 15.5
+cooff = 18
 njoff = 15
 caoff = 20
 floff = 20
@@ -22,14 +22,14 @@ iloff = 17
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
 "../jhu-data/us_d/Washington-jhu" using ($0 -12 - waoff  - jhuoffset):($2/uswapop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Washington  State (%d days behind Italy)", waoff), \
 "../jhu-data/us_d/NewYork-jhu" using ($0 - 2 - nyoff  - jhuoffset):($2/usnypop) w lp ps 0.5 lw 2 lc "blue" t sprintf("New York (%d days offset from Italy)", nyoff),\
-"../jhu-data/us_d/NewJersey-jhu" using ($0 - 2 - njoff  - jhuoffset):($2/usnjpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("New Jersey (%d days behind Italy)", njoff), \
+"../jhu-data/us_d/NewJersey-jhu" using ($0 - 2 - njoff  - jhuoffset):($2/usnjpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("New Jersey (%d days offset from Italy)", njoff), \
+"../jhu-data/us_d/Louisiana-jhu" using ($0 - 2 - looff  - jhuoffset):($2/uslopop) w lp ps 0.5 lw 2 lc "magenta" t sprintf("Louisiana (%d days offset from Italy)", looff), \
+"../jhu-data/us_d/Michigan-jhu" using ($0 - 2-mioff  - jhuoffset):($2/usmipop) w lp ps 0.5 lw 2 lc "#a0a0a0" t sprintf("Michigan (%d days offset from Italy)", mioff), \
 "../jhu-data/us_d/Massachusetts-jhu" using ($0 - 2 - maoff  - jhuoffset):($2/usmapop) w lp ps 0.5 lw 2 lc "black" t sprintf("Massachusetts (%d days behind Italy)", maoff), \
+"../jhu-data/us_d/Illinois-jhu" using ($0 - 9 -iloff  - jhuoffset):($2/usilpop) w lp ps 0.5 lw 2 lc "#00c0a0" t sprintf("Illinois (%d days behind Italy)", iloff), \
 "../jhu-data/us_d/Colorado-jhu" using ($0 - 2-cooff  - jhuoffset):($2/uscopop) w lp ps 0.5 lw 2 lc "#00a0ff" t sprintf("Colorado (%d days behind Italy)", cooff), \
 "../jhu-data/us_d/California-jhu" using ($0 - 8 - caoff  - jhuoffset):($2/uscapop) w lp ps 0.5 lw 2 lc "red" t sprintf("California (%d days behind Italy)", caoff), \
 "../jhu-data/us_d/Florida-jhu" using ($0 - 2-floff  - jhuoffset):($2/usflpop) w lp ps 0.5 lw 2 lc "#00a000" t sprintf("Florida (%d days behind Italy)", floff), \
-"../jhu-data/us_d/Louisiana-jhu" using ($0 - 2 - looff  - jhuoffset):($2/uslopop) w lp ps 0.5 lw 2 lc "magenta" t sprintf("Louisiana (%d days behind Italy)", looff), \
-"../jhu-data/us_d/Michigan-jhu" using ($0 - 2-mioff  - jhuoffset):($2/usmipop) w lp ps 0.5 lw 2 lc "#a0a0a0" t sprintf("Michigan (%d days behind Italy)", mioff), \
-"../jhu-data/us_d/Illinois-jhu" using ($0 - 9 -iloff  - jhuoffset):($2/usilpop) w lp ps 0.5 lw 2 lc "#00c0a0" t sprintf("Illinois (%d days behind Italy)", iloff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

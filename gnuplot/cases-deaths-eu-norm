@@ -90,8 +90,8 @@ set key at -12,600
 set yrange [:200]
 set xrange [-40:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 25 March 2020)"
-offset = 39
+set xlabel "Days (from 26 March 2020)"
+offset = 40
 set grid
 choff = 2
 esoff = 5

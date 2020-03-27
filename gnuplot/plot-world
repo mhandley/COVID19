@@ -44,6 +44,7 @@ plpop = 37.8 # poland
 ptpop = 10.2 # portugal
 pypop = 7.1 # paraguay
 ropop = 19.3 # romania
+rspop = 8.7 # serbia
 rupop = 145.9 # russia
 sapop = 58.8 # south africa
 sepop = 10.2 # sweden
@@ -88,19 +89,19 @@ set output "../graphs/covid-world.png"
 set logscale y
 set key at 4,600
 set yrange [30:100000]
-set xrange [-30:7]
+set xrange [-40:7]
 set ylabel "Confirmed COVID-19 cases"
-set xlabel "Days (from March 25th 2020)"
+set xlabel "Days (from March 26th 2020)"
 set grid
-offset = 39
+offset = 40
 plot "../country_data/china" using ($0 +6 - offset):2 w lp ps 0.5 lw 2 lc "black" t "China (early cases)",\
 "../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 lc "#a000a0" t "Italy", \
 "../country_data/iran" using ($0 +3 - offset):2 w lp ps 0.5 lw 2 lc "#6090ff" t "Iran (1 days behind Italy)", \
 "../country_data/france" using ($0 + 1.5 - offset):2 w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
 "../country_data/us" using ($0 + 0 - offset):2 w lp ps 0.5 lw 2 lc "orange" t "USA (12 days behind Italy)", \
 "../country_data/russia" using ($0 -6 - offset):2 w lp ps 0.5 lw 2 lc "#00ba00" t "Russia (25 days behind Italy)", \
-"../country_data/skorea" using ($0 + 6.5 - offset):2 w lp ps 0.5 lw 2 t "S Korea (2.5 days ahead of Italy)", \
-"../country_data/japan" using ($0 -4 -offset):2 w lp ps 0.5 lw 2 t "Japan", \
+"../country_data/skorea" using ($0 + 6.5 - offset):2 w lp ps 0.5 lw 2 lc 6 t "S Korea (2.5 days ahead of Italy)", \
+"../country_data/japan" using ($0 -30 -offset):2 w lp ps 0.5 lw 2 lc "#b08000" t "Japan", \
 1.35**(x+offset + 9.5) lc "black"  dt 4 t "35% daily increase",\
 1.115**(x+offset + 59.5) lc "black"  dt 2 t "11.5% daily increase", \
 1.085**(x+offset + 52.5) lc "black"  dt 3 t "8.5% daily increase"

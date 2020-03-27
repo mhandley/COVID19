@@ -4,12 +4,13 @@ set grid
 set logscale y
 set key at -1,12
 set yrange [0.5:1000]
-set xrange [-30:]
+set xrange [-35:]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 
 offset = OFFSET
 skoff = 19.5
 bgoff = 21
+rsoff = 22
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
 "../country_data/greece" using ($0 -2.5 - offset):($2/grpop) w lp ps 0.5 lw 2 lc "#8080ff" t "Greece (13.5 days offset from Italy)", \
 "../country_data/czechia" using ($0 + 1 - offset):($2/czpop) w lp ps 0.5 lw 2 lc "blue" t "Czech Republic (14 days behind Italy)", \
@@ -19,6 +20,7 @@ plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Ital
 "../country_data/poland" using ($0 -6 - offset):($2/plpop) w lp ps 0.5 lw 2 lc "red" t "Poland (23 days behind Italy)", \
 "../country_data/hungary" using ($0 -5 - offset):($2/hupop) w lp ps 0.5 lw 2 lc "#80a080" t "Hungary (24 days behind Italy)", \
 "../country_data/bulgaria" using ($0 + 22 - bgoff - offset):($2/bgpop) w lp ps 0.5 lw 2 lc "#ffa0c0" t sprintf("Bulgaria (%d days behind Italy)", bgoff), \
+"../jhu-data/serbia-wiki" using ($0 + 20 - rsoff - offset):($2/rspop) w lp ps 0.5 lw 2 lc 6 t sprintf("Serbia (%d days behind Italy)", rsoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

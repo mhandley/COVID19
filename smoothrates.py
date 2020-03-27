@@ -1,5 +1,17 @@
 def do_country(country):
-    ifile = open("country_data/"+country, "r")
+    ifile = None
+    try:
+        ifile = open("country_data/"+country, "r")
+    except FileNotFoundError:
+        pass
+    if ifile == None:
+        try:
+            ifile = open("jhu-data/"+country+"-wiki", "r")
+        except FileNotFoundError:
+            pass
+    if ifile == None:
+        ifile = open("jhu-data/"+country+"-jhu", "r")
+
     ofile = open("increase_rates/"+country, "w")
     prevval = -1
     diffs = []
@@ -26,7 +38,8 @@ def do_country(country):
     ofile.close()
 
 
-countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece", "denmark", "finland", "us", "lombardy"]
+countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece", "denmark", "finland", "us", "lombardy",
+             "greece", "slovenia", "czechia", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia"]
 for country in countries:
     do_country(country)
                
