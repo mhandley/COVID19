@@ -1,0 +1,114 @@
+arpop = 44.3 # argentina
+atpop = 9.0 # austria
+aupop = 25.6 # australia
+bepop = 11.5 # belgium
+bopop = 11.6 # bolivia
+brpop = 212 # brazil
+bgpop = 6.9 # bulgaria
+bypop = 9.45 # belarus
+capop = 37.6 # canada
+chpop = 8.6 # switzerland
+clpop = 17.6 # chile
+czpop = 10.7 # czech republic
+copop = 50.7 # colombia
+dapop = 5.8 # danmark
+depop = 83.7 # germany
+ecpop = 17.6 # ecuador
+eepop = 1.33 # estonia
+egpop = 101.8 # egypt
+espop = 46.7 # spain
+fipop = 5.5 # finland
+frpop = 65.2 # france
+grpop = 10.4 # greece
+hupop = 9.6 # hungary
+iepop = 4.9  # ireland
+ilpop = 8.6  # israel
+irpop = 83   # iran
+ispop = 0.34 # iceland
+itpop = 60.5 # italy
+jppop = 126.6 # japan
+khpop = 16.6 # Cambodia
+krpop = 51 # south korea
+lompop = 10 # lombardy
+ltoff = 2.9 # lithuania
+lupop = 0.623 #luxembourg
+lvoff = 1.9 # latvia
+mxpop = 126 # mexico
+nlpop = 17.4 # netherlands
+nopop = 5.4 # norway
+nzpop = 4.8 # new zealand
+pepop = 32.8 # peru
+phpop = 109 # philippines
+pkpop = 208 # pakistan
+plpop = 37.8 # poland
+ptpop = 10.2 # portugal
+pypop = 7.1 # paraguay
+ropop = 19.3 # romania
+rspop = 8.7 # serbia
+rupop = 145.9 # russia
+sapop = 58.8 # south africa
+sepop = 10.2 # sweden
+skpop = 5.46 # slovakia
+sipop = 2.08 # slovenia
+sgpop = 5.8 # singapore
+testpop = 13.0 # testdata
+testpop = 16 # testdata
+testpop = 17 # testdata
+testpop = 3 # testdata
+thpop = 69.7 # thailand
+trpop = 84 # turkey
+twpop = 23.8 # taiwan
+uapop = 43.8 # ukraine
+ukepop = 6.2 # UK East
+uklonpop = 8.9 # UK london
+ukmidpop = 10.7 # UK Midlands
+uknepop = 8.1 # UK NE
+uknipop = 1.8 # UK Northern Ireland
+uknwpop = 7.2 # UK NE
+ukpop = 67.7 # UK
+ukscpop = 5.3 # UK Scotland
+uksepop = 9.1 # UK SE
+ukswpop = 5.6 # UK SW
+ukwapop = 3.0 # UK Wales
+urpop = 35.3 # uruguay
+usflpop = 21.5 # US florida
+usilpop = 12.7 # US illinois
+uslopop = 4.66 # US louisiana
+usmapop = 6.95 # US mass
+usmipop = 9.88 # US MI
+usnjpop = 8.9 # US New Jersey
+usnypop = 19.4 # US NY
+uscapop = 39.9 # US CA
+uscopop = 5.77 # US CO
+uspop = 330 # USA
+uswapop = 7.6 # US WA
+vepop = 28.4 # Venezuela
+vnpop = 96.2 # Vietnam
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set grid
+set output "../graphs/rates-eeu.png"
+set logscale y
+set key at -25,900
+set yrange [0.2:]
+#set xrange [-21:]
+set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
+set xlabel "Days (from 26 March 2020)"
+offset = 40
+usoff = 0
+iroff = 0
+froff = 0
+kroff = 0
+lomoff = 0
+plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w lp ps 0.5 lw 2 lc 1 t "Italy", \
+"../increase_rates/greece" using ($0 +12 - offset):($3/grpop) w lp ps 0.5 lw 2 lc "#8080ff" t sprintf("Greece", usoff), \
+"../increase_rates/czechia" using ($0 +16 - offset):($3/czpop) w lp ps 0.5 lw 2 lc "blue" t sprintf("Czech Republic", usoff), \
+"../increase_rates/slovenia" using ($0 +19 - offset):($3/sipop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Slovenia"), \
+"../increase_rates/slovakia" using ($0 +25 - offset):($3/skpop) w lp ps 0.5 lw 2 lc "black" t sprintf("Slovakia)"), \
+"../increase_rates/romania" using ($0 +18 - offset):($3/ropop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Romania"), \
+"../increase_rates/poland" using ($0 +19 - offset):($3/plpop) w lp ps 0.5 lw 2 lc "red" t sprintf("Poland"), \
+"../increase_rates/hungary" using ($0 +24 - offset):($3/hupop) w lp ps 0.5 lw 2 lc "#80a080" t sprintf("Hungary"), \
+"../increase_rates/bulgaria" using ($0 +25 - offset):($3/bgpop) w lp ps 0.5 lw 2 lc "#ffa0c0" t sprintf("Bulgaria", usoff), \
+"../increase_rates/serbia" using ($0 +21 - offset):($3/rspop) w lp ps 0.5 lw 2 lc 6 t sprintf("Serbia"), \
+
+#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
