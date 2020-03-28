@@ -60,7 +60,7 @@ def do_country(country):
 
 
 countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece", "denmark", "finland", "us", "lombardy",
-             "greece", "slovenia", "czechia", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
+             "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
              "denmark", "sweden", "finland", "norway", "iceland", "estonia"]
 for country in countries:
     do_country(country)

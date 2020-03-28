@@ -16,7 +16,7 @@ nzoff = 22.5
 ruoff = 30.5
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
 "../country_data/us" using ($0  +11 - usoff - offset):($2/uspop) w l lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
-"../country_data/skorea" using ($0 +7 - offset):($2/krpop) w l lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
+"../country_data/southkorea" using ($0 +7 - offset):($2/krpop) w l lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
 "../country_data/canada" using ($0 -12.5 - offset):($2/capop) w l lw 2 lc "#00b000" t "Canada (18.5 days behind Italy)", \
 "../country_data/newzealand" using ($0 +28 -nzoff - offset):($2/nzpop) w l lw 2 lc "blue" t sprintf("New Zealand (%d days behind Italy)", nzoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase"

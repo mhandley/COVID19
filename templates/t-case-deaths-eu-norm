@@ -29,10 +29,10 @@ set arrow from -itdoff, graph 0 to -itdoff, graph 1 nohead lc 1
 set arrow from -froff-frdoff, graph 0 to -froff-frdoff, graph 1 nohead
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 dt 2 t "Italy", \
 "../country_data/france" using ($0 + 10 - froff - offset):($2/frpop) w l lw 2 lc "red" dt 2 t sprintf("France (%d days behind Italy)", froff), \
-"../country_data/skorea" using ($0 +4 +kroff- offset):($2/krpop) w lp ps 0.5 lw 2  lc 6 dt 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
+"../country_data/southkorea" using ($0 +4 +kroff- offset):($2/krpop) w lp ps 0.5 lw 2  lc 6 dt 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
 "../country_data/italy" using ($0 + 5 - itdoff  - offset):($3*itscale/itpop) w lp ps 0.5 lw 2 lc 1 t sprintf("Italy Deaths (%d days behind Italy)", itdoff), \
 "../country_data/france" using ($0 + 10 - froff -frdoff - offset):($3*frscale/frpop) w lp ps 0.5 lw 2 lc "red" t sprintf("France Deaths (%d days behind France)", frdoff), \
-"../country_data/skorea" using ($0 + 4 + kroff -krdoff - offset):($3*krscale/krpop) w lp ps 0.5 lw 2 lc 6 t sprintf("Korea Deaths (%d days behind Korea)", krdoff), \
+"../country_data/southkorea" using ($0 + 4 + kroff -krdoff - offset):($3*krscale/krpop) w lp ps 0.5 lw 2 lc 6 t sprintf("Korea Deaths (%d days behind Korea)", krdoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase",\
 1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase"

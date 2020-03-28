@@ -1,6 +1,6 @@
 #/bin/sh
-DATE=26
-OFFSET=40
+DATE=28
+OFFSET=41
 cat populations templates/t-plot-eu | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu
 cat populations templates/t-plot-eu-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm
 cat populations templates/t-plot-rates | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-rates

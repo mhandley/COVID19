@@ -16,7 +16,7 @@ plot "../country_data/china" using ($0 +6 - offset):2 w l lw 2 lc "black" t "Chi
 "../country_data/france" using ($0 + 1.5 - offset):2 w l lw 2 lc "red" t "France (8.5 days behind Italy)", \
 "../country_data/spain" using ($0 +10 -esoff - offset):2 w l lw 2 lc "brown" t sprintf("Spain (%d days behind Italy)", esoff), \
 "../country_data/us" using ($0 + 0 - offset):2 w l lw 2 lc "orange" t "USA (12 days behind Italy)", \
-"../country_data/skorea" using ($0 + 6.5 - offset):2 w l lw 2 lc 6 t "S Korea (2.5 days ahead of Italy)", \
+"../country_data/southkorea" using ($0 + 6.5 - offset):2 w l lw 2 lc 6 t "S Korea (2.5 days ahead of Italy)", \
 "../country_data/japan" using ($0 -30 -offset):2 w l lw 2 lc "#b08000" t "Japan", \
 1.35**(x+offset + 9.5) lc "black"  dt 4 t "35% daily increase",\
 1.115**(x+offset + 59.5) lc "black"  dt 2 t "11.5% daily increase", \
