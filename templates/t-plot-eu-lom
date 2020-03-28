@@ -1,20 +1,21 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-lom.png"
 set logscale y
-set key at 4,20
+set key at 4,20 box
 set yrange [3:4000]
 set xrange [-25:6]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
-set grid
+set mxtics
+set grid mxtics xtics ytics mytics
 lomoff = 5.5
 choff = 5.5
 atoff = 10
-plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \
-"../country_data/lombardy" using ($0 +5 + lomoff - offset):($2/lompop) w lp ps 0.5 lw 2 lc "red" t sprintf("Lombardy (%d days ahead of Italy - see comment)", lomoff), \
-"../country_data/switzerland" using ($0 + 10 - choff -offset):($2/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%d days behind Lombardy)", choff), \
-"../country_data/austria" using ($0 +14 - atoff - offset):($2/atpop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Austria (%d days behind Lombardy)", atoff), \
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
+"../country_data/lombardy" using ($0 +5 + lomoff - offset):($2/lompop) w l lw 2 lc "red" t sprintf("Lombardy (%d days ahead of Italy - see comment)", lomoff), \
+"../country_data/switzerland" using ($0 + 10 - choff -offset):($2/chpop) w l lw 2 lc "brown" t sprintf("Switzerland (%d days behind Lombardy)", choff), \
+"../country_data/austria" using ($0 +14 - atoff - offset):($2/atpop) w l lw 2 lc "orange" t sprintf("Austria (%d days behind Lombardy)", atoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

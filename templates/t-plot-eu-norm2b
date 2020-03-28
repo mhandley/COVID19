@@ -1,17 +1,18 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-norm2b.png"
-set grid
+set mxtics
+set grid mxtics xtics ytics mytics
 set logscale y
-set key at -1,15
-set yrange [5:500]
-set xrange [-16:]
+set key at -1,20 box
+set yrange [6:500]
+set xrange [-18:]
 set ylabel "COVID-10 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET - 12
-plot "../country_data/denmark" using ($0 -0  - offset):(($2-650)/dapop) w lp ps 0.5 lw 2 lc "black" t "Denmark - 650", \
-"../country_data/norway" using ($0 -3.0 - offset):(($2-1050)/nopop) w lp ps 0.5 lw 2 lc "red" t "Norway -1050 (2 days offset)", \
-"../country_data/sweden" using ($0 -4.9 - offset):(($2-900)/sepop) w lp ps 0.5 lw 2 lc "blue" t "Sweden - 900 (4 days offset)", \
-"../country_data/finland" using ($0 +0.8 - offset):(($2-120)/fipop) w lp ps 0.5 lw 2 lc "#00a000" t "Finland - 120 (3 days offset)", \
+plot "../country_data/denmark" using ($0 -0  - offset):(($2-650)/dapop) w l lw 2 lc "black" t "Denmark - 650", \
+"../country_data/norway" using ($0 -3.0 - offset):(($2-1050)/nopop) w l lw 2 lc "red" t "Norway -1050 (2 days offset)", \
+"../country_data/sweden" using ($0 -4.9 - offset):(($2-900)/sepop) w l lw 2 lc "blue" t "Sweden - 900 (4 days offset)", \
+"../country_data/finland" using ($0 +0.8 - offset):(($2-120)/fipop) w l lw 2 lc "#00a000" t "Finland - 120 (3 days offset)", \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase",\
 1.16**(x+offset + 11) lc "black" dashtype 5 t "16% daily increase"

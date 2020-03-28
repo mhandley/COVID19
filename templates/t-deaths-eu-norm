@@ -1,26 +1,27 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/deaths-eu-norm.png"
 set logscale y
-set key at -1,3
+set key at -1,2 box
 set yrange [0.2:150]
 set xrange [-30:]
 set ylabel "COVID19 deaths per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
-set grid
+set mxtics
+set grid mxtics xtics ytics mytics
 choff = 13
 esoff = 7
 froff = 12
 deoff = 21
 nloff = 12.5
 ukoff = 16.75
-plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w lp lw 2 t "Italy", \
-"../country_data/spain" using ($0 + 10 - esoff  - offset):($3/espop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
-"../country_data/switzerland" using ($0 +10 - choff-offset):($3/chpop) w lp ps 0.5 lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \
-"../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
-"../country_data/netherlands" using ($0 + 12 - nloff -offset):($3/nlpop) w lp ps 0.5 lw 2 lc "#a0a0a0" t sprintf("Netherlands (%d days behind Italy)", nloff), \
-"../country_data/uk" using ($0 +12 - ukoff - offset):($3/ukpop) w lp ps 0.75 lw 2 lc "blue" t sprintf("UK (%d days behind Italy)", ukoff), \
-"../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
+plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w l lw 2 t "Italy", \
+"../country_data/spain" using ($0 + 10 - esoff  - offset):($3/espop) w l lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
+"../country_data/switzerland" using ($0 +10 - choff-offset):($3/chpop) w l lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \
+"../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
+"../country_data/netherlands" using ($0 + 12 - nloff -offset):($3/nlpop) w l lw 2 lc "#a0a0a0" t sprintf("Netherlands (%d days behind Italy)", nloff), \
+"../country_data/uk" using ($0 +12 - ukoff - offset):($3/ukpop) w l lw 2 lc "blue" t sprintf("UK (%d days behind Italy)", ukoff), \
+"../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
 1.35**(x+offset - 16) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset -11.9) lc "black" dashtype 2 t "22% daily increase"
 

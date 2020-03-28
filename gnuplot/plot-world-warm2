@@ -30,9 +30,9 @@ jppop = 126.6 # japan
 khpop = 16.6 # Cambodia
 krpop = 51 # south korea
 lompop = 10 # lombardy
-ltoff = 2.9 # lithuania
+ltpop = 2.9 # lithuania
 lupop = 0.623 #luxembourg
-lvoff = 1.9 # latvia
+lvpop = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
@@ -91,9 +91,9 @@ set key at -11,1190
 set yrange [50:1500]
 set xrange [-26:]
 set ylabel "Confirmed COVID-10 cases"
-set xlabel "Days (from 26 March 2020)"
+set xlabel "Days (from 27 March 2020)"
 set grid
-offset = 40
+offset = 41
 inoff = 9
 bhoff = 7
 bhoff = 0

@@ -20,6 +20,7 @@ espop = 46.7 # spain
 fipop = 5.5 # finland
 frpop = 65.2 # france
 grpop = 10.4 # greece
+hrpop = 4.1 # croatia
 hupop = 9.6 # hungary
 iepop = 4.9  # ireland
 ilpop = 8.6  # israel
@@ -30,9 +31,9 @@ jppop = 126.6 # japan
 khpop = 16.6 # Cambodia
 krpop = 51 # south korea
 lompop = 10 # lombardy
-ltoff = 2.9 # lithuania
+ltpop = 2.9 # lithuania
 lupop = 0.623 #luxembourg
-lvoff = 1.9 # latvia
+lvpop = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
@@ -88,12 +89,12 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-linear.png"
 set grid
 #set logscale y
-set key at -12,29900
-set yrange [40:60000]
+set key at -10,89900 box
+set yrange [40:100000]
 set xrange [-30:]
 set ylabel "Confirmed COVID-19 cases"
-set xlabel "Days (from 26 March 2020)"
-offset = 40
+set xlabel "Days (from 27 March 2020)"
+offset = 41
 esoff = 6
 deoff = 9
 choff = 14

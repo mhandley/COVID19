@@ -1,0 +1,28 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/covid-world-norm3.png"
+set logscale y
+set mxtics
+set grid mxtics xtics ytics mytics
+set key at 1,10 box
+set yrange [1:1500]
+set xrange [-40:3]
+set ylabel "COVID-19 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = OFFSET
+jhuoffset = (OFFSET + 24)
+usoff = 17
+nzoff = 22.5
+ruoff = 30.5
+zaoff = 27
+saoff = 23
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
+"../country_data/israel" using ($0 -7 - offset):($2/ilpop) w l lw 2 lc "#b00000" t "Israel (14 days behind Italy)", \
+"../country_data/pakistan" using ($0 -4 - offset):($2/pkpop) w l lw 2 lc "black" t "Pakistan (28 days behind Italy)", \
+"../country_data/turkey" using ($0 +2 - offset):($2/trpop) w l lw 2 lc "red" t "Turkey (28 days behind Italy)", \
+"../jhu-data/southafrica-jhu" using ($0  - zaoff - jhuoffset):($2/zapop) w l lw 2 lc "#00a000" t sprintf("South Africa (%d days behind Italy)", zaoff), \
+"../country_data/russia" using ($0 +19.5 - ruoff - offset):($2/rupop) w l lw 2 lc "#80ba80" t sprintf("Russia (%d days behind Italy)", ruoff), \
+"../country_data/saudiarabia" using ($0 +18- saoff - offset):($2/sapop) w l lw 2 lc "blue" t sprintf("Saudi Arabia (%d days behind Italy)", saoff), \
+1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase"
+
+#"../country_data/chile" using ($0 -2.5 - offset):($2/clpop) w l lw 2 lc "blue" t "Chile (19.5 days behind Italy)", \
+

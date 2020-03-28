@@ -30,9 +30,9 @@ jppop = 126.6 # japan
 khpop = 16.6 # Cambodia
 krpop = 51 # south korea
 lompop = 10 # lombardy
-ltoff = 2.9 # lithuania
+ltpop = 2.9 # lithuania
 lupop = 0.623 #luxembourg
-lvoff = 1.9 # latvia
+lvpop = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
@@ -91,10 +91,11 @@ set key at -18,90000
 set yrange [20:100000]
 set xrange [-40:]
 set ylabel "Confirmed COVID-10 cases"
-set xlabel "Days (from 26 March 2020)"
+set xlabel "Days (from 27 March 2020)"
 set grid
-offset = 40
+offset = 41
 usoff = 12
+inoff = 8
 plot "../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 t "Italy", \
 "../country_data/france" using ($0 + 1.5  - offset):2 w lp ps 0.5 lw 2 lc "black" t "France (8 days behind Italy)",\
 "../country_data/us" using ($0 + 11 - usoff - offset):2 w lp ps 0.5 lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
@@ -107,7 +108,7 @@ plot "../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 t "Italy"
 "../country_data/indonesia" using ($0 -10.5 - offset):2 w lp ps 0.5 lw 2 lc "#00a000" t "Indonesia (7 days behind Qatar)", \
 "../country_data/kuwait" using ($0 -4 - offset):2 w lp ps 0.5 lw 2 lc "purple" t "Kuwait (7 days behind Malaysia)", \
 "../country_data/egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
-"../country_data/india" using ($0 -38 - offset):2 w lp ps 0.5 lw 2 lc "brown" t "India (14 days behind Malaysia)", \
+"../country_data/india" using ($0 +15 - inoff - offset):2 w lp ps 0.5 lw 2 lc "brown" t sprintf("India (%d days behind Malaysia)", inoff), \
 1.38**(x+offset + 8) lc "grey" t "38% daily increase",\
 1.22**(x+offset + 22.5) lc "grey" dashtype 2 t "22% daily increase",\
 1.14**(x+offset + 19) lc "black" dt 3 t "14% daily increase"

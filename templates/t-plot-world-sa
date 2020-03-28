@@ -1,8 +1,9 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-world-sa.png"
 set logscale y
-set grid
-set key at -1,10
+set mxtics
+set grid mxtics xtics ytics mytics
+set key at -1,10 box
 set yrange [1:1000]
 set xrange [-30:0]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
@@ -26,15 +27,15 @@ clpop=17.6
 ecpop=17.6
 brpop=212
 pepop=32.8
-plot "italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
-"brazil" using ($0 -14 - offset):($2/brpop) w lp ps 0.5 lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
-"ecuador" using ($0 +1 - offset):($2/ecpop) w lp ps 0.5 lw 2 lc "red" t "Ecuador (21 days behind Italy)", \
-"peru" using ($0 -3 - offset):($2/pepop) w lp ps 0.5 lw 2 lc "brown" t "Peru (21 days behind Italy)", \
-"chile" using ($0 -2.5 - offset):($2/clpop) w lp ps 0.5 lw 2 lc "#00b000" t "Chile (19.5 days behind Italy)", \
+plot "italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
+"brazil" using ($0 -14 - offset):($2/brpop) w l lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
+"ecuador" using ($0 +1 - offset):($2/ecpop) w l lw 2 lc "red" t "Ecuador (21 days behind Italy)", \
+"peru" using ($0 -3 - offset):($2/pepop) w l lw 2 lc "brown" t "Peru (21 days behind Italy)", \
+"chile" using ($0 -2.5 - offset):($2/clop) w l lw 2 lc "#00b000" t "Chile (19.5 days behind Italy)", \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase"
 
-#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
-#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
+#"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \
 
-#"france" using ($0 + 1.5 - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
-#"iran" using ($0 +1.5 - offset):($2/irpop) w lp lw 2 ps 0.5  lc "#6090ff" t "Iran (2.5 days behind Italy)", \
+#"france" using ($0 + 1.5 - offset):($2/frpop) w l lw 2 lc "red" t "France (8.5 days behind Italy)", \
+#"iran" using ($0 +1.5 - offset):($2/irpop) w l lw 2  lc "#6090ff" t "Iran (2.5 days behind Italy)", \

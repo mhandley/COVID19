@@ -1,3 +1,4 @@
+
 arpop = 44.3 # argentina
 atpop = 9.0 # austria
 aupop = 25.6 # australia
@@ -20,6 +21,7 @@ espop = 46.7 # spain
 fipop = 5.5 # finland
 frpop = 65.2 # france
 grpop = 10.4 # greece
+hrpop = 4.1 # croatia
 hupop = 9.6 # hungary
 iepop = 4.9  # ireland
 ilpop = 8.6  # israel
@@ -30,9 +32,9 @@ jppop = 126.6 # japan
 khpop = 16.6 # Cambodia
 krpop = 51 # south korea
 lompop = 10 # lombardy
-ltoff = 2.9 # lithuania
+ltpop = 2.9 # lithuania
 lupop = 0.623 #luxembourg
-lvoff = 1.9 # latvia
+lvpop = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
@@ -46,7 +48,8 @@ pypop = 7.1 # paraguay
 ropop = 19.3 # romania
 rspop = 8.7 # serbia
 rupop = 145.9 # russia
-sapop = 58.8 # south africa
+sapop = 34.7 # saudi arabia
+zapop = 58.8 # south africa
 sepop = 10.2 # sweden
 skpop = 5.46 # slovakia
 sipop = 2.08 # slovenia
@@ -80,6 +83,7 @@ usnjpop = 8.9 # US New Jersey
 usnypop = 19.4 # US NY
 uscapop = 39.9 # US CA
 uscopop = 5.77 # US CO
+ustxpop = 25.1 # US TX
 uspop = 330 # USA
 uswapop = 7.6 # US WA
 vepop = 28.4 # Venezuela
@@ -87,25 +91,26 @@ vnpop = 96.2 # Vietnam
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-world-seasia.png"
 set logscale y
-set grid
-set key at -1,30
+set mxtics
+set grid mxtics xtics ytics mytics
+set key at -1,7 box
 set yrange [0.5:1500]
 set xrange [-45:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 26 March 2020)"
-offset = 40
-jhuoffset = (40 + 24)
+set xlabel "Days (from 27 March 2020)"
+offset = 41
+jhuoffset = (41 + 24)
 vnoff = 37
 twoff = 28
 phoff = 27.5
 khoff = 27
 thoff = 25
-plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
-"../country_data/thailand" using ($0 -24 -thoff - offset):($2/thpop) w lp ps 0.5 lw 2 lc "#a0a000" t sprintf("Thailand (%d days behind Italy)", thoff), \
-"../jhu-data/taiwan-jhu" using ($0 -twoff - jhuoffset):($2/twpop) w lp ps 0.5 lw 2 lc "orange" t sprintf("Taiwan (%d days behind Italy)", twoff), \
-"../jhu-data/philippines-wiki" using ($0 +39 -phoff - jhuoffset):($2/phpop) w lp ps 0.5 lw 2 lc "blue" t sprintf("Philippines (%d days behind Italy)", phoff), \
-"../jhu-data/vietnam-wiki" using ($0 +23 -vnoff - jhuoffset):($2/vnpop) w lp ps 0.5 lw 2 lc "red" t sprintf("Vietnam (%d days behind Italy)", vnoff), \
-"../jhu-data/cambodia-jhu" using ($0 -khoff - jhuoffset):($2/khpop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Cambodia (%d days behind Italy)", khoff), \
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
+"../country_data/thailand" using ($0 -24 -thoff - offset):($2/thpop) w l lw 2 lc "#a0a000" t sprintf("Thailand (%d days behind Italy)", thoff), \
+"../jhu-data/taiwan-jhu" using ($0 -twoff - jhuoffset):($2/twpop) w l lw 2 lc "orange" t sprintf("Taiwan (%d days behind Italy)", twoff), \
+"../jhu-data/philippines-wiki" using ($0 +39 -phoff - jhuoffset):($2/phpop) w l lw 2 lc "blue" t sprintf("Philippines (%d days behind Italy)", phoff), \
+"../jhu-data/vietnam-wiki" using ($0 +23 -vnoff - jhuoffset):($2/vnpop) w l lw 2 lc "red" t sprintf("Vietnam (%d days behind Italy)", vnoff), \
+"../jhu-data/cambodia-jhu" using ($0 -khoff - jhuoffset):($2/khpop) w l lw 2 lc "#00b000" t sprintf("Cambodia (%d days behind Italy)", khoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

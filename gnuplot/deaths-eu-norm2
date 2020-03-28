@@ -30,9 +30,9 @@ jppop = 126.6 # japan
 khpop = 16.6 # Cambodia
 krpop = 51 # south korea
 lompop = 10 # lombardy
-ltoff = 2.9 # lithuania
+ltpop = 2.9 # lithuania
 lupop = 0.623 #luxembourg
-lvoff = 1.9 # latvia
+lvpop = 1.9 # latvia
 mxpop = 126 # mexico
 nlpop = 17.4 # netherlands
 nopop = 5.4 # norway
@@ -87,24 +87,24 @@ vnpop = 96.2 # Vietnam
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/deaths-eu-norm2.png"
 set logscale y
-set key at -1,3
-set yrange [0.2:100]
-set xrange [-25:]
+set key at -1,2 box
+set yrange [0.5:200]
+set xrange [-30:]
 set ylabel "COVID19 deaths per million inhabitants"
-set xlabel "Days (from 26 March 2020)"
-offset = 40
-set grid
-choff = 11
+set xlabel "Days (from 27 March 2020)"
+offset = 41
+set mxtics
+set grid mxtics xtics ytics mytics
 esoff = 8
 froff = 11.5
 deoff = 21.5
 nloff = 12.5
 ukoff = 14.5
-luoff = 11
-plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w lp lw 2 t "Italy", \
-"../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff),\
-"../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w lp ps 0.5 lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
-"../country_data/luxembourg" using ($0 + 19 - luoff - offset):($3/lupop) w lp ps 0.5 lw 2 lc "blue" t sprintf("Luxembourg (%d days behind Italy)", luoff), \
+luoff = 12
+plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w l lw 2 t "Italy", \
+     "../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff),\
+"../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
+"../country_data/luxembourg" using ($0 + 19 - luoff - offset):($3/lupop) w l lw 2 lc "blue" t sprintf("Luxembourg (%d days behind Italy)", luoff), \
 1.35**(x+offset - 16) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset -11.9) lc "black" dashtype 2 t "22% daily increase"
 
