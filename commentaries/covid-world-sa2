@@ -1,0 +1,4 @@
+  <LI>Data on this graph comes directly from the <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data">JHU dataset</a>.  I have not double-checked the data, and it may lag by up to a day.
+  <LI>Most South American countries have been roughly along the 35% daily increase curve that Italy initially followed.
+  <LI>Argentina seems to be roughly tracking along the 22% daily increase curve that Italy later moved on to.
+  <LI>Cases in Ecuador are increasing significantly faster than 35% per day.  This usually indicates that the epidemic has spread without being detected, and testing is now catching up.

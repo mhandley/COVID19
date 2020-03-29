@@ -1,0 +1,25 @@
+1. update JHU data.
+   python process-jhu.py
+   mv *-jhu ../COVID19/jhu-data
+
+2. update NYT data
+   python process-us-nyt.py
+
+3. scrape wiki
+   python scrape-wiki.py
+   files end up in wiki-tmp
+
+4. update country_data manually
+
+5. update UK data manually
+
+6. generate time-indexed data
+   python process-time.py
+   
+7. update increase rate curves
+   python smoothrates.py
+
+8. build everything
+   python build-web.py
+
+9. edit commentaries, repeat 8

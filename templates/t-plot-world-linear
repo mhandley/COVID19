@@ -1,8 +1,9 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
-set grid
+set mxtics
+set grid mxtics xtics ytics mytics
 set output "../graphs/covid-world-linear.png"
 set key at 28,30000
-set yrange [0:90000]
+set yrange [0:120000]
 set xrange [-30:]
 set ylabel "Confirmed COVID-19 cases"
 set xlabel "Days (from DATE March 2020)"
@@ -11,13 +12,13 @@ usoff = 10
 iroff = 0
 froff = 10
 kroff = 2.5
-plot "../country_data/china" using ($0 +9.5 - offset):2 w lp ps 0.5 lw 2 lc "black" t "China (30 days ahead of Italy)",\
-"../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 lc 1 t "Italy", \
+plot "../country_data/china" using ($0 +9.5 - offset):2 w l lw 2 lc "black" t "China (30 days ahead of Italy)",\
+"../country_data/italy" using ($0 +5 - offset):2 w l lw 2 lc 1 t "Italy", \
 "../country_data/iran" using ($0 +4 - iroff - offset):2 w lp lw 2 ps 0.5 t "Iran", \
-"../country_data/france" using ($0 + 10 - froff - offset):2 w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
-"../country_data/us" using ($0 +11 - usoff  - offset):2 w lp ps 0.5 lw 2 lc "orange" t sprintf("USA (%d days offset from Italy)", usoff), \
-"../country_data/southkorea" using ($0 + 3.5 + kroff - offset):2 w lp ps 0.5 lw 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
-"../country_data/japan" using ($0 -4 -offset):2 w lp ps 0.5 lc "brown" lw 2 t "Japan"
+"../country_data/france" using ($0 + 10 - froff - offset):2 w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
+"../country_data/us" using ($0 +11 - usoff  - offset):2 w l lw 2 lc "orange" t sprintf("USA (%d days offset from Italy)", usoff), \
+"../country_data/southkorea" using ($0 + 3.5 + kroff - offset):2 w l lw 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
+"../country_data/japan" using ($0 -4 -offset):2 w l lc "brown" lw 2 t "Japan"
 
-#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
-#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
+#"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \

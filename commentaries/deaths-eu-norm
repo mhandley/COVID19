@@ -1,0 +1,32 @@
+    <LI> As different countries have different testing policies, many
+      people have suggested that we should look at deaths instead.
+      There are several downsides to using deaths as a metric.  First,
+      if the purpose of these graphs is to provide warning of what is
+      to come, or to verify whether measure are working, deaths is not
+      very useful.  Death rate is too low to provide a warning signal
+      in advance of there being a problem, and it is not a good early
+      indicator of whether measures are working because it lags case
+      data by between one and two weeks.  It can, however, provide
+      some insight into what fraction of infections are being detected
+      in different countries.  Generally, if a country is further
+      behind in this graph than in the equivalent cases graph, then
+      the country is probably catching a larger fraction of cases.
+      This is particularly pronounced in the case of Germany.
+    <LI>
+      Death data is also problematic because deaths per day does not
+      go down quickly when cases go down.  This is particularly clear
+      in the Korean data, where the death rate has remained nearly
+      constant for three weeks after new infections peaked.
+    <LI>
+      Finally, when a healthcare system gets overwhelmed, death rate
+      goes up from something like 0.9% (Korea) to something like 3-4%
+      (Hubei, parts of Lombardy).
+    <LI>
+      Generally when cases are increasing exponentially, most
+      countries' death rate curves shadow the cases curve, with a lag
+      of between 6 (France, UK) and 12 days (Germany).  Spain, France,
+      Netherlands and the UK look very similar to how they looked using
+      case data around 6 days ago.  Germany is about ten days further
+      back on this graph.  The difference in
+      per-capita testing rates does not seem to explain this
+      difference.

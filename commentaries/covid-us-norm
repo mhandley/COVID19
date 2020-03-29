@@ -1,0 +1,37 @@
+  <LI>I am now pulling data for this graph from
+    the <a href="https://github.com/nytimes/covid-19-data">NYT
+    dataset</a>, which is much less noisy than the JHU dataset I was
+    previously using.
+  <LI>Most US states are a long way behind European countries, but
+    several now have comparable rates per million inhabitants and New
+    York is ahead. I have plotted the states with most confirmed
+    cases.
+  <LI>European countries moved from a 35% daily increase curve to a
+    22% daily increase curve; Washington is one of the few US states
+    to have clearly made a similar transition, and in the last few
+    days the daily increase rate has declined further.  Washington is
+    the only US state with a large number of cases to start to turn
+    the tide significantly.
+  <LI>New York was growing at close to the 35% daily increase rate
+    seen in Europe, but then had very large increases over a week.
+    This usually happens when cases have been spreading undetected,
+    and suddenly testing starts catching up. The last few days, cases
+    in NY have been growing exponentially at around 22% per day.  This
+    is the same growth curve most European countries followed once
+    people started to get concerned about COVID19.  I have placed New
+    York so as to align it with the 22% curve.  This places it 4 days
+    offset from Italy, but today's datapoint would place New York
+    above Italy.  As Italy seems to have peaked and New York has more
+    cases per head of population than Italy, it makes no sense saying
+    where New York is on Italy's track: New York is forming its own
+    track.
+  <LI>Illinois and California are the other two states that are now
+    following the 22% curve.  California has followed the curve for
+    some time, but Illinois has only recently come out of fast growth
+    (presumably due to testing catching up somewhat) so we will have
+    to wait and see it it stabilizes along this curve.
+  <LI>New Jersey, Louisiana, Michigan, Colorado, Florida, and Texas
+    have been increasing recently at close to the 35% daily increase
+    rate seen in Europe, so I've placed then on that curve, though
+    this gives misleading time delays relative to Italy.  Based on the
+    most recent data point, New Jersey is 12 days behind Italy.

@@ -14,12 +14,12 @@ froff = 8.5
 deoff = 9
 nloff = 16
 ukoff = 15
-plot "../time-aligned/italy" using ($1):2 w l lw 2 lc 1 t "Italy", \
-"../time-aligned/spain" using ($1 - esoff):2 w l lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
-"../time-aligned/france" using ($1 - froff):2 w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
-"../time-aligned/germany" using ($1 - deoff):2 w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
-"../time-aligned/netherlands" using ($1 - nloff):2 w l lw 2 lc "#a0a0a0" t sprintf("Netherlands (%d days behind Italy)", nloff), \
-"../time-aligned/uk" using ($1 - ukoff):2 w l lw 2 lc "blue" t sprintf("UK (%d days behind Italy)", ukoff), \
+plot "../aligned/country_data/italy" using ($1):2 w l lw 2 lc 1 t "Italy", \
+"../aligned/country_data/spain" using ($1 - esoff):2 w l lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
+"../aligned/country_data/france" using ($1 - froff):2 w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
+"../aligned/country_data/germany" using ($1 - deoff):2 w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
+"../aligned/country_data/netherlands" using ($1 - nloff):2 w l lw 2 lc "#a0a0a0" t sprintf("Netherlands (%d days behind Italy)", nloff), \
+"../aligned/country_data/uk" using ($1 - ukoff):2 w l lw 2 lc "blue" t sprintf("UK (%d days behind Italy)", ukoff), \
 1.35**(x+offset + 9.5) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 22.5) lc "black" dashtype 2 t "22% daily increase",\
 1.135**(x+offset + 50.8) lc "black" dashtype 5 t "13.5% daily increase"

@@ -1,0 +1,7 @@
+       <LI>I normally use a log scale on the y-axis because
+     exponential growth gives a straight line on a log-linear graph.
+     This allows exponential growth rates to be compared. However,
+     many readers don't like log-linear graphs, so this one is for
+     them.  It has to be truncated, or you cannot see any information.
+     It doesn't really show anything additional over the log graphs,
+     except it looks scarier.  

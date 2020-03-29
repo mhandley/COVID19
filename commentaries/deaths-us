@@ -1,0 +1,13 @@
+<LI>Confirmed cases in the US have been growing very fast recently.
+The US testing procedures were very slow to get started, but are
+reported to have scaled up quickly.  How much of the rapid increase in
+case data is due to this scale-up?  This graph shows the US death
+rate, with Italy and France for comparison.  When looking at confirmed
+cases, the US is roughly 15 days behind Italy, whereas when looking at
+death rates, the US is roughly 19 days behind Italy.  This probably
+indicates that a small part of the recent increases is indeed due to
+improved testing, but the difference is nowhere near as large as
+Germany or Luxembourg, so the underlying infection rate must also be
+high.  If this gap widens in the future, then this would be evidence
+  that testing is getting ahead of the epidemic.
+  <LI> To put this in perspective if Italy is identifying just the ~10% of infections that need ICU care, the US is probably identifying very roughly ~30% of infections. (1.35 ^ 4 ~= 3)

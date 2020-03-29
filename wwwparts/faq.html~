@@ -1,0 +1,115 @@
+<h3>Thoughts</h3>
+<P>
+    While you're sitting pondering your mortality, think how astounding it is that one single viral particle from a bat can replicate so far, so fast, and cause so much trouble!  Biology is truly amazing!
+</P>    
+<h3>FAQ</h3>
+<P><B>Q: Where does the data come from?</B>
+<P>Where possible, the data comes from the relevant national
+authorities, as they tend to be more up to date.  In some cases I'm
+using
+the <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports">WHO
+daily briefing</a>, but they lag the national authorities somewhat.
+The <a href="https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic">wikipedia
+pages</a> contain links to the national authorities.  Some are
+  <a href="https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates">Finland</a>,
+  <a href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-et-infections-respiratoires/infection-a-coronavirus/articles/infection-au-nouveau-coronavirus-sars-cov-2-covid-19-france-et-monde">France</a>,
+  <a href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html">Germany</a>,
+  <a href="https://www.gov.ie/en/news/7e0924-latest-updates-on-covid-19-coronavirus/">Ireland</a>,
+  <a href="https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/">Norway</a>
+  <a href="https://www.moph.gov.qa/english/Pages/Coronavirus2019.aspx">Qatar</a>,
+  <a href="https://www.gov.si/teme/koronavirus/">Slovenia</a>,
+  <a href="https://www.cdc.go.kr/board/board.es?mid=a30402000000&bid=0030">South Korea</a>,
+  <a href="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/situacionActual.htm">Spain</a>,
+  <a href="https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov.html">Switzerland</a>,
+  <a href="https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public">UK</a>,
+
+<P><B>Q: Can I have your data?</B>
+  <P>My data is <a href="https://github.com/mhandley/COVID19/">on github</a>..
+  <P>A more complete dataset is the <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series">Johns Hopkins</a> one. It tends to lag the national data sources and the WHO, but it is complete and machine readable.
+
+  <P><B>Q: Can I use your graphs?</B>
+  <P>
+    Yes, they're under a CC0 "No rights reserved" license.  You can
+    use them for any purpose.  I'd prefer you link back here though,
+    as the explanations add important context.
+
+  <P><B>Q: Different countries are testing at different rates.  How can you compare the data?</B>
+    <P>So long as the fraction of actual cases being detected does
+    not change, this does not affect any inference we can make about
+    the growth rate.  35% growth is still 35% growth, whether we
+    measure 100% of the cases or 50%.
+    <P>If, for example, Italy is detecting 50% of the cases and the
+    US is detecting 25% of cases, this affects any predictions of how
+    far the US is behind Italy At 35% growth, cases double every 2.5
+    days, so this undersampling would show the US 2.5 days further
+    behind than it really is.
+    <P>Likely no-one except Korea and Singapore are getting close to
+    100% of cases.  Probably everyone is detecting at least 20% of
+    cases, because those require medical attention.  We don't really
+    know what fraction of cases are missed, but the difference in
+    sampling between countries might skew the delays by a few days in
+      either direction.
+
+  <P><B>Q: Comparing with Italy as a whole is flawed. Shouldn't you be comparing with Lombardy?</B>
+    <P>Perhaps.  Certainly cases in Italy are concentrated in the
+    North at the moment.  Lombardy is running about seven days ahead
+    of the rest of the country, as measured by cases per million
+    inhabitants. I've shown this in <a href="#g3">graph 3</a>. The
+    problem is that cases in some other countries, notably France,
+    Spain and the USA, are also concentrated, so comparing these
+    entire countries with Lombardy is biased in the other direction.
+    These graphs give a crude indication, but they're never going to
+    be able to track problems down to the local level, where an
+    individual town is overwhelmed by cases before this becomes
+    commonplace in a country.  Just remember, to compare with
+    Lombardy, a rough approximation is to move the Italy curve seven days
+    to the right.
+    <P><B>Q: Shouldn't you break out China by province?</B>
+    <P> At the moment I'm only showing China on the graphs that show
+    absolute counts, not counts per million inhabitants.  As the vast
+    majority of Chinese cases were in Hubei, there's not a great deal
+    of difference on these graphs between showing Hubei and showing
+    all of China.  The population of Hubei provice is around 57
+    million, which is roughly the same as Italy.  Thus the data for
+    China is reasonably comparable with the data for Italy.
+<P>
+   The Chinese data is somewhat suspect in the early days, so it's not
+   very good for comparison until the epidemic gets a fair way along.
+   Mostly I'm using Italy to provide a model for how other places
+   might progress, as it's a better fit.  But as of March 16th, I've
+   changed the last (linear) graph to use the Chinese data to show one
+   possible direction that Italy might folliow.
+<P>
+   Elsewhere in China, cases that arose were stamped on quickly, and
+   pretty much all of China shut down until that was complete.  In
+   Europe we failed to learn from that model, so we're all much
+   further along than Beijing, Shanghai, or similar provinces ever
+   got.
+      
+  <P><B>Q: Why didn't you show my country?</B>
+    <P>A1. Until the number of cases reaches around 100, the data
+    tends to be too noisy to draw conclusions
+    <P>A2. The graphs are pretty cluttered as it is.  
+    <P>A3. I'll add more as I find time.
+
+  <P><B>Q: You aren't an epidemiologist. Why should I listen to you?</B>
+    <P>You probably shouldn't.  I'm a computer scientist and I've
+    spend decades analysing data, but you should talk to a real
+    epidemiologist if you want to understand the underlying causes.
+    Computer scientists do know a lot about exponential growth though.
+  <P><B>Q: I'm a journalist.  Will you appear on my TV show?</B>
+    <P>No. You should have a real epidemiologist on your TV show.
+  </DT>
+</DL>
+<P>
+  Mark Handley, UCL.
+</body>
+</HTML>
+
+
+
+
+
+
+
+

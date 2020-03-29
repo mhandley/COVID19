@@ -1,0 +1,14 @@
+  <LI> Showing cases per million inhabitants does not greatly change
+  the overall picture compared to the previous graph.
+  <LI>In this view, the US moves a few days further behind Italy.  This
+  is probably deceptive, and it might be better to show data for
+  New York State, for example, on this graph.
+  <LI>I've added a curve for Singapore, which contained the initial
+  imported cases very well.  The graph shows a worrying slow but
+  steady super-exponential growth recently though, perhaps indicating
+  that current measures are starting to not be effective, or that more
+  cases are being imported again.  I've been told that most of the new
+  cases are imports; it makes sense that if Singapore's quarantining
+  of visitors and contact tracing is mostly keeping on top of local
+  spread, then as the pandemic ranges worldwide, Singapore will see an
+  equivalent rise in imported cases.  The number of untraced cases remains small at this time.

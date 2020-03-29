@@ -1,4 +1,4 @@
-set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-world-warm2.png"
 set logscale y
 set key at -11,1190
@@ -6,21 +6,22 @@ set yrange [50:1500]
 set xrange [-26:]
 set ylabel "Confirmed COVID-10 cases"
 set xlabel "Days (from DATE March 2020)"
-set grid
+set mxtics
+set grid mxtics xtics ytics mytics
 offset = OFFSET
 inoff = 9
 bhoff = 7
 bhoff = 0
 kwoff = 9
-plot "../country_data/malaysia" using ($0 -21 - offset):2 w lp ps 0.5 lw 2 lc "magenta" t "Malaysia", \
-"../country_data/qatar" using ($0 + 12.5 - offset):2 w lp ps 0.5 lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
-"../country_data/bahrain" using ($0 -18 - offset):2 w lp ps 0.5 lw 2 lc "red" t "Bahrain", \
-"../country_data/egypt" using ($0 +8 - offset):2 w lp ps 0.5 lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
-"../country_data/india" using ($0 -25 -inoff - offset):2 w lp ps 0.5 lw 2 lc "brown" t sprintf("India (%d days behind Malaysia)", inoff), \
-"../country_data/kuwait" using ($0 +9 -kwoff - offset):2 w lp ps 0.5 lw 2 lc "purple" t "Kuwait", \
+plot "../country_data/malaysia" using ($0 -21 - offset):2 w l lw 2 lc "magenta" t "Malaysia", \
+"../country_data/qatar" using ($0 + 12.5 - offset):2 w l lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
+"../country_data/bahrain" using ($0 -18 - offset):2 w l lw 2 lc "red" t "Bahrain", \
+"../country_data/egypt" using ($0 +8 - offset):2 w l lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
+"../country_data/india" using ($0 -25 -inoff - offset):2 w l lw 2 lc "brown" t sprintf("India (%d days behind Malaysia)", inoff), \
+"../country_data/kuwait" using ($0 +9 -kwoff - offset):2 w l lw 2 lc "purple" t "Kuwait", \
 1.13**(x+offset + 22.5) lc "black" dt 3 t "13% daily increase", \
 1.065**(x+offset + 55.5) lc "black" dt 4 t "6.5% daily increase"
 
-#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
-#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
-#"singapore" using ($0 - 24 - offset):2 w lp ps 0.5 lc "#909090" lw 2 t "Singapore", \
+#"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \
+#"singapore" using ($0 - 24 - offset):2 w l lc "#909090" lw 2 t "Singapore", \

@@ -1,0 +1,26 @@
+      <LI> These countries experienced a large wave of imported cases.
+      However, it appears they were effective at contact tracing for
+      these cases, and most of them were effectively quarantined.
+      Despite this, it appears a non-negligible number of local
+      infections escaped detection, and from this smaller base,
+      exponential growth continued.  I have subtracted the amounts
+      shown from the case counts before plotting - these represent my
+      guess at the number of imported cases and their immediate
+      contacts that were stopped by contact tracing.  If we subtract
+      these values, the remaining cases show straight lines at the
+      characteristic values of 35% or 22%.  Am I convinced by these
+      offset ammounts?  No, not completely - see Norway below.  But this way of viewing
+      the data makes more sense to me than the raw counts in the previous
+	graphs.
+      <LI>Sweden appeared to be growing exponentially at 35% per day
+	from a base of about 220 active cases six days ago, but a
+	sudden change to a 16% daily increase rate occurred five days
+	ago.
+      <LI>Finland appears to have been growing exponentially at 22%
+      per day from a base of about 135 active cases nine days ago.  The last three days hint that a change to a lower increase rate similar to Sweden's 16% has occured.
+      <LI>Denmark was growing exponentially for seven days at 22% per
+	day from a base of about 185 active cases nine days ago.  The last four days Sweden seems to have moved to a lower increase rate similar to Sweden.
+	<LI>Norway appeared to be growing exponentially at 35% per day
+	from a base of about 260 active cases six days ago. Norway
+	also appears to have switched to a 16% daily increase the last
+	few days.
