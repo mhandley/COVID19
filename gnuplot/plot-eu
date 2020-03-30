@@ -100,10 +100,10 @@ set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 fo
 set yrange [200:100000]
 set xrange [-30:0]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from 29 March 2020)"
+set xlabel "Days (from 30 March 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 43
+offset = 44
 esoff = 6
 froff = 8.5
 deoff = 9

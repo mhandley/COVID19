@@ -1,8 +1,7 @@
 import subprocess
 from time import sleep
 urls = {}
-countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "belgium", "portugal", "canada", "norway", "australia", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "qatar", "slovenia", "slovakia", "estonia", "kuwait", "india", "serbia", "bulgaria", "hungary", "croatia"]
-countries = ["domicanrepublic"]
+countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "belgium", "portugal", "canada", "norway", "australia", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "qatar", "slovenia", "slovakia", "estonia", "kuwait", "india", "serbia", "bulgaria", "hungary", "croatia", "japan"]
 
 #Bad countries: poland, switzerland
 urls["iran"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Iran_medical_cases_chart&action=edit"
@@ -25,8 +24,8 @@ base_url2 = "_medical_cases_chart&action=edit"
 
 
 #urls["switzerland"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Switzerland_medical_cases_chart/&action=edit"
-prevdate = "2020-03-28"
-date = "2020-03-29"
+prevdate = "2020-03-29"
+date = "2020-03-30"
 
 def fix_date(date):
     if "-" in date:

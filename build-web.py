@@ -176,7 +176,7 @@ print("</DL>", file=ofile)
 
 
 gnum = 1
-datedir = "29mar2020"
+datedir = "30mar2020"
 for graph,gname,gtype in graphs:
     make_graph(graph, gname, gtype, gnum, datedir)
     gnum+=1

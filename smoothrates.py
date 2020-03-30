@@ -1,3 +1,7 @@
+countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece", "denmark", "finland", "us", "lombardy",
+             "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
+             "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan", "japan", "singapore"]
+
 smooth = 3
 def do_country(country):
     ifile = None
@@ -59,9 +63,6 @@ def do_country(country):
     ofile.close()
 
 
-countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece", "denmark", "finland", "us", "lombardy",
-             "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
-             "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan"]
 for country in countries:
     do_country(country)
                

@@ -1,8 +1,8 @@
-all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png
+all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png
 
-DATEDIR = www/29mar2020/
-DATE=29
-OFFSET=43
+DATEDIR = www/30mar2020/
+DATE=30
+OFFSET=44
 graphs/covid-eu.png: templates/t-plot-eu increase_rates/uk increase_rates/italy increase_rates/france increase_rates/spain increase_rates/germany
 	cat populations templates/t-plot-eu | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu
 	cd gnuplot; gnuplot plot-eu
@@ -111,6 +111,12 @@ graphs/rates-seasia.png:	templates/t-plot-rates-seasia
 	cd gnuplot; gnuplot plot-rates-seasia
 	cp graphs/rates-seasia.png ${DATEDIR}
 	open graphs/rates-seasia.png
+
+graphs/rates-asia.png:	templates/t-plot-rates-asia
+	cat populations templates/t-plot-rates-asia | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-rates-asia
+	cd gnuplot; gnuplot plot-rates-asia
+	cp graphs/rates-asia.png ${DATEDIR}
+	open graphs/rates-asia.png
 
 graphs/covid-world.png: templates/t-plot-world
 	cat populations templates/t-plot-world | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world
