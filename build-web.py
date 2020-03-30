@@ -37,7 +37,7 @@ types = {}
 types["logabs"] = (\
 """The graph shows <B>cumulative number of confirmed cases</b>, plotted on a log
 scale, against time.  The country curves are shown offset by the
-amounts shown.""", "Cases")
+amounts shown. """, "Cases")
 
 types["lognorm"] = (\
 """The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
@@ -50,10 +50,10 @@ by the amounts shown.""", "Cases")
 
 types["inc"] = (\
 """The graph shows <B>daily increase in confirmed cases                                                                                   per million inhabitants</B>, plotted on a log scale, against time.
-  A Holt-Winters moving average filter with constants &alpha;=0.25 and
-  &beta;=0.25 has been applied to smooth the curves as differences are
-  very noisy.  This is quite a lot of smoothing and it imposes a
-  couple of days lag, but it does extract trends fairly well.  The
+  A Holt-Winters moving average filter with constants &alpha;=0.5 and
+  &beta;=0.5 has been applied to smooth the curves as differences are
+  very noisy.  This is a moderate amount of smoothing and it imposes a
+  about a days lag, but it does extract trends fairly well.  The
   curves are not offset, today is Day 0 for all curves.""",  "Increases")
 
 types["deaths"] = (\

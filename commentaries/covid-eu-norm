@@ -1,18 +1,30 @@
-  <LI> The graph shows number of <B>confirmed cases per million
-    inhabitants</B>, plotted on a log scale, against time.  The
-    country curves are shown offset by the amounts shown.
-  <LI> Normalizing by population makes little difference for most of the countries shown.
-  <LI> On this view, France's departure from the 22% curve is clearer.
-  <LI>Switzerland has a relatively small population, and so the number
+<LI><I>Commentary updated 30th March 2020</I>
+<DL>
+<DT>35% daily increase corresponds to a doubling time of 2.5 days</DT>
+<DT>22% daily increase corresponds to a doubling time of 3.5 days</DT>
+<DT>13.5% daily increase corresponds to a doubling time of 5.5 days</DT>
+</DL>
+
+<LI> I'm now showing these countries aligned with the 13.5% curve as
+all of them now appear to have left the 22% curve.  
+
+<LI> France, Germany and (tentatively) the UK are all now tracking
+along the 13.5% daily increase curve that Italy followed.
+
+<LI> Italy has now dropped off of exponential increases and appears to have peaked.
+
+<LI>Switzerland has a relatively small population, and so the number
     of cases per million inhabitants is much higher.  Switzerland is
     shown two days behind Italy and has followed Italy closely for the
-    last week.
-  <LI> See the <a href="#end">this death rates graph</a> for why I am
+    last two weeks.
+    
+  <LI> See the <a href="#deaths-eu-norm">this death rates graph</a> for why I am
     not confident in this placement for Switzerland - it appears that
     Switzerland is testing more widely than Italy, so Switzerland is
     likely to be perhaps as much as 10 days behind Italy.
+    
   <LI>Spain stayed at 35% daily increases for much longer than any
     other large European country, which caused it to close on Italy,
-    then followed the 22% curve for a week. Althouh Spain has now
-    moved to a lower daily increase rate, it has not followed Italy
-    and France down to 13%.
+    then followed the 22% curve for a week. Spain is now tracking
+    along the 13.5% curve, although it joined this curve at roughly
+    the point where Italy departed it.

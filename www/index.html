@@ -38,7 +38,7 @@ are my interpretation only.  Nevertheless, I hope you find it useful.
 <DT><a href="#covid-eu-norm3">Graph 9:</a> <B>Cases</B>: Italy, Belgium, Ireland, Portugal, Luxembourg</DT>
 <DT><a href="#deaths-eu-norm2">Graph 10:</a> <B>Cases</B>: Deaths: Italy, France, Germany, Luxembourg</DT>
 <DT><a href="#covid-eu-norm4">Graph 11:</a> <B>Cases</B>: Italy, Greece, Czech Republic, Slovenia, Slovakia, Croatia, Romania, Poland, Hungary, Bulgaria, Serbia</DT>
-<DT><a href="#rates-eeu">Graph 12:</a> <B>Increases</B>: Eastern Europe, Daily Increases: Italy, Greece, Czech Republic, Slovenia, Slovakia, Romania, Poland, Hungary, Bulgaria, Serbia, Belarus</DT>
+<DT><a href="#rates-eeu">Graph 12:</a> <B>Increases</B>: Eastern Europe, Daily Increases: Italy, Taiwan</DT>
 <DT><a href="#covid-eu-norm5">Graph 13:</a> <B>Cases</B>: Italy, Estonia, Belarus, Lithuania, Latvia, Ukraine, Russia</DT>
 <DT><a href="#covid-eu-linear">Graph 14:</a> <B>Cases</B>: Western Europe: Italy, France, Germany, Spain, Switzerland, UK, Netherlands, Sweden</DT>
 <DT><a href="#covid-uk">Graph 15:</a> <B>Cases</B>: UK: England Regions</DT>
@@ -63,7 +63,7 @@ are my interpretation only.  Nevertheless, I hope you find it useful.
 <UL>
 <LI>The graph shows <B>cumulative number of confirmed cases</b>, plotted on a log
 scale, against time.  The country curves are shown offset by the
-amounts shown.</LI>
+amounts shown. </LI>
    <LI>Italy's daily increase rate had been reducing slowly, and is
    showing signs that it may be peaking (see Graph 3).  Lombardy's
    daily increase rate results appeared to have peaked six days ago,
@@ -89,33 +89,45 @@ amounts shown.</LI>
 <UL>
 <LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
 country curves are shown offset by the amounts shown.</LI>
-  <LI> The graph shows number of <B>confirmed cases per million
-    inhabitants</B>, plotted on a log scale, against time.  The
-    country curves are shown offset by the amounts shown.
-  <LI> Normalizing by population makes little difference for most of the countries shown.
-  <LI> On this view, France's departure from the 22% curve is clearer.
-  <LI>Switzerland has a relatively small population, and so the number
+<LI><I>Commentary updated 30th March 2020</I>
+<DL>
+<DT>35% daily increase corresponds to a doubling time of 2.5 days</DT>
+<DT>22% daily increase corresponds to a doubling time of 3.5 days</DT>
+<DT>13.5% daily increase corresponds to a doubling time of 5.5 days</DT>
+</DL>
+
+<LI> I'm now showing these countries aligned with the 13.5% curve as
+all of them now appear to have left the 22% curve.  
+
+<LI> France, Germany and (tentatively) the UK are all now tracking
+along the 13.5% daily increase curve that Italy followed.
+
+<LI> Italy has now dropped off of exponential increases and appears to have peaked.
+
+<LI>Switzerland has a relatively small population, and so the number
     of cases per million inhabitants is much higher.  Switzerland is
     shown two days behind Italy and has followed Italy closely for the
-    last week.
-  <LI> See the <a href="#end">this death rates graph</a> for why I am
+    last two weeks.
+    
+  <LI> See the <a href="#deaths-eu-norm">this death rates graph</a> for why I am
     not confident in this placement for Switzerland - it appears that
     Switzerland is testing more widely than Italy, so Switzerland is
     likely to be perhaps as much as 10 days behind Italy.
+    
   <LI>Spain stayed at 35% daily increases for much longer than any
     other large European country, which caused it to close on Italy,
-    then followed the 22% curve for a week. Althouh Spain has now
-    moved to a lower daily increase rate, it has not followed Italy
-    and France down to 13%.
+    then followed the 22% curve for a week. Spain is now tracking
+    along the 13.5% curve, although it joined this curve at roughly
+    the point where Italy departed it.
 </UL>
 <hr><P><h3><a name="rates"></a>Western Europe Daily Increases: Italy, Lombardy, France, USA, UK, Spain, Greece, Denmark</h3><P>
 <img src="29mar2020/rates.png"><P>
 <UL>
 <LI>The graph shows <B>daily increase in confirmed cases                                                                                   per million inhabitants</B>, plotted on a log scale, against time.
-  A Holt-Winters moving average filter with constants &alpha;=0.25 and
-  &beta;=0.25 has been applied to smooth the curves as differences are
-  very noisy.  This is quite a lot of smoothing and it imposes a
-  couple of days lag, but it does extract trends fairly well.  The
+  A Holt-Winters moving average filter with constants &alpha;=0.5 and
+  &beta;=0.5 has been applied to smooth the curves as differences are
+  very noisy.  This is a moderate amount of smoothing and it imposes a
+  about a days lag, but it does extract trends fairly well.  The
   curves are not offset, today is Day 0 for all curves.</LI>
   <LI>Generally, trends are easier to see on a cumulative plot, as changes are inherently more noisy.  However, this view is better to see whether a country has peaked or not.
   <LI>The daily increase in cases appears to have peaked in Lombardy, and perhaps in Italy as a whole.  The daily increases have decreased for five consecutive days in Lombardy.
@@ -252,24 +264,42 @@ country curves are shown offset by the amounts shown.</LI>
 <img src="29mar2020/rates-nordic.png"><P>
 <UL>
 <LI>The graph shows <B>daily increase in confirmed cases                                                                                   per million inhabitants</B>, plotted on a log scale, against time.
-  A Holt-Winters moving average filter with constants &alpha;=0.25 and
-  &beta;=0.25 has been applied to smooth the curves as differences are
-  very noisy.  This is quite a lot of smoothing and it imposes a
-  couple of days lag, but it does extract trends fairly well.  The
+  A Holt-Winters moving average filter with constants &alpha;=0.5 and
+  &beta;=0.5 has been applied to smooth the curves as differences are
+  very noisy.  This is a moderate amount of smoothing and it imposes a
+  about a days lag, but it does extract trends fairly well.  The
   curves are not offset, today is Day 0 for all curves.</LI>
-  <LI>Generally, trends are easier to see on a cumulative plot, as
-    changes are inherently more noisy.  However, this view is better
-    to see whether a country has peaked or not.
-  <LI><B>Slovakia appears to have peaked, and Bulgaria may also have done so</B> in the last few days, though a few more days will be needed to be sure.
-  <LI>Greece and Slovenia appear to be close to peaking - the daily
-  increase has been more or less constant for a number of days, and no
-  longer shows signs of exponential growth. Neither has turned
-  downwards yet though.
-  <LI>Poland and Hungary are still growing exponentially, though the
-  absolute values are relatively low.
-  <lI>Romania may have peaked, but I'm not confident in this
-  conclusion yet - Italy has shown multiple such false peaks.
-</UL>
+<LI><I>Commentary updated 30 March 2020.</I>
+
+<LI>Generally, trends are easier to see on a cumulative plot, as
+changes are inherently more noisy.  However, this view is better
+to see whether a country has peaked or not.
+
+<LI>Daily increases in absolute numbers have been nearly constant for
+several days in Finland and Iceland.  This is likely to an indication
+that the infection rate in these countries is peaking, though we wont
+be sure until it has been going down again for more than a week.
+Certainly, exponential growth is no longer occurring in these
+countries.
+
+<LI>Norway was growing exponentially until 26th March, but since then
+has been decreasing, Three days is not long enough to have confidence
+that Norway has peaked, as daily change data is always noisy, but it
+hints that it might have done so, especially relatively good news from elsewhere
+in the Nordic region.
+
+<LI>Denmark and Sweden have very similar exponential increase rate
+profiles for the last two weeks. In both countries there is a hint of
+a slow decrease below exponential in the last two days, but it's not a
+long enough trend to say anything with confidence.
+
+<LI>Ten days ago, Estonia looked like it had peaked, but this behviour
+has happened in other rountries such as Denmark, where a large number
+of case are imported.  The imported cases are mostly tracked down,
+leading to a dip, then growth again as transmission that was missed
+grows.  The peak the last four days may be an echo of the original
+imported peak - this happened in Denmark and Sweden too, though their
+echoes were less pronounced.</UL>
 <hr><P><h3><a name="covid-eu-norm3"></a>Italy, Belgium, Ireland, Portugal, Luxembourg</h3><P>
 <img src="29mar2020/covid-eu-norm3.png"><P>
 <UL>
@@ -313,14 +343,14 @@ The German data shows a similar additional lag.
 country curves are shown offset by the amounts shown.</LI>
   <LI> Most Eastern European countries have shown large downturns.  This logscale plot of cumulative confirmed cases no longer gives enough visibility into what is happened.  See the next graph for a better view.
 </UL>
-<hr><P><h3><a name="rates-eeu"></a>Eastern Europe, Daily Increases: Italy, Greece, Czech Republic, Slovenia, Slovakia, Romania, Poland, Hungary, Bulgaria, Serbia, Belarus</h3><P>
+<hr><P><h3><a name="rates-eeu"></a>Eastern Europe, Daily Increases: Italy, Taiwan</h3><P>
 <img src="29mar2020/rates-eeu.png"><P>
 <UL>
 <LI>The graph shows <B>daily increase in confirmed cases                                                                                   per million inhabitants</B>, plotted on a log scale, against time.
-  A Holt-Winters moving average filter with constants &alpha;=0.25 and
-  &beta;=0.25 has been applied to smooth the curves as differences are
-  very noisy.  This is quite a lot of smoothing and it imposes a
-  couple of days lag, but it does extract trends fairly well.  The
+  A Holt-Winters moving average filter with constants &alpha;=0.5 and
+  &beta;=0.5 has been applied to smooth the curves as differences are
+  very noisy.  This is a moderate amount of smoothing and it imposes a
+  about a days lag, but it does extract trends fairly well.  The
   curves are not offset, today is Day 0 for all curves.</LI>
 <LI><I>Updated 29th March</I>
 <LI>Generally, trends are easier to see on a cumulative plot, as
@@ -411,7 +441,7 @@ curve that Italy followed.
 <UL>
 <LI>The graph shows <B>cumulative number of confirmed cases</b>, plotted on a log
 scale, against time.  The country curves are shown offset by the
-amounts shown.</LI>
+amounts shown. </LI>
      <LI> The early part of the China curve is shown for
      comparison. I'm not sure how accurate the numbers are in the
      early stage because they didn't initially know what to look for,
@@ -627,7 +657,7 @@ country curves are shown offset by the amounts shown.</LI>
 <UL>
 <LI>The graph shows <B>cumulative number of confirmed cases</b>, plotted on a log
 scale, against time.  The country curves are shown offset by the
-amounts shown.</LI>
+amounts shown. </LI>
   <LI>Very few warm countries have enough cases to establish a clear
   increase rate trend.  The graph shows number of confirmed case for
   some typical "cool" countries and some "warm" ones.  During the
@@ -655,7 +685,7 @@ amounts shown.</LI>
 <UL>
 <LI>The graph shows <B>cumulative number of confirmed cases</b>, plotted on a log
 scale, against time.  The country curves are shown offset by the
-amounts shown.</LI>
+amounts shown. </LI>
   <LI> The graph shows number of confirmed cases per million
   inhabitants, plotted on a log scale, against time.  The country
     curves are shown offset by the amounts shown.
