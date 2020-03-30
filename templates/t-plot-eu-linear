@@ -2,7 +2,7 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-linear.png"
 set grid
 #set logscale y
-set key at -10,89900 box
+set key at -11,95900 box
 set yrange [40:100000]
 set xrange [-30:]
 set ylabel "Confirmed COVID-19 cases"

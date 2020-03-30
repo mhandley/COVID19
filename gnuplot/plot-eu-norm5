@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -95,26 +97,27 @@ set output "../graphs/covid-eu-norm5.png"
 set mxtics
 set grid mxtics xtics ytics mytics
 set logscale y
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at -1,8 box
-set yrange [0.5:1500]
+set yrange [0.5:2000]
 set xrange [-40:]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
-offset = 42
-jhuoffset = (42 + 24)
+set ylabel "COVID19 cases per million inhabitants"
+set xlabel "Days (from 29 March 2020)"
+offset = 43
+jhuoffset = (43 + 24)
 eeoff = 9
 ltoff = 18
-lvoff = 17
+lvoff = 16
 byoff = 26
 uaoff = 31
 ruoff = 33.5
-plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
-"../country_data/estonia" using ($0 +16 -eeoff - offset):($2/eepop) w l lw 2 lc "brown" t sprintf("Estonia (%d days behind Italy)", eeoff), \
-"../jhu-data/belarus-jhu" using ($0 +1 -byoff - jhuoffset):($2/bypop) w l lw 2 lc "#00b000" t sprintf("Belarus (%d days offset from Italy)", byoff), \
-"../jhu-data/lithuania-jhu" using ($0 -ltoff - jhuoffset):($2/ltpop) w l lw 2 lc "#8080ff" t sprintf("Lithuania (%d days offset from Italy)", ltoff), \
-"../jhu-data/latvia-jhu" using ($0 - lvoff  - jhuoffset):($2/lvpop) w l lw 2 lc "blue" t sprintf("Latvia (%d days behind Italy)", lvoff), \
-"../jhu-data/ukraine-jhu" using ($0 - uaoff - jhuoffset):($2/uapop) w l lw 2 lc "black" t sprintf("Ukraine (%d days behind Italy)", uaoff), \
-"../country_data/russia" using ($0 +19 - ruoff - offset):($2/rupop) w l lw 2 lc "orange" t sprintf("Russia (%d days behind Italy)", ruoff), \
+plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
+"../aligned/country_data/estonia" using ($1 -eeoff):($2/eepop) w l lw 2 lc "brown" t sprintf("Estonia (%d days behind Italy)", eeoff), \
+"../aligned/jhu/belarus-jhu" using ($1 -byoff):($2/bypop) w l lw 2 lc "#00b000" t sprintf("Belarus (%d days offset from Italy)", byoff), \
+"../aligned/jhu/lithuania-jhu" using ($1 -ltoff):($2/ltpop) w l lw 2 lc "#8080ff" t sprintf("Lithuania (%d days offset from Italy)", ltoff), \
+"../aligned/jhu/latvia-jhu" using ($1 -lvoff):($2/lvpop) w l lw 2 lc "blue" t sprintf("Latvia (%d days behind Italy)", lvoff), \
+"../aligned/jhu/ukraine-jhu" using ($1 - uaoff):($2/uapop) w l lw 2 lc "black" t sprintf("Ukraine (%d days behind Italy)", uaoff), \
+"../aligned/country_data/russia" using ($1 -ruoff):($2/rupop) w l lw 2 lc "orange" t sprintf("Russia (%d days behind Italy)", ruoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

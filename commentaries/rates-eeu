@@ -1,12 +1,20 @@
-  <LI>Generally, trends are easier to see on a cumulative plot, as
+<LI><I>Updated 29th March</I>
+<LI>Generally, trends are easier to see on a cumulative plot, as
     changes are inherently more noisy.  However, this view is better
     to see whether a country has peaked or not.
-  <LI><B>Slovakia appears to have peaked, and Bulgaria may also have done so</B> in the last few days, though a few more days will be needed to be sure.
-  <LI>Greece and Slovenia appear to be close to peaking - the daily
-  increase has been more or less constant for a number of days, and no
-  longer shows signs of exponential growth. Neither has turned
-  downwards yet though.
-  <LI>Poland and Hungary are still growing exponentially, though the
-  absolute values are relatively low.
-  <lI>Romania may have peaked, but I'm not confident in this
-  conclusion yet - Italy has shown multiple such false peaks.
+
+<LI>I thought Slovakia had peaked a few days ago, but it appears I was
+wrong.  Nevertheless, growth there is almost constant, and certainly
+no longer exponential.
+
+<LI>Greece, Bulgaria, Hungary and perhaps Poland appear to be close to
+  peaking - the daily increase has been nearly constant for a number
+  of days, and they no longer shows signs of exponential growth.
+
+<LI>Slovenia and Romania are still growing exponentiall, though with a
+relatiively low daily increase rate.
+
+<LI>I have added Belarus to this graph, as the curve is intereting.
+Belarus definitely seems to have peaked a week ago, though the
+absolute values are so small - only 94 cases in total - that only a
+small undetected outbreak could reverse this trend.

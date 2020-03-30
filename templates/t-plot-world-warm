@@ -1,7 +1,8 @@
-set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set terminal pngcairo dashed font "Helvetica,13" size 1200,600
 set output "../graphs/covid-world-warm.png"
 set logscale y
-set key at -18,90000
+#set key at -18,90000
+set key outside right
 set yrange [20:120000]
 set xrange [-40:]
 set ylabel "Confirmed COVID-10 cases"

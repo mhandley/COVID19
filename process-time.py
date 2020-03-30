@@ -13,7 +13,6 @@ monstarts = []
 for mlen in monthlens:
     monstarts.append(d)
     d += mlen
-print(monstarts)
 
 def convert_date(date):
     if "-" in date:
@@ -21,23 +20,19 @@ def convert_date(date):
     elif "/" in date:
         parts = date.split("/")
     else:
-        print("bad date: ", date)
         return 0
     year = int(parts[0])
     mon = int(parts[1])
     try:
         day = int(parts[2].strip(","))
     except:
-        print("bad date: ", date)
         return -1
         
     if mon-1 < len(monstarts):
         dnum = monstarts[mon-1] + day
     else:
-        print("bad date: ", date)
         return -1
     if dnum > 1000:
-        print(date)
         exit()
     return dnum
 
@@ -63,7 +58,6 @@ for filename in filenames:
             print("bad file: ", filename)
             continue
         if dnum > maxday:
-            print(dnum, date)
             maxday = dnum
 
 for filename in filenames:
@@ -87,5 +81,4 @@ for filename in filenames:
         if dnum < -1000:
             os.exit()
         print(dnum, cases, deaths, file = ofile)
-        print(dnum, cases, deaths)
     

@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -99,8 +101,8 @@ set key at -1,20 box
 set yrange [6:500]
 set xrange [-18:]
 set ylabel "COVID-10 cases per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
-offset = 42 - 12
+set xlabel "Days (from 29 March 2020)"
+offset = 43 - 12
 plot "../country_data/denmark" using ($0 -0  - offset):(($2-650)/dapop) w l lw 2 lc "black" t "Denmark - 650", \
 "../country_data/norway" using ($0 -3.0 - offset):(($2-1050)/nopop) w l lw 2 lc "red" t "Norway -1050 (2 days offset)", \
 "../country_data/sweden" using ($0 -4.9 - offset):(($2-900)/sepop) w l lw 2 lc "blue" t "Sweden - 900 (4 days offset)", \

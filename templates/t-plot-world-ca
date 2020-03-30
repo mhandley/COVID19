@@ -1,21 +1,28 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-world-ca.png"
 set logscale y
-set grid
-set key at -1,10
-set yrange [1:1000]
-set xrange [-35:0]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
+set mxtics
+set grid mxtics xtics ytics mytics
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
+set key at -1,4 box
+set yrange [0.5:1500]
+set xrange [-45:]
+set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
 jhuoffset = (OFFSET + 24)
-plot "italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 ps 0.5 t "Italy", \
-"mexico-jhu" using ($0 -29 - jhuoffset):($2/mxpop) w lp ps 0.5 lw 2 lc "magenta" t sprintf("Mexico (%d days behind Italy)", mxoff), \
+mxoff = 34.5
+paoff = 17
+dooff = 22.5
+plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
+"../aligned/wiki/panama-wiki" using ($1 - paoff):($2/papop) w l lw 2 lc "blue" t sprintf("Panama (%d days behind Italy)", paoff), \
+"../aligned/jhu/dominican_republic-jhu" using ($1 - dooff):($2/dopop) w l lw 2 lc "#00a000" t sprintf("Domincan Republic (%d days behind Italy)", dooff), \
+"../aligned/wiki/mexico-wiki" using ($1 - mxoff):($2/mxpop) w l lw 2 lc "red" t sprintf("Mexico (%d days behind Italy)", mxoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
-#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
-#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
-
-#"france" using ($0 + 1.5 - offset):($2/frpop) w lp ps 0.5 lw 2 lc "red" t "France (8.5 days behind Italy)", \
-#"iran" using ($0 +1.5 - offset):($2/irpop) w lp lw 2 ps 0.5  lc "#6090ff" t "Iran (2.5 days behind Italy)", \
+#"../wiki-data/uruguay-wiki" using ($0  +51 -uroff - jhuoffset):($2/urpop) w l lw 2 lc "#00b000" t sprintf("Uruguay (%d days behind Italy)", uroff), \
+#"../wiki-data/colombia-wiki" using ($0 +47 -cooff - jhuoffset):($2/copop) w l lw 2 lc "black" t sprintf("Colombia (%d days behind Italy)", cooff), \
+#"../country_data/brazil" using ($0 -14 - offset):($2/brpop) w l lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
+#"../jhu-data/paraguay-jhu" using ($0  -pyoff - jhuoffset):($2/pypop) w l lw 2 lc "#00b0ff" t sprintf("Paraguay (%d days behind Italy)", pyoff), \
+#"../wiki-data/venezuela-wiki" using ($0  +45 -veoff - jhuoffset):($2/vepop) w l lw 2 lc "pink" t sprintf("Venezuela (%d days behind Italy)", veoff), \

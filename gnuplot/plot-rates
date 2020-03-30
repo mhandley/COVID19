@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -98,8 +100,8 @@ set key at -25,900
 set yrange [0.2:]
 #set xrange [-21:]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
-offset = 42
+set xlabel "Days (from 29 March 2020)"
+offset = 43
 usoff = 0
 iroff = 0
 froff = 0
@@ -107,12 +109,12 @@ kroff = 0
 lomoff = 0
 plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t "Italy", \
 "../increase_rates/lombardy" using ($0 +6 - offset):($3/lompop) w l lw 2 lc "purple" t sprintf("Lombardy"), \
-"../increase_rates/france" using ($0 +11 - offset):($3/frpop) w l lw 2 lc "red" t sprintf("France)"), \
-"../increase_rates/us" using ($0 +12 - offset):($3/uspop) w l lw 2 lc "orange" t sprintf("USA)"), \
+"../increase_rates/france" using ($0 +11 - offset):($3/frpop) w l lw 2 lc "red" t sprintf("France"), \
+"../increase_rates/us" using ($0 +12 - offset):($3/uspop) w l lw 2 lc "orange" t sprintf("USA"), \
 "../increase_rates/uk" using ($0 +13 - offset):($3/ukpop) w l lw 2 lc "blue" t sprintf("UK"), \
-"../increase_rates/spain" using ($0 +11 - offset):($3/espop) w l lw 2 lc "brown" t sprintf("Spain)", usoff), \
-"../increase_rates/greece" using ($0 +12 - offset):($3/grpop) w l lw 2 lc "green" t sprintf("Greece)", usoff), \
-"../increase_rates/denmark" using ($0 +13 - offset):($3/dapop) w l lw 2 lc "black" t sprintf("Denmark)", usoff), \
+"../increase_rates/spain" using ($0 +11 - offset):($3/espop) w l lw 2 lc "brown" t sprintf("Spain", usoff), \
+"../increase_rates/greece" using ($0 +12 - offset):($3/grpop) w l lw 2 lc "green" t sprintf("Greece", usoff), \
+"../increase_rates/denmark" using ($0 +13 - offset):($3/dapop) w l lw 2 lc "black" t sprintf("Denmark", usoff), \
 
 #"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \

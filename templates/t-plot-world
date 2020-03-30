@@ -1,21 +1,22 @@
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-world.png"
 set logscale y
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 4,600 box
-set yrange [30:120000]
+set yrange [30:170000]
 set xrange [-40:7]
-set ylabel "Confirmed COVID-19 cases"
+set ylabel "Confirmed COVID19 cases"
 set xlabel "Days (from March DATEth 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
 offset = OFFSET
 esoff = 9
-plot "../country_data/china" using ($0 +6 - offset):2 w l lw 2 lc "black" t "China (early cases)",\
+plot "../country_data/china" using ($0 +6.5 - offset):2 w l lw 2 lc "black" t "China (early cases)",\
 "../country_data/italy" using ($0 +5 - offset):2 w l lw 2 lc "#a000a0" t "Italy", \
 "../country_data/iran" using ($0 +3 - offset):2 w l lw 2 lc "#6090ff" t "Iran (1 days behind Italy)", \
 "../country_data/france" using ($0 + 1.5 - offset):2 w l lw 2 lc "red" t "France (8.5 days behind Italy)", \
 "../country_data/spain" using ($0 +10 -esoff - offset):2 w l lw 2 lc "brown" t sprintf("Spain (%d days behind Italy)", esoff), \
-"../country_data/us" using ($0 + 0 - offset):2 w l lw 2 lc "orange" t "USA (12 days behind Italy)", \
+"../country_data/us" using ($0 + -0 - offset):2 w l lw 2 lc "orange" t "USA (shown 12 days offset from Italy)", \
 "../country_data/southkorea" using ($0 + 6.5 - offset):2 w l lw 2 lc 6 t "S Korea (2.5 days ahead of Italy)", \
 "../country_data/japan" using ($0 -30 -offset):2 w l lw 2 lc "#b08000" t "Japan", \
 1.35**(x+offset + 9.5) lc "black"  dt 4 t "35% daily increase",\

@@ -6,6 +6,7 @@
    python process-us-nyt.py
 
 3. scrape wiki
+   update dates in scraper script
    python scrape-wiki.py
    files end up in wiki-tmp
 

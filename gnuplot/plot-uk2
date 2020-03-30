@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -100,8 +102,8 @@ set xrange [-40:0]
 #set yrange [3:100]
 #set xrange [-3:-15]
 set ylabel "Confirmed COVID19 cases per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
-offset = (42 + 5.5)
+set xlabel "Days (from 29 March 2020)"
+offset = (43 + 5.5)
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7

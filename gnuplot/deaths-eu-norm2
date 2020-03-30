@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -97,8 +99,8 @@ set key at -1,2 box
 set yrange [0.5:200]
 set xrange [-30:]
 set ylabel "COVID19 deaths per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
-offset = 42
+set xlabel "Days (from 29 March 2020)"
+offset = 43
 set mxtics
 set grid mxtics xtics ytics mytics
 esoff = 8
@@ -106,7 +108,7 @@ froff = 11.5
 deoff = 21.5
 nloff = 12.5
 ukoff = 14.5
-luoff = 12
+luoff = 13
 plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w l lw 2 t "Italy", \
      "../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff),\
 "../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \

@@ -3,6 +3,7 @@ set output "../graphs/covid-world-norm.png"
 set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 0,10 box
 set yrange [0.5:2000]
 set xrange [-40:3]

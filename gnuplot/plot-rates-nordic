@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -95,12 +97,13 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set output "../graphs/rates-nordic.png"
 set logscale y
-set key at -25,900 box
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.55,0.02 font "Helvetica,11" textcolor "#a0a0a0"
+set key at -23,900 box
 set yrange [1:]
-#set xrange [-21:]
+set xrange [-30:]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
-offset = 42
+set xlabel "Days (from 29 March 2020)"
+offset = 43
 usoff = 0
 iroff = 0
 froff = 0
@@ -109,7 +112,7 @@ lomoff = 0
 plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t "Italy", \
 "../increase_rates/denmark" using ($0 +13 - offset):($3/dapop) w l lw 2 lc "black" t sprintf("Denark"), \
 "../increase_rates/sweden" using ($0 +12 - offset):($3/sepop) w l lw 2 lc "blue" t sprintf("Sweden"), \
-"../increase_rates/norway" using ($0 +12 - offset):($3/nopop) w l lw 2 lc "red" t sprintf("Norway"), \
+"../increase_rates/norway" using ($0 +11 - offset):($3/nopop) w l lw 2 lc "red" t sprintf("Norway"), \
 "../increase_rates/finland" using ($0 +17 - offset):($3/fipop) w l lw 2 lc "#00a000" t sprintf("Finland"), \
 "../increase_rates/iceland" using ($0 +15 - offset):($3/ispop) w l lw 2 lc "orange" t sprintf("Iceland"), \
 "../increase_rates/estonia" using ($0 +17 - offset):($3/eepop) w l lw 2 lc "brown" t sprintf("Estonia")

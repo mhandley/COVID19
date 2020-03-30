@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -93,13 +95,13 @@ vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-uk-all.png"
 set logscale y
-set key at -1,20 box
+set key at -1,30 box
 #set key at -22,100
-set yrange [1:4000]
-set xrange [-35:]
+set yrange [3:4500]
+set xrange [-40:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
-offset = (42 + 5.5)
+set xlabel "Days (from 29 March 2020)"
+offset = (43 + 5.5)
 set mxtics
 set grid mxtics xtics ytics mytics
 ukpop = 67.7
@@ -126,7 +128,7 @@ lonoff = 19
 scoff = 21.5
 waoff = 20
 nioff = 23
-roeoff = 23
+roeoff = 23.5
 plot "../country_data/lombardy" using ($0 +10.5 - offset):($2/lompop) w l lw 2 lc "black" t "Lombardy Region, Italy",\
 "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lc "#a0a0a0" lw 2 t "All of Italy", \
 "../uk-data/uk-regions-cum" using ($0 +13.5 -lonoff - offset):($3/lonpop) w l lw 2 lc "red" t sprintf("London (18 days behind Lombardy)",lonoff), \

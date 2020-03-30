@@ -1,10 +1,12 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
-set grid
+set mxtics
+set grid mxtics xtics ytics mytics
 set output "../graphs/rates-eeu.png"
 set logscale y
-set key at -25,900
-set yrange [0.2:1000]
-#set xrange [-21:]
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.55,0.02 font "Helvetica,11" textcolor "#a0a0a0"
+set key at -23,280 box
+set yrange [0.1:300]
+set xrange [-35:]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
@@ -19,10 +21,11 @@ plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t
 "../increase_rates/slovenia" using ($0 +19 - offset):($3/sipop) w l lw 2 lc "#00b000" t sprintf("Slovenia"), \
 "../increase_rates/slovakia" using ($0 +25 - offset):($3/skpop) w l lw 2 lc "black" t sprintf("Slovakia)"), \
 "../increase_rates/romania" using ($0 +18 - offset):($3/ropop) w l lw 2 lc "orange" t sprintf("Romania"), \
-"../increase_rates/poland" using ($0 +19 - offset):($3/plpop) w l lw 2 lc "red" t sprintf("Poland"), \
-"../increase_rates/hungary" using ($0 +19 - offset):($3/hupop) w l lw 2 lc "#80a080" t sprintf("Hungary"), \
+"../increase_rates/poland" using ($0 +18 - offset):($3/plpop) w l lw 2 lc "red" t sprintf("Poland"), \
+"../increase_rates/hungary" using ($0 +18 - offset):($3/hupop) w l lw 2 lc "#80a080" t sprintf("Hungary"), \
 "../increase_rates/bulgaria" using ($0 +23 - offset):($3/bgpop) w l lw 2 lc "#ffa0c0" t sprintf("Bulgaria", usoff), \
-"../increase_rates/serbia" using ($0 +21 - offset):($3/rspop) w l lw 2 lc 6 t sprintf("Serbia"), \
+"../increase_rates/serbia" using ($0 -22 - offset):($3/rspop) w l lw 2 lc 6 t sprintf("Serbia"), \
+"../increase_rates/belarus" using ($0 -23 - offset):($3/bypop) w l lw 2 lc 6 t sprintf("Belarus"), \
 
 #"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \

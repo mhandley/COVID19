@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -100,10 +102,10 @@ set xrange [-40:0]
 #set yrange [3:100]
 #set xrange [-30:-15]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
+set xlabel "Days (from 29 March 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = (42 + 5.5)
+offset = (43 + 5.5)
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7
@@ -132,12 +134,13 @@ set grid
 plot "../country_data/lombardy" using ($0 +10.5 - offset):($2/lompop) w lp ps 0.5 lw 2 lc "black" t "Lombardy Region, Italy",\
 "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lc "#a0a0a0" lw 2 t "All of Italy", \
 "../uk-data/uk-regions-cum" using ($0 + 13.5 - lonoff - offset):($3/lonpop) w l lw 2 lc "red" t sprintf("London, UK (%d days behind Lombardy)", lonoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 - seoff - offset):($7/sepop) w l lw 2 lc "#00a0ff" t sprintf("South East, UK (%d days behind Lombardy)", seoff), \
 "../uk-data/uk-regions-cum" using ($0 +13.5 - midoff - offset):($4/midpop) w l lw 2 lc "#00a000" t sprintf("Midlands, UK (%d days behind Lombardy)", midoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 - neoff - offset):($5/nepop) w l lw 2 lc "blue" t sprintf("North East, UK (%d days behind Lombardy)", neoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 - nwoff - offset):($6/nwpop) w l lw 2 lc "brown" t sprintf("North West (%d days behind Lombardy)", nwoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 - eoff - offset):($2/epop) w l lw 2 lc "orange" t sprintf("UK, East (%d days behind Lombardy)", eoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 - swoff - offset):($8/swpop) w l lw 2 lc "magenta" t sprintf("South West, UK, (%d days behind Lombardy)", swoff),1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
+"../uk-data/uk-regions-cum" using ($0 +13.5 - seoff - offset):($7/sepop) w l lw 2 lc "#00a0ff" t sprintf("South East, UK (%d days behind Italy)", seoff-5.5), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 - neoff - offset):($5/nepop) w l lw 2 lc "blue" t sprintf("North East, UK (%d days behind Italy)", neoff - 5.5), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 - nwoff - offset):($6/nwpop) w l lw 2 lc "brown" t sprintf("North West (%d days behind Italy)", nwoff - 5.5), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 - eoff - offset):($2/epop) w l lw 2 lc "orange" t sprintf("UK, East (%d days behind Italy)", eoff - 5.5), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 - swoff - offset):($8/swpop) w l lw 2 lc "magenta" t sprintf("South West, UK, (%d days behind Italy)", swoff - 5.5),\
+1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
 #"switzerland" using ($0+3.5-offset):($2/supop) w lp ps 0.5 lw 2 lc "brown" t "Switzerland (11 days behind Lombardy, see comment)", \

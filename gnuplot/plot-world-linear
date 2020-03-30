@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -90,26 +92,28 @@ ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
-set terminal pngcairo dashed font "Helvetica,13" size 800,600
-set grid
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
+set mxtics
+set grid mxtics xtics ytics mytics
 set output "../graphs/covid-world-linear.png"
-set key at 28,30000
-set yrange [0:90000]
-set xrange [-30:]
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
+set key at 19,140000 box
+set yrange [0:150000]
+set xrange [-30:20]
 set ylabel "Confirmed COVID-19 cases"
-set xlabel "Days (from 28 March 2020)"
-offset = 42
+set xlabel "Days (from 29 March 2020)"
+offset = 43
 usoff = 10
 iroff = 0
 froff = 10
 kroff = 2.5
-plot "../country_data/china" using ($0 +9.5 - offset):2 w lp ps 0.5 lw 2 lc "black" t "China (30 days ahead of Italy)",\
-"../country_data/italy" using ($0 +5 - offset):2 w lp ps 0.5 lw 2 lc 1 t "Italy", \
-"../country_data/iran" using ($0 +4 - iroff - offset):2 w lp lw 2 ps 0.5 t "Iran", \
-"../country_data/france" using ($0 + 10 - froff - offset):2 w lp ps 0.5 lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
-"../country_data/us" using ($0 +11 - usoff  - offset):2 w lp ps 0.5 lw 2 lc "orange" t sprintf("USA (%d days offset from Italy)", usoff), \
-"../country_data/southkorea" using ($0 + 3.5 + kroff - offset):2 w lp ps 0.5 lw 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
-"../country_data/japan" using ($0 -4 -offset):2 w lp ps 0.5 lc "brown" lw 2 t "Japan"
+plot "../country_data/china" using ($0 +9.5 - offset):2 w l lw 2 lc "black" t "China (30 days ahead of Italy)",\
+"../country_data/italy" using ($0 +5 - offset):2 w l lw 2 lc 1 t "Italy", \
+"../country_data/iran" using ($0 +4 - iroff - offset):2 w l lw 2 t "Iran", \
+"../country_data/france" using ($0 + 10 - froff - offset):2 w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
+"../country_data/us" using ($0 +11 - usoff  - offset):2 w l lw 2 lc "orange" t sprintf("USA (%d days offset from Italy)", usoff), \
+"../country_data/southkorea" using ($0 + 3.5 + kroff - offset):2 w l lw 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
+"../aligned/country_data/japan" using ($1):2 w l lc "brown" lw 2 t "Japan"
 
-#"uk" using ($0 -1 - offset):2 w lp ps 0.5 lw 2 lc "blue" t "UK (13 days behind Italy)", \
-#"germany" using ($0 - offset):2 w lp ps 0.5 lw 2 t "Germany (9 days behind Italy)", \
+#"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \

@@ -7,7 +7,7 @@ def do_country(country):
         pass
     if ifile == None:
         try:
-            ifile = open("jhu-data/"+country+"-wiki", "r")
+            ifile = open("wiki-data/"+country+"-wiki", "r")
         except FileNotFoundError:
             pass
     if ifile == None:
@@ -46,8 +46,8 @@ def do_country(country):
             s = diffs[0]
             b = diffs[1]-diffs[0]
         else:
-            alpha = 0.25
-            beta = 0.25
+            alpha = 0.5
+            beta = 0.5
             prevs = s
             s = alpha * diffs[i] + (1-alpha) * (s + b)
             b = beta * (s -prevs) + (1 - beta)*b
@@ -61,7 +61,7 @@ def do_country(country):
 
 countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece", "denmark", "finland", "us", "lombardy",
              "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
-             "denmark", "sweden", "finland", "norway", "iceland", "estonia"]
+             "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan"]
 for country in countries:
     do_country(country)
                

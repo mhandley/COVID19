@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -93,15 +95,16 @@ vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-us-norm.png"
 set logscale y
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at -1,80 box
-set yrange [5:2500]
+set yrange [5:3000]
 set xrange [-30:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 28 March 2020)"
+set xlabel "Days (from 29 March 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 42
-jhuoffset = (42 - 27)
+offset = 43
+jhuoffset = (43 - 27)
 nyoff = 4
 waoff = 10.5
 maoff = 17
@@ -113,18 +116,18 @@ looff = 15.5
 mioff = 17.5
 iloff = 15.5
 txoff = 22
-plot "../time-aligned/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
-"../time-aligned/Washington" using ($1 - waoff):($2/uswapop) w l lw 2 lc "orange" t sprintf("Washington  State (%d days behind Italy)", waoff), \
-"../time-aligned/NewYork" using ($1 - nyoff):($2/usnypop) w l lw 2 lc "blue" t sprintf("New York (%d days offset from Italy)", nyoff),\
-"../time-aligned/NewJersey" using ($1 - njoff):($2/usnjpop) w l lw 2 lc "brown" t sprintf("New Jersey (%d days offset from Italy)", njoff), \
-"../time-aligned/Louisiana" using ($1 - looff):($2/uslopop) w l lw 2 lc "magenta" t sprintf("Louisiana (%d days offset from Italy)", looff), \
-"../time-aligned/Michigan" using ($1 - mioff):($2/usmipop) w l lw 2 lc "#a0a0a0" t sprintf("Michigan (%d days offset from Italy)", mioff), \
-"../time-aligned/Massachusetts" using ($1 - maoff):($2/usmapop) w l lw 2 lc "black" t sprintf("Massachusetts (%d days behind Italy)", maoff), \
-"../time-aligned/Illinois" using ($1 - iloff):($2/usilpop) w l lw 2 lc "#00c0a0" t sprintf("Illinois (%d days behind Italy)", iloff), \
-"../time-aligned/Colorado" using ($1 - cooff):($2/uscopop) w l lw 2 lc "#00a0ff" t sprintf("Colorado (%d days behind Italy)", cooff), \
-"../time-aligned/California" using ($1 - caoff):($2/uscapop) w l lw 2 lc "red" t sprintf("California (%d days behind Italy)", caoff), \
-"../time-aligned/Florida" using ($1 - floff):($2/usflpop) w l lw 2 lc "#00a000" t sprintf("Florida (%d days behind Italy)", floff), \
-"../time-aligned/Texas" using ($1 - txoff):($2/ustxpop) w l lw 2 lc "#a0a000" t sprintf("Texas (%d days behind Italy)", txoff), \
+plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
+"../aligned/nyt/Washington" using ($1 - waoff):($2/uswapop) w l lw 2 lc "orange" t sprintf("Washington  State (%d days behind Italy)", waoff), \
+"../aligned/nyt/NewYork" using ($1 - nyoff):($2/usnypop) w l lw 2 lc "blue" t sprintf("New York (%d days offset from Italy)", nyoff),\
+"../aligned/nyt/NewJersey" using ($1 - njoff):($2/usnjpop) w l lw 2 lc "brown" t sprintf("New Jersey (%d days offset from Italy)", njoff), \
+"../aligned/nyt/Louisiana" using ($1 - looff):($2/uslopop) w l lw 2 lc "magenta" t sprintf("Louisiana (%d days offset from Italy)", looff), \
+"../aligned/nyt/Michigan" using ($1 - mioff):($2/usmipop) w l lw 2 lc "#a0a0a0" t sprintf("Michigan (%d days offset from Italy)", mioff), \
+"../aligned/nyt/Massachusetts" using ($1 - maoff):($2/usmapop) w l lw 2 lc "black" t sprintf("Massachusetts (%d days behind Italy)", maoff), \
+"../aligned/nyt/Illinois" using ($1 - iloff):($2/usilpop) w l lw 2 lc "#00c0a0" t sprintf("Illinois (%d days behind Italy)", iloff), \
+"../aligned/nyt/Colorado" using ($1 - cooff):($2/uscopop) w l lw 2 lc "#00a0ff" t sprintf("Colorado (%d days behind Italy)", cooff), \
+"../aligned/nyt/California" using ($1 - caoff):($2/uscapop) w l lw 2 lc "red" t sprintf("California (%d days behind Italy)", caoff), \
+"../aligned/nyt/Florida" using ($1 - floff):($2/usflpop) w l lw 2 lc "#00a000" t sprintf("Florida (%d days behind Italy)", floff), \
+"../aligned/nyt/Texas" using ($1 - txoff):($2/ustxpop) w l lw 2 lc "#a0a000" t sprintf("Texas (%d days behind Italy)", txoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

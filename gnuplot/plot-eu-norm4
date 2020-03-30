@@ -15,6 +15,7 @@ czpop = 10.7 #Czech Republic
 copop = 50.7 #colombia
 dapop = 5.8 #denmark
 depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
 ecpop = 17.6 #ecuador
 eepop = 1.33 #estonia
 egpop = 101.8 #egypt
@@ -44,6 +45,7 @@ mxpop = 126 #mexico
 nlpop = 17.4 #netherlands
 nopop = 5.4 #norway
 nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
 pepop = 32.8 #peru
 phpop = 109 #philippines
 pkpop = 208 #pakistan
@@ -95,27 +97,34 @@ set output "../graphs/covid-eu-norm4.png"
 set mxtics
 set grid mxtics xtics ytics mytics
 set logscale y
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at -1,14 box
 set yrange [0.3:2000]
 set xrange [-40:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 28 March 
-offset = 42
-skoff = 19.5
+set xlabel "Days (from 29 March 
+offset = 43
+skoff = 19
 bgoff = 21
 rsoff = 22
 hroff = 18.5
-plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
-"../country_data/greece" using ($0 -2.5 - offset):($2/grpop) w l lw 2 lc "#8080ff" t "Greece (13.5 days offset from Italy)", \
-"../country_data/czechrepublic" using ($0 + 1 - offset):($2/czpop) w l lw 2 lc "blue" t "Czech Republic (14 days behind Italy)", \
-"../country_data/slovenia" using ($0 +9 - offset):($2/sipop) w l lw 2 lc "#00b000" t "Slovenia (16 days offset from Italy)", \
-"../country_data/slovakia" using ($0 + 24 - skoff - offset):($2/skpop) w l lw 2 lc "black" t sprintf("Slovakia (%d days behind Italy)", skoff), \
-"../country_data/romania" using ($0 -4 - offset):($2/ropop) w l lw 2 lc "orange" t "Romania (21 days behind Italy)", \
-"../country_data/poland" using ($0 -6 - offset):($2/plpop) w l lw 2 lc "red" t "Poland (23 days behind Italy)", \
-"../country_data/hungary" using ($0 -5 - offset):($2/hupop) w l lw 2 lc "#80a080" t "Hungary (24 days behind Italy)", \
-"../country_data/bulgaria" using ($0 + 22 - bgoff - offset):($2/bgpop) w l lw 2 lc "#ffa0c0" t sprintf("Bulgaria (%d days behind Italy)", bgoff), \
-"../jhu-data/serbia-wiki" using ($0 + 20 - rsoff - offset):($2/rspop) w l lw 2 lc 6 t sprintf("Serbia (%d days behind Italy)", rsoff), \
-"../jhu-data/croatia-wiki" using ($0 + 14 - hroff - offset):($2/hrpop) w l lw 2 lc "brown" t sprintf("Croatia (%d days behind Italy)", hroff), \
+czoff = 14
+groff = 13.5
+sioff = 9
+rooff = 21
+ploff = 23
+huoff = 24
+plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
+"../aligned/country_data/greece" using ($1 - groff):($2/grpop) w l lw 2 lc "#8080ff" t sprintf("Greece (%d days offset from Italy)", groff), \
+"../aligned/country_data/czechrepublic" using ($1 - czoff):($2/czpop) w l lw 2 lc "blue" t sprintf("Czech Republic (%d days behind Italy)", czoff), \
+"../aligned/country_data/slovenia" using ($1 - sioff):($2/sipop) w l lw 2 lc "#00b000" t sprintf("Slovenia (%d days offset from Italy)", sioff), \
+"../aligned/country_data/slovakia" using ($1 - skoff):($2/skpop) w l lw 2 lc "black" t sprintf("Slovakia (%d days behind Italy)", skoff), \
+"../aligned/wiki/croatia-wiki" using ($1 - hroff):($2/hrpop) w l lw 2 lc "brown" t sprintf("Croatia (%d days behind Italy)", hroff), \
+"../aligned/country_data/romania" using ($1 - rooff):($2/ropop) w l lw 2 lc "orange" t sprintf("Romania (%d days behind Italy)", rooff), \
+"../aligned/country_data/poland" using ($1 - ploff):($2/plpop) w l lw 2 lc "red" t sprintf("Poland (%d days behind Italy)", ploff), \
+"../aligned/country_data/hungary" using ($1 - huoff):($2/hupop) w l lw 2 lc "#80a080" t sprintf("Hungary (%d days behind Italy)", huoff), \
+"../aligned/country_data/bulgaria" using ($1 - bgoff):($2/bgpop) w l lw 2 lc "#ffa0c0" t sprintf("Bulgaria (%d days behind Italy)", bgoff), \
+"../aligned/wiki/serbia-wiki" using ($1 - rsoff):($2/rspop) w l lw 2 lc 6 t sprintf("Serbia (%d days behind Italy)", rsoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
