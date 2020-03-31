@@ -4,10 +4,9 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
           ("covid-eu-norm.png", "Western Europe", "lognorm"),
           ("rates.png", "Western Europe Daily Increases", "inc"),
           ("deaths-eu-norm.png", "Deaths: Western Europe", "deaths"),
-          ("covid-eu-lom.png", "",  "lognorm"),
+          ("covid-eu-norm-lom.png", "",  "lognorm"),
           ("covid-eu-norm2.png", "Nordic Region", "lognorm"),
-          ("covid-eu-norm2b.png","Nordic Region (offset curves)", "lognorm"),
-          ("rates-nordic.png", " Nordic Region, Daily Increases", "inc"),
+          ("rates-nordic.png", "Daily Increases", "inc"),
           ("covid-eu-norm3.png","", "lognorm"),
 	  ("deaths-eu-norm2.png","Deaths", "lognorm"),
 	  ("covid-eu-norm4.png","", "lognorm"),
@@ -31,7 +30,10 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
 	  ("covid-world-warm2.png", "Warm Countries", "logabs"),
 	  ("covid-world-linear.png", "World", "linear")]
 
-#graphs = ["covid-eu.png"]
+
+# not used anymore
+#          ("covid-eu-norm2b.png","Nordic Region (offset curves)", "lognorm"),
+
 
 types = {}
 types["logabs"] = (\

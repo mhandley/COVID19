@@ -99,11 +99,11 @@ set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 4,30 box
-set yrange [3:3500]
+set yrange [3:6388.235294117647]
 set xrange [-30:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 29 March 2020)"
-offset = 43
+set xlabel "Days (from 30 March 2020)"
+offset = 44
 testpop=3
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
 "../country_data/iceland" using ($0 +15 - offset):($2/ispop) w l lw 2 lc "orange" t "Iceland (2 days ahead of Italy)" , \

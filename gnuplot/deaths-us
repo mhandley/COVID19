@@ -100,8 +100,8 @@ set key at -1,3
 set yrange [0.4:200]
 set xrange [-30:]
 set ylabel "COVID19 deaths per million inhabitants"
-set xlabel "Days (from 29 March 2020)"
-offset = 43
+set xlabel "Days (from 30 March 2020)"
+offset = 44
 set mxtics
 set grid mxtics xtics ytics mytics
 choff = 11

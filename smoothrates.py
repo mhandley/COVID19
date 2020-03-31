@@ -1,9 +1,11 @@
 countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece", "denmark", "finland", "us", "lombardy",
              "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
-             "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan", "japan", "singapore"]
+             "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan", "japan", "singapore",
+             "luxembourg"]
 
 smooth = 3
 def do_country(country):
+    print(country)
     ifile = None
     try:
         ifile = open("country_data/"+country, "r")
@@ -22,6 +24,8 @@ def do_country(country):
     diffs = []
     dates = []
     for line in ifile:
+        if line.strip() == "":
+            continue
         parts = line.split()
         date = parts[0]
         val = int(parts[1])

@@ -99,18 +99,18 @@ set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at -2,15 box
-set yrange [2:3500]
+set yrange [2:6382.0224719101125]
 set xrange [-35:]
 set ylabel "SARS-CoV-2 cases per million inhabitants"
-set xlabel "Days (from 29 March 2020)"
-offset = 43
+set xlabel "Days (from 30 March 2020)"
+offset = 44
 iroff = 12
 ptoff = 12.5
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
 "../country_data/belgium" using ($0 +4.5 - offset):($2/bepop) w l lw 2 lc "black" t "Belgium (9.5 days behind Italy)", \
 "../country_data/ireland" using ($0 +17 - iroff - offset):($2/iepop) w l lw 2 lc "#00a000" t sprintf("Ireland (%d days behind Italy)", iroff), \
 "../country_data/portugal" using ($0 +16 - ptoff - offset):($2/ptpop) w l lw 2 lc "red" t sprintf("Portugal (%d days behind Italy)", ptoff),\
-"../country_data/luxembourg" using ($0 +10 - offset):($2/lupop) w l lw 2 lc "blue" t "Luxembourg (8 days behind Italy)", \
+"../country_data/luxembourg" using ($0 +10 - offset):($2/lupop) w l lw 2 lc "#a0a0ff" t "Luxembourg (8 days behind Italy)", \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

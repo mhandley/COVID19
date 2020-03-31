@@ -92,18 +92,18 @@ ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
-set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-eu-norm4.png"
 set mxtics
 set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at -1,14 box
-set yrange [0.3:2000]
+set yrange [0.3:3363.2727272727275]
 set xrange [-40:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 29 March 
-offset = 43
+set xlabel "Days (from 30 March 
+offset = 44
 skoff = 19
 bgoff = 21
 rsoff = 22

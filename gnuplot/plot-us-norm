@@ -96,15 +96,15 @@ set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-us-norm.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at -1,80 box
-set yrange [5:3000]
+set key at -1,80 box font "Helvetica,11"
+set yrange [5:6141.030927835052]
 set xrange [-30:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 29 March 2020)"
+set xlabel "Days (from 30 March 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 43
-jhuoffset = (43 - 27)
+offset = 44
+jhuoffset = (44 - 27)
 nyoff = 4
 waoff = 10.5
 maoff = 17

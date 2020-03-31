@@ -51,6 +51,8 @@ for filename in filenames:
         print("failed to open " + filename)
         continue
     for line in ifile:
+        if line.strip() == "":
+            continue
         parts = line.split()
         date = parts[0]
         dnum = convert_date(date)
@@ -65,11 +67,14 @@ for filename in filenames:
         ifile = open(filename, "r")
     except:
         continue
+    dateset = set()
     ofname = filename.split("/")[1]
     srcname = filename.split("/")[0].split("-")[0]
     ofile = open("aligned/" + srcname + "/" + ofname, "w")
     print(filename)
     for line in ifile:
+        if line.strip() == "":
+            continue
         parts = line.split()
         date = parts[0]
         cases = int(parts[1])
@@ -80,5 +85,9 @@ for filename in filenames:
         dnum = convert_date(date) - maxday
         if dnum < -1000:
             os.exit()
+        if date in dateset:
+            print("duplicate date: ", date)
+            os.exit()
+        dateset.add(date)
         print(dnum, cases, deaths, file = ofile)
     

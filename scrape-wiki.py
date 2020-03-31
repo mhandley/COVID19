@@ -91,10 +91,44 @@ for country in countries:
                         cases = parts[3].strip()
                         print(date2, cases, deaths, recovered, file=ofile)
                         if date == date2 or prevdate == date2:
+                            success = True
                             print(date2, cases, deaths, recovered)
                     elif line[:7] == "&lt;!--":
                         pass
                     else:
                         dump = False
+        file.close()
+    if not success:
+        print("here2")
+        file = open("dump", "r")
+        for line in file:
+            if "{{Bar stacked" in line:
+                line = line.strip("\n")
+                assert(line[:2] == "{{" and line[len(line)-2:] == "}}")
+                # strip enclosing quotes
+                line = line[2:len(line)-2]
+                                          
+                parts = []
+                stack = 0
+                start = 0
+                for i in range(len(line)):
+                    if line[i] == "|" and stack == 0:
+                        parts.append(line[start:i])
+                        start = i+1
+                    elif line[i:i+2] == "{{":
+                        stack += 1
+                    elif line[i:i+2] == "}}":
+                        stack -= 1
+                date2 = fix_date(parts[1].strip())
+                cases = "".join(parts[2].split("&")[0].split(",")).strip()
+                deaths = parts[4].split()[1].split("/")[0].strip()
+                recovered = parts[6].split()[1].split("/")[0].strip()
+                if not "2020" in date2:
+                    pass
+                else:
+                    success = True
+                    print(date2, cases, deaths, recovered, file=ofile)
+                    if date == date2 or prevdate == date2:
+                        print(date2, cases, deaths, recovered)
         file.close()
     ofile.close()

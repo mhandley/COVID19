@@ -1,0 +1,14 @@
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
+set output "../graphs/covid-uk-local.png"
+set logscale y
+set key at -1,25 box
+#set key at -22,100
+set yrange [1:4000]
+set xrange [-40:0]
+#set yrange [3:100]
+#set xrange [-30:-15]
+set ylabel "COVID19 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+set mxtics
+set grid mxtics xtics ytics mytics
+set grid

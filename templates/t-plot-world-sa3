@@ -1,0 +1,38 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set output "../graphs/covid-world-sa3.png"
+set logscale y
+set mxtics
+set grid mxtics xtics ytics mytics
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
+set key at -1,6 box
+set yrange [0.5:YMAX]
+set xrange [-45:]
+set ylabel "COVID19 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = OFFSET
+jhuoffset = (OFFSET + 24)
+cloff = 19
+ecoff = 19.5
+peoff = 26.5
+aroff = 29
+mxoff = 29
+uroff = 22
+pyoff = 28
+booff = 31.5
+cooff = 25.5
+veoff = 20.5
+
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
+"../country_data/brazil" using ($0 -14 - offset):($2/brpop) w l lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
+"../wiki-data/colombia-wiki" using ($0 +47 -cooff - jhuoffset):($2/copop) w l lw 2 lc "black" t sprintf("Colombia (%d days behind Italy)", cooff), \
+"../wiki-data/uruguay-wiki" using ($0  +43 -uroff - jhuoffset):($2/urpop) w l lw 2 lc "brown0b000" t sprintf("Uruguay (%d days behind Italy)", uroff), \
+"../jhu-data/paraguay-jhu" using ($0  -pyoff - jhuoffset):($2/pypop) w l lw 2 lc "#00b0ff" t sprintf("Paraguay (%d days behind Italy)", pyoff), \
+"../wiki-data/venezuela-wiki" using ($0  +45 -veoff - jhuoffset):($2/vepop) w l lw 2 lc "red" t sprintf("Venezuela (%d days behind Italy)", veoff), \
+1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+
+#"../wiki-data/argentina-wiki" using ($0  +41 -aroff - jhuoffset):($2/arpop) w l lw 2 lc "#9090a0" t sprintf("Argentina (%d days behind Italy)", aroff), \
+#"../jhu-data/bolivia-jhu" using ($0  -booff - jhuoffset):($2/bopop) w l lw 2 lc "magenta" t sprintf("Bolivia (%d days behind Italy)", booff), \
+#" t sprintf("Peru (%d days behind Italy)", peoff), \
+"../wiki-data/uruguay-wiki" using ($0  +51 -uroff - jhuoffset):($2/urpop) w l lw 2 lc "#0#"../wiki-data/chile-wiki" using ($0 +40 -cloff - jhuoffset):($2/clpop) w l lw 2 lc "orange" t sprintf("Chile (%d days behind Italy)", cloff), \
+#"../wiki-data/ecuador-wiki" using ($0  +45 -ecoff - jhuoffset):($2/ecpop) w l lw 2 lc "red" t sprintf("Ecuador (%d days behind Italy)", ecoff), \

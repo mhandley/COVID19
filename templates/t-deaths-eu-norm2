@@ -18,7 +18,7 @@ luoff = 13
 plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w l lw 2 t "Italy", \
      "../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff),\
 "../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
-"../country_data/luxembourg" using ($0 + 19 - luoff - offset):($3/lupop) w l lw 2 lc "blue" t sprintf("Luxembourg (%d days behind Italy)", luoff), \
+"../country_data/luxembourg" using ($0 + 19 - luoff - offset):($3/lupop) w l lw 2 lc "#a0a0ff" t sprintf("Luxembourg (%d days behind Italy)", luoff), \
 1.35**(x+offset - 16) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset -11.9) lc "black" dashtype 2 t "22% daily increase"
 

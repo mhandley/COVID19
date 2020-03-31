@@ -32,16 +32,17 @@ wapop = 3.0
 
 lonoff = 19
 scoff = 21.5
-waoff = 20
+waoff = 19.5
 nioff = 23
 roeoff = 23.5
+lomoff = 5.5
 plot "../country_data/lombardy" using ($0 +10.5 - offset):($2/lompop) w l lw 2 lc "black" t "Lombardy Region, Italy",\
 "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lc "#a0a0a0" lw 2 t "All of Italy", \
 "../uk-data/uk-regions-cum" using ($0 +13.5 -lonoff - offset):($3/lonpop) w l lw 2 lc "red" t sprintf("London (18 days behind Lombardy)",lonoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 -roeoff - offset):(($2+$4+$5+$6+$7+$8)/(epop+midpop+nepop+nwpop+sepop+swpop)) w l lw 2 lc "magenta" t sprintf("Rest of England (%d days behind Lombardy)", roeoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 -scoff - offset):($11/scpop) w l lw 2 lc "blue" t sprintf("Scotland (%d days beind Lombardy)", scoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 -waoff - offset):($12/wapop) w l lw 2 lc "#00b000" t sprintf("Wales (%d days behind Lombardy)", waoff), \
-"../uk-data/uk-regions-cum" using ($0 +13.5 -nioff - offset):($10/nipop) w l lw 2 lc "brown" t sprintf("Northern Ireland (%d days behind Lombardy)", nioff), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -waoff - offset):($12/wapop) w l lw 2 lc "#00b000" t sprintf("Wales (%d days behind Italy)", waoff - lomoff), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -scoff - offset):($11/scpop) w l lw 2 lc "blue" t sprintf("Scotland (%d days beind Italy)", scoff - lomoff), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -nioff - offset):($10/nipop) w l lw 2 lc "brown" t sprintf("Northern Ireland (%d days behind Italy)", nioff - lomoff), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -roeoff - offset):(($2+$4+$5+$6+$7+$8)/(epop+midpop+nepop+nwpop+sepop+swpop)) w l lw 2 lc "magenta" t sprintf("Rest of England (%d days behind Italy)", roeoff - lomoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

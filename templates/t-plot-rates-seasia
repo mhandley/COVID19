@@ -1,0 +1,22 @@
+set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set mxtics
+set grid mxtics xtics ytics mytics
+set output "../graphs/rates-seasia.png"
+set logscale y
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.55,0.02 font "Helvetica,11" textcolor "#a0a0a0"
+set key at -23,280 box
+set yrange [0.1:300]
+set xrange [-35:]
+set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
+set xlabel "Days (from DATE March 2020)"
+offset = OFFSET
+usoff = 0
+iroff = 0
+froff = 0
+kroff = 0
+lomoff = 0
+plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t "Italy", \
+"../increase_rates/taiwan" using ($0 -23 - offset):($3/twpop) w l lw 2 lc 6 t sprintf("Taiwan"), \
+
+#"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \

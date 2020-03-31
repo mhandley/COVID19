@@ -1,52 +1,60 @@
-all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png
+all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-norm-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png
 
 DATEDIR = www/30mar2020/
 DATE=30
 OFFSET=44
 graphs/covid-eu.png: templates/t-plot-eu increase_rates/uk increase_rates/italy increase_rates/france increase_rates/spain increase_rates/germany
 	cat populations templates/t-plot-eu | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu
+	python set_ymax.py gnuplot/plot-eu
 	cd gnuplot; gnuplot plot-eu
 	cp graphs/covid-eu.png ${DATEDIR}
 	open graphs/covid-eu.png
 
 graphs/covid-eu-norm.png: templates/t-plot-eu-norm
 	cat populations templates/t-plot-eu-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm
+	python set_ymax.py gnuplot/plot-eu-norm
 	cd gnuplot; gnuplot plot-eu-norm
 	cp graphs/covid-eu-norm.png ${DATEDIR}
 	open graphs/covid-eu-norm.png
 
 graphs/covid-eu-norm2.png: templates/t-plot-eu-norm2
 	cat populations templates/t-plot-eu-norm2 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm2
+	python set_ymax.py gnuplot/plot-eu-norm2
 	cd gnuplot; gnuplot plot-eu-norm2
 	cp graphs/covid-eu-norm2.png ${DATEDIR}
 	open graphs/covid-eu-norm2.png
 
 graphs/covid-eu-norm2b.png: templates/t-plot-eu-norm2b
 	cat populations templates/t-plot-eu-norm2b | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm2b
+	python set_ymax.py gnuplot/plot-eu-norm2b
 	cd gnuplot; gnuplot plot-eu-norm2b
 	cp graphs/covid-eu-norm2b.png ${DATEDIR}
 	open graphs/covid-eu-norm2b.png
 
 graphs/covid-eu-norm3.png: templates/t-plot-eu-norm3
 	cat populations templates/t-plot-eu-norm3 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm3
+	python set_ymax.py gnuplot/plot-eu-norm3
 	cd gnuplot; gnuplot plot-eu-norm3
 	cp graphs/covid-eu-norm3.png ${DATEDIR}
 	open graphs/covid-eu-norm3.png
 
 graphs/covid-eu-norm4.png: templates/t-plot-eu-norm4
 	cat populations templates/t-plot-eu-norm4 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm4
+	python set_ymax.py gnuplot/plot-eu-norm4
 	cd gnuplot; gnuplot plot-eu-norm4
 	cp graphs/covid-eu-norm4.png ${DATEDIR}
 	open graphs/covid-eu-norm4.png
 
 graphs/covid-eu-norm5.png: templates/t-plot-eu-norm5
 	cat populations templates/t-plot-eu-norm5 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm5
+	python set_ymax.py gnuplot/plot-eu-norm5
 	cd gnuplot; gnuplot plot-eu-norm5
 	cp graphs/covid-eu-norm5.png ${DATEDIR}
 	open graphs/covid-eu-norm5.png
 
 graphs/covid-eu-linear.png: templates/t-plot-eu-linear
 	cat populations templates/t-plot-eu-linear | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-linear
+	python set_ymax.py gnuplot/plot-eu-linear 1.1
 	cd gnuplot; gnuplot plot-eu-linear
 	cp graphs/covid-eu-linear.png ${DATEDIR}
 	open graphs/covid-eu-linear.png
@@ -69,11 +77,12 @@ graphs/covid-uk-all.png: templates/t-plot-uk3
 	cp graphs/covid-uk-all.png ${DATEDIR}
 	open graphs/covid-uk-all.png
 
-graphs/covid-eu-lom.png: templates/t-plot-eu-lom
-	cat populations templates/t-plot-eu-lom | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-lom
-	cd gnuplot; gnuplot plot-eu-lom
-	cp graphs/covid-eu-lom.png ${DATEDIR}
-	open graphs/covid-eu-lom.png
+graphs/covid-eu-norm-lom.png: templates/t-plot-eu-norm-lom
+	cat populations templates/t-plot-eu-norm-lom | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-eu-norm-lom
+	python set_ymax.py gnuplot/plot-eu-norm-lom
+	cd gnuplot; gnuplot plot-eu-norm-lom
+	cp graphs/covid-eu-norm-lom.png ${DATEDIR}
+	open graphs/covid-eu-norm-lom.png
 
 graphs/deaths-eu-norm.png: templates/t-deaths-eu-norm
 	cat populations templates/t-deaths-eu-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/deaths-eu-norm
@@ -88,7 +97,7 @@ graphs/deaths-eu-norm2.png: templates/t-deaths-eu-norm2
 	open graphs/deaths-eu-norm2.png
 
 
-graphs/rates.png:	templates/t-plot-rates
+graphs/rates.png:	templates/t-plot-rates country_data/us
 	cat populations templates/t-plot-rates | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-rates
 	cd gnuplot; gnuplot plot-rates
 	cp graphs/rates.png ${DATEDIR}
@@ -118,37 +127,42 @@ graphs/rates-asia.png:	templates/t-plot-rates-asia
 	cp graphs/rates-asia.png ${DATEDIR}
 	open graphs/rates-asia.png
 
-graphs/covid-world.png: templates/t-plot-world
+graphs/covid-world.png: templates/t-plot-world country_data/us
 	cat populations templates/t-plot-world | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world
+	python set_ymax.py gnuplot/plot-world
 	cd gnuplot; gnuplot plot-world
 	cp graphs/covid-world.png ${DATEDIR}
 	open graphs/covid-world.png
 
-graphs/covid-world-norm.png: templates/t-plot-world-norm
+graphs/covid-world-norm.png: templates/t-plot-world-norm country_data/us
 	cat populations templates/t-plot-world-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-norm
+	python set_ymax.py gnuplot/plot-world-norm
 	cd gnuplot; gnuplot plot-world-norm
 	cp graphs/covid-world-norm.png ${DATEDIR}
 	open graphs/covid-world-norm.png
 
-graphs/covid-world-norm2.png: templates/t-plot-world-norm2 
+graphs/covid-world-norm2.png: templates/t-plot-world-norm2  country_data/us
 	cat populations templates/t-plot-world-norm2 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-norm2
+	python set_ymax.py gnuplot/plot-world-norm2
 	cd gnuplot; gnuplot plot-world-norm2
 	cp graphs/covid-world-norm2.png ${DATEDIR}
 	open graphs/covid-world-norm2.png
 
 graphs/covid-world-norm3.png: templates/t-plot-world-norm3 
 	cat populations templates/t-plot-world-norm3 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-norm3
+	python set_ymax.py gnuplot/plot-world-norm3
 	cd gnuplot; gnuplot plot-world-norm3
 	cp graphs/covid-world-norm3.png ${DATEDIR}
 	open graphs/covid-world-norm3.png
 
 graphs/covid-us-norm.png: templates/t-plot-us-norm
 	cat populations templates/t-plot-us-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-us-norm
+	python set_ymax.py gnuplot/plot-us-norm
 	cd gnuplot; gnuplot plot-us-norm
 	cp graphs/covid-us-norm.png ${DATEDIR}
 	open graphs/covid-us-norm.png
 
-graphs/deaths-us.png: templates/t-deaths-us
+graphs/deaths-us.png: templates/t-deaths-us country_data/us
 	cat populations templates/t-deaths-us | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/deaths-us
 	cd gnuplot; gnuplot deaths-us
 	cp graphs/deaths-us.png ${DATEDIR}
@@ -156,42 +170,49 @@ graphs/deaths-us.png: templates/t-deaths-us
 
 graphs/covid-world-sa2.png: templates/t-plot-world-sa2
 	cat populations templates/t-plot-world-sa2 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-sa2
+	python set_ymax.py gnuplot/plot-world-sa2
 	cd gnuplot; gnuplot plot-world-sa2
 	cp graphs/covid-world-sa2.png ${DATEDIR}
 	open graphs/covid-world-sa2.png
 
 graphs/covid-world-sa3.png: templates/t-plot-world-sa3
 	cat populations templates/t-plot-world-sa3 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-sa3
+	python set_ymax.py gnuplot/plot-world-sa3
 	cd gnuplot; gnuplot plot-world-sa3
 	cp graphs/covid-world-sa3.png ${DATEDIR}
 	open graphs/covid-world-sa3.png
 
 graphs/covid-world-ca.png: templates/t-plot-world-ca
 	cat populations templates/t-plot-world-ca | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-ca
+	python set_ymax.py gnuplot/plot-world-ca
 	cd gnuplot; gnuplot plot-world-ca
 	cp graphs/covid-world-ca.png ${DATEDIR}
 	open graphs/covid-world-ca.png
 
 graphs/covid-world-seasia.png: templates/t-plot-world-seasia
 	cat populations templates/t-plot-world-seasia | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-seasia
+	python set_ymax.py gnuplot/plot-world-seasia
 	cd gnuplot; gnuplot plot-world-seasia
 	cp graphs/covid-world-seasia.png ${DATEDIR}
 	open graphs/covid-world-seasia.png
 
-graphs/covid-world-warm.png: templates/t-plot-world-warm
+graphs/covid-world-warm.png: templates/t-plot-world-warm country_data/us
 	cat populations templates/t-plot-world-warm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-warm
+	python set_ymax.py gnuplot/plot-world-warm
 	cd gnuplot; gnuplot plot-world-warm
 	cp graphs/covid-world-warm.png ${DATEDIR}
 	open graphs/covid-world-warm.png
 
 graphs/covid-world-warm2.png: templates/t-plot-world-warm2
 	cat populations templates/t-plot-world-warm2 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-warm2
+	python set_ymax.py gnuplot/plot-world-warm2
 	cd gnuplot; gnuplot plot-world-warm2
 	cp graphs/covid-world-warm2.png ${DATEDIR}
 	open graphs/covid-world-warm2.png
 
-graphs/covid-world-linear.png: templates/t-plot-world-linear
+graphs/covid-world-linear.png: templates/t-plot-world-linear country_data/us
 	cat populations templates/t-plot-world-linear | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" > gnuplot/plot-world-linear
+	python set_ymax.py gnuplot/plot-world-linear 1.1
 	cd gnuplot; gnuplot plot-world-linear
 	cp graphs/covid-world-linear.png ${DATEDIR}
 	open graphs/covid-world-linear.png
@@ -222,7 +243,7 @@ increase_rates/vietnam:	wiki_data/vietnam
 # gnuplot deaths-eu-norm
 # gnuplot deaths-eu-norm2
 # gnuplot deaths-us
-# gnuplot plot-eu-lom
+# gnuplot plot-eu-norm-lom
 # gnuplot plot-eu-norm2
 # gnuplot plot-eu-norm2b
 # gnuplot plot-eu-norm3

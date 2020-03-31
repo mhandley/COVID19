@@ -1,9 +1,9 @@
-set terminal pngcairo dashed font "Helvetica,13" size 1200,600
+set terminal pngcairo dashed font "Helvetica,12" size 1200,600
 set output "../graphs/covid-world-warm.png"
 set logscale y
 #set key at -18,90000
 set key outside right
-set yrange [20:120000]
+set yrange [100:YMAX]
 set xrange [-40:]
 set ylabel "Confirmed COVID-10 cases"
 set xlabel "Days (from DATE March 2020)"
@@ -12,16 +12,19 @@ set grid mxtics xtics ytics mytics
 offset = OFFSET
 usoff = 12
 inoff = 8
+broff = -2
+thoff = 6
+idoff = 7.5
 plot "../country_data/italy" using ($0 +5 - offset):2 w l lw 2 t "Italy", \
-"../country_data/france" using ($0 + 1.5  - offset):2 w l lw 2 lc "black" t "France (8 days behind Italy)",\
+"../country_data/france" using ($0 + 1.5  - offset):2 w l lw 2 lc "red" t "France (8 days behind Italy)",\
 "../country_data/us" using ($0 + 11 - usoff - offset):2 w l lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
-"../country_data/brazil" using ($0 -10 - offset):2 w l lw 2 lc "blue" t "Brazil (21 days behind Italy)", \
+"../country_data/brazil" using ($0 +11 -broff - offset):2 w l lw 2 lc "blue" t sprintf("Brazil (%d days behind Italy)", broff),\
 "../country_data/australia" using ($0 - 30.5 - offset):2 w l lw 2 lc "#00b0b0" t "Australia (22.5 days behind Italy)", \
 "../country_data/malaysia" using ($0 -21 - offset):2 w l lw 2 lc "magenta" t "Malaysia", \
 "../country_data/qatar" using ($0 + 12.5 - offset):2 w l lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
-"../country_data/thailand" using ($0 -51 - offset):2 w l lw 2 lc "#a0a000" t "Thailand  (4 days behind Qatar)", \
-"../country_data/bahrain" using ($0 -28 - offset):2 w l lw 2 lc "red" t "Bahrain (7 days behind Qatar)", \
-"../country_data/indonesia" using ($0 -10.5 - offset):2 w l lw 2 lc "#00a000" t "Indonesia (7 days behind Qatar)", \
+"../country_data/thailand" using ($0 -24 -thoff - offset):2 w l lw 2 lc "#a0a000" t sprintf("Thailand  (%d days behind Qatar)", thoff), \
+"../country_data/bahrain" using ($0 -28 - offset):2 w l lw 2 lc "black" t "Bahrain (7 days behind Qatar)", \
+"../country_data/indonesia" using ($0 +16 -idoff - offset):2 w l lw 2 lc "#00a000" t sprintf("Indonesia (%d days behind Qatar)", idoff), \
 "../country_data/kuwait" using ($0 -4 - offset):2 w l lw 2 lc "purple" t "Kuwait (7 days behind Malaysia)", \
 "../country_data/egypt" using ($0 +8 - offset):2 w l lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
 "../country_data/india" using ($0 +15 - inoff - offset):2 w l lw 2 lc "brown" t sprintf("India (%d days behind Malaysia)", inoff), \

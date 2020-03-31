@@ -3,7 +3,7 @@ set output "../graphs/covid-eu.png"
 set logscale y
 set key at -1,1500 box
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set yrange [200:100000]
+set yrange [200:YMAX]
 set xrange [-30:0]
 set ylabel "Confirmed COVID19 cases"
 set xlabel "Days (from DATE March 2020)"

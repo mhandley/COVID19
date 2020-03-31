@@ -1,4 +1,4 @@
-set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-world-seasia.png"
 set logscale y
 set mxtics
