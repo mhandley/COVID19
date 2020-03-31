@@ -27,12 +27,12 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
 	  ("covid-world-ca.png","Central America", "lognorm"),
 	  ("covid-world-seasia.png","South East Asia", "lognorm"),
 	  ("covid-world-warm.png", "Warm Countries", "logabs"),
-	  ("covid-world-warm2.png", "Warm Countries", "logabs"),
 	  ("covid-world-linear.png", "World", "linear")]
 
 
 # not used anymore
 #          ("covid-eu-norm2b.png","Nordic Region (offset curves)", "lognorm"),
+#	  ("covid-world-warm2.png", "Warm Countries", "logabs"),
 
 
 types = {}
@@ -153,10 +153,14 @@ def make_graph(graph, gname, gtype, gnum, datedir):
     print('<hr><P><h3><a name="' + gprefix + '"></a>' + s + "</h3><P>", file=ofile)
     print('<img src="' + datedir + "/" + graph + '"><P>', file = ofile)
     print('<UL>', file=ofile);
+    commentfile = "commentaries/" + gprefix
+    ls = subprocess.check_output("ls -l " + commentfile, shell=True).decode()
+    updatetime = " ".join(ls.split()[5:7])
+    print("<LI><I>Commentary updated: " + updatetime + " 2020</I></LI>", file=ofile)
     txt, tag = types[gtype]
     print("<LI>" + txt + "</LI>",  file=ofile)
     try:
-        ifile = open("commentaries/" + gprefix, "r")
+        ifile = open(commentfile, "r")
         txt = ifile.read();
         ofile.write(txt);
         ifile.close()

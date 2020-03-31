@@ -1,21 +1,38 @@
-  <LI>Very few warm countries have enough cases to establish a clear
+  <LI>Most warm countries do not have enough cases to establish a clear
   increase rate trend.  The graph shows number of confirmed case for
-  some typical "cool" countries and some "warm" ones.  During the
-  timescale shown, Spain had experienced cool weather.
-  <LI>Malaysia, India, Bahrain, Kuwait and Egypt are all warm countries and have all been experiencing
+  some typical "cool" countries and some "warm" ones.  
+
+<LI>Malaysia, India, Bahrain, Kuwait and Egypt are all warm countries and have all been experiencing
     roughly 14% daily growth.
-  <LI>Australia used to be on the 14% curve, but ten days ago it
+
+<LI>Australia used to be on the 14% curve, but ten days ago it
   switched to the 22% curve.  The results from ten days ago correspond
   to infections from roughly 17-20 days ago.  The mean daytime
   temperature in Sydney for the five days before March 3rd (17 days
   ago) was 28.6C, whereas for the five days after March 3rd it was
   23.8C.  More analysis is needed to know if this is significant.
-  <LI>Malaysia had a large increase four days ago, but since seems to be tracking close to 14%.
-  <LI>Brazil seems to be tracking roughly along the 35% line, which seems to run counter to warm weather inhibiting the spread of the virus.
-  <LI> Both Qatar and Bahrain have very low recent increase
-  levels. This may indicate that most cases were imports, and that
-  local spread has been effectivel contained.
-  <LI>Although Singapore has a warm climate, I have ommited it from
-  this graph, because strong contact tracing there dwarfs any
-    climate-dependent effect we might observe.
-  <LI> In general, it does appear that COVID19 may spread more slowly in warm climates, but the evidence is inconclusive, with Brazil being the main counterexample.
+  There is no equivalent warming associated with the most recent
+  reduction in daily growth, so this is likely to be related to social
+  distancing measures.
+
+<LI>Malaysia had a large increase four days ago, but since seems to be tracking close to 14%.
+
+<LI>Brazil was tracking roughly along the 35% line for a while, which
+seems to run counter to warm weather inhibiting the spread of the
+virus, but recently it has moved to lower growth.  I have now aligned
+Brazil with the 14% curve experience by other warm countries, though
+the fit is imperfect.  Brazil actually has both tropical and
+equatorial climate zones, so it clear how this should manifest in
+COVID-19 progression.
+
+<LI> Qatar, Bahrain and Kuwait have very low recent increase levels. This
+  may indicate that most cases were imports, and that local spread has
+  been effectivel contained.
+
+<LI>Although Singapore has a warm climate, I have ommited it from this
+  graph, because strong contact tracing there dwarfs any
+  climate-dependent effect we might observe.
+
+<LI> In general, it does appear that COVID19 may spread more slowly in
+  warm climates, but the evidence is inconclusive, and it appears to
+  require relatively hot temperatures to have much effect.

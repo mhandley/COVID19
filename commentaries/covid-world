@@ -4,35 +4,36 @@
      and the way of measuring changed part way through this period.
      The initial increase rate is fairly consistent with the 35% daily growth seen in
      Europe.
-     <LI>Other than China, South Korea is the only country to have had a
+
+<LI>Other than China, South Korea is the only country to have had a
      high sustained increase rate, and then bring the virus under
      control.
-     <LI>The USA had been tracking very closely along the 35% growth
-     line, and has done so for much longer than any other
+
+<LI>The USA tracked very closely along the 35% growth
+     line, and did so for much longer than any other
      country. Testing in the US was initially very limited, but
      recently it seems testing has been catching up somewhat. In the
-     last few days the US has shown the first signs of dropping off of
+     last five days the US has shown the first signs of dropping off of
      the 35% daily increase curve.
-     <LI>Cases in the US are concentrated in a few states, in a
+
+<LI>Cases in the US are concentrated in a few states, in a
      similar way to how cases in Italy are concentrated in
      Lombardy.
-     <LI>Iran tracked a little above a 35% increase rate until three
-     weeks ago.  Since then, Iran had experienced ten days of
-     consistent 11.5% exponential growth, with the last ten days
-     showing further decline.  For many days the daily increase in
-     cases had been roughly constant at around 1100-1200 new cases per
-     day, but it has now started to increase again.  It is possible
-     this was due to limitations in testing.
-     <LI>Japan is an enigma.  The testing rate there is low, so cases
-     may be being underreported.  However consistently missing the
-     same fraction of cases would not affect the exponential growth
-     doubling time, which had been extremely consistent at 8.5% per
-     day for many weeks, until the last week when it has declined
-     further.  It seems more likely that early measures taken there
-     are being effective at reducing the increase rate, but are not
-     sufficient to avoid exponential growth altogether. It looks like
-     the combination of early school closure, plus ubiquitous face
-     masks and regular Japanese good hygene may be responsible for
-     Japan's unique track. No-one really knows,
-     but <a href="https://www.japantimes.co.jp/opinion/2020/03/21/commentary/japan-commentary/japan-still-coronavirus-outlier/#.XnZH06FRUlQ">many
-     are speculating.</a>
+
+<LI>Iran tracked a little above a 35% increase rate until four weeks
+  ago.  Since then, Iran had experienced ten days of consistent 11.5%
+  exponential growth, with the following ten days showing further
+  decline.  For many days the daily increase in cases was roughly
+  constant at around 1100-1200 new cases per day, but it has now
+  started to increase exponentially again, now at around 8% per day.
+  It is possible the constant phase was due to limitations in testing.
+
+<LI>Japan is has been an enigma for a long time, with an extremely
+  consistent 8.5% per day daily growth rate for many weeks, until two
+  weeks when it has declined further, before rebounding significantly
+  in the last few days.  It seems more likely that early measures
+  taken there were effective to some degree at reducing the increase
+  rate, but are not sufficient to avoid exponential growth altogether.
+  There is some discussion that the historic figures for Japan may not
+  have been accurate, but I won't speculate on this other than to note
+  that the Japanese curve has always been an unusual outlier.

@@ -99,8 +99,8 @@ set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 4,30 box
-set yrange [3:6388.235294117647]
-set xrange [-30:]
+set yrange [1:6388.235294117647]
+set xrange [-40:]
 set ylabel "COVID-19 cases per million inhabitants"
 set xlabel "Days (from 30 March 2020)"
 offset = 44

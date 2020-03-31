@@ -1,4 +1,21 @@
-  <LI>Generally, trends are easier to see on a cumulative plot, as changes are inherently more noisy.  However, this view is better to see whether a country has peaked or not.
-  <LI>The daily increase in cases appears to have peaked in Lombardy, and perhaps in Italy as a whole.  The daily increases have decreased for five consecutive days in Lombardy.
-  <LI>Spain and the US are showing no signs of nearing a peak, whereas France and the UK show slightly sub-exponential increases.
-  <LI>Denmark and Greece show no clear pattern recently, but neither has peaked yet.
+<LI>Generally, trends are easier to see on a cumulative plot, as
+changes are inherently more noisy.  However, this view is better to
+see whether a country has peaked or not.
+
+<LI>The daily increase in cases appears to have peaked in both
+Lombardy and in Italy as a whole around March 21st.
+
+<LI>Switzerland appears to be on a plateau, which may be a sign than it is peaking.
+
+<LI>Spain, France and the UK all hint at peaking today.  From
+comparing the cumulative curves, I'm not yet convinced any of these
+countries is actually peaking.  I would expect France to not peak for
+another week and the UK to not peak for nearly two weeks.  There's no
+clear model for Spain, so it may be peaking already, but two days of
+decline is insufficent for me to have any confidence.
+
+<LI>The very rapid increase rate in the US appears to have tailed off,
+but I suspect it has some way to go before peaking.
+
+<LI>Greece shows no clear pattern recently; the trend seems to be for
+slow but not exponential growth.

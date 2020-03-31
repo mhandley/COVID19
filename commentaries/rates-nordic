@@ -6,26 +6,28 @@ to see whether a country has peaked or not.
 
 <LI>Daily increases in absolute numbers have been nearly constant for
 several days in Finland and Iceland.  This is likely to an indication
-that the infection rate in these countries is peaking, though we wont
+that the infection rate in these countries is peaking, though we won't
 be sure until it has been going down again for more than a week.
 Certainly, exponential growth is no longer occurring in these
 countries.
 
 <LI>Norway was growing exponentially until 26th March, but since then
-has been decreasing, Three days is not long enough to have confidence
+has been decreasing. Four days is not long enough to have confidence
 that Norway has peaked, as daily change data is always noisy, but it
-hints that it might have done so, especially relatively good news from elsewhere
-in the Nordic region.
+hints that it might have done so, especially given relatively good
+news from similar countries elsewhere in the Nordic region.
 
 <LI>Denmark and Sweden have very similar exponential increase rate
 profiles for the last two weeks. In both countries there is a hint of
-a slow decrease below exponential in the last two days, but it's not a
+a slow decrease below exponential in the last three days, but it's not a
 long enough trend to say anything with confidence.
 
 <LI>Ten days ago, Estonia looked like it had peaked, but this behviour
 has happened in other rountries such as Denmark, where a large number
 of case are imported.  The imported cases are mostly tracked down,
 leading to a dip, then growth again as transmission that was missed
-grows.  The peak the last four days may be an echo of the original
+grows.  The peak the last five days may be an echo of the original
 imported peak - this happened in Denmark and Sweden too, though their
-echoes were less pronounced.
+echoes were less pronounced.  It is too early to know if the curve
+will turn back up again, but the Denmark curve implies this is
+possible in Estonia too.
