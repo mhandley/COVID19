@@ -99,16 +99,16 @@ set key at -1,2 box
 set yrange [0.5:200]
 set xrange [-30:]
 set ylabel "COVID19 deaths per million inhabitants"
-set xlabel "Days (from 30 March 2020)"
-offset = 44
+set xlabel "Days (from 31 March 2020)"
+offset = 45
 set mxtics
 set grid mxtics xtics ytics mytics
 esoff = 8
-froff = 11.5
-deoff = 21.5
+froff = 12
+deoff = 23.5
 nloff = 12.5
 ukoff = 14.5
-luoff = 13
+luoff = 13.5
 plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w l lw 2 t "Italy", \
      "../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff),\
 "../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \

@@ -7,7 +7,7 @@ set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 fo
 set key at -2,15 box
 set yrange [2:YMAX]
 set xrange [-35:]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
+set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
 iroff = 12

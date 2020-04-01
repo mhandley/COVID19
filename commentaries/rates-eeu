@@ -12,10 +12,13 @@ no longer exponential.
   been nearly constant for a number of days, and it no longer shows
   signs of significant exponential growth.
 
-<LI> The last two days data for Slovenia and the Czech Republic have
-show decreases, but this is too short a duration to have any
+<LI> The last three days data for Slovenia and the Czech Republic have
+show decreases, but this is still too short a duration to have any
 confidence they have peaked.
 
-<LI>Serbia, Hungary, Romania and Poland are still growing exponentially with a
+<LI>Hungary, Romania and Poland are still growing exponentially with a
 relatively low daily increase rate, though today's data point for Serbia is down.
 
+<LI>Serbia dipped the last two days after a steady exponential
+increases the last two weeks.  I suspect it has not yet peaked (it
+would be rather sudden if it has), but we will only know in a few more days.

@@ -16,7 +16,7 @@ atoff = 10
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/lombardy" using ($1 + lomoff):($2/lompop) w l lw 2 lc "red" t sprintf("Lombardy (%d days ahead of Italy - see comment)", lomoff), \
 "../aligned/country_data/switzerland" using ($1 - choff):($2/chpop) w l lw 2 lc "brown" t sprintf("Switzerland (%d days behind Lombardy)", choff+lomoff), \
-"../aligned/country_data/austria" using ($1 - atoff):($2/atpop) w l lw 2 lc "orange" t sprintf("Austria (%d days behind Lombardy)", atoff+lomoff), \
+"../aligned/country_data/austria" using ($1 - atoff):($2/atpop) w l lw 2 lc "#00a000" t sprintf("Austria (%d days behind Lombardy)", atoff+lomoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

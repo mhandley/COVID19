@@ -99,25 +99,29 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at -1,10 box
-set yrange [1:3363.2727272727275]
-set xrange [-40:]
+set yrange [1:3497.2561983471073]
+set xrange [-45:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 30 March 2020)"
-offset = 44
-jhuoffset = (44 + 24)
+set xlabel "Days (from 31 March 2020)"
+offset = 45
+jhuoffset = (45 + 24)
 usoff = 17
 nzoff = 22.5
-ruoff = 30.5
-zaoff = 27
-saoff = 23
+ruoff = 33.5
+zaoff = 26.5
+saoff = 24.5
+troff = 21.5
+pkoff = 31
+iloff = 12.5
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
-"../country_data/israel" using ($0 -7 - offset):($2/ilpop) w l lw 2 lc "#b00000" t "Israel (14 days behind Italy)", \
-"../country_data/pakistan" using ($0 -4 - offset):($2/pkpop) w l lw 2 lc "black" t "Pakistan (28 days behind Italy)", \
-"../country_data/turkey" using ($0 +2 - offset):($2/trpop) w l lw 2 lc "red" t "Turkey (28 days behind Italy)", \
+"../aligned/country_data/israel" using ($1 - iloff):($2/ilpop) w l lw 2 lc "#b00000" t sprintf("Israel (%d days behind Italy)", iloff), \
+"../aligned/country_data/pakistan" using ($1 - pkoff):($2/pkpop) w l lw 2 lc "black" t sprintf("Pakistan (%d days behind Italy)", pkoff), \
+"../aligned/country_data/turkey" using ($1 - troff):($2/trpop) w l lw 2 lc "red" t sprintf("Turkey (%d days behind Italy)", troff), \
 "../jhu-data/southafrica-jhu" using ($0  - zaoff - jhuoffset):($2/zapop) w l lw 2 lc "#00a000" t sprintf("South Africa (%d days behind Italy)", zaoff), \
 "../country_data/russia" using ($0 +19.5 - ruoff - offset):($2/rupop) w l lw 2 lc "#80ba80" t sprintf("Russia (%d days behind Italy)", ruoff), \
 "../country_data/saudiarabia" using ($0 +18- saoff - offset):($2/sapop) w l lw 2 lc "blue" t sprintf("Saudi Arabia (%d days behind Italy)", saoff), \
-1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase"
+1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
 #"../country_data/chile" using ($0 -2.5 - offset):($2/clpop) w l lw 2 lc "blue" t "Chile (19.5 days behind Italy)", \
 

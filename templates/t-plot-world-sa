@@ -6,7 +6,7 @@ set grid mxtics xtics ytics mytics
 set key at -1,10 box
 set yrange [1:1000]
 set xrange [-30:0]
-set ylabel "SARS-CoV-2 cases per million inhabitants"
+set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
 ukpop = 67.7

@@ -152,6 +152,7 @@ def make_graph(graph, gname, gtype, gnum, datedir):
         s = gname[1:]
     print('<hr><P><h3><a name="' + gprefix + '"></a>' + s + "</h3><P>", file=ofile)
     print('<img src="' + datedir + "/" + graph + '"><P>', file = ofile)
+    print('<br><a href="points.html#' + gprefix + '"><small>SHOW DATA POINTS</small></a>', file=ofile)
     print('<UL>', file=ofile);
     commentfile = "commentaries/" + gprefix
     ls = subprocess.check_output("ls -l " + commentfile, shell=True).decode()
@@ -182,7 +183,7 @@ print("</DL>", file=ofile)
 
 
 gnum = 1
-datedir = "30mar2020"
+datedir = "31mar2020"
 for graph,gname,gtype in graphs:
     make_graph(graph, gname, gtype, gnum, datedir)
     gnum+=1
@@ -190,5 +191,6 @@ for graph,gname,gtype in graphs:
 ofile.close()
 
 subprocess.call("cat wwwparts/faq.html >> www/index.html", shell=True)
+subprocess.call('cat www/index.html | sed -e "s/\.png/-lp\.png/g" | sed -e "s/SHOW/HIDE/g" | sed -e "s/points\.html/index\.html/g" > www/points.html', shell=True)
 
 #print(longnames)

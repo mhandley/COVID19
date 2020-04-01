@@ -1,7 +1,8 @@
 import subprocess
 from time import sleep
 urls = {}
-countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "belgium", "portugal", "canada", "norway", "australia", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "qatar", "slovenia", "slovakia", "estonia", "kuwait", "india", "serbia", "bulgaria", "hungary", "croatia", "japan"]
+countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania"]
+countries = ["belarus"]
 
 #Bad countries: poland, switzerland
 urls["iran"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Iran_medical_cases_chart&action=edit"
@@ -18,14 +19,17 @@ urls["chile"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pan
 urls["philippines"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Philippines_medical_cases_chart&action=edit"
 #urls["colombia"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Colombia_medical_cases_chart&action=edit"
 urls["domincanrepublic"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Dominican_Republic_medical_cases_chart&action=edit"
+urls["czechrepublic"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Czech_Republic_medical_cases_chart&action=edit"
+urls["saudiarabia"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Saudi_Arabia_medical_cases_chart&action=edit"
+urls["ireland"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Republic_of_Ireland_medical_cases_chart&action=edit"
 
 base_url1 = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/"
 base_url2 = "_medical_cases_chart&action=edit"
 
 
 #urls["switzerland"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Switzerland_medical_cases_chart/&action=edit"
-prevdate = "2020-03-29"
-date = "2020-03-30"
+prevdate = "2020-03-30"
+date = "2020-03-31"
 
 def fix_date(date):
     if "-" in date:
@@ -33,7 +37,6 @@ def fix_date(date):
     elif "/" in date:
         parts = date.split("/")
     else:
-        print("bad date:", date)
         return ""
     if parts[0] == "2020":
         date2 = parts[0] + "-" + parts[1] + "-" + parts[2]
@@ -44,7 +47,7 @@ def fix_date(date):
     return date2
 
 for country in countries:
-    print(country)
+    print("\n" + country)
     sleep(1)
     subprocess.call("rm -f dump", shell=True)
     try:
@@ -57,7 +60,7 @@ for country in countries:
     ofile = open("wiki-tmp/" + country + "-wiki", "w")
     for line in file:
         parts = line.split("|")
-        if len(parts) > 4 and "{{Medical cases chart/Row" in parts[0]:
+        if len(parts) > 4 and "{{Medical cases chart/Row" in parts[0] and "&lt;!" not in parts[0]:
             date2 = fix_date(parts[1].strip())
             deaths = parts[2].strip()
             recovered = parts[3].strip()
@@ -72,11 +75,10 @@ for country in countries:
                     print(date2, cases, deaths, recovered)
     file.close()
     if not success:
-        print("here")
         file = open("dump", "r")
         dump = False
         for line in file:
-            if "|data=" == line.strip():
+            if "|data=" == "".join(line.strip().split(" ")):
                 dump = True
             else:
                 if dump:
@@ -93,13 +95,12 @@ for country in countries:
                         if date == date2 or prevdate == date2:
                             success = True
                             print(date2, cases, deaths, recovered)
-                    elif line[:7] == "&lt;!--":
+                    elif line[:7] == "&lt;!--" or line[:1] == ";" or line.strip() == "":
                         pass
                     else:
                         dump = False
         file.close()
     if not success:
-        print("here2")
         file = open("dump", "r")
         for line in file:
             if "{{Bar stacked" in line:

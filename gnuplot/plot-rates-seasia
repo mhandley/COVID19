@@ -102,8 +102,8 @@ set key at -23,280 box
 set yrange [0.1:300]
 set xrange [-35:]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
-set xlabel "Days (from 30 March 2020)"
-offset = 44
+set xlabel "Days (from 31 March 2020)"
+offset = 45
 usoff = 0
 iroff = 0
 froff = 0

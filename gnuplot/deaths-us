@@ -100,21 +100,21 @@ set key at -1,3
 set yrange [0.4:200]
 set xrange [-30:]
 set ylabel "COVID19 deaths per million inhabitants"
-set xlabel "Days (from 30 March 2020)"
-offset = 44
+set xlabel "Days (from 31 March 2020)"
+offset = 45
 set mxtics
 set grid mxtics xtics ytics mytics
 choff = 11
 esoff = 8
-froff = 11.5
-deoff = 21
+froff = 12
+deoff = 23.5
 nloff = 12.5
 ukoff = 14.5
-usoff = 19.5
-plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w l lw 2 t "Italy", \
-"../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff),\
-"../country_data/us" using ($0 + 11 - usoff - offset):($3/uspop) w l lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
-"../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
+usoff = 21
+plot "../aligned/country_data/italy" using ($1):($3/itpop) w l lw 2 t "Italy", \
+"../aligned/country_data/france" using ($1 - froff):($3/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff),\
+"../aligned/country_data/us" using ($1 - usoff):($3/uspop) w l lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
+"../aligned/country_data/germany" using ($1 - deoff):($3/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
 1.35**(x+offset - 16) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset -11.9) lc "black" dashtype 2 t "22% daily increase"
 

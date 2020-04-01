@@ -98,11 +98,11 @@ set logscale y
 set key at -12,2500 box
 set yrange [50:3000]
 set xrange [-26:]
-set ylabel "Confirmed COVID-10 cases"
-set xlabel "Days (from 30 March 2020)"
+set ylabel "Confirmed COVID19 cases"
+set xlabel "Days (from 31 March 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 44
+offset = 45
 inoff = 8.5
 bhoff = 7
 bhoff = 0

@@ -10,7 +10,7 @@ set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
 set mxtics
 set grid mxtics xtics ytics mytics
-choff = 1.0
+choff = 1.5
 esoff = 2.5
 froff = 10.5
 deoff = 10.5

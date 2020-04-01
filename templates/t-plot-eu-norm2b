@@ -6,7 +6,7 @@ set logscale y
 set key at -1,20 box
 set yrange [6:700]
 set xrange [-18:]
-set ylabel "COVID-10 cases per million inhabitants"
+set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET - 12
 plot "../country_data/denmark" using ($0 -0  - offset):(($2-650)/dapop) w l lw 2 lc "black" t "Denmark - 650", \

@@ -4,7 +4,7 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at -1,8 box
+set key at -1,13 box
 set yrange [0.5:YMAX]
 set xrange [-40:]
 set ylabel "COVID19 cases per million inhabitants"
@@ -20,12 +20,13 @@ ruoff = 33.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/estonia" using ($1 -eeoff):($2/eepop) w l lw 2 lc "brown" t sprintf("Estonia (%d days behind Italy)", eeoff), \
 "../aligned/jhu/belarus-jhu" using ($1 -byoff):($2/bypop) w l lw 2 lc "#00b000" t sprintf("Belarus (%d days offset from Italy)", byoff), \
-"../aligned/jhu/lithuania-jhu" using ($1 -ltoff):($2/ltpop) w l lw 2 lc "#8080ff" t sprintf("Lithuania (%d days offset from Italy)", ltoff), \
+"../aligned/wiki/lithuania-wiki" using ($1 -ltoff):($2/ltpop) w l lw 2 lc "#8080ff" t sprintf("Lithuania (%d days offset from Italy)", ltoff), \
 "../aligned/jhu/latvia-jhu" using ($1 -lvoff):($2/lvpop) w l lw 2 lc "blue" t sprintf("Latvia (%d days behind Italy)", lvoff), \
 "../aligned/jhu/ukraine-jhu" using ($1 - uaoff):($2/uapop) w l lw 2 lc "black" t sprintf("Ukraine (%d days behind Italy)", uaoff), \
 "../aligned/country_data/russia" using ($1 -ruoff):($2/rupop) w l lw 2 lc "orange" t sprintf("Russia (%d days behind Italy)", ruoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
-1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase",\
+1.10**(x+offset + 27) lc "black" dashtype 3 t "10% daily increase"
 
 #"france" using ($0 + 1 - offset):($2/frpop) w l lw 2 lc "red" t "France (9 days behind Italy)", \
 #"spain" using ($0 + 1  - offset):($2/espop) w l lw 2 t "Spain (9 days behind Italy)", \
