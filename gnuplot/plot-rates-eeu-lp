@@ -1,0 +1,125 @@
+arpop = 44.3 #argentina
+atpop = 9.0 #austria
+aupop = 25.6 #australia
+bepop = 11.5 #belgium
+bhpop = 1.69 #bahrain
+bopop = 11.6 #bolivia
+brpop = 212 #brazil
+bgpop = 6.9 #bulgaria
+bypop = 9.45 #belarus
+capop = 37.6 #canada
+chpop = 8.6 #switzerland
+clpop = 17.6 #chile
+cnpop = 1300 #china
+czpop = 10.7 #Czech Republic
+copop = 50.7 #colombia
+dapop = 5.8 #denmark
+depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
+ecpop = 17.6 #ecuador
+eepop = 1.33 #estonia
+egpop = 101.8 #egypt
+espop = 46.7 #spain
+fipop = 5.5 #finland
+frpop = 65.2 #france
+grpop = 10.4 #greece
+hrpop = 4.1 #croatia
+hupop = 9.6 #hungary
+idpop = 272.7 #indonesia
+iepop = 4.9  #ireland
+ilpop = 8.6  #israel
+inpop = 1376 #india
+irpop = 83   #iran
+ispop = 0.34 #iceland
+itpop = 60.5 #italy
+jppop = 126.6 #japan
+khpop = 16.6 #cambodia
+krpop = 51 #South Korea
+kwpop = 4.25 #kuwait
+lompop = 10 #lombardy
+ltpop = 2.9 #lithuania
+lupop = 0.623 #luxembourg
+lvpop = 1.9 #latvia
+mypop = 32.3 #malaysia
+mxpop = 126 #mexico
+nlpop = 17.4 #netherlands
+nopop = 5.4 #norway
+nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
+pepop = 32.8 #peru
+phpop = 109 #philippines
+pkpop = 208 #pakistan
+plpop = 37.8 #poland
+ptpop = 10.2 #portugal
+pypop = 7.1 #paraguay
+qapop = 2.87 #qatar
+ropop = 19.3 #romania
+rspop = 8.7 #serbia
+rupop = 145.9 #russia
+sapop = 34.7 #Saudi Arabia
+zapop = 58.8 #South Africa
+sepop = 10.2 #Sweden
+skpop = 5.46 #Slovakia
+sipop = 2.08 #Slovenia
+sgpop = 5.8 #Singapore
+thpop = 69.7 #Thailand
+trpop = 84 #Turkey
+twpop = 23.8 #Taiwan
+uapop = 43.8 #Ukraine
+ukpop = 67.7 #UK
+ukepop = 6.2 #UK: East
+uklonpop = 8.9 #UK: london
+ukmidpop = 10.7 #UK: Midlands
+uknepop = 8.1 #UK: NE
+uknipop = 1.8 #UK: Northern Ireland
+uknwpop = 7.2 #UK: NE
+ukscpop = 5.3 #UK: Scotland
+uksepop = 9.1 #UK: SE
+ukswpop = 5.6 #UK: SW
+ukwapop = 3.0 #UK: Wales
+urpop = 35.3 #Uruguay
+uspop = 330 #USA
+usflpop = 21.5 #US: florida
+usilpop = 12.7 #US: illinois
+uslopop = 4.66 #US: louisiana
+usmapop = 6.95 #US: massachusetts
+usmipop = 9.88 #US: michigan
+usnjpop = 8.9 #US: New Jersey
+usnypop = 19.4 #US: new york
+uscapop = 39.9 #US: california
+uscopop = 5.77 #US: colorado
+ustxpop = 25.1 #US: texas
+uswapop = 7.6 #US: washington
+vepop = 28.4 #Venezuela
+vnpop = 96.2 #Vietnam
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
+set mxtics
+set grid mxtics xtics ytics mytics
+set output "../graphs/rates-eeu-lp.png"
+set logscale y
+set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.55,0.02 font "Helvetica,11" textcolor "#a0a0a0"
+set key at -24,280 box
+set yrange [0.1:300]
+set xrange [-35:]
+set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
+set xlabel "Days (from 31 March 2020)"
+offset = 45
+usoff = 0
+iroff = 0
+froff = 0
+kroff = 0
+lomoff = 0
+plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w lp lw 2 lc 1 t "Italy", \
+"../increase_rates/greece" using ($0 +12 - offset):($3/grpop) w lp lw 2 lc "#8080ff" t sprintf("Greece", usoff), \
+"../increase_rates/czechrepublic" using ($0 +16 - offset):($3/czpop) w lp lw 2 lc "blue" t sprintf("Czech Republic", usoff), \
+"../increase_rates/slovenia" using ($0 +19 - offset):($3/sipop) w lp lw 2 lc "#00b000" t sprintf("Slovenia"), \
+"../increase_rates/slovakia" using ($0 +25 - offset):($3/skpop) w lp lw 2 lc "black" t sprintf("Slovakia)"), \
+"../increase_rates/romania" using ($0 +18 - offset):($3/ropop) w lp lw 2 lc "orange" t sprintf("Romania"), \
+"../increase_rates/poland" using ($0 +19 - offset):($3/plpop) w lp lw 2 lc "red" t sprintf("Poland"), \
+"../increase_rates/hungary" using ($0 +19 - offset):($3/hupop) w lp lw 2 lc "#80a080" t sprintf("Hungary"), \
+"../increase_rates/bulgaria" using ($0 +23 - offset):($3/bgpop) w lp lw 2 lc "#ffa0c0" t sprintf("Bulgaria", usoff), \
+"../increase_rates/serbia" using ($0 +21 - offset):($3/rspop) w lp lw 2 lc 6 t sprintf("Serbia"), \
+
+#"uk" using ($0 -1 - offset):2 w lp lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w lp lw 2 t "Germany (9 days behind Italy)", \
+#"../increase_rates/belarus" using ($0 -23 - offset):($3/bypop) w lp lw 2 lc "brown" t sprintf("Belarus"), \

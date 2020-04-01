@@ -1,0 +1,150 @@
+arpop = 44.3 #argentina
+atpop = 9.0 #austria
+aupop = 25.6 #australia
+bepop = 11.5 #belgium
+bhpop = 1.69 #bahrain
+bopop = 11.6 #bolivia
+brpop = 212 #brazil
+bgpop = 6.9 #bulgaria
+bypop = 9.45 #belarus
+capop = 37.6 #canada
+chpop = 8.6 #switzerland
+clpop = 17.6 #chile
+cnpop = 1300 #china
+czpop = 10.7 #Czech Republic
+copop = 50.7 #colombia
+dapop = 5.8 #denmark
+depop = 83.7 #germany
+dopop = 10.8 #dominican_republic
+ecpop = 17.6 #ecuador
+eepop = 1.33 #estonia
+egpop = 101.8 #egypt
+espop = 46.7 #spain
+fipop = 5.5 #finland
+frpop = 65.2 #france
+grpop = 10.4 #greece
+hrpop = 4.1 #croatia
+hupop = 9.6 #hungary
+idpop = 272.7 #indonesia
+iepop = 4.9  #ireland
+ilpop = 8.6  #israel
+inpop = 1376 #india
+irpop = 83   #iran
+ispop = 0.34 #iceland
+itpop = 60.5 #italy
+jppop = 126.6 #japan
+khpop = 16.6 #cambodia
+krpop = 51 #South Korea
+kwpop = 4.25 #kuwait
+lompop = 10 #lombardy
+ltpop = 2.9 #lithuania
+lupop = 0.623 #luxembourg
+lvpop = 1.9 #latvia
+mypop = 32.3 #malaysia
+mxpop = 126 #mexico
+nlpop = 17.4 #netherlands
+nopop = 5.4 #norway
+nzpop = 4.8 #New Zealand
+papop = 4.3 # panama
+pepop = 32.8 #peru
+phpop = 109 #philippines
+pkpop = 208 #pakistan
+plpop = 37.8 #poland
+ptpop = 10.2 #portugal
+pypop = 7.1 #paraguay
+qapop = 2.87 #qatar
+ropop = 19.3 #romania
+rspop = 8.7 #serbia
+rupop = 145.9 #russia
+sapop = 34.7 #Saudi Arabia
+zapop = 58.8 #South Africa
+sepop = 10.2 #Sweden
+skpop = 5.46 #Slovakia
+sipop = 2.08 #Slovenia
+sgpop = 5.8 #Singapore
+thpop = 69.7 #Thailand
+trpop = 84 #Turkey
+twpop = 23.8 #Taiwan
+uapop = 43.8 #Ukraine
+ukpop = 67.7 #UK
+ukepop = 6.2 #UK: East
+uklonpop = 8.9 #UK: london
+ukmidpop = 10.7 #UK: Midlands
+uknepop = 8.1 #UK: NE
+uknipop = 1.8 #UK: Northern Ireland
+uknwpop = 7.2 #UK: NE
+ukscpop = 5.3 #UK: Scotland
+uksepop = 9.1 #UK: SE
+ukswpop = 5.6 #UK: SW
+ukwapop = 3.0 #UK: Wales
+urpop = 35.3 #Uruguay
+uspop = 330 #USA
+usflpop = 21.5 #US: florida
+usilpop = 12.7 #US: illinois
+uslopop = 4.66 #US: louisiana
+usmapop = 6.95 #US: massachusetts
+usmipop = 9.88 #US: michigan
+usnjpop = 8.9 #US: New Jersey
+usnypop = 19.4 #US: new york
+uscapop = 39.9 #US: california
+uscopop = 5.77 #US: colorado
+ustxpop = 25.1 #US: texas
+uswapop = 7.6 #US: washington
+vepop = 28.4 #Venezuela
+vnpop = 96.2 #Vietnam
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
+set output "../graphs/covid-uk-all-lp.png"
+set logscale y
+set key at -1,30 box
+#set key at -22,100
+set yrange [3:4500]
+set xrange [-40:]
+set ylabel "COVID19 cases per million inhabitants"
+set xlabel "Days (from 31 March 2020)"
+offset = (45 + 5.5)
+set mxtics
+set grid mxtics xtics ytics mytics
+ukpop = 67.7
+frpop = 65.2
+depop = 83.7
+itpop = 60.5
+supop = 8.6
+espop = 46.7
+nopop = 5.4
+lompop = 10
+atpop = 9.0
+sepop = 9.1
+lonpop = 8.9
+nwpop = 7.2
+epop = 6.2
+swpop = 5.6
+nepop = 8.1
+midpop = 10.7
+nipop = 1.8
+scpop = 5.3
+wapop = 3.0
+
+lonoff = 19
+scoff = 21.5
+waoff = 19.5
+nioff = 23
+roeoff = 23.5
+lomoff = 5.5
+plot "../country_data/lombardy" using ($0 +10.5 - offset):($2/lompop) w lp lw 2 lc "black" t "Lombardy Region, Italy",\
+"../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lc "#a0a0a0" lw 2 t "All of Italy", \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -lonoff - offset):($3/lonpop) w lp lw 2 lc "red" t sprintf("London (18 days behind Lombardy)",lonoff), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -waoff - offset):($12/wapop) w lp lw 2 lc "#00b000" t sprintf("Wales (%d days behind Italy)", waoff - lomoff), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -scoff - offset):($11/scpop) w lp lw 2 lc "blue" t sprintf("Scotland (%d days beind Italy)", scoff - lomoff), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -nioff - offset):($10/nipop) w lp lw 2 lc "brown" t sprintf("Northern Ireland (%d days behind Italy)", nioff - lomoff), \
+"../uk-data/uk-regions-cum" using ($0 +13.5 -roeoff - offset):(($2+$4+$5+$6+$7+$8)/(epop+midpop+nepop+nwpop+sepop+swpop)) w lp lw 2 lc "magenta" t sprintf("Rest of England (%d days behind Italy)", roeoff - lomoff), \
+1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+
+#"switzerland" using ($0+3.5-offset):($2/supop) w lp lw 2 lc "brown" t "Switzerland (11 days behind Lombardy, see comment)", \
+#"austria" using ($0 +4.5 - offset):($2/atpop) w lp lw 2 lc "orange" t "Austria (14 days behind Lombardy)", \
+#"uk-regions-cum" using ($0 -11 - offset):($4/midpop) w lp lw 2 lc "#00a000" t "Midlands", \
+#"uk-regions-cum" using ($0 -11 - offset):($5/nepop) w lp lw 2 lc "blue" t "North East", \
+#"uk-regions-cum" using ($0 -11 - offset):($6/nwpop) w lp lw 2 lc "brown" t "North West", \
+#"uk-regions-cum" using ($0 -9.5 - offset):($7/sepop) w lp lw 2 lc "#00a0ff" t "South East", \
+#"uk-regions-cum" using ($0 -12 - offset):($8/swpop) w lp lw 2 lc "magenta" t "South West", \
+
