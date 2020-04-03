@@ -99,14 +99,14 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set key at -18.5,1900 box
 set yrange [0.5:2000]
-set xrange [-45:]
+set xrange [-50:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 31 March 2020)"
-offset = 45
-jhuoffset = (45 + 24)
+set xlabel "Days (from 2 April 2020)"
+offset = 47
+jhuoffset = (47 + 24)
 vnoff = 37
 twoff = 27
-phoff = 27.5
+phoff = 31
 khoff = 27
 thoff = 25
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lw 2 t "Italy", \

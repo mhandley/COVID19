@@ -2,6 +2,8 @@ import subprocess
 from glob import glob
 graphs = [("covid-eu.png", "Western Europe", "logabs"),
           ("covid-eu-norm.png", "Western Europe", "lognorm"),
+          ("rates-peaked.png", "Daily Increases, Peaked Countries", "inc"),
+          ("rates-level.png", "Daily Increases, Countries with Constant Increases", "inc"),
           ("rates.png", "Western Europe Daily Increases", "inc"),
           ("deaths-eu-norm.png", "Deaths: Western Europe", "deaths"),
           ("covid-eu-norm-lom.png", "",  "lognorm"),
@@ -183,7 +185,7 @@ print("</DL>", file=ofile)
 
 
 gnum = 1
-datedir = "31mar2020"
+datedir = "2apr2020"
 for graph,gname,gtype in graphs:
     make_graph(graph, gname, gtype, gnum, datedir)
     gnum+=1

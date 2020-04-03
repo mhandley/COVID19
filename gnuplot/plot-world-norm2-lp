@@ -99,17 +99,17 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 0,20 box
-set yrange [2:3497.2561983471073]
+set yrange [2:3809.6528925619837]
 set xrange [-40:3]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 31 March 2020)"
-offset = 45
+set xlabel "Days (from 2 April 2020)"
+offset = 47
 usoff = 17
 saoff = 27
 nzoff = 22.5
 ruoff = 30.5
 auoff = 18.5
-ukoff = 15.5
+ukoff = 16
 kroff = 4
 caoff = 18.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w lp lw 2 t "Italy", \

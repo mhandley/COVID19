@@ -1,2 +1,5 @@
   <LI>Data on this graph comes directly from the <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data">JHU dataset</a>.  I have not double-checked the data, and it may lag by up to a day.
-  <LI>I have included a graph for Vietnam, Cambodia, Taiwan and the Philippines, not because the situation there is bad (they all have a few weeks lead time to prepare), but because the trend for each has recently started to look worrying.  
+
+<LI>I included a graph for Vietnam, Cambodia, Taiwan and the Philippines, not because the situation there is bad (they all have a few weeks lead time to prepare), but because the trend for each had started to look worrying  a week ago.  
+
+<LI>Since then, Taiwan has peaked, Thailand looks like it may peak soon, and the increase rates for Vietnam and Cambodia have dropped off greatly.

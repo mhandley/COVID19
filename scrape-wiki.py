@@ -1,10 +1,13 @@
 import subprocess
 from time import sleep
 urls = {}
-countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania"]
-countries = ["belarus"]
+countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy"]
+
+countries = ["newzealand"]
 
 #Bad countries: poland, switzerland
+urls["newzealand"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/New_Zealand_medical_cases_chart&action=edit"
+urls["us"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/United_States_medical_cases_chart&action=edit"
 urls["iran"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Iran_medical_cases_chart&action=edit"
 urls["france"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/France_medical_cases_chart&action=edit"
 urls["spain"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Spain_medical_cases_chart&action=edit"
@@ -28,8 +31,9 @@ base_url2 = "_medical_cases_chart&action=edit"
 
 
 #urls["switzerland"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Switzerland_medical_cases_chart/&action=edit"
-prevdate = "2020-03-30"
-date = "2020-03-31"
+prev2date = "2020-03-31"
+prevdate = "2020-04-01"
+date = "2020-04-02"
 
 def fix_date(date):
     if "-" in date:
@@ -71,7 +75,7 @@ for country in countries:
             else:
                 success = True
                 print(date2, cases, deaths, recovered, file=ofile)
-                if date == date2 or prevdate == date2:
+                if date == date2 or prevdate == date2  or prev2date == date2:
                     print(date2, cases, deaths, recovered)
     file.close()
     if not success:
@@ -92,7 +96,7 @@ for country in countries:
                         recovered = parts[2].strip()
                         cases = parts[3].strip()
                         print(date2, cases, deaths, recovered, file=ofile)
-                        if date == date2 or prevdate == date2:
+                        if date == date2 or prevdate == date2 or prev2date == date2:
                             success = True
                             print(date2, cases, deaths, recovered)
                     elif line[:7] == "&lt;!--" or line[:1] == ";" or line.strip() == "":
@@ -129,7 +133,7 @@ for country in countries:
                 else:
                     success = True
                     print(date2, cases, deaths, recovered, file=ofile)
-                    if date == date2 or prevdate == date2:
+                    if date == date2 or prevdate == date2 or prev2date == date2:
                         print(date2, cases, deaths, recovered)
         file.close()
     ofile.close()

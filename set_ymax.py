@@ -2,6 +2,7 @@ import subprocess
 import sys
 
 norm = False
+calc_deaths = False
 def extract_countries(filename):
     global norm
     file = open(filename, "r")
@@ -19,7 +20,6 @@ def extract_countries(filename):
                 for part in curve.split('"'):
                     if "../" in part:
                         datafiles.append(part)
-    print(datafiles)
     countries = []
     for path in datafiles:
         parts = path.split("/")
@@ -36,6 +36,8 @@ if len(sys.argv) == 3:
     scale = float(sys.argv[2])
     
 countries = extract_countries(filename)
+if "death" in filename:
+    calc_deaths = True
 
 pfile = open("populations", "r")
 sizes = {}
@@ -43,7 +45,6 @@ for line in pfile:
     parts = line.split("#")
     country = "".join(parts[1].strip().split(" ")).lower()
     size = float(parts[0].split("=")[1].strip())
-    print(country, size)
     if country == "usa":
         country = "us"
     if ":" in country:
@@ -61,12 +62,14 @@ for country,short in countries:
         parts = line.split()
         date = parts[0]
         cases = int(parts[1])
+        if calc_deaths:
+            deaths = int(parts[2])
+            cases = deaths
         if norm:
             cases /= sizes[short]
         if cases > cases_max:
             cases_max = cases
     file.close()
-
 ymax = cases_max * scale
 subprocess.call("cat " + filename + ' | sed -e "s/YMAX/' + str(ymax) + '/g" >' + filename + ".tmp", shell = True)
 subprocess.call("mv " + filename + ".tmp " + filename, shell = True)

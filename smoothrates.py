@@ -1,7 +1,8 @@
 countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece", "denmark", "finland", "us", "lombardy",
              "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
              "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan", "japan", "singapore",
-             "luxembourg", "switzerland", "austria"]
+             "luxembourg", "switzerland", "austria", "southkorea", "china", "australia", "thailand",
+             "newzealand", "italy-lom"]
 
 smooth = 3
 def do_country(country):

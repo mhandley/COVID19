@@ -6,13 +6,13 @@
 
 <LI> In contrast to graph 1, which highlights any divergence, on this
 graph I'm showing these countries aligned with the 13.5% curve as all
-of them now appear to have left the 22% curve.
+of them now appear to have left the 22% curve.  I'm also showing a shorter time interval.
 
-<LI> France, Germany and Spain have all been tracking along the 13.5%
+<LI> France, Germany and Spain were all been tracking along the 13.5%
 daily increase curve that Italy followed.
 
-<LI>In the last three days Germany appears to be starting to drop below the 13.5% curve,
-though it will take a few more days to be sure.
+<LI>In the last five days Germany has dropped below the 13.5% curve, with roughly constant daily increases.
+It will take a few more days to be sure whether we are seeing early signs that Germany too has peaked.
 
 <LI> Italy has now dropped off of exponential increases and the daily
 increase count appears to have peaked.
@@ -27,15 +27,21 @@ increase count appears to have peaked.
     not confident in this placement for Switzerland - it appears that
     Switzerland is testing more widely than Italy, so Switzerland is
     likely to be perhaps as much as 10 days behind Italy.
+
+  <LI> For 13 days now, Switzerland has seen roughly constant daily
+  increases, which suggests Switzerland may be peaking.  The
+  alternative explaination - that testing capacity is saturated -
+  doesn't seem to match with what we see in the death rates curve, so
+  I think the Swiss cases data is likely reasonably good.
     
   <LI>Spain stayed at 35% daily increases for much longer than any
     other large European country, which caused it to close on Italy,
     then followed the 22% curve for a week. Spain only roughly aligned
     with the 13.5% curve, although it joined this curve at roughly the
-    point where Italy departed it, and in the last two days appears to
-    have left this curve, but today's data point was again at 13%.
-    The increase rates graph implies Spain may be peaking, but if so,
-    it will be a more rapid peaking than Italy did, so it is equally
-    likely that the current leveling will be transient.  In any event,
-    if Spain has not yet peaked, I would expect it to do so in the
-    next week.
+    point where Italy departed it, and in the last four days appears
+    to have left this curve.  The increase rates graph implies Spain
+    may be peaking, but if so, it will be a more rapid peaking than
+    Italy did, so it is possible that the current leveling will be
+    transient.  In any event, if Spain has not yet peaked, I would
+    expect it to do so in the next week and at a daily case increase count
+    not far above the current one.

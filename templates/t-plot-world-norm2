@@ -15,7 +15,7 @@ saoff = 27
 nzoff = 22.5
 ruoff = 30.5
 auoff = 18.5
-ukoff = 15.5
+ukoff = 16
 kroff = 4
 caoff = 18.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \

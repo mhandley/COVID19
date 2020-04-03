@@ -97,36 +97,39 @@ set output "../graphs/covid-world-warm-lp.png"
 set logscale y
 #set key at -18,90000
 set key outside right
-set yrange [50:377094]
+set yrange [50:425628]
 set xrange [-50:]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from 31 March 2020)"
+set xlabel "Days (from 2 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 45
+offset = 47
 usoff = 12
-inoff = 8
-broff = -2
-thoff = 6
-idoff = 7.5
-kwoff = 21
-qaoff = 2.5
+inoff = 8.5
+broff = 0
+thoff = 8
+idoff = 9.5
+kwoff = 10.5
+qaoff = 4.5
+myoff = 2
+egoff = 13
 plot "../country_data/italy" using ($0 +5 - offset):2 w lp lw 2 t "Italy", \
 "../country_data/france" using ($0 + 1.5  - offset):2 w lp lw 2 lc "red" t "France (8 days behind Italy)",\
 "../country_data/us" using ($0 + 11 - usoff - offset):2 w lp lw 2 lc "orange" t sprintf("USA (%d days behind Italy)", usoff), \
-"../country_data/brazil" using ($0 +11 -broff - offset):2 w lp lw 2 lc "blue" t sprintf("Brazil (%d days behind Italy)", broff),\
 "../country_data/australia" using ($0 - 30.5 - offset):2 w lp lw 2 lc "#00b0b0" t "Australia (22.5 days behind Italy)", \
-"../country_data/malaysia" using ($0 -21 - offset):2 w lp lw 2 lc "magenta" t "Malaysia", \
-"../country_data/qatar" using ($0 + 16 - qaoff - offset):2 w lp lw 2 lc "green" t sprintf("Qatar (%d days behind Malaysia)", qaoff), \
-"../country_data/thailand" using ($0 -24 -thoff - offset):2 w lp lw 2 lc "#a0a000" t sprintf("Thailand  (%d days behind Qatar)", thoff), \
-"../country_data/bahrain" using ($0 -28 - offset):2 w lp lw 2 lc "black" t "Bahrain (7 days behind Qatar)", \
-"../country_data/indonesia" using ($0 +16 -idoff - offset):2 w lp lw 2 lc "#00a000" t sprintf("Indonesia (%d days behind Qatar)", idoff), \
-"../country_data/kuwait" using ($0 +9 -kwoff - offset):2 w lp lw 2 lc "purple" t sprintf("Kuwait (%d days behind Qatar)", kwoff - qaoff), \
-"../country_data/egypt" using ($0 +8 - offset):2 w lp lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
-"../country_data/india" using ($0 +15 - inoff - offset):2 w lp lw 2 lc "brown" t sprintf("India (%d days behind Malaysia)", inoff), \
+"../aligned/country_data/brazil" using ($1):2 w lp lw 2 lc "blue" t sprintf("Brazil"),\
+"../aligned/country_data/malaysia" using ($1 - myoff):2 w lp lw 2 lc "magenta" t sprintf("Malaysia (%d days behind Brazil)", myoff), \
+"../aligned/country_data/india" using ($1 -myoff - inoff):2 w lp lw 2 lc "brown" t sprintf("India (%d days behind Brazil)", inoff), \
+"../aligned/country_data/qatar" using ($1 -myoff - qaoff - offset):2 w lp lw 2 lc "green" t sprintf("Qatar (%d days behind Brazil)", qaoff), \
+"../aligned/country_data/thailand" using ($1 -thoff):2 w lp lw 2 lc "#a0a000" t sprintf("Thailand  (%d days behind Brazil)", thoff), \
+"../aligned/country_data/indonesia" using ($1 -idoff):2 w lp lw 2 lc "#00a000" t sprintf("Indonesia (%d days behind Brazil)", idoff), \
+"../aligned/country_data/egypt" using ($1-egoff):2 w lp lw 2 lc "#808080" dt 6 t sprintf("Egypt (%d days behind Brazil)", egoff), \
+"../aligned/country_data/bahrain" using ($1):2 w lp lw 2 lc "black" t "Bahrain", \
+"../aligned//country_data/kuwait" using ($1 -kwoff):2 w lp lw 2 lc "purple" t sprintf("Kuwait (%d days behind Bahrain)", kwoff), \
 1.38**(x+offset + 8) lc "black" dt 4 t "38% daily increase",\
 1.22**(x+offset + 22.5) lc "black" dashtype 2 t "22% daily increase",\
-1.14**(x+offset + 19) lc "black" dt 3 t "14% daily increase"
+1.14**(x+offset + 21) lc "black" dt 3 t "14% daily increase",\
+1.065**(x+offset + 57) lc "black" dt 5 t "6.5% daily increase"
 
 #"uk" using ($0 -1 - offset):2 w lp lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w lp lw 2 t "Germany (9 days behind Italy)", \

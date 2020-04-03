@@ -99,17 +99,17 @@ set key at -12,2500 box
 set yrange [50:3000]
 set xrange [-26:]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from 31 March 2020)"
+set xlabel "Days (from 2 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 45
+offset = 47
 inoff = 8.5
 bhoff = 7
 bhoff = 0
 kwoff = 9
 plot "../country_data/malaysia" using ($0 -21 - offset):2 w l lw 2 lc "magenta" t "Malaysia", \
 "../country_data/qatar" using ($0 + 12.5 - offset):2 w l lw 2 lc "green" t "Qatar (2.5 days behind Malaysia)", \
-"../country_data/bahrain" using ($0 -18 - offset):2 w l lw 2 lc "black" t "Bahrain", \
+"../jhu-data/bahrain-jhu" using ($0 -24 - offset):2 w l lw 2 lc "black" t "Bahrain", \
 "../country_data/egypt" using ($0 +8 - offset):2 w l lw 2 lc "#808080" dt 6 t "Egypt (7 days behind Qatar)", \
 "../country_data/india" using ($0 +15 -inoff - offset):2 w l lw 2 lc "brown" t sprintf("India (%d days behind Malaysia)", inoff), \
 "../country_data/kuwait" using ($0 +9 -kwoff - offset):2 w l lw 2 lc "purple" t "Kuwait", \

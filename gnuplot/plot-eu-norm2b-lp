@@ -101,8 +101,8 @@ set key at -1,20 box
 set yrange [6:700]
 set xrange [-18:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 31 March 2020)"
-offset = 45 - 12
+set xlabel "Days (from 2 April 2020)"
+offset = 47 - 12
 plot "../country_data/denmark" using ($0 -0  - offset):(($2-650)/dapop) w lp lw 2 lc "black" t "Denmark - 650", \
 "../country_data/norway" using ($0 -3.0 - offset):(($2-1050)/nopop) w lp lw 2 lc "red" t "Norway -1050 (2 days offset)", \
 "../country_data/sweden" using ($0 -4.9 - offset):(($2-900)/sepop) w lp lw 2 lc "blue" t "Sweden - 900 (4 days offset)", \

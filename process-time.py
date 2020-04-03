@@ -5,7 +5,9 @@ wikifiles = glob.glob("wiki-data/*")
 jhufiles = glob.glob("jhu-data/*")
 nytfiles = glob.glob("nyt-data/*")
 myfiles = glob.glob("country_data/*")
-filenames = jhufiles + wikifiles + nytfiles + myfiles
+incfiles = glob.glob("increase_rates/*")
+incfiles2 = glob.glob("increase_rates2/*")
+filenames = jhufiles + wikifiles + nytfiles + myfiles + incfiles + incfiles2
              #J  F   M   A   M   J   J   A   S   O   N   D
 monthlens = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 d = 0
