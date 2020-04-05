@@ -1,0 +1,24 @@
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
+set grid
+set output "../graphs/rates-level.png"
+set logscale y
+set key at -25,900
+set yrange [0.2:]
+set xrange [-35:]
+set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
+set xlabel "Days (from DATE April 2020)"
+offset = OFFSET
+usoff = 0
+iroff = 0
+froff = 0
+kroff = 0
+lomoff = 0
+plot "../increase_rates/switzerland" using ($0 +11 - offset):($3/chpop) w l lw 2 lc "brown" t sprintf("Switzerland"), \
+"../increase_rates/iceland" using ($0 +14 - offset):($3/ispop) w l lw 2 lc "orange" t sprintf("Iceland"), \
+"../increase_rates/luxembourg" using ($0 +20 - offset):($3/lupop) w l lw 2 lc "#a0a0ff" t sprintf("Luxembourg"), \
+"../increase_rates/slovakia" using ($0 +25 - offset):($3/skpop) w l lw 2 lc "black" t sprintf("Slovakia)"), \
+"../increase_rates/bulgaria" using ($0 +23 - offset):($3/bgpop) w l lw 2 lc "#ffa0c0" t sprintf("Bulgaria"), \
+"../increase_rates/thailand" using ($0 -23 - offset):($3/thpop) w l lw 2 lc "#a0a000" t sprintf("Thailand"), \
+
+#"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \

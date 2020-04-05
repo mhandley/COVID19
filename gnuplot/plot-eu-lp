@@ -95,15 +95,15 @@ vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-eu-lp.png"
 set logscale y
-set key at -1,1500 box
+set key at -1,2000 box
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set yrange [200:230484]
-set xrange [-40:0]
+set yrange [200:249472]
+set xrange [-42:0]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from 2 April 2020)"
+set xlabel "Days (from 4 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 47
+offset = 49
 esoff = 6
 froff = 8.5
 deoff = 9
@@ -117,5 +117,6 @@ plot "../aligned/country_data/italy" using ($1):2 w lp lw 2 lc 1 t "Italy", \
 "../aligned/country_data/uk" using ($1 - ukoff):2 w lp lw 2 lc "blue" t sprintf("UK (%d days behind Italy)", ukoff), \
 1.35**(x+offset + 9.5) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 22.5) lc "black" dashtype 2 t "22% daily increase",\
-1.135**(x+offset + 50.8) lc "black" dashtype 5 t "13.5% daily increase"
+1.135**(x+offset + 50.8) lc "black" dashtype 5 t "13.5% daily increase", \
+1.08**(x+offset + 106.8) lc "black" dashtype 3 t "8% daily increase"
 

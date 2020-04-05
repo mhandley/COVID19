@@ -12,7 +12,7 @@ set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
 jhuoffset = (OFFSET + 24)
 mxoff = 36.5
-paoff = 19.5
+paoff = 17
 dooff = 22.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/wiki/panama-wiki" using ($1 - paoff):($2/papop) w l lw 2 lc "blue" t sprintf("Panama (%d days behind Italy)", paoff), \

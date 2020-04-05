@@ -1,8 +1,8 @@
 all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-norm-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png graphs/rates-peaked.png graphs/rates-level.png
 
-DATEDIR = www/2apr2020/
-DATE=2
-OFFSET=47
+DATEDIR = www/4apr2020/
+DATE=4
+OFFSET=49
 graphs/covid-eu.png: templates/t-plot-eu increase_rates/uk increase_rates/italy increase_rates/france increase_rates/spain increase_rates/germany
 	cat populations templates/t-plot-eu | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-eu
 	python set_ymax.py gnuplot/plot-eu
@@ -67,8 +67,8 @@ graphs/covid-eu-linear.png: templates/t-plot-eu-linear
 	cp graphs/covid-eu-linear*.png ${DATEDIR}
 	open graphs/covid-eu-linear.png
 
-graphs/covid-uk.png: templates/t-plot-uk
-	cat populations templates/t-plot-uk | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk
+graphs/covid-uk.png: templates/plot-uk
+	cat populations templates/plot-uk | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk
 	cat gnuplot/plot-uk | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-uk-lp
 	cd gnuplot; gnuplot plot-uk; gnuplot plot-uk-lp
 	cp graphs/covid-uk*.png ${DATEDIR}
@@ -113,8 +113,8 @@ graphs/deaths-eu-norm2.png: templates/t-deaths-eu-norm2
 	open graphs/deaths-eu-norm2.png
 
 
-graphs/rates.png:	templates/t-plot-rates country_data/us
-	cat populations templates/t-plot-rates | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-rates
+graphs/rates.png:	templates/plot-rates country_data/us country_data/uk  country_data/france  country_data/germany  country_data/newzealand  country_data/spain  country_data/netherlands increase_rates/uk increase_rates/us
+	cat populations templates/plot-rates | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-rates
 	cat gnuplot/plot-rates | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-rates-lp
 	cd gnuplot; gnuplot plot-rates; gnuplot plot-rates-lp
 	cp graphs/rates*.png ${DATEDIR}
@@ -134,15 +134,15 @@ graphs/rates-nordic.png:	templates/t-plot-rates-nordic
 	cp graphs/rates-nordic*.png ${DATEDIR}
 	open graphs/rates-nordic.png
 
-graphs/rates-peaked.png:	templates/t-plot-rates-peaked
-	cat populations templates/t-plot-rates-peaked | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-rates-peaked
+graphs/rates-peaked.png:	templates/plot-rates-peaked
+	cat populations templates/plot-rates-peaked | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-rates-peaked
 	cat gnuplot/plot-rates-peaked | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-rates-peaked-lp
 	cd gnuplot; gnuplot plot-rates-peaked; gnuplot plot-rates-peaked-lp
 	cp graphs/rates-peaked*.png ${DATEDIR}
 	open graphs/rates-peaked.png
 
-graphs/rates-level.png:	templates/t-plot-rates-level
-	cat populations templates/t-plot-rates-level | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-rates-level
+graphs/rates-level.png:	templates/plot-rates-level
+	cat populations templates/plot-rates-level | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-rates-level
 	cat gnuplot/plot-rates-level | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-rates-level-lp
 	cd gnuplot; gnuplot plot-rates-level; gnuplot plot-rates-level-lp
 	cp graphs/rates-level*.png ${DATEDIR}
@@ -194,8 +194,8 @@ graphs/covid-world-norm3.png: templates/t-plot-world-norm3
 	cp graphs/covid-world-norm3*.png ${DATEDIR}
 	open graphs/covid-world-norm3.png
 
-graphs/covid-us-norm.png: templates/t-plot-us-norm
-	cat populations templates/t-plot-us-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-us-norm
+graphs/covid-us-norm.png: templates/plot-us-norm
+	cat populations templates/plot-us-norm | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-us-norm
 	python set_ymax.py gnuplot/plot-us-norm
 	cat gnuplot/plot-us-norm | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-us-norm-lp
 	cd gnuplot; gnuplot plot-us-norm; gnuplot plot-us-norm-lp
@@ -258,8 +258,8 @@ graphs/covid-world-warm2.png: templates/t-plot-world-warm2
 	cp graphs/covid-world-warm2*.png ${DATEDIR}
 	open graphs/covid-world-warm2.png
 
-graphs/covid-world-linear.png: templates/t-plot-world-linear country_data/us
-	cat populations templates/t-plot-world-linear | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-world-linear
+graphs/covid-world-linear.png: templates/plot-world-linear country_data/us
+	cat populations templates/plot-world-linear | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-world-linear
 	python set_ymax.py gnuplot/plot-world-linear 1.1
 	cat gnuplot/plot-world-linear | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-world-linear-lp
 	cd gnuplot; gnuplot plot-world-linear; gnuplot plot-world-linear-lp
@@ -284,8 +284,12 @@ increase_rates/italy:	country_data/italy
 increase_rates/switzerland:	country_data/switzerland
 	python process-time.py
 
-increase_rates/vietnam:	wiki_data/vietnam  
+increase_rates/vietnam-wiki:	wiki_data/vietnam-wiki
 	python process-time.py
+
+increase_rates/us:	country_data/us
+	python process-time.py
+
 
 # gnuplot plot-eu-norm
 # gnuplot plot-rates

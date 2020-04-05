@@ -1,11 +1,12 @@
 import subprocess
 from time import sleep
 urls = {}
-countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy"]
+countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy", "newzealand", "australia", "us", "china", "panama"]
 
-countries = ["newzealand"]
+countries = ["panama"]
 
 #Bad countries: poland, switzerland
+urls["china"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Mainland_China_medical_cases_chart&action=edit"
 urls["newzealand"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/New_Zealand_medical_cases_chart&action=edit"
 urls["us"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/United_States_medical_cases_chart&action=edit"
 urls["iran"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Iran_medical_cases_chart&action=edit"
@@ -17,7 +18,7 @@ urls["southkorea"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E
 urls["netherlands"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Netherlands_medical_cases_chart&action=edit"
 urls["ecuador"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Ecuador_medical_cases_chart&action=edit"
 urls["peru"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pandemic_in_Peru&action=edit&section=2"
-urls["uruguay"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pandemic_in_Uruguay&action=edit&section=3"
+urls["uruguay"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pandemic_in_Uruguay&action=edit&section=4"
 urls["chile"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pandemic_in_Chile&action=edit&section=5"
 urls["philippines"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Philippines_medical_cases_chart&action=edit"
 #urls["colombia"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Colombia_medical_cases_chart&action=edit"
@@ -31,18 +32,37 @@ base_url2 = "_medical_cases_chart&action=edit"
 
 
 #urls["switzerland"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Switzerland_medical_cases_chart/&action=edit"
-prev2date = "2020-03-31"
-prevdate = "2020-04-01"
-date = "2020-04-02"
+prev2date = "2020-04-02"
+prevdate = "2020-04-03"
+date = "2020-04-04"
+
+months = {}
+months["february"] = "02"
+months["march"] = "03"
+months["april"] = "04"
+months["may"] = "05"
+months["june"] = "06"
+
+def lookup_month(mon):
+    return months[mon.lower()]
+    
 
 def fix_date(date):
     if "-" in date:
         parts = date.split("-")
     elif "/" in date:
         parts = date.split("/")
+    elif " " in date:
+        parts = date.split(" ")
+        mon = lookup_month(parts[1])
+        day = parts[0]
+        if len(parts[0]) == 1:
+            day = "0" + day
+        date2 = parts[2] + "-" + mon + "-" + day
+        return date2
     else:
         return ""
-    if parts[0] == "2020":
+    if parts[0] == "2020" or parts[0] == "2019":
         date2 = parts[0] + "-" + parts[1] + "-" + parts[2]
     elif parts[2] == "2020":
         date2 = parts[2] + "-" + parts[1] + "-" + parts[0]
@@ -83,10 +103,11 @@ for country in countries:
         dump = False
         for line in file:
             if "|data=" == "".join(line.strip().split(" ")):
+                #print("starting")
                 dump = True
             else:
                 if dump:
-                    if line[:5] == "2020-":
+                    if line[:5] == "2019-" or line[:5] == "2020-" or "-2020" in line[:10]:
                         parts = line.split(";")
                         if len(parts) < 5:
                             dump = False
@@ -95,6 +116,8 @@ for country in countries:
                         deaths = parts[1].strip()
                         recovered = parts[2].strip()
                         cases = parts[3].strip()
+                        if cases == "":
+                            cases = parts[5].strip()
                         print(date2, cases, deaths, recovered, file=ofile)
                         if date == date2 or prevdate == date2 or prev2date == date2:
                             success = True
@@ -102,6 +125,7 @@ for country in countries:
                     elif line[:7] == "&lt;!--" or line[:1] == ";" or line.strip() == "":
                         pass
                     else:
+                        #print("stop: ", line)
                         dump = False
         file.close()
     if not success:
@@ -135,5 +159,33 @@ for country in countries:
                     print(date2, cases, deaths, recovered, file=ofile)
                     if date == date2 or prevdate == date2 or prev2date == date2:
                         print(date2, cases, deaths, recovered)
+        file.close()
+    if not success:
+        file = open("dump", "r")
+        dump = False
+        for line in file:
+            squishline = "".join(line.strip().split(" "))
+            if '{|class="wikitable"' == squishline:
+                dump = True
+            else:
+                if dump:
+                    if squishline[:7] == "|{{dts|":
+                        parts = squishline.split("|")
+                        parts2 = line.split("|")
+                        if len(parts) < 11:
+                            dump = False
+                            break
+                        date2 = fix_date(parts2[2].strip().strip("}"))
+                        deaths = parts[10].strip()
+                        recovered = parts[8].strip()
+                        cases = parts[6].strip()
+                        print(date2, cases, deaths, recovered, file=ofile)
+                        if date == date2 or prevdate == date2 or prev2date == date2:
+                            success = True
+                            print(date2, cases, deaths, recovered)
+                    elif line[:2] == "|-" or "New cases" in line:
+                        pass
+                    else:
+                        dump = False
         file.close()
     ofile.close()

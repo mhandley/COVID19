@@ -100,8 +100,8 @@ set key at -25,900
 set yrange [0.2:]
 #set xrange [-21:]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
-set xlabel "Days (from 2 April 2020)"
-offset = 47
+set xlabel "Days (from 4 April 2020)"
+offset = 49
 usoff = 0
 iroff = 0
 froff = 0
@@ -119,3 +119,4 @@ plot "../increase_rates/france" using ($0 +11 - offset):($3/frpop) w l lw 2 lc "
 #"../increase_rates/lombardy" using ($0 +6 - offset):($3/lompop) w l lw 2 lc "purple" t sprintf("Lombardy"), \
 #"../increase_rates/switzerland" using ($0 +11 - offset):($3/chpop) w l lw 2 lc "brown" t sprintf("Switzerland"), \
 #"../increase_rates/austria" using ($0 +15 - offset):($3/atpop) w l lw 2 lc "black" t "Austria", \
+#"../increase_rates/london" using ($0 +29 - offset):($3/uklonpop) w l lw 2 lc "green" t "London", \

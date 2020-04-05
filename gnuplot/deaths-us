@@ -97,11 +97,11 @@ set output "../graphs/deaths-us.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at -1,3
-set yrange [0.4:460.0]
-set xrange [-30:]
+set yrange [0.4:507.8347107438017]
+set xrange [-40:]
 set ylabel "COVID19 deaths per million inhabitants"
-set xlabel "Days (from 2 April 2020)"
-offset = 47
+set xlabel "Days (from 4 April 2020)"
+offset = 49
 set mxtics
 set grid mxtics xtics ytics mytics
 choff = 11

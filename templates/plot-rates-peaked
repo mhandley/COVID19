@@ -1,0 +1,29 @@
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
+set grid
+set output "../graphs/rates-peaked.png"
+set logscale y
+set key at 29,900
+set yrange [0.2:]
+set xrange [-30:30]
+set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
+set xlabel "Days (from date of peaking)"
+offset = (OFFSET - 14)
+usoff = 0
+iroff = 0
+froff = 0
+kroff = 0
+lomoff = 0
+plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t "Italy", \
+"../increase_rates/lombardy" using ($0 +6 - offset):($3/lompop) w l lw 2 lc "purple" t sprintf("Lombardy"), \
+"../increase_rates/italy-lom" using ($0 +10 - offset):($3/(itpop-lompop)) w l lw 2 lc "magenta" t sprintf("Italy excluding Lombardy"), \
+"../increase_rates/austria" using ($0 +9 - offset):($3/atpop) w l lw 2 lc "#ff9090" t "Austria", \
+"../increase_rates/taiwan" using ($0 -25 - offset):($3/twpop) w l lw 2 lc "red" t "Taiwan", \
+"../increase_rates/southkorea" using ($0 +0 - offset):($3/krpop) w l lw 2 lc 6 t "South Korea", \
+"../increase_rates/china" using ($0 +10 - offset):($3/20) w l lw 2 lc "black" t "China (see comments)", \
+"../increase_rates/australia" using ($0 -14- offset):($3/aupop) w l lw 2 lc "#00b0b0" t "Australia", \
+
+
+
+#"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
+#"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \
+#"../increase_rates/newzealand" using ($0 +22- offset):($3/nzpop) w l lw 2 lc "blue" t "New Zealand", \

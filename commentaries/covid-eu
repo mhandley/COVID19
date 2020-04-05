@@ -1,45 +1,24 @@
-<LI>Italy's daily increase rate appears to have peaked around March
-   21st and has generally been reducing slowly since then (see <a
-   href="#rates">the increases graph</a>).  Lombardy's daily increase
-   rate results appears to have peaked at the same time.
+<LI>Certain increase rates: 35%, 22%, 13.5% and 8% really stand out in
+  the data, as each country has settled on these rates for a while at
+  different phases of the epidemic. I don't have any good
+  justification for why these specific increase rates exist as strong
+  features of the data, but they do appear to be quite prominent at
+  the relative phases of the epidemic.  Likely they are related to
+  various levels of social distancing performed by these countries.
+  
+<UL>
+<LI>35% daily increase corresponds to a doubling time of 2.5 days</LI>
+<LI>22% daily increase corresponds to a doubling time of 3.5 days</LI>
+<LI>13.5% daily increase corresponds to a doubling time of 5.5 days</LI>
+<LI>8% daily increase corresponds to a doubling time of 9 days</LI>
+</UL>
 
-<LI>Over the past three weeks France, Germany, the UK, the Netherlands
-   and Spain all became aligned with the 22 percent daily increase
-   curve that Italy followed at this point, rather than the higher 35%
-   curve all the large European countries initially followed.  
+<LI>On this graph I show the confirmed cases for Western European
+countries, with the curves aligned at the point when each had just
+transitioned from 35% daily increases to 22% daily increases.  This
+view highlights the differences between countries, but is less useful
+than <a href="#covid-eu-norm">the next graph</a> for understanding
+similarities, so I will reserve dicussion of the individual curves for
+that graph.
 
-<LI>France and the UK followed Italy in dropping off the 22% curve 
-   and have been more aligned with the 13% curve that Italy followed for
-   about a week.
-
-<LI>In the last two days, France has shown a pronounced reduction in
-daily increase rate.  France's increase rare recently has been
-generally similar to that of Italy just before Italy peaked, but it
-will take several more days before we know if France has now peaked
-too.
-
-<LI>Spain increased further, faster than the other large European
-  countries, and never really aligned with the 13% curve, but in the
-  last seven days has decreased below the 13% curve, roughly tracking
-  Italy's curve, but with a higher caseload at the same point.
-  Spain's increases no longer look exponential; they have been roughly
-  constant the last week.  We won't really know for a while yet, but it looks
-  if Spain may now be peaking.
-
-<LI>The last five days the Netherlands has started to turn
-downwards. It is possible that the Netherlands is now peaking - the
-increase rate has stopped increasing for five days now - but if so, it
-has done so more suddenly than the countries ahead of it.  Another few
-days will tell.
-
-<LI>Note that I don't have any good justification for why the 35%, 22%
-  and 13% curves exist as strong features of the data, but they do
-  appear to be quite prominent at the relative phases of the epidemic.
-  Likely they are related to various levels of social distancing
-  performed by these countries.
-<DL>
-<DT>35% daily increase corresponds to a doubling time of 2.5 days</DT>
-<DT>22% daily increase corresponds to a doubling time of 3.5 days</DT>
-<DT>13.5% daily increase corresponds to a doubling time of 5.5 days</DT>
-</DL>
 

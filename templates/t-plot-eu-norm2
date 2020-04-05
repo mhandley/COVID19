@@ -17,7 +17,7 @@ plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy
 "../country_data/norway" using ($0 +6.5 - offset):($2/nopop) w l lw 2 lc "red" t "Norway (4.5 days offset)", \
 "../country_data/sweden" using ($0 +3 - offset):($2/sepop) w l lw 2 lc "blue" t "Sweden (9 days offset)", \
 "../country_data/finland" using ($0 +4.5 - offset):($2/fipop) w l lw 2 lc "#00a000" t "Finland (12 days offset)", \
-"../country_data/southkorea" using ($0 +7 - offset):($2/krpop) w l lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
+"../country_data/southkorea" using ($0 -17 - offset):($2/krpop) w l lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

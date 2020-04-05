@@ -25,3 +25,4 @@ plot "../increase_rates/france" using ($0 +11 - offset):($3/frpop) w l lw 2 lc "
 #"../increase_rates/lombardy" using ($0 +6 - offset):($3/lompop) w l lw 2 lc "purple" t sprintf("Lombardy"), \
 #"../increase_rates/switzerland" using ($0 +11 - offset):($3/chpop) w l lw 2 lc "brown" t sprintf("Switzerland"), \
 #"../increase_rates/austria" using ($0 +15 - offset):($3/atpop) w l lw 2 lc "black" t "Austria", \
+#"../increase_rates/london" using ($0 +29 - offset):($3/uklonpop) w l lw 2 lc "green" t "London", \

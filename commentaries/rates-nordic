@@ -3,27 +3,32 @@ changes are inherently more noisy.  However, this view is better
 to see whether a country has peaked or not.
 
 <LI>Daily increases in absolute numbers have been nearly constant for
-several days in Finland and Iceland.  This is likely to an indication
+several days in Luxembourg and Iceland.  This is likely to an indication
 that the infection rate in these countries is peaking, though we won't
 be sure until it has been going down again for more than a week.
 Certainly, exponential growth is no longer occurring in these
 countries.
 
-<LI>Norway was growing exponentially until 26th March, but since then
-has been decreasing. Four days is not long enough to have confidence
-that Norway has peaked, as daily change data is always noisy, but it
-hints that it might have done so, especially given relatively good
-news from similar countries elsewhere in the Nordic region.
+<LI>Two days ago, Finland looked like it had peaked.  Unfortunately
+the last two days showed this to be incorrect, and Finland has
+experienced a rush of new cases.  Nevertheless, as the curve had been
+level for so long, it seems unlikely that Finland will return to
+exponential growth, but time will tell.
+
+<LI>Norway was growing exponentially until 26th March, then decreased
+for six days. The last three days have shown modest increases again;
+these waves against a relatively static background level seems to be a
+common feature in the Nordic region.
 
 <LI>Denmark and Sweden have very similar exponential increase rate
-profiles for the last two weeks. Neither country is yet showing signes of peaking.
+profiles for the last two weeks. Neither country is yet showing clear signs of peaking.
 
-<LI>In mid March, Estonia looked like it had peaked, but this behaviour
-has happened in other countries such as Denmark, where a large number
-of case are imported.  The imported cases are mostly tracked down,
-leading to a dip, then growth again as transmission that was missed
-grows.  The peak seven days ago be an echo of the original
-imported peak - this happened in Denmark and Sweden too, though their
-echoes were less pronounced.  Today's data point is higher; It is too early to know if the curve
-will continue  up again, but the Denmark curve implies this is
-possible in Estonia too.
+<LI>In mid March, Estonia looked like it had peaked, but this
+behaviour has happened in other countries such as Denmark, where a
+large number of case are imported.  The imported cases are mostly
+tracked down, leading to a dip, then growth again as transmission that
+was missed grows.  The peak seven days ago may be an echo of the
+original imported peak - this happened in Denmark and Sweden too,
+though their echoes were less pronounced.  The last three data points
+seem to indicate another wave of cases is in progress; whether this
+wave is higher than the previous one is not yet clear.

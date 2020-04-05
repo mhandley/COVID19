@@ -98,14 +98,14 @@ set logscale y
 set key at -1,25 box
 #set key at -22,100
 set yrange [1:4000]
-set xrange [-40:0]
+set xrange [-45:0]
 #set yrange [3:100]
 #set xrange [-30:-15]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 2 April 2020)"
+set xlabel "Days (from 4 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = (47 + 5.5)
+offset = (49 + 5.5)
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7
@@ -123,16 +123,16 @@ swpop = 5.6
 nepop = 8.1
 midpop = 10.7
 
-lonoff = 19
-seoff = 23
-midoff = 24
+lonoff = 16
+
+seoff = 25
+midoff = 23
 eoff = 24
 swoff = 25
 neoff = 24
-nwoff = 24
+nwoff = 23
 set grid
-plot "../country_data/lombardy" using ($0 +10.5 - offset):($2/lompop) w lp ps 0.5 lw 2 lc "black" t "Lombardy Region, Italy",\
-"../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lc "#a0a0a0" lw 2 t "All of Italy", \
+plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w lp lc "#a0a0a0" lw 2 t "All of Italy", \
 "../uk-data/uk-regions-cum" using ($0 + 13.5 - lonoff - offset):($3/lonpop) w lp lw 2 lc "red" t sprintf("London, UK (%d days behind Lombardy)", lonoff), \
 "../uk-data/uk-regions-cum" using ($0 +13.5 - midoff - offset):($4/midpop) w lp lw 2 lc "#00a000" t sprintf("Midlands, UK (%d days behind Lombardy)", midoff), \
 "../uk-data/uk-regions-cum" using ($0 +13.5 - seoff - offset):($7/sepop) w lp lw 2 lc "#00a0ff" t sprintf("South East, UK (%d days behind Italy)", seoff-5.5), \

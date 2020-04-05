@@ -1,4 +1,5 @@
-  <LI>I am pulling data for this graph from
+
+<LI>I am pulling data for this graph from
     the <a href="https://github.com/nytimes/covid-19-data">NYT
     dataset</a>, which is much less noisy than the JHU dataset I was
     previously using.
@@ -27,6 +28,6 @@
     makes no sense saying where New York is on Italy's track: New York
     is forming its own track.
 
-<LI>New Jersey and Michigan have tracked further up the 22% curve than
-Italy did, and neither is yet showing any sign of dropping off that
-curve.
+<LI>New Jersey, Louisiana, Massachussetts and Michigan have tracked
+further up the 13.5% curve than Italy did.  None of these states are
+showing signs the exponential growth will end soon.

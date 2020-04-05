@@ -62,6 +62,7 @@ for filename in filenames:
             print("bad file: ", filename)
             continue
         if dnum > maxday:
+            print(line)
             maxday = dnum
 
 for filename in filenames:

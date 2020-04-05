@@ -2,7 +2,8 @@ countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece
              "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
              "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan", "japan", "singapore",
              "luxembourg", "switzerland", "austria", "southkorea", "china", "australia", "thailand",
-             "newzealand", "italy-lom"]
+             "newzealand", "london"]
+foo = ["italy-lom", "hubei-china", "china2"]
 
 smooth = 3
 def do_country(country):
@@ -22,7 +23,9 @@ def do_country(country):
 
     ofile = open("increase_rates/"+country, "w")
     prevval = -1
+    prevdeaths = 0
     diffs = []
+    deathdiffs = []
     dates = []
     for line in ifile:
         if line.strip() == "":
@@ -30,11 +33,18 @@ def do_country(country):
         parts = line.split()
         date = parts[0]
         val = int(parts[1])
+        try:
+            deaths = int(parts[2])
+        except:
+            deaths = 0
         if prevval != -1:
             dates.append(date)
             diffs.append(val - prevval)
+            deathdiffs.append(deaths - prevdeaths)
         prevval = val
+        prevdeaths = deaths
     s = -1
+    sd = -1
     for i in range(len(dates)):
         if i == 0 or i == len(dates)-1 or smooth == 1:
             smoothed = diffs[i]
@@ -62,8 +72,16 @@ def do_country(country):
             b = beta * (s -prevs) + (1 - beta)*b
         if s < 0.1:  # for logscale plotting
             s = 0.1
+
+        if sd == -1:
+            sd = deathdiffs[0]
+        else:
+            alpha = 0.25
+            sd = alpha * deathdiffs[i] + (1-alpha) * sd
+            
+        
         #print(dates[i], diffs[i], smoothed, file=ofile)
-        print(dates[i], diffs[i], s, file=ofile)
+        print(dates[i], diffs[i], s, deathdiffs[i], sd, file=ofile)
     ifile.close()
     ofile.close()
 

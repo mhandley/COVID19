@@ -1,23 +1,33 @@
 
  <LI>In the other graphs I use a log scale on the y-axis because
-    exponential growth gives a straight line on a log-linear graph, and this makes changes in the growth rates visible and allows exponential growth rates to be compared. However, many
-    readers have told me they don't like log-linear graphs, so this one is for them.  It
-    has to be truncated, or you cannot see any information.  It
-    doesn't really show anything additional over the log graphs,
-    except it looks scarier and shows how much worse things are set to get if effective measures are not taken.
-    <LI>I have shown the China curve until the daily increase rate
-    drops below 0.1%.  The glitch in the center of this curve is a
-    change in measurement methodology.  If Italy followed a similar
-    curve, this wave of the epidemic may have abated in 30 days time,
-    but this prediction should be tempered by the fact that Italy has
-    only recently reached the logistics curve inflection point.  On this basis, because deaths lag infections
-      by 1-2 weeks, the worst may be yet to come for many Italian hospitals.
-   <LI>One thing this view shows well is how much of an outlier the US
+    exponential growth gives a straight line on a log-linear graph,
+    and this makes changes in the growth rates visible and allows
+    exponential growth rates to be compared. However, many readers
+    have told me they don't like log-linear graphs, so this one is for
+    them.  It has to be truncated, or you cannot see any information.
+    It doesn't really show anything additional over the log graphs,
+    except it looks scarier and shows how much worse things are set to
+    get if effective measures are not taken.
+
+<LI>I have shown the China curve until the daily increase rate drops
+    below 0.1%.  The glitch in the center of this curve is a change in
+    measurement methodology.
+
+<LI>Italy closely followed the Chinese curve during the exponential period, but took longer to bring the epidemic under control. Italy is no longer rising exponentially, but new cases are not yet declining much either.
+
+<LI>One thing this view shows well is how much of an outlier the US
    is - the faster increase rate of the US
-   curve is self-evident.  The US now has more than twice the case count of China.
+   curve is self-evident. 
+   
 <LI>This view also makes clearer the recent restart of exponential
-  growth in Iran.  It is unclear to me whether exponential growth
-  actually had previously stopped in Iran, or whether the increase
-  rate was simply limited by their testing capacity.  If it was the
-  latter, then something about their process for confirming cases has
-  changed.
+  growth in Iran, and its subsequent reduction.  It is unclear to me
+  whether exponential growth actually had previously stopped in Iran,
+  or whether the increase rate was simply limited by their testing
+  capacity.  If it was the latter, then something about their process
+  for confirming cases has changed.
+
+<LI>I have added Austria to this graph, as it is the western country
+that most clearly appears to have peaked.  If this is the case, it
+should trend in a similar way to South Korea, although it is not clear
+if the decline in new cases will be as quick in Austria as it was in
+South Korea.

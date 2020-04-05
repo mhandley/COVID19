@@ -3,22 +3,24 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set output "../graphs/covid-world-linear.png"
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at 19,(YMAX*0.95) box
+set key at 19,(YMAX*0.95) 
 set yrange [0:YMAX]
-set xrange [-30:20]
+set xrange [-40:20]
 set ylabel "Confirmed COVID-19 cases"
-set xlabel "Days (from DATE March 2020)"
+set xlabel "Days (from DATE April 2020)"
 offset = OFFSET
 usoff = 10
 iroff = 0
 froff = 10
 kroff = 2.5
+atoff = 18
 plot "../country_data/china" using ($0 +9.5 - offset):2 w l lw 2 lc "black" t "China (30 days ahead of Italy)",\
-"../country_data/italy" using ($0 +5 - offset):2 w l lw 2 lc 1 t "Italy", \
+"../aligned/country_data/italy" using ($1):2 w l lw 2 lc 1 t "Italy", \
 "../country_data/iran" using ($0 +4 - iroff - offset):2 w l lw 2 t "Iran", \
 "../country_data/france" using ($0 + 10 - froff - offset):2 w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
 "../country_data/us" using ($0 +11 - usoff  - offset):2 w l lw 2 lc "orange" t sprintf("USA (%d days offset from Italy)", usoff), \
-"../country_data/southkorea" using ($0 + 3.5 + kroff - offset):2 w l lw 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
+"../aligned/country_data/southkorea" using ($1 + kroff):2 w l lw 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
+"../aligned/country_data/austria" using ($1 - atoff):2 w l lw 2 lc "#ff9090" t sprintf("Austria (%d days ahead of Italy)", atoff), \
 "../aligned/country_data/japan" using ($1):2 w l lc "brown" lw 2 t "Japan"
 
 #"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
