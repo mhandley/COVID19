@@ -97,13 +97,13 @@ set output "../graphs/covid-world-lp.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 6,600 box font "Helvetica,11"
-set yrange [30:547616]
+set yrange [30:614072]
 set xrange [-40:7]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from April 4th 2020)"
+set xlabel "Days (from April 6th 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 49
+offset = 51
 esoff = 9
 plot "../country_data/china" using ($0 +6.5 - offset):2 w lp lw 2 lc "black" t "China (early cases)",\
 "../country_data/italy" using ($0 +5 - offset):2 w lp lw 2 lc "#a000a0" t "Italy", \

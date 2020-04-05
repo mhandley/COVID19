@@ -96,12 +96,12 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-linear.png"
 set grid
 #set logscale y
-set key at -13,(137209.6*0.95)
-set yrange [40:137209.6]
+set key at -13,(144810.6*0.95)
+set yrange [40:144810.6]
 set xrange [-30:]
 set ylabel "Confirmed COVID-19 cases"
-set xlabel "Days (from 4 April 2020)"
-offset = 49
+set xlabel "Days (from 6 April 2020)"
+offset = 51
 esoff = 6
 deoff = 9
 choff = 14

@@ -15,7 +15,7 @@ esoff = 1
 froff = 12
 deoff = 12.5
 nloff = 12.5
-ukoff = 18.5
+ukoff = 18
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
 "../country_data/spain" using ($0 + 10 + esoff  - offset):($2/espop) w l lw 2 lc "orange" t sprintf("Spain (%d day ahead of Italy)", esoff), \
 "../country_data/switzerland" using ($0 +10 - choff-offset):($2/chpop) w l lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \
