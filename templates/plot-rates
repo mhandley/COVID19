@@ -19,7 +19,6 @@ plot "../increase_rates/france" using ($0 +11 - offset):($3/frpop) w l lw 2 lc "
 "../increase_rates/spain" using ($0 +11 - offset):($3/espop) w l lw 2 lc "orange" t sprintf("Spain", usoff), \
 "../increase_rates/netherlands" using ($0 +13 - offset):($3/nlpop) w l lw 2 lc "#a0a0a0" t "Netherlands", \
 "../increase_rates/germany" using ($0 +10 - offset):($3/depop) w l lw 2 lc "#00a000" t "Germany", \
-"../increase_rates/newzealand" using ($0 +29 - offset):($3/nzpop) w l lw 2 lc "black" t "New Zealand", \
 
 #"../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t "Italy", \
 #"../increase_rates/lombardy" using ($0 +6 - offset):($3/lompop) w l lw 2 lc "purple" t sprintf("Lombardy"), \

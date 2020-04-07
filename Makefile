@@ -113,7 +113,7 @@ graphs/deaths-eu-norm2.png: templates/t-deaths-eu-norm2
 	open graphs/deaths-eu-norm2.png
 
 
-graphs/rates.png:	templates/plot-rates increase_rates/us increase_rates/uk  increase_rates/france  increase_rates/germany  increase_rates/newzealand  increase_rates/spain  increase_rates/netherlands increase_rates/uk increase_rates/us
+graphs/rates.png:	templates/plot-rates increase_rates/us increase_rates/uk  increase_rates/france  increase_rates/germany  increase_rates/spain  increase_rates/netherlands increase_rates/uk increase_rates/us
 	cat populations templates/plot-rates | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-rates
 	cat gnuplot/plot-rates | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-rates-lp
 	cd gnuplot; gnuplot plot-rates; gnuplot plot-rates-lp
