@@ -16,11 +16,11 @@ plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy
 "../country_data/denmark" using ($0 +8 - offset):($2/dapop) w l lw 2 lc "black" t "Denmark (4 days offset)", \
 "../country_data/norway" using ($0 +6.5 - offset):($2/nopop) w l lw 2 lc "red" t "Norway (4.5 days offset)", \
 "../country_data/sweden" using ($0 +3 - offset):($2/sepop) w l lw 2 lc "blue" t "Sweden (9 days offset)", \
-"../country_data/finland" using ($0 +4.5 - offset):($2/fipop) w l lw 2 lc "#00a000" t "Finland (12 days offset)", \
 "../country_data/southkorea" using ($0 -17 - offset):($2/krpop) w l lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
+#"../country_data/finland" using ($0 +4.5 - offset):($2/fipop) w l lw 2 lc "#00a000" t "Finland (12 days offset)", \
 #"testchange3" using ($0 +15.1 - offset):($2/testpop) w l lw 2 lc "blue" t "Model (50% -> 15% sampling change)", \
 #"france" using ($0 + 1 - offset):($2/frpop) w l lw 2 lc "red" t "France (9 days behind Italy)", \
 #"spain" using ($0 + 1  - offset):($2/espop) w l lw 2 t "Spain (9 days behind Italy)", \

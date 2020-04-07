@@ -1,7 +1,7 @@
-set terminal pngcairo dashed font "Helvetica,13" size 800,600
+set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-eu-norm.png"
 set logscale y
-set key at -1,80 box
+set key at 0,100 box
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set yrange [10:YMAX]
 set xrange [-30:2]

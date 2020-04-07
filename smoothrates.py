@@ -2,7 +2,7 @@ countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece
              "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
              "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan", "japan", "singapore",
              "luxembourg", "switzerland", "austria", "southkorea", "china", "australia", "thailand",
-             "newzealand", "london"]
+             "newzealand", "london", "belgium", "egypt"]
 foo = ["italy-lom", "hubei-china", "china2"]
 
 smooth = 3

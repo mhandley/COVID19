@@ -1,13 +1,13 @@
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set grid
 set output "../graphs/rates-peaked.png"
-set logscale y
+#set logscale y
 set key at 29,900
 set yrange [0.2:]
 set xrange [-30:30]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
 set xlabel "Days (from date of peaking)"
-offset = (OFFSET - 14)
+offset = (OFFSET - 16)
 usoff = 0
 iroff = 0
 froff = 0
@@ -17,10 +17,16 @@ plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t
 "../increase_rates/lombardy" using ($0 +6 - offset):($3/lompop) w l lw 2 lc "purple" t sprintf("Lombardy"), \
 "../increase_rates/italy-lom" using ($0 +10 - offset):($3/(itpop-lompop)) w l lw 2 lc "magenta" t sprintf("Italy excluding Lombardy"), \
 "../increase_rates/austria" using ($0 +9 - offset):($3/atpop) w l lw 2 lc "#ff9090" t "Austria", \
-"../increase_rates/taiwan" using ($0 -25 - offset):($3/twpop) w l lw 2 lc "red" t "Taiwan", \
+"../increase_rates/taiwan" using ($0 -25 - offset):($3/twpop) w l lw 2 lc "green" t "Taiwan", \
 "../increase_rates/southkorea" using ($0 +0 - offset):($3/krpop) w l lw 2 lc 6 t "South Korea", \
 "../increase_rates/china" using ($0 +10 - offset):($3/20) w l lw 2 lc "black" t "China (see comments)", \
 "../increase_rates/australia" using ($0 -14- offset):($3/aupop) w l lw 2 lc "#00b0b0" t "Australia", \
+"../increase_rates/france" using ($0 +1 - offset):($3/frpop) w l lw 2 lc "red" t "France", \
+"../increase_rates/spain" using ($0 +0 - offset):($3/espop) w l lw 2 lc "orange" t "Spain", \
+"../increase_rates/norway" using ($0 +6 - offset):($3/nopop) w l dt (5,3) lw 2 lc "red" t sprintf("Norway"), \
+"../increase_rates/czechrepublic" using ($0 +9 - offset):($3/czpop) w l lw 2 lc "blue" dt (5,3) t sprintf("Czech Republic", usoff), \
+"../increase_rates/slovenia" using ($0 +12 - offset):($3/sipop) w l lw 2 lc "#00b000" dt (5,3)t sprintf("Slovenia"), \
+"../increase_rates/thailand" using ($0 -25 - offset):($3/thpop) w l lw 2 lc "brown" dt (5,3)t sprintf("Thailand"), \
 
 
 

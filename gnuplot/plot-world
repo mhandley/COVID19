@@ -86,6 +86,7 @@ usmapop = 6.95 #US: massachusetts
 usmipop = 9.88 #US: michigan
 usnjpop = 8.9 #US: New Jersey
 usnypop = 19.4 #US: new york
+usokpop = 3.95 # US: oklahoma
 uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
@@ -97,7 +98,7 @@ set output "../graphs/covid-world.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 6,600 box font "Helvetica,11"
-set yrange [30:614072]
+set yrange [30:667186]
 set xrange [-40:7]
 set ylabel "Confirmed COVID19 cases"
 set xlabel "Days (from April 6th 2020)"

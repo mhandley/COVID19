@@ -1,3 +1,4 @@
+
 <LI>Generally, trends are easier to see on a cumulative plot, as
 changes are inherently more noisy.  However, this view is better to
 see whether a country has peaked or not.
@@ -10,8 +11,15 @@ last few days, but it's too early to say so with confidence.
 <LI>I would expect the UK to not peak for another one to two weeks.
 Generally the UK has been following France around a week behind.
 
+<LI>The US and New Zealand are not technically in Western Europe, but I've added them here to aid comparision. 
+
 <LI>The very rapid increase rate in the US appears to have tailed off,
 but I suspect it has some way to go before peaking.  As the epidemic
 is at different stages in different states, the US curve is less
-likely to show a sharp peak when it does occur.
+likely to show a sharp peak when it does occur.  The last two weeks of
+the US curve show strong similarities to the equivalent phase of the
+Italian curve.
+
+<LI>New Zealand appears to be exhibiting a broad peak, similar to a
+number of European countries, including Germany and the Netherlands.
 

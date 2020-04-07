@@ -86,6 +86,7 @@ usmapop = 6.95 #US: massachusetts
 usmipop = 9.88 #US: michigan
 usnjpop = 8.9 #US: New Jersey
 usnypop = 19.4 #US: new york
+usokpop = 3.95 # US: oklahoma
 uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
@@ -98,8 +99,8 @@ set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at -1,10 box
-set yrange [1:4120.06611570248]
+set key at -1,20 box
+set yrange [1:4381.719008264463]
 set xrange [-45:]
 set ylabel "COVID-19 cases per million inhabitants"
 set xlabel "Days (from 6 April 2020)"

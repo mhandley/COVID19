@@ -22,6 +22,7 @@ looff = 6
 mioff = 10
 iloff = 14.5
 txoff = 23.5
+okoff = 22.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/nyt/Washington" using ($1 - waoff):($2/uswapop) w l lw 2 lc "orange" t sprintf("Washington  State (%d days behind Italy)", waoff), \
 "../aligned/nyt/NewYork" using ($1 + nyoff):($2/usnypop) w l lw 2 lc "blue" t sprintf("New York (%d days offset from Italy)", nyoff),\
@@ -34,6 +35,7 @@ plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/nyt/Florida" using ($1 - floff):($2/usflpop) w l lw 2 lc "#00a000" t sprintf("Florida (%d days behind Italy)", floff), \
 "../aligned/nyt/California" using ($1 - caoff):($2/uscapop) w l lw 2 lc "red" t sprintf("California (%d days behind Italy)", caoff), \
 "../aligned/nyt/Texas" using ($1 - txoff):($2/ustxpop) w l lw 2 lc "#a0a000" t sprintf("Texas (%d days behind Italy)", txoff), \
+"../aligned/nyt/Oklahoma" using ($1 - okoff):($2/usokpop) w l lw 2 lc "green" t sprintf("Oklahoma (%d days behind Italy)", okoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase", \
 1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase"

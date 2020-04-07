@@ -86,6 +86,7 @@ usmapop = 6.95 #US: massachusetts
 usmipop = 9.88 #US: michigan
 usnjpop = 8.9 #US: New Jersey
 usnypop = 19.4 #US: new york
+usokpop = 3.95 # US: oklahoma
 uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
@@ -96,7 +97,7 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/deaths-eu-norm2.png"
 set logscale y
 set key at -1,2 box
-set yrange [0.5:507.8347107438017]
+set yrange [0.5:546.2148760330579]
 set xrange [-40:]
 set ylabel "COVID19 deaths per million inhabitants"
 set xlabel "Days (from 6 April 2020)"

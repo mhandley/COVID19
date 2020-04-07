@@ -1,11 +1,13 @@
 import subprocess
 from time import sleep
 urls = {}
-countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy", "newzealand", "australia", "us", "china", "panama"]
+countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy", "newzealand", "australia", "us", "china", "panama", "poland", "qatar", "egypt"]
 
-countries = ["poland"]
+countries = ["switzerland"]
 
 #Bad countries: poland, switzerland
+urls["qatar"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Qatar_medical_cases_chart&action=edit"
+urls["italy"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Italy_medical_cases_chart&action=edit"
 urls["china"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Mainland_China_medical_cases_chart&action=edit"
 urls["newzealand"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/New_Zealand_medical_cases_chart&action=edit"
 urls["us"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/United_States_medical_cases_chart&action=edit"
@@ -102,7 +104,8 @@ for country in countries:
         file = open("dump", "r")
         dump = False
         for line in file:
-            if "|data=" == "".join(line.strip().split(" ")):
+            if "|data=" == "".join(line.strip().split(" ")) or \
+               "|bars=" == line[:6]: 
                 #print("starting")
                 dump = True
             else:
@@ -183,7 +186,7 @@ for country in countries:
                         if date == date2 or prevdate == date2 or prev2date == date2:
                             success = True
                             print(date2, cases, deaths, recovered)
-                    elif line[:2] == "|-" or "New cases" in line:
+                    elif line[:2] == "|-" or "New cases" in line or "! scope=" in line:
                         pass
                     else:
                         dump = False

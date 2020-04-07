@@ -12,10 +12,17 @@
 
 4. update country_data manually
 
+4b. process canada csv (see datasets)
+4c  process italy-lom:
+python calc-italy-lom.py
+
 5. update UK data manually
 
 6. generate time-indexed data
    python process-time.py
+
+6b. CHECK FOR MISSING DATA:
+tail -1 aligned/country_data/*
    
 7. update increase rate curves
    python smoothrates.py

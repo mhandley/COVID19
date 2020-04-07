@@ -2,8 +2,9 @@
   increase rate trend.  The graph shows number of confirmed case for
   some typical "cool" countries and some "warm" ones.  
 
-<LI>India, Indonesia and Egypt are all warm countries and have all been experiencing
-    roughly 14% daily growth.
+<LI>India, Indonesia and Egypt are all warm countries and have all
+    been experiencing roughly 14% daily growth.  The last few days
+    Egypt has seen a significant decline in growth rate.
 
 <LI>Australia used to be on the 14% curve, but three weeks ago it
   switched to the 22% curve.  The mean daytime
@@ -12,9 +13,9 @@
   23.8C.  More analysis is needed to know if this is significant.
   There is no equivalent warming associated with the most recent
   reduction in daily growth, so this is likely to be related to social
-  distancing measures. Australia now looks like it <a href="#rates-peaked">may have peaked</a>.
+  distancing measures. Australia now looks like it <a href="#rates-peaked"has peaked</a>.
 
-<LI>Malaysia had been tracking close to 14%, but the last week seems
+<LI>Malaysia had been tracking close to 14%, but the last ten days seems
 to have transitioned to around 5-6% growth.
 
 <LI>Brazil was tracking roughly along the 35% line for a while, which
@@ -25,9 +26,11 @@ the fit is imperfect.  Brazil actually has both tropical and
 equatorial climate zones, so it clear how this should manifest in
 COVID-19 progression.
 
-<LI> Qatar, Bahrain and Kuwait have very low recent increase levels. This
+<LI> Bahrain and Kuwait have very low recent increase levels. This
   may indicate that most cases were imports, and that local spread has
   been effectively contained.
+
+<LI>Qatar previously was following the same curve as Bahrain, but the last week has increased suddently to match the 14% daily increase rate of Brazil.
 
 <LI>Although Singapore has a warm climate, I have omitted it from this
   graph, because strong contact tracing there dwarfs any

@@ -86,6 +86,7 @@ usmapop = 6.95 #US: massachusetts
 usmipop = 9.88 #US: michigan
 usnjpop = 8.9 #US: New Jersey
 usnypop = 19.4 #US: new york
+usokpop = 3.95 # US: oklahoma
 uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
@@ -97,7 +98,7 @@ set output "../graphs/covid-world-warm.png"
 set logscale y
 #set key at -18,90000
 set key outside right
-set yrange [50:614072]
+set yrange [50:667186]
 set xrange [-50:]
 set ylabel "Confirmed COVID19 cases"
 set xlabel "Days (from 6 April 2020)"
@@ -110,7 +111,7 @@ broff = 0
 thoff = 8
 idoff = 9.5
 kwoff = 10.5
-qaoff = 4.5
+qaoff = 12.5
 myoff = 2
 egoff = 13
 plot "../country_data/italy" using ($0 +5 - offset):2 w l lw 2 t "Italy", \
@@ -120,12 +121,12 @@ plot "../country_data/italy" using ($0 +5 - offset):2 w l lw 2 t "Italy", \
 "../aligned/country_data/brazil" using ($1):2 w l lw 2 lc "blue" t sprintf("Brazil"),\
 "../aligned/country_data/malaysia" using ($1 - myoff):2 w l lw 2 lc "magenta" t sprintf("Malaysia (%d days behind Brazil)", myoff), \
 "../aligned/country_data/india" using ($1 -myoff - inoff):2 w l lw 2 lc "brown" t sprintf("India (%d days behind Brazil)", inoff), \
-"../aligned/country_data/qatar" using ($1 -myoff - qaoff - offset):2 w l lw 2 lc "green" t sprintf("Qatar (%d days behind Brazil)", qaoff), \
+"../aligned/country_data/qatar" using ($1 -myoff - qaoff):2 w l lw 2 lc "green" t sprintf("Qatar (%d days behind Brazil)", qaoff), \
 "../aligned/country_data/thailand" using ($1 -thoff):2 w l lw 2 lc "#a0a000" t sprintf("Thailand  (%d days behind Brazil)", thoff), \
 "../aligned/country_data/indonesia" using ($1 -idoff):2 w l lw 2 lc "#00a000" t sprintf("Indonesia (%d days behind Brazil)", idoff), \
 "../aligned/country_data/egypt" using ($1-egoff):2 w l lw 2 lc "#808080" dt 6 t sprintf("Egypt (%d days behind Brazil)", egoff), \
-"../aligned/country_data/bahrain" using ($1):2 w l lw 2 lc "black" t "Bahrain", \
-"../aligned//country_data/kuwait" using ($1 -kwoff):2 w l lw 2 lc "purple" t sprintf("Kuwait (%d days behind Bahrain)", kwoff), \
+"../aligned/jhu/bahrain-jhu" using ($1):2 w l lw 2 lc "black" t "Bahrain", \
+"../aligned/country_data/kuwait" using ($1 -kwoff):2 w l lw 2 lc "purple" t sprintf("Kuwait (%d days behind Bahrain)", kwoff), \
 1.38**(x+offset + 8) lc "black" dt 4 t "38% daily increase",\
 1.22**(x+offset + 22.5) lc "black" dashtype 2 t "22% daily increase",\
 1.14**(x+offset + 21) lc "black" dt 3 t "14% daily increase",\

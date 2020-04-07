@@ -86,6 +86,7 @@ usmapop = 6.95 #US: massachusetts
 usmipop = 9.88 #US: michigan
 usnjpop = 8.9 #US: New Jersey
 usnypop = 19.4 #US: new york
+usokpop = 3.95 # US: oklahoma
 uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
@@ -96,8 +97,8 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-linear.png"
 set grid
 #set logscale y
-set key at -13,(144810.6*0.95)
-set yrange [40:144810.6]
+set key at -13,(270064*0.95)
+set yrange [40:270064]
 set xrange [-30:]
 set ylabel "Confirmed COVID-19 cases"
 set xlabel "Days (from 6 April 2020)"

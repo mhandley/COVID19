@@ -46,6 +46,8 @@ def convert_date(date):
 
 maxday = 0
 for filename in filenames:
+    if "#" in filename or "~" in filename:
+        continue
     print(filename)
     try:
         ifile = open(filename, "r")
@@ -80,11 +82,12 @@ for filename in filenames:
             continue
         parts = line.split()
         date = parts[0]
-        cases = int(parts[1])
-        try:
-            deaths = int(parts[2])
-        except:
-            deaths = -1
+        #cases = int(parts[1])
+        #try:
+        #    deaths = int(parts[2])
+        #except:
+        #    deaths = -1
+        rest = " ".join(parts[1:])
         dnum = convert_date(date) - maxday
         if dnum < -1000:
             os.exit()
@@ -92,5 +95,5 @@ for filename in filenames:
             print("duplicate date: ", date)
             os.exit()
         dateset.add(date)
-        print(dnum, cases, deaths, file = ofile)
+        print(dnum, rest, file = ofile)
     

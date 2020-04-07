@@ -11,9 +11,16 @@
       possible that this increase was due to increased testing rather
       than a burst in new cases.  Iceland is now showing signs that it is peaking.
       
-      <LI>Norway, Sweden, Denmark and Finland all managed to stop the
+      <LI>Norway, Sweden, and Denmark all managed to stop the
       majority of imported cases from spreading too far, but
       afterwards they all restarted exponential growth from a smaller
       base of active cases, hence the relatively shallow gradients of
       their curves.  All these countries are showing signs that they
-      make peak shortly.
+      may peak shortly.
+
+      <LI>The data for Finland on previous verions of this graph is
+      almost certainly incorrect as a result of late incorporation of
+      old results that were not previously counted into the historic
+      record, but I have not yet had time to understand precisely how
+      this is incorrect. I have removed the curve for Finland until
+      then.

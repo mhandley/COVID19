@@ -4,8 +4,9 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
           ("covid-eu-norm.png", "Western Europe", "lognorm"),
           ("rates-peaked.png", "Daily Increases, Peaked Countries", "inc"),
           ("rates-level.png", "Daily Increases, Countries with Constant Increases", "inc"),
-          ("rates.png", "Western Europe Daily Increases", "inc"),
+          ("rates-eu.png", "Western Europe Daily Increases", "inc"),
           ("deaths-eu-norm.png", "Deaths: Western Europe", "deaths"),
+          ("deathrates-eu.png", "Death per day: Western Europe", "deathrates"),
           ("covid-eu-norm-lom.png", "",  "lognorm"),
           ("covid-eu-norm2.png", "Nordic Region", "lognorm"),
           ("rates-nordic.png", "Daily Increases", "inc"),
@@ -60,6 +61,14 @@ types["inc"] = (\
   about a days lag, but it does extract trends fairly well.  The
   curves are not offset, today is Day 0 for all curves.""",  "Increases")
 
+types["deathrates"] = (\
+"""The graph shows <B>the number of deaths each day per million inhabitants</B>, plotted on a log scale, against time.
+  A Holt-Winters moving average filter with constants &alpha;=0.5 and
+  &beta;=0.5 has been applied to smooth the curves as daily counts are
+  very noisy.  This is a moderate amount of smoothing and it imposes a
+  about a days lag, but it does extract trends fairly well.  The
+  curves are not offset, today is Day 0 for all curves.""",  "Deaths per day")
+
 types["deaths"] = (\
 """The graph shows cumulative number of <B>deaths per million
       inhabitants</B>, plotted on a log scale, against time.  The
@@ -84,6 +93,7 @@ tl_to_c = {}
 c_to_tl = {}
 longnames = {}
 longnames["us"] = "USA"
+longnames["scenario4"] = "Scenario 4"
 
 def load_tlcs():
     file = open("populations", "r")
@@ -153,7 +163,9 @@ def make_graph(graph, gname, gtype, gnum, datedir):
     elif gname != "" and gname[0] == '*':
         s = gname[1:]
     print('<hr><P><h3><a name="' + gprefix + '"></a>' + s + "</h3><P>", file=ofile)
+    print('<a href="' + datedir + "/" + gprefix + '-large.png">', file=ofile)
     print('<img src="' + datedir + "/" + graph + '"><P>', file = ofile)
+    print('</a>', file=ofile)
     print('<br><a href="points.html#' + gprefix + '"><small>SHOW DATA POINTS</small></a>', file=ofile)
     print('<UL>', file=ofile);
     commentfile = "commentaries/" + gprefix
@@ -193,6 +205,6 @@ for graph,gname,gtype in graphs:
 ofile.close()
 
 subprocess.call("cat wwwparts/faq.html >> www/index.html", shell=True)
-subprocess.call('cat www/index.html | sed -e "s/\.png/-lp\.png/g" | sed -e "s/SHOW/HIDE/g" | sed -e "s/points\.html/index\.html/g" > www/points.html', shell=True)
+subprocess.call('cat www/index.html | sed -e "s/\.png/-lp\.png/g" | sed -e "s/large-lp.png/lp-large.png/g" | sed -e "s/SHOW/HIDE/g" | sed -e "s/points\.html/index\.html/g" > www/points.html', shell=True)
 
 #print(longnames)
