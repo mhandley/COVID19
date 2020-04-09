@@ -1,5 +1,5 @@
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
-set output "../graphs/covid-eu-norm.png"
+set output "../graphs/cases-deaths-eu-norm.png"
 set logscale y
 set key at -1,50
 set yrange [10:1000]

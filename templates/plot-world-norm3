@@ -29,5 +29,3 @@ plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
-#"../country_data/chile" using ($0 -2.5 - offset):($2/clpop) w l lw 2 lc "blue" t "Chile (19.5 days behind Italy)", \
-

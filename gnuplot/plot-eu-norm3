@@ -100,18 +100,20 @@ set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at -2,15 box
-set yrange [2:9001.605136436598]
+set yrange [2:9534.510433386838]
 set xrange [-35:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 6 April 2020)"
-offset = 51
-iroff = 12
+set xlabel "Days (from 8 April 2020)"
+offset = 53
+iroff = 13
 ptoff = 12.5
-plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
-"../country_data/belgium" using ($0 +4.5 - offset):($2/bepop) w l lw 2 lc "black" t "Belgium (9.5 days behind Italy)", \
-"../country_data/ireland" using ($0 +17 - iroff - offset):($2/iepop) w l lw 2 lc "#00a000" t sprintf("Ireland (%d days behind Italy)", iroff), \
-"../country_data/portugal" using ($0 +16 - ptoff - offset):($2/ptpop) w l lw 2 lc "red" t sprintf("Portugal (%d days behind Italy)", ptoff),\
-"../country_data/luxembourg" using ($0 +10 - offset):($2/lupop) w l lw 2 lc "#a0a0ff" t "Luxembourg (8 days behind Italy)", \
+beoff = 6.5
+luxoff = 0
+plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
+"../aligned/country_data/belgium" using ($1 - beoff):($2/bepop) w l lw 2 lc "black" t sprintf("Belgium (%f days behind Italy)", beoff), \
+"../aligned/country_data/ireland" using ($1 - iroff):($2/iepop) w l lw 2 lc "#00a000" t sprintf("Ireland (%d days behind Italy)", iroff), \
+"../aligned/country_data/portugal" using ($1 - ptoff):($2/ptpop) w l lw 2 lc "red" t sprintf("Portugal (%d days behind Italy)", ptoff),\
+"../aligned/country_data/luxembourg" using ($1 -luxoff):($2/lupop) w l lw 2 lc "#a0a0ff" t sprintf("Luxembourg", luxoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

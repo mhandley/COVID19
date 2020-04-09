@@ -1,13 +1,13 @@
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set grid
 set output "../graphs/rates-peaked.png"
-#set logscale y
+set logscale y
 set key at 29,900
 set yrange [0.2:]
 set xrange [-30:30]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
 set xlabel "Days (from date of peaking)"
-offset = (OFFSET - 16)
+offset = (OFFSET - 18)
 usoff = 0
 iroff = 0
 froff = 0

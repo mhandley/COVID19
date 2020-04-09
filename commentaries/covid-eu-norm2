@@ -5,22 +5,35 @@
 	
       <LI>Iceland suffered a large number of imported cases relative
       to its very small population.  After that burst stopped, Iceland
-      followed roughly the same curve as Italy, two days ahead.
-      Twelve days ago Iceland's increase rate increased for five days,
-      but it has now levelled off at a similar rate to Italy. It is
+      followed roughly the same curve as Italy, two days ahead.  Two
+      weeks days ago Iceland's increase rate increased for five days,
+      but it then levelled off at a similar rate to Italy. It is
       possible that this increase was due to increased testing rather
-      than a burst in new cases.  Iceland is now showing signs that it is peaking.
+      than a burst in new cases.  Iceland is now appears to have
+      peaked, though the decline in new cases is relatively slow.
       
       <LI>Norway, Sweden, and Denmark all managed to stop the
       majority of imported cases from spreading too far, but
       afterwards they all restarted exponential growth from a smaller
       base of active cases, hence the relatively shallow gradients of
-      their curves.  All these countries are showing signs that they
-      may peak shortly.
+      their curves.
 
-      <LI>The data for Finland on previous verions of this graph is
-      almost certainly incorrect as a result of late incorporation of
-      old results that were not previously counted into the historic
-      record, but I have not yet had time to understand precisely how
-      this is incorrect. I have removed the curve for Finland until
-      then.
+<LI>Norway peaked on March 27th, though the decrease since has not
+been continuous.
+
+<LI>Sweden and Denmarks are showing signs that they may
+peak shortly.
+
+      <LI>Unlike other countries, Finland is now reporting confirmed
+      cases data with the date that the test was performed rather than
+      the date the test result was produced.  This means that
+      confirmed cases for the last few days continue to rise as test
+      results come in.  As a result, I am not displaying the last two
+      days' results, as their results are incomplete and so they give
+      a false impression of a downturn.  I am not yet sure if the
+      downturn in the last few days that I am showing is genuine, or a
+      result of late test results.
+
+<LI>The Finland dataset is currently coming from <a
+href="https://github.com/HS-Datadesk/koronavirus-avoindata">Helsingin
+Sanomat</a>.

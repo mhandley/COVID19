@@ -13,8 +13,14 @@
 4. update country_data manually
 
 4b. process canada csv (see datasets)
+
 4c  process italy-lom:
 python calc-italy-lom.py
+
+4d process finland
+cd datasets
+python process-finland.py
+edit country_data/finland as appropriate
 
 5. update UK data manually
 

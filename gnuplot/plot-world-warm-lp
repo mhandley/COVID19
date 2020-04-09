@@ -98,13 +98,13 @@ set output "../graphs/covid-world-warm-lp.png"
 set logscale y
 #set key at -18,90000
 set key outside right
-set yrange [50:667186]
+set yrange [50:869396]
 set xrange [-50:]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from 6 April 2020)"
+set xlabel "Days (from 8 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 51
+offset = 53
 usoff = 12
 inoff = 8.5
 broff = 0

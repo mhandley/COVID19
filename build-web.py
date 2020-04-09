@@ -5,9 +5,9 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
           ("rates-peaked.png", "Daily Increases, Peaked Countries", "inc"),
           ("rates-level.png", "Daily Increases, Countries with Constant Increases", "inc"),
           ("rates-eu.png", "Western Europe Daily Increases", "inc"),
+          ("rates-norm-peaked.png", "Daily Increases, Peaked Countries", "norminc"),
           ("deaths-eu-norm.png", "Deaths: Western Europe", "deaths"),
           ("deathrates-eu.png", "Death per day: Western Europe", "deathrates"),
-          ("covid-eu-norm-lom.png", "",  "lognorm"),
           ("covid-eu-norm2.png", "Nordic Region", "lognorm"),
           ("rates-nordic.png", "Daily Increases", "inc"),
           ("covid-eu-norm3.png","", "lognorm"),
@@ -22,6 +22,7 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
 	  ("covid-world.png", "World", "logabs"),
 	  ("covid-world-norm.png","World", "lognorm"),
 	  ("covid-us-norm.png","US States", "lognorm"),
+	  ("rates-us.png","US States", "inc"),
 	  ("covid-world-norm2.png","", "lognorm"),
 	  ("covid-world-norm3.png","", "lognorm"),
 	  ("deaths-us.png", "Deaths: USA", "deaths"),
@@ -34,6 +35,7 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
 
 
 # not used anymore
+#          ("covid-eu-norm-lom.png", "",  "lognorm"),
 #          ("covid-eu-norm2b.png","Nordic Region (offset curves)", "lognorm"),
 #	  ("covid-world-warm2.png", "Warm Countries", "logabs"),
 
@@ -60,6 +62,12 @@ types["inc"] = (\
   very noisy.  This is a moderate amount of smoothing and it imposes a
   about a days lag, but it does extract trends fairly well.  The
   curves are not offset, today is Day 0 for all curves.""",  "Increases")
+
+types["norminc"] = (\
+"""The graph shows <B>daily increase in confirmed cases normalized so the peaks of different countries are all the same height</B>, plotted on a linear scale against time.  A
+  Holt-Winters moving average filter with constants &alpha;=0.5 and
+  &beta;=0.5 has been applied to smooth the curves as differences are
+  very noisy.  This is a moderate amount of smoothing and extracts trends fairly well without smoothing large peaks. """,  "Normalized Increases")
 
 types["deathrates"] = (\
 """The graph shows <B>the number of deaths each day per million inhabitants</B>, plotted on a log scale, against time.
@@ -125,7 +133,7 @@ def extract_countries(filename):
                 for part in curve.split('"'):
                     if "../" in part:
                         datafiles.append(part)
-    print(datafiles)
+    #print(datafiles)
     countries = []
     for path in datafiles:
         parts = path.split("/")
@@ -133,6 +141,7 @@ def extract_countries(filename):
         prefix = fname.split("-")[0]
         countries.append(prefix)
     file.close()
+    print(filename, countries, "\n\n")
     return countries
 
 def make_country_list(graph):
@@ -197,7 +206,7 @@ print("</DL>", file=ofile)
 
 
 gnum = 1
-datedir = "6apr2020"
+datedir = "8apr2020"
 for graph,gname,gtype in graphs:
     make_graph(graph, gname, gtype, gnum, datedir)
     gnum+=1

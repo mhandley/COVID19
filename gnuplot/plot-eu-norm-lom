@@ -98,11 +98,11 @@ set output "../graphs/covid-eu-norm-lom.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 4,20 box
-set yrange [3:10306.8]
+set yrange [3:10465.0]
 set xrange [-35:6]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 6 April 2020)"
-offset = 51
+set xlabel "Days (from 8 April 2020)"
+offset = 53
 set mxtics
 set grid mxtics xtics ytics mytics
 lomoff = 5.5

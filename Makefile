@@ -1,8 +1,9 @@
-all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates-eu.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-norm-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png graphs/rates-peaked.png graphs/rates-level.png graphs/deathrates-eu.png
 
-DATEDIR = www/6apr2020/
-DATE=6
-OFFSET=51
+all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates-eu.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-norm-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png graphs/rates-peaked.png graphs/rates-level.png graphs/deathrates-eu.png graphs/deathrates-eu-raw.png graphs/rates-norm-peaked.png graphs/rates-us.png
+
+DATEDIR = www/8apr2020/
+DATE=8
+OFFSET=53
 
 
 graphs/covid-world-linear.png: templates/plot-world-linear
@@ -85,28 +86,28 @@ graphs/covid-uk-all.png: templates/t-plot-uk3
 
 
 increase_rates/uk:	country_data/uk
-	python smoothdata.py
+	python smoothrates.py
 
 increase_rates/spain:	country_data/spain
-	python smoothdata.py
+	python smoothrates.py
 
 increase_rates/france:	country_data/france
-	python smoothdata.py
+	python smoothrates.py
 
 increase_rates/germany:	country_data/germany
-	python smoothdata.py
+	python smoothrates.py
 
 increase_rates/italy:	country_data/italy
-	python smoothdata.py
+	python smoothrates.py
 
 increase_rates/switzerland:	country_data/switzerland
-	python smoothdata.py
+	python smoothrates.py
 
 increase_rates/vietnam-wiki:	wiki_data/vietnam-wiki
-	python smoothdata.py
+	python smoothrates.py
 
 increase_rates/us:	country_data/us
-	python smoothdata.py
+	python smoothrates.py
 
 # we don't really need these for all countries - just sentinel countries to avoid forgetting to run when we've updated each directory
 

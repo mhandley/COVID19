@@ -1,13 +1,24 @@
 import glob
+import subprocess
 files = []
+
+subprocess.call("rm aligned/country_data/*", shell=True)
+subprocess.call("rm aligned/jhu/*", shell=True)
+subprocess.call("rm aligned/nyt/*", shell=True)
+subprocess.call("rm aligned/wiki/*", shell=True)
+subprocess.call("rm aligned/increase_rates/*", shell=True)
+subprocess.call("rm aligned/normalized/*", shell=True)
 
 wikifiles = glob.glob("wiki-data/*")
 jhufiles = glob.glob("jhu-data/*")
 nytfiles = glob.glob("nyt-data/*")
 myfiles = glob.glob("country_data/*")
 incfiles = glob.glob("increase_rates/*")
-incfiles2 = glob.glob("increase_rates2/*")
-filenames = jhufiles + wikifiles + nytfiles + myfiles + incfiles + incfiles2
+normfiles = glob.glob("normalized/*")
+#incfiles2 = glob.glob("increase_rates2/*")
+#filenames = jhufiles + wikifiles + nytfiles + myfiles + incfiles + incfiles2
+filenames = jhufiles + wikifiles + nytfiles + myfiles + incfiles + normfiles
+#filenames = jhufiles + nytfiles + myfiles + incfiles + incfiles2
              #J  F   M   A   M   J   J   A   S   O   N   D
 monthlens = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 d = 0

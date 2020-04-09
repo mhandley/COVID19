@@ -100,11 +100,11 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 0,20 box
-set yrange [2:4381.719008264463]
+set yrange [2:4608.99173553719]
 set xrange [-40:3]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 6 April 2020)"
-offset = 51
+set xlabel "Days (from 8 April 2020)"
+offset = 53
 usoff = 17
 saoff = 27
 nzoff = 22.5
@@ -121,7 +121,4 @@ plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/newzealand" using ($1 -nzoff):($2/nzpop) w l lw 2 lc "black" t sprintf("New Zealand (%d days behind Italy)", nzoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
-
-#"../aligned/country_data/southkorea" using ($1 + kroff):($2/krpop) w l lw 2  lc 6 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
-#"../country_data/chile" using ($0 -2.5 - offset):($2/clpop) w l lw 2 lc "blue" t "Chile (19.5 days behind Italy)", \
 

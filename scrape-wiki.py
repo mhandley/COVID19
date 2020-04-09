@@ -3,9 +3,10 @@ from time import sleep
 urls = {}
 countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy", "newzealand", "australia", "us", "china", "panama", "poland", "qatar", "egypt"]
 
-countries = ["switzerland"]
+countries = ["us"]
 
 #Bad countries: poland, switzerland
+urls["mexico"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Mexico_medical_cases_chart&action=edit"
 urls["qatar"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Qatar_medical_cases_chart&action=edit"
 urls["italy"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Italy_medical_cases_chart&action=edit"
 urls["china"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Mainland_China_medical_cases_chart&action=edit"
@@ -20,8 +21,8 @@ urls["southkorea"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E
 urls["netherlands"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Netherlands_medical_cases_chart&action=edit"
 urls["ecuador"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Ecuador_medical_cases_chart&action=edit"
 urls["peru"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pandemic_in_Peru&action=edit&section=2"
-urls["uruguay"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pandemic_in_Uruguay&action=edit&section=4"
-urls["chile"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pandemic_in_Chile&action=edit&section=5"
+urls["uruguay"] = "https://en.wikipedia.org/w/index.php?title=2020_coronavirus_pandemic_in_Uruguay&action=edit&section=5"
+urls["chile"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Chile_medical_cases_chart&action=edit"
 urls["philippines"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Philippines_medical_cases_chart&action=edit"
 #urls["colombia"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Colombia_medical_cases_chart&action=edit"
 urls["domincanrepublic"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Dominican_Republic_medical_cases_chart&action=edit"
@@ -34,9 +35,9 @@ base_url2 = "_medical_cases_chart&action=edit"
 
 
 #urls["switzerland"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Switzerland_medical_cases_chart/&action=edit"
-prev2date = "2020-04-04"
-prevdate = "2020-04-05"
-date = "2020-04-06"
+prev2date = "2020-04-06"
+prevdate = "2020-04-07"
+date = "2020-04-08"
 
 months = {}
 months["february"] = "02"

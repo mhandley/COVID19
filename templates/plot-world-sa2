@@ -1,19 +1,20 @@
+
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-world-sa2.png"
 set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at -1,30 box
+set key at -1,10 box
 set yrange [0.5:YMAX]
-set xrange [-50:]
+set xrange [-55:]
 set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
 offset = OFFSET
 jhuoffset = (OFFSET + 24)
 cloff = 19
 ecoff = 19.5
-peoff = 26.5
+peoff = 24.5
 aroff = 29
 mxoff = 29
 uroff = 30
@@ -25,7 +26,7 @@ veoff = 27.5
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
 "../wiki-data/chile-wiki" using ($0 +40 -cloff - jhuoffset):($2/clpop) w l lw 2 lc "orange" t sprintf("Chile (%d days behind Italy)", cloff), \
 "../wiki-data/ecuador-wiki" using ($0  +45 -ecoff - jhuoffset):($2/ecpop) w l lw 2 lc "red" t sprintf("Ecuador (%d days behind Italy)", ecoff), \
-"../wiki-data/peru-wiki" using ($0  +43 -peoff - jhuoffset):($2/pepop) w l lw 2 lc "brown" t sprintf("Peru (%d days behind Italy)", peoff), \
+"../aligned/jhu/peru-jhu" using ($1 -peoff):($2/pepop) w l lw 2 lc "brown" t sprintf("Peru (%d days behind Italy)", peoff), \
 "../jhu-data/bolivia-jhu" using ($0  -booff - jhuoffset):($2/bopop) w l lw 2 lc "blue" t sprintf("Bolivia (%d days behind Italy)", booff), \
 "../wiki-data/argentina-wiki" using ($0  +41 -aroff - jhuoffset):($2/arpop) w l lw 2 lc "#00b000" t sprintf("Argentina (%d days behind Italy)", aroff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \

@@ -31,8 +31,3 @@ plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
-#"../wiki-data/argentina-wiki" using ($0  +41 -aroff - jhuoffset):($2/arpop) w l lw 2 lc "#9090a0" t sprintf("Argentina (%d days behind Italy)", aroff), \
-#"../jhu-data/bolivia-jhu" using ($0  -booff - jhuoffset):($2/bopop) w l lw 2 lc "magenta" t sprintf("Bolivia (%d days behind Italy)", booff), \
-#" t sprintf("Peru (%d days behind Italy)", peoff), \
-"../wiki-data/uruguay-wiki" using ($0  +51 -uroff - jhuoffset):($2/urpop) w l lw 2 lc "#0#"../wiki-data/chile-wiki" using ($0 +40 -cloff - jhuoffset):($2/clpop) w l lw 2 lc "orange" t sprintf("Chile (%d days behind Italy)", cloff), \
-#"../wiki-data/ecuador-wiki" using ($0  +45 -ecoff - jhuoffset):($2/ecpop) w l lw 2 lc "red" t sprintf("Ecuador (%d days behind Italy)", ecoff), \

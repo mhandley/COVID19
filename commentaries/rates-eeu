@@ -2,23 +2,26 @@
     changes are inherently more noisy.  However, this view is better
     to see whether a country has peaked or not.
 
-<LI>I thought Slovakia had peaked a few days ago, but it appears I was
-wrong.  Nevertheless, growth there is almost constant, and certainly
-no longer exponential.
+<LI>I thought Slovakia had peaked 16 days ago, then again 7 days ago,
+but it appears I was wrong in both cases.  The increase in new cases
+the last three days after such a long period of constant growth is
+unusual, but I do not know if this is causes by better testing or an
+increase in the underlying epidemic.
 
-<LI>Increase are also roughly level in Bulgaria, which is likely peaking now too.
+<LI>Increase are roughly level in Bulgaria, which appears to have
+peaked on March 31st, and been declining slowly since.
 
-<LI>Greece appears to be close to peaking - the daily increase has
-  been nearly constant for a number of days, and it no longer shows
-  signs of significant exponential growth.
+<LI>Greece appears to have peaked on April 2nd - the daily increase
+  had been nearly constant for two weeks, and has turned down more
+  significantly the last few days.
 
-<LI> The last three days data for Slovenia and the Czech Republic have
-show decreases, but this is still too short a duration to have any
-confidence they have peaked.
+<LI> Slovenia and the Czech Republic both appear to have peaked on
+March 27th, but the decrease since then has been rather slow, with
+both showing a smaller secondary peak.
 
-<LI>Hungary, Romania and Poland are still growing exponentially with a
-relatively low daily increase rate, though today's data point for Serbia is down.
+<LI>Hungary, Romania and Poland may be peaking now, but more data will
+be required to say this with confidence.
 
 <LI>Serbia dipped the last two days after a steady exponential
-increases the last two weeks.  I suspect it has not yet peaked (it
-would be rather sudden if it has), but we will only know in a few more days.
+increases the last three weeks.  It is too early to know if this is a
+peak.

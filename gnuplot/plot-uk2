@@ -103,8 +103,8 @@ set xrange [-40:0]
 #set yrange [3:100]
 #set xrange [-3:-15]
 set ylabel "Confirmed COVID19 cases per million inhabitants"
-set xlabel "Days (from 6 April 2020)"
-offset = (51 + 5.5)
+set xlabel "Days (from 8 April 2020)"
+offset = (53 + 5.5)
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7

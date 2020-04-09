@@ -103,8 +103,8 @@ set key at -23,900 box
 set yrange [1:]
 set xrange [-40:]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
-set xlabel "Days (from 6 April 2020)"
-offset = 51
+set xlabel "Days (from 8 April 2020)"
+offset = 53
 usoff = 0
 iroff = 0
 froff = 0
@@ -114,10 +114,10 @@ plot "../aligned/increase_rates/italy" using ($1):($3/itpop) w lp lw 2 lc 1 t "I
 "../aligned/increase_rates/denmark" using ($1):($3/dapop) w lp lw 2 lc "black" t sprintf("Denark"), \
 "../aligned/increase_rates/sweden" using ($1):($3/sepop) w lp lw 2 lc "blue" t sprintf("Sweden"), \
 "../aligned/increase_rates/norway" using ($1):($3/nopop) w lp lw 2 lc "red" t sprintf("Norway"), \
+"../aligned/increase_rates/finland" using ($1):($3/fipop) w lp lw 2 lc "#00a000" t sprintf("Finland"), \
 "../aligned/increase_rates/iceland" using ($1):($3/ispop) w lp lw 2 lc "orange" t sprintf("Iceland"), \
 "../aligned/increase_rates/estonia" using ($1):($3/eepop) w lp lw 2 lc "brown" t sprintf("Estonia"), \
-"../aligned/increase_rates/luxembourg" using ($1):($3/lupop) w lp lw 2 lc "#a0a0ff" t sprintf("Luxembourg")
+"../aligned/increase_rates/luxembourg" using ($1):($3/lupop) w lp lw 2 lc "#a0a0ff" t sprintf("Luxembourg"),\
 
-#"../aligned/increase_rates/finland" using ($1):($3/fipop) w lp lw 2 lc "#00a000" t sprintf("Finland"), \
 #"uk" using ($0 -1 - offset):2 w lp lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w lp lw 2 t "Germany (9 days behind Italy)", \

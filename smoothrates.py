@@ -2,7 +2,7 @@ countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece
              "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
              "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan", "japan", "singapore",
              "luxembourg", "switzerland", "austria", "southkorea", "china", "australia", "thailand",
-             "newzealand", "london", "belgium", "egypt"]
+             "newzealand", "london", "belgium", "egypt", "lithuania", "latvia", "NewYork", "Washington", "California", "NewJersey", "Colorado", "Louisiana", "Massachusetts", "Illinois", "Michigan", "Florida"]
 foo = ["italy-lom", "hubei-china", "china2"]
 
 smooth = 3
@@ -15,17 +15,24 @@ def do_country(country):
         pass
     if ifile == None:
         try:
+            ifile = open("nyt-data/"+country, "r")
+        except FileNotFoundError:
+            pass
+    if ifile == None:
+        try:
             ifile = open("wiki-data/"+country+"-wiki", "r")
         except FileNotFoundError:
             pass
     if ifile == None:
         ifile = open("jhu-data/"+country+"-jhu", "r")
 
-    ofile = open("increase_rates/"+country, "w")
     prevval = -1
     prevdeaths = 0
     diffs = []
     deathdiffs = []
+    smoothdiffs = []
+    smoothdeathdiffs = []
+    
     dates = []
     for line in ifile:
         if line.strip() == "":
@@ -45,6 +52,8 @@ def do_country(country):
         prevdeaths = deaths
     s = -1
     sd = -1
+    maxsmoothdiffs = 0
+    maxsmoothdeathdiffs = 0
     for i in range(len(dates)):
         if i == 0 or i == len(dates)-1 or smooth == 1:
             smoothed = diffs[i]
@@ -81,10 +90,27 @@ def do_country(country):
             
         
         #print(dates[i], diffs[i], smoothed, file=ofile)
-        print(dates[i], diffs[i], s, deathdiffs[i], sd, file=ofile)
+        if s > maxsmoothdiffs:
+            maxsmoothdiffs = s
+        if sd > maxsmoothdeathdiffs:
+            maxsmoothdeathdiffs = sd
+        smoothdiffs.append(s)
+        smoothdeathdiffs.append(sd)
+        
     ifile.close()
-    ofile.close()
 
+    ofile = open("increase_rates/"+country, "w")
+    ofile2 = open("normalized/"+country, "w")
+    for i in range(len(dates)):
+        print(dates[i], diffs[i], smoothdiffs[i], deathdiffs[i], smoothdeathdiffs[i], file=ofile)
+        try:
+            norm_sd = smoothdeathdiffs[i]/maxsmoothdeathdiffs
+        except:
+            norm_sd = 0
+        print(dates[i], diffs[i], smoothdiffs[i]/maxsmoothdiffs, deathdiffs[i], norm_sd, file=ofile2)
+
+    ofile.close()
+    ofile2.close()
 
 for country in countries:
     do_country(country)

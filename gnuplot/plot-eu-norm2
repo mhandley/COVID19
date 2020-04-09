@@ -100,26 +100,26 @@ set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 4,30 box
-set yrange [1:9188.235294117647]
-set xrange [-40:]
+set yrange [1:9505.882352941177]
+set xrange [-45:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 6 April 2020)"
-offset = 51
+set xlabel "Days (from 8 April 2020)"
+offset = 53
 testpop=3
-plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
-"../country_data/iceland" using ($0 +15 - offset):($2/ispop) w l lw 2 lc "orange" t "Iceland (2 days ahead of Italy)" , \
-"../country_data/denmark" using ($0 +8 - offset):($2/dapop) w l lw 2 lc "black" t "Denmark (4 days offset)", \
-"../country_data/norway" using ($0 +6.5 - offset):($2/nopop) w l lw 2 lc "red" t "Norway (4.5 days offset)", \
-"../country_data/sweden" using ($0 +3 - offset):($2/sepop) w l lw 2 lc "blue" t "Sweden (9 days offset)", \
-"../country_data/southkorea" using ($0 -17 - offset):($2/krpop) w l lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
+plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
+"../aligned/country_data/iceland" using ($1 -2):($2/ispop) w l lw 2 lc "orange" t "Iceland (2 days ahead of Italy)" , \
+"../aligned/country_data/denmark" using ($1 -4):($2/dapop) w l lw 2 lc "black" t "Denmark (4 days offset)", \
+"../aligned/country_data/norway" using ($1 -4.5):($2/nopop) w l lw 2 lc "red" t "Norway (4.5 days offset)", \
+"../aligned/country_data/sweden" using ($1 -9):($2/sepop) w l lw 2 lc "blue" t "Sweden (9 days offset)", \
+"../aligned/country_data/finland" using ($1 -9):($2/fipop) w l lw 2 lc "#00a000" t "Finland (9 days offset)", \
+"../aligned/country_data/southkorea" using ($1 +4):($2/krpop) w l lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 
-#"../country_data/finland" using ($0 +4.5 - offset):($2/fipop) w l lw 2 lc "#00a000" t "Finland (12 days offset)", \
-#"testchange3" using ($0 +15.1 - offset):($2/testpop) w l lw 2 lc "blue" t "Model (50% -> 15% sampling change)", \
-#"france" using ($0 + 1 - offset):($2/frpop) w l lw 2 lc "red" t "France (9 days behind Italy)", \
-#"spain" using ($0 + 1  - offset):($2/espop) w l lw 2 t "Spain (9 days behind Italy)", \
-#"germany" using ($0 -1.5 - offset):($2/depop) w l lw 2 lc "#00b000" t "Germany (10.5 days behind Italy)", \
-#"uk" using ($0 -2 - offset):($2/ukpop) w l lw 2 lc "blue" t "UK (14 days behind Italy)", \
+#"testchange3" using ($0 +15.1):($2/testpop) w l lw 2 lc "blue" t "Model (50% -> 15% sampling change)", \
+#"france" using ($0 + 1):($2/frpop) w l lw 2 lc "red" t "France (9 days behind Italy)", \
+#"spain" using ($0 + 1 ):($2/espop) w l lw 2 t "Spain (9 days behind Italy)", \
+#"germany" using ($0 -1.5):($2/depop) w l lw 2 lc "#00b000" t "Germany (10.5 days behind Italy)", \
+#"uk" using ($0 -2):($2/ukpop) w l lw 2 lc "blue" t "UK (14 days behind Italy)", \
 
 

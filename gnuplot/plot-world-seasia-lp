@@ -102,9 +102,9 @@ set key at -18.5,1900 box
 set yrange [0.5:2000]
 set xrange [-50:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 6 April 2020)"
-offset = 51
-jhuoffset = (51 + 24)
+set xlabel "Days (from 8 April 2020)"
+offset = 53
+jhuoffset = (53 + 24)
 vnoff = 37
 twoff = 27
 phoff = 31

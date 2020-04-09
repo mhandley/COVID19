@@ -11,13 +11,13 @@
 <BODY bgcolor=white TEXT="#00000" LINK="#0000f0" VLINK="#8000a0">
   <H1>CoVID 19 Worldwide Growth Rates</H1>
   <P>
-    <font color="red">Updated: 7th April 2020, 03:35 BST <B>All graphs
-    have been updated, but not much of the commentary.  You can now
-    click on the graphs to get a large version, which is useful when
-    curves overlap.  The dataset for Finland had some issues, so I've
-    removed those curves for now.  I'll add them back when I
-	understand what is going on.
-	<P>In general, quite a few countries are showing signs have having peaked (number of new confirmed cases per day is now decreasing), and a few are showing signs that the death rate has also peaked. MJH</B></font>
+    <font color="red">Updated: 9th April 2020, 03:35 BST <B>All graphs
+    have been updated, and I've added new graphs looking at the shape
+    of the peak and looking at US states that may be peaking now.
+    I've updated the commentary for all 19 European graphs, but not many
+    of the others.  
+
+<P>In general, quite a few countries are showing signs have having peaked (number of new confirmed cases per day is now decreasing), and a few are showing signs that the death rate has also peaked. MJH</B></font>
 <P>
 This page presents historical SARS-CoV-2 coronavirus infection
 information.  I try to present it in a way that helps inform about how
@@ -34,15 +34,15 @@ are my interpretation only.  Nevertheless, I hope you find it useful.
 </P>
 <h2>Contents</h2><DL>
 <DT><a href="#covid-eu">Graph 1:</a> <B>Cases</B>: Western Europe: Italy, Spain, France, Germany, Netherlands, UK</DT>
-<DT><a href="#covid-eu-norm">Graph 2:</a> <B>Cases</B>: Western Europe: Italy, Switzerland, Spain, France, Germany, Netherlands, UK</DT>
+<DT><a href="#covid-eu-norm">Graph 2:</a> <B>Cases</B>: Western Europe: Italy, Spain, Switzerland, France, Germany, Netherlands, UK, Austria</DT>
 <DT><a href="#rates-peaked">Graph 3:</a> <B>Increases</B>: Daily Increases, Peaked Countries: Italy, Lombardy, Italy, Austria, Taiwan, South Korea, China, Australia, France, Spain, Norway, Czech Republic, Slovenia, Thailand</DT>
 <DT><a href="#rates-level">Graph 4:</a> <B>Increases</B>: Daily Increases, Countries with Constant Increases: Switzerland, Iceland, Luxembourg, Slovakia, Bulgaria, Thailand</DT>
 <DT><a href="#rates-eu">Graph 5:</a> <B>Increases</B>: Western Europe Daily Increases: Italy, France, USA, UK, Netherlands, Germany, New Zealand, Spain</DT>
-<DT><a href="#deaths-eu-norm">Graph 6:</a> <B>Deaths</B>: Deaths: Western Europe: Italy, Spain, France, Netherlands, Switzerland, UK, Germany</DT>
-<DT><a href="#deathrates-eu">Graph 7:</a> <B>Deaths per day</B>: Death per day: Western Europe: Italy, France, UK, Netherlands, Norway, Germany, Spain, Switzerland, Austria, South Korea</DT>
-<DT><a href="#covid-eu-norm-lom">Graph 8:</a> <B>Cases</B>: Italy, Lombardy, Switzerland, Austria</DT>
-<DT><a href="#covid-eu-norm2">Graph 9:</a> <B>Cases</B>: Nordic Region: Italy, Iceland, Denmark, Norway, Sweden, South Korea</DT>
-<DT><a href="#rates-nordic">Graph 10:</a> <B>Increases</B>: Daily Increases: Italy, Denmark, Sweden, Norway, Iceland, Estonia, Luxembourg</DT>
+<DT><a href="#rates-norm-peaked">Graph 6:</a> <B>Normalized Increases</B>: Daily Increases, Peaked Countries: Italy, Lombardy, Italy, Austria, Taiwan, South Korea, China, Australia, France, Spain, Norway, Czech Republic, Slovenia, Thailand, Switzerland, Iceland, Bulgaria</DT>
+<DT><a href="#deaths-eu-norm">Graph 7:</a> <B>Deaths</B>: Deaths: Western Europe: Italy, Spain, France, Netherlands, Switzerland, UK, Germany</DT>
+<DT><a href="#deathrates-eu">Graph 8:</a> <B>Deaths per day</B>: Death per day: Western Europe: Italy, France, UK, Netherlands, Norway, Germany, Spain, Switzerland, Austria, South Korea</DT>
+<DT><a href="#covid-eu-norm2">Graph 9:</a> <B>Cases</B>: Nordic Region: Italy, Iceland, Denmark, Norway, Sweden, Finland, South Korea</DT>
+<DT><a href="#rates-nordic">Graph 10:</a> <B>Increases</B>: Daily Increases: Italy, Denmark, Sweden, Norway, Finland, Iceland, Estonia, Luxembourg</DT>
 <DT><a href="#covid-eu-norm3">Graph 11:</a> <B>Cases</B>: Italy, Belgium, Ireland, Portugal, Luxembourg</DT>
 <DT><a href="#deaths-eu-norm2">Graph 12:</a> <B>Cases</B>: Deaths: Italy, France, Germany, Luxembourg</DT>
 <DT><a href="#covid-eu-norm4">Graph 13:</a> <B>Cases</B>: Italy, Greece, Czech Republic, Slovenia, Slovakia, Croatia, Romania, Poland, Hungary, Bulgaria, Serbia</DT>
@@ -55,19 +55,20 @@ are my interpretation only.  Nevertheless, I hope you find it useful.
 <DT><a href="#covid-world">Graph 20:</a> <B>Cases</B>: World: China, Italy, Iran, France, Spain, USA, South Korea, Japan</DT>
 <DT><a href="#covid-world-norm">Graph 21:</a> <B>Cases</B>: World: Italy, Iran, France, USA, Australia, South Korea, Singapore, Japan</DT>
 <DT><a href="#covid-us-norm">Graph 22:</a> <B>Cases</B>: US States: Italy, Washington, New York, New Jersey, Louisiana, Massachusetts, Michigan, Colorado, Illinois, Florida, California, Texas, Oklahoma</DT>
-<DT><a href="#covid-world-norm2">Graph 23:</a> <B>Cases</B>: Italy, USA, UK, Canada, Australia, New Zealand</DT>
-<DT><a href="#covid-world-norm3">Graph 24:</a> <B>Cases</B>: Italy, Israel, Pakistan, Turkey, South Africa, Russia, Saudi Arabia</DT>
-<DT><a href="#deaths-us">Graph 25:</a> <B>Deaths</B>: Deaths: USA: Italy, France, USA, Germany</DT>
-<DT><a href="#covid-world-sa2">Graph 26:</a> <B>Cases</B>: South America (Andean): Italy, Chile, Ecuador, Peru, Bolivia, Argentina</DT>
-<DT><a href="#covid-world-sa3">Graph 27:</a> <B>Cases</B>: South America: Italy, Brazil, Colombia, Uruguay, Paraguay, Venezuela</DT>
-<DT><a href="#covid-world-ca">Graph 28:</a> <B>Cases</B>: Central America: Italy, Panama, Dominican_republic, Mexico</DT>
-<DT><a href="#covid-world-seasia">Graph 29:</a> <B>Cases</B>: South East Asia: Italy, Thailand, Taiwan, Philippines, Vietnam, Cambodia</DT>
-<DT><a href="#covid-world-warm">Graph 30:</a> <B>Cases</B>: Warm Countries: Italy, France, USA, Australia, Brazil, Malaysia, India, Qatar, Thailand, Indonesia, Egypt, Bahrain, Kuwait</DT>
-<DT><a href="#covid-world-linear">Graph 31:</a> <B>Cases</B>: World: China, Italy, Iran, France, USA, South Korea, Austria, Japan, Scenario 4</DT>
+<DT><a href="#rates-us">Graph 23:</a> <B>Increases</B>: US States: New York, New Jersey, Washington, Louisiana, Colorado</DT>
+<DT><a href="#covid-world-norm2">Graph 24:</a> <B>Cases</B>: Italy, USA, UK, Canada, Australia, New Zealand</DT>
+<DT><a href="#covid-world-norm3">Graph 25:</a> <B>Cases</B>: Italy, Israel, Pakistan, Turkey, South Africa, Russia, Saudi Arabia</DT>
+<DT><a href="#deaths-us">Graph 26:</a> <B>Deaths</B>: Deaths: USA: Italy, France, USA, Germany</DT>
+<DT><a href="#covid-world-sa2">Graph 27:</a> <B>Cases</B>: South America (Andean): Italy, Chile, Ecuador, Peru, Bolivia, Argentina</DT>
+<DT><a href="#covid-world-sa3">Graph 28:</a> <B>Cases</B>: South America: Italy, Brazil, Colombia, Uruguay, Paraguay, Venezuela</DT>
+<DT><a href="#covid-world-ca">Graph 29:</a> <B>Cases</B>: Central America: Italy, Panama, Dominican_republic, Mexico</DT>
+<DT><a href="#covid-world-seasia">Graph 30:</a> <B>Cases</B>: South East Asia: Italy, Thailand, Taiwan, Philippines, Vietnam, Cambodia</DT>
+<DT><a href="#covid-world-warm">Graph 31:</a> <B>Cases</B>: Warm Countries: Italy, France, USA, Australia, Brazil, Malaysia, India, Qatar, Thailand, Indonesia, Egypt, Bahrain, Kuwait</DT>
+<DT><a href="#covid-world-linear">Graph 32:</a> <B>Cases</B>: World: China, Italy, Iran, France, USA, South Korea, Austria, Japan, Scenario 4</DT>
 </DL>
 <hr><P><h3><a name="covid-eu"></a>Western Europe: Italy, Spain, France, Germany, Netherlands, UK</h3><P>
-<a href="6apr2020/covid-eu-large.png">
-<img src="6apr2020/covid-eu.png"><P>
+<a href="8apr2020/covid-eu-large.png">
+<img src="8apr2020/covid-eu.png"><P>
 </a>
 <br><a href="points.html#covid-eu"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -100,13 +101,13 @@ that graph.
 
 
 </UL>
-<hr><P><h3><a name="covid-eu-norm"></a>Western Europe: Italy, Switzerland, Spain, France, Germany, Netherlands, UK</h3><P>
-<a href="6apr2020/covid-eu-norm-large.png">
-<img src="6apr2020/covid-eu-norm.png"><P>
+<hr><P><h3><a name="covid-eu-norm"></a>Western Europe: Italy, Spain, Switzerland, France, Germany, Netherlands, UK, Austria</h3><P>
+<a href="8apr2020/covid-eu-norm-large.png">
+<img src="8apr2020/covid-eu-norm.png"><P>
 </a>
 <br><a href="points.html#covid-eu-norm"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 5 Apr 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
 country curves are shown offset by the amounts shown.</LI>
 <UL>
@@ -127,14 +128,19 @@ daily increase count appears to have peaked, though it has not declined greatly.
 <LI> For the last week France and Germany both appear to have been
 tracking close to the 8% daily increase curve that Italy followed.
 Once increases get this small, it is hard to distinguish constant
-increases from exponential increases on this graph.
+increases from exponential increases on this graph.  France appears now to have peaked about 8 days ago.
 In the case of Germany, the daily increase in cases has been
 relatively constant, though it is not yet clear whether this represents
 a peak.
 
+<LI>The UK continues to follow most closely behind France, about 6
+days behind.  In general the UK curves have most closely resembled
+France for several weeks, so if the UK continues to do so, it should
+now be peaking.
+
 <LI> The Netherlands roughly followed the 8% curve for five days, but
 the last two days show lower increases. It is starting to look like
-cases in the Netherlands may have peaked 7 days ago.
+cases in the Netherlands may have peaked 10 days ago, but the decrease rate since has been relatively show.
 
 <LI>Switzerland has a relatively small population, and so the number
     of cases per million inhabitants is much higher.  Switzerland is
@@ -145,26 +151,25 @@ cases in the Netherlands may have peaked 7 days ago.
     that graph Switzerland looks to be as much as 10 days behind
     Italy.
 
-  <LI> For 15 days now, Switzerland has seen roughly constant daily
-  increases, which suggests Switzerland may be peaking.  The
-  alternative explanation - that testing capacity is saturated -
-  seems unlikely, as Switzerland is reporting only 15% of test results
-  are positive.  I think the Swiss cases data is likely reasonably
-  good.
+  <LI> For more than two weeks now, Switzerland has seen roughly constant daily
+  increases, which suggests Switzerland may have peaked, but is declining slowly since. 
     
   <LI>Spain stayed at 35% daily increases for much longer than any
     other large European country, which caused it to close on Italy,
     then followed the 22% curve for a week. Spain only roughly aligned
     with the 13.5% curve, although it joined this curve at roughly the
-    point where Italy departed it.  For the last ten days the number
-    of new cases in Spain has been roughly constant, with the last two
-    days showing a decrease.  We need to wait a few more days before
-    we have confidence that Spain has peaked, but it beginning to look
-    like it has.
+    point where Italy departed it.  For the last two weeks the number
+    of new cases in Spain was roughly constant, with the last four 
+    days showing a marked decrease.  Spain how appears to have peaked about a week ago.
+
+  <LI>Austria followed the Lombardy curve pretty faithfully about ten
+  days behind, staying at a higher increase rate for longer than
+  Italy.  Austria peaked ten days ago, and, unlike Italy, Austria has
+  seen a pronounced decrease in new cases since.
 </UL>
 <hr><P><h3><a name="rates-peaked"></a>Daily Increases, Peaked Countries: Italy, Lombardy, Italy, Austria, Taiwan, South Korea, China, Australia, France, Spain, Norway, Czech Republic, Slovenia, Thailand</h3><P>
-<a href="6apr2020/rates-peaked-large.png">
-<img src="6apr2020/rates-peaked.png"><P>
+<a href="8apr2020/rates-peaked-large.png">
+<img src="8apr2020/rates-peaked.png"><P>
 </a>
 <br><a href="points.html#rates-peaked"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -189,8 +194,8 @@ declined faster from their peaks than western countries.
 
 <LI>Finland was previously on this graph, but no longer looks to have peaked.</UL>
 <hr><P><h3><a name="rates-level"></a>Daily Increases, Countries with Constant Increases: Switzerland, Iceland, Luxembourg, Slovakia, Bulgaria, Thailand</h3><P>
-<a href="6apr2020/rates-level-large.png">
-<img src="6apr2020/rates-level.png"><P>
+<a href="8apr2020/rates-level-large.png">
+<img src="8apr2020/rates-level.png"><P>
 </a>
 <br><a href="points.html#rates-level"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -222,8 +227,8 @@ saturated, so the numbers only report the testing capacity.
 
 <LI>We can look at death rates data to try and rule out the third option.  Death rate data lags case data by 1-2 weeks, but we can see the start of a levelling in deaths in Switzerland and Luxembourg.  There have not been enough deaths in Iceland, Bulgaria or Slovakia to case any light on the issue, either way.</UL>
 <hr><P><h3><a name="rates-eu"></a>Western Europe Daily Increases: Italy, France, USA, UK, Netherlands, Germany, New Zealand, Spain</h3><P>
-<a href="6apr2020/rates-eu-large.png">
-<img src="6apr2020/rates-eu.png"><P>
+<a href="8apr2020/rates-eu-large.png">
+<img src="8apr2020/rates-eu.png"><P>
 </a>
 <br><a href="points.html#rates-eu"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -260,9 +265,36 @@ Italian curve.
 number of European countries, including Germany and the Netherlands.
 
 </UL>
+<hr><P><h3><a name="rates-norm-peaked"></a>Daily Increases, Peaked Countries: Italy, Lombardy, Italy, Austria, Taiwan, South Korea, China, Australia, France, Spain, Norway, Czech Republic, Slovenia, Thailand, Switzerland, Iceland, Bulgaria</h3><P>
+<a href="8apr2020/rates-norm-peaked-large.png">
+<img src="8apr2020/rates-norm-peaked.png"><P>
+</a>
+<br><a href="points.html#rates-norm-peaked"><small>SHOW DATA POINTS</small></a>
+<UL>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
+<LI>The graph shows <B>daily increase in confirmed cases normalized so the peaks of different countries are all the same height</B>, plotted on a linear scale against time.  A
+  Holt-Winters moving average filter with constants &alpha;=0.5 and
+  &beta;=0.5 has been applied to smooth the curves as differences are
+  very noisy.  This is a moderate amount of smoothing and extracts trends fairly well without smoothing large peaks. </LI>
+<LI>This linear-scale graph shows better than the log-scale graphs how
+rapidly (or otherwise) cases drop off after the peak.  I've aligned
+all the peaks together, and normalized the daily increases so the day
+of maximum increase (after moderate smoothing) has value 1.  Where a
+country had more than one peak within 90% of the same height, I've
+aligned by the first one, as I'm interested in what happens once the
+number of daily confirmed cases stops increasing.
+
+<LI>Where a country essentially had a single outbreak, such as in
+China or South Korea, once the outbreak is tackled effectively, the
+cases can largely die back down within ten days of the peak.  But few
+countries manage to achieve this, and double or triple peaks are
+common.  There are likely to be a number of reasons for this ranging
+from multiple outbreaks within a country peaking at different times to
+mitigation measures not being completely effective.
+</UL>
 <hr><P><h3><a name="deaths-eu-norm"></a>Deaths: Western Europe: Italy, Spain, France, Netherlands, Switzerland, UK, Germany</h3><P>
-<a href="6apr2020/deaths-eu-norm-large.png">
-<img src="6apr2020/deaths-eu-norm.png"><P>
+<a href="8apr2020/deaths-eu-norm-large.png">
+<img src="8apr2020/deaths-eu-norm.png"><P>
 </a>
 <br><a href="points.html#deaths-eu-norm"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -308,8 +340,8 @@ Italy did at a similar point in the epidemic, whereas Switzerland has
 seem fewer deaths.
 </UL>
 <hr><P><h3><a name="deathrates-eu"></a>Death per day: Western Europe: Italy, France, UK, Netherlands, Norway, Germany, Spain, Switzerland, Austria, South Korea</h3><P>
-<a href="6apr2020/deathrates-eu-large.png">
-<img src="6apr2020/deathrates-eu.png"><P>
+<a href="8apr2020/deathrates-eu-large.png">
+<img src="8apr2020/deathrates-eu.png"><P>
 </a>
 <br><a href="points.html#deathrates-eu"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -334,43 +366,13 @@ Korea, where the peak in the death rate was nearly a month after the
 peak in the peak in new confirmed cases.
 
 </UL>
-<hr><P><h3><a name="covid-eu-norm-lom"></a>Italy, Lombardy, Switzerland, Austria</h3><P>
-<a href="6apr2020/covid-eu-norm-lom-large.png">
-<img src="6apr2020/covid-eu-norm-lom.png"><P>
-</a>
-<br><a href="points.html#covid-eu-norm-lom"><small>SHOW DATA POINTS</small></a>
-<UL>
-<LI><I>Commentary updated: 5 Apr 2020</I></LI>
-<LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
-country curves are shown offset by the amounts shown.</LI>
-  <LI>I have aligned the 35% daily increase rate parts of the four
-    graphs, so the points at which they diverge can be seen.  As a
-    result the graph shows Lombardy as being 5.5 days ahead of Italy,
-    but a more realistic value based on today's data points is seven
-    days ahead.
-
-  <LI>Lombardy and Italy now appear to have peaked, see Graph 3,
-  though the daily increase in cases is not declining rapidly.
-
-  <LI>Switzerland tracked along the 35% curve about six days further
-    than Italy did, so comparing with Italy as a whole did not seem to
-    be the right baseline.  During this time Lombardy results provided
-    a better reference curve.  However in the last week Switzerland
-    has dropped off of the Lombardy curve and no longer is seeing
-    exponential growth.
-    
-  <LI>Austria also followed the Lombardy curve pretty faithfully about
-  ten days behind.  It now looks like Austria peaked eight days ago,
-  and, unlike Lombardy, Austria has seen a pronounced decrease in new
-  cases each day since.
-</UL>
-<hr><P><h3><a name="covid-eu-norm2"></a>Nordic Region: Italy, Iceland, Denmark, Norway, Sweden, South Korea</h3><P>
-<a href="6apr2020/covid-eu-norm2-large.png">
-<img src="6apr2020/covid-eu-norm2.png"><P>
+<hr><P><h3><a name="covid-eu-norm2"></a>Nordic Region: Italy, Iceland, Denmark, Norway, Sweden, Finland, South Korea</h3><P>
+<a href="8apr2020/covid-eu-norm2-large.png">
+<img src="8apr2020/covid-eu-norm2.png"><P>
 </a>
 <br><a href="points.html#covid-eu-norm2"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 7 Apr 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
 country curves are shown offset by the amounts shown.</LI>
       <LI>Data for most Nordic countries showed large waves of
@@ -380,33 +382,46 @@ country curves are shown offset by the amounts shown.</LI>
 	
       <LI>Iceland suffered a large number of imported cases relative
       to its very small population.  After that burst stopped, Iceland
-      followed roughly the same curve as Italy, two days ahead.
-      Twelve days ago Iceland's increase rate increased for five days,
-      but it has now levelled off at a similar rate to Italy. It is
+      followed roughly the same curve as Italy, two days ahead.  Two
+      weeks days ago Iceland's increase rate increased for five days,
+      but it then levelled off at a similar rate to Italy. It is
       possible that this increase was due to increased testing rather
-      than a burst in new cases.  Iceland is now showing signs that it is peaking.
+      than a burst in new cases.  Iceland is now appears to have
+      peaked, though the decline in new cases is relatively slow.
       
       <LI>Norway, Sweden, and Denmark all managed to stop the
       majority of imported cases from spreading too far, but
       afterwards they all restarted exponential growth from a smaller
       base of active cases, hence the relatively shallow gradients of
-      their curves.  All these countries are showing signs that they
-      may peak shortly.
+      their curves.
 
-      <LI>The data for Finland on previous verions of this graph is
-      almost certainly incorrect as a result of late incorporation of
-      old results that were not previously counted into the historic
-      record, but I have not yet had time to understand precisely how
-      this is incorrect. I have removed the curve for Finland until
-      then.
+<LI>Norway peaked on March 27th, though the decrease since has not
+been continuous.
+
+<LI>Sweden and Denmarks are showing signs that they may
+peak shortly.
+
+      <LI>Unlike other countries, Finland is now reporting confirmed
+      cases data with the date that the test was performed rather than
+      the date the test result was produced.  This means that
+      confirmed cases for the last few days continue to rise as test
+      results come in.  As a result, I am not displaying the last two
+      days' results, as their results are incomplete and so they give
+      a false impression of a downturn.  I am not yet sure if the
+      downturn in the last few days that I am showing is genuine, or a
+      result of late test results.
+
+<LI>The Finland dataset is currently coming from <a
+href="https://github.com/HS-Datadesk/koronavirus-avoindata">Helsingin
+Sanomat</a>.
 </UL>
-<hr><P><h3><a name="rates-nordic"></a>Daily Increases: Italy, Denmark, Sweden, Norway, Iceland, Estonia, Luxembourg</h3><P>
-<a href="6apr2020/rates-nordic-large.png">
-<img src="6apr2020/rates-nordic.png"><P>
+<hr><P><h3><a name="rates-nordic"></a>Daily Increases: Italy, Denmark, Sweden, Norway, Finland, Iceland, Estonia, Luxembourg</h3><P>
+<a href="8apr2020/rates-nordic-large.png">
+<img src="8apr2020/rates-nordic.png"><P>
 </a>
 <br><a href="points.html#rates-nordic"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 7 Apr 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows <B>daily increase in confirmed cases                                                                                   per million inhabitants</B>, plotted on a log scale, against time.
   A Holt-Winters moving average filter with constants &alpha;=0.5 and
   &beta;=0.5 has been applied to smooth the curves as differences are
@@ -417,12 +432,9 @@ country curves are shown offset by the amounts shown.</LI>
 changes are inherently more noisy.  However, this view is better
 to see whether a country has peaked or not.
 
-<LI>Daily increases in absolute numbers have been nearly constant for
-several days in Luxembourg and Iceland.  This is likely to an indication
-that the infection rate in these countries is peaking, though we won't
-be sure until it has been going down again for more than a week.
-Certainly, exponential growth is no longer occurring in these
-countries.
+<LI>Daily increases in absolute numbers were nearly constant for
+several weeks in Luxembourg and Iceland.  Both countries now seem to
+have peaked but the decrease is rather slow.
 
 <LI>Several days ago, Finland looked like it had peaked.  I'm currently
 unable to understand what has happened with the Finish data.  I am
@@ -432,57 +444,61 @@ a result I have removed Finland from the graph until I find time to
 understnd what is really happening.
 
 <LI>Norway was growing exponentially until 26th March, then decreased
-for six days. The last three days have shown modest increases again;
+for six days. This was followed by three days of modest increases again, followed again by decline;
 these waves against a relatively static background level seems to be a
-common feature in the Nordic region.
+common feature in the Nordic region. It seems likely that Norway did in fact peak on 26th March.
 
 <LI>Denmark and Sweden have very similar exponential increase rate
-profiles for the last two weeks. Neither country is yet showing clear signs of peaking.
+profiles for the last two weeks. Neither country is yet showing clear
+signs of having peaked, but both may be near to doing so.
 
 <LI>In mid March, Estonia looked like it had peaked, but this
 behaviour has happened in other countries such as Denmark, where a
 large number of case are imported.  The imported cases are mostly
 tracked down, leading to a dip, then growth again as transmission that
-was missed grows.  The peak seven days ago may be an echo of the
-original imported peak - this happened in Denmark and Sweden too,
-though their echoes were less pronounced.  The last three data points
-seem to indicate another wave of cases is in progress; whether this
-wave is higher than the previous one is not yet clear.</UL>
+was missed grows.  The peak 14 days ago may be an echo of the original
+imported peak - this happened in Denmark and Sweden too, though their
+echoes were less pronounced.  6 days ago another wave of cases
+occured, and now cases have dropped off again.  It is not clear
+whether another echo of the previous peak will occur, or whether cases
+will now decline.
+</UL>
 <hr><P><h3><a name="covid-eu-norm3"></a>Italy, Belgium, Ireland, Portugal, Luxembourg</h3><P>
-<a href="6apr2020/covid-eu-norm3-large.png">
-<img src="6apr2020/covid-eu-norm3.png"><P>
+<a href="8apr2020/covid-eu-norm3-large.png">
+<img src="8apr2020/covid-eu-norm3.png"><P>
 </a>
 <br><a href="points.html#covid-eu-norm3"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 31 Mar 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
 country curves are shown offset by the amounts shown.</LI>
-      <LI>In Belgium, the initial early ramp-up appears to be mostly
-      due to imported cases from Italian ski resorts. Since these
-      imports stopped, Belgium seems to be on a similar 22% daily
-      increase curve to that followed by Italy
-      <LI>Ireland and Portugal continue to follow the Italian curve closely, about 12 days behind.
-      <LI>Luxembourg has a very small population, so the curve is
-      noisy.  However, the last ten days data have taken Luxembourg
-      well above the point Lombardy reached at this stage of the
-      infection, but the last two datapoints hint at lower increases
-      around 22% in the future.  See the next graph for why I am not
-      confident Switzerland really is quite so close behind Italy as
-      this graph would suggest.
+<LI>Ireland, Portugal and Belgium all appear to be roughly following
+the curve that Italy followed.  In the last week it appears that
+Portugal and Ireland are tracking slightly below the Italy curve and
+Belgium is tracking slightly above the Italy curve.
+
+<LI>Luxembourg has a very small population, so the curve is noisy.
+      However, the last three weeks have taken Luxembourg well above
+      the point even Lombardy reached at this stage of the infection.
+      As a result I am not showing any time offset between the
+      Luxembourg and Italy curves.  However, see the next graph for
+      why I am not confident Luxembourg really is quite so close
+      behind Italy as this graph would suggest.  Likely the large
+      number of cases reported is due to better testing in Luxembourg.
 </UL>
 <hr><P><h3><a name="deaths-eu-norm2"></a>Deaths: Italy, France, Germany, Luxembourg</h3><P>
-<a href="6apr2020/deaths-eu-norm2-large.png">
-<img src="6apr2020/deaths-eu-norm2.png"><P>
+<a href="8apr2020/deaths-eu-norm2-large.png">
+<img src="8apr2020/deaths-eu-norm2.png"><P>
 </a>
 <br><a href="points.html#deaths-eu-norm2"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 29 Mar 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
 country curves are shown offset by the amounts shown.</LI>
 <LI>Luxembourg is such an outlier in the previous graph that this
 leads me to doubt that the confirmed case data is comparable with
 other countries.  The number of deaths in Luxembourg is very small -
-only eight - but it's just enough that we can get a very rough
+only 44 as of 8th April - but it's just enough that we can get a very rough
 cross-calibration of case data vs death data.  It seems likely that
 testing in Luxembourg is much more effective than in France or Italy,
 and so is identifying many more people whose symptoms would be too
@@ -490,11 +506,11 @@ mild to merit testing in France or Germany.  It is clear that there
 are a large number of cases in Luxembourg, but not so many more per
 million inhabitants as the previous graph shows.  It looks like deaths
 lag case data by about ten days more in Luxembourg than in France.
-The German data shows a similar additional lag.
+The German data shows a similar additional lag.  
 </UL>
 <hr><P><h3><a name="covid-eu-norm4"></a>Italy, Greece, Czech Republic, Slovenia, Slovakia, Croatia, Romania, Poland, Hungary, Bulgaria, Serbia</h3><P>
-<a href="6apr2020/covid-eu-norm4-large.png">
-<img src="6apr2020/covid-eu-norm4.png"><P>
+<a href="8apr2020/covid-eu-norm4-large.png">
+<img src="8apr2020/covid-eu-norm4.png"><P>
 </a>
 <br><a href="points.html#covid-eu-norm4"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -504,12 +520,12 @@ country curves are shown offset by the amounts shown.</LI>
   <LI> Most Eastern European countries have shown large downturns.  This logscale plot of cumulative confirmed cases no longer gives enough visibility into what is happened.  See the next graph for a better view.
 </UL>
 <hr><P><h3><a name="rates-eeu"></a>Eastern Europe, Daily Increases: Italy, Greece, Czech Republic, Slovenia, Slovakia, Romania, Poland, Hungary, Bulgaria, Serbia</h3><P>
-<a href="6apr2020/rates-eeu-large.png">
-<img src="6apr2020/rates-eeu.png"><P>
+<a href="8apr2020/rates-eeu-large.png">
+<img src="8apr2020/rates-eeu.png"><P>
 </a>
 <br><a href="points.html#rates-eeu"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 1 Apr 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows <B>daily increase in confirmed cases                                                                                   per million inhabitants</B>, plotted on a log scale, against time.
   A Holt-Winters moving average filter with constants &alpha;=0.5 and
   &beta;=0.5 has been applied to smooth the curves as differences are
@@ -520,56 +536,66 @@ country curves are shown offset by the amounts shown.</LI>
     changes are inherently more noisy.  However, this view is better
     to see whether a country has peaked or not.
 
-<LI>I thought Slovakia had peaked a few days ago, but it appears I was
-wrong.  Nevertheless, growth there is almost constant, and certainly
-no longer exponential.
+<LI>I thought Slovakia had peaked 16 days ago, then again 7 days ago,
+but it appears I was wrong in both cases.  The increase in new cases
+the last three days after such a long period of constant growth is
+unusual, but I do not know if this is causes by better testing or an
+increase in the underlying epidemic.
 
-<LI>Increase are also roughly level in Bulgaria, which is likely peaking now too.
+<LI>Increase are roughly level in Bulgaria, which appears to have
+peaked on March 31st, and been declining slowly since.
 
-<LI>Greece appears to be close to peaking - the daily increase has
-  been nearly constant for a number of days, and it no longer shows
-  signs of significant exponential growth.
+<LI>Greece appears to have peaked on April 2nd - the daily increase
+  had been nearly constant for two weeks, and has turned down more
+  significantly the last few days.
 
-<LI> The last three days data for Slovenia and the Czech Republic have
-show decreases, but this is still too short a duration to have any
-confidence they have peaked.
+<LI> Slovenia and the Czech Republic both appear to have peaked on
+March 27th, but the decrease since then has been rather slow, with
+both showing a smaller secondary peak.
 
-<LI>Hungary, Romania and Poland are still growing exponentially with a
-relatively low daily increase rate, though today's data point for Serbia is down.
+<LI>Hungary, Romania and Poland may be peaking now, but more data will
+be required to say this with confidence.
 
 <LI>Serbia dipped the last two days after a steady exponential
-increases the last two weeks.  I suspect it has not yet peaked (it
-would be rather sudden if it has), but we will only know in a few more days.</UL>
+increases the last three weeks.  It is too early to know if this is a
+peak.</UL>
 <hr><P><h3><a name="covid-eu-norm5"></a>Italy, Estonia, Belarus, Lithuania, Latvia, Ukraine, Russia</h3><P>
-<a href="6apr2020/covid-eu-norm5-large.png">
-<img src="6apr2020/covid-eu-norm5.png"><P>
+<a href="8apr2020/covid-eu-norm5-large.png">
+<img src="8apr2020/covid-eu-norm5.png"><P>
 </a>
 <br><a href="points.html#covid-eu-norm5"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 3 Apr 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
 country curves are shown offset by the amounts shown.</LI>
   <LI>Estonia's small population and recent fast ramp up of cases
   means it now has a high number of cases per million inhabitants. The
   current curve is similar to the Danish data, where most of a wave of
   imported cases was tracked down and exponential growth resumed from
-  a lower base.  The long term trend has been about 10% daily growth.
+  a lower base.  Estonia now looks to be peaking, but this is not
+  certain, and can be seen better on <a href="#rates-nordic">this
+  graph.</a>
 
 <LI>Russia is experiencing a lower daily increase rate than most
   northern countries at the equivalent stage of the infection.  I've
   aligned it with the 22% daily increase curve that many countries
-  followed.
+  followed.  Recently Russian looks to starting to drop below the 22% curve.
 
-<LI>Latvia and Lithuania are on very similar curves showing around 10% daily increases.
+<LI>Latvia and Lithuania are on very similar curves; both look like
+they peaked recently, Lithuania on April 4th and Latvia on April 1st,
+though it will take a few more days to be confident about this.
 
-<LI>Ukraine is growing at around the 35% rate that is typical of countries early in the epidemic.
+<LI>Ukraine was growing at around the 35% rate that is typical of
+countries early in the epidemic, then switched to a lower growth rate
+the last week.  If the last two data points are continued, Ukraine may
+be peaking, but it is too early to be sure.
 
 <LI>I don't understand why the Belarus curve levelled off, but it
 increasing again now.  Belarus only reports statistics every two or
 three days.</UL>
 <hr><P><h3><a name="covid-eu-linear"></a>Western Europe: Italy, France, Germany, Spain, Switzerland, UK, Netherlands, Sweden</h3><P>
-<a href="6apr2020/covid-eu-linear-large.png">
-<img src="6apr2020/covid-eu-linear.png"><P>
+<a href="8apr2020/covid-eu-linear-large.png">
+<img src="8apr2020/covid-eu-linear.png"><P>
 </a>
 <br><a href="points.html#covid-eu-linear"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -586,12 +612,12 @@ by the amounts shown.</LI>
      except it looks scarier.  
 </UL>
 <hr><P><h3><a name="covid-uk"></a>UK: England Regions</h3><P>
-<a href="6apr2020/covid-uk-large.png">
-<img src="6apr2020/covid-uk.png"><P>
+<a href="8apr2020/covid-uk-large.png">
+<img src="8apr2020/covid-uk.png"><P>
 </a>
 <br><a href="points.html#covid-uk"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 5 Apr 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
 country curves are shown offset by the amounts shown.</LI>
 <LI>All the English regions converged onto the 35% daily increase
@@ -604,13 +630,15 @@ has been less than the rest of England for more than a week now.
 
 <LI>London is running around a week ahead of the UK, and is tracking
 along the curve that Italy followed (previously it looked like it was
-tracking the Lombardy curve).  London is looking like the daily
-increase rate there may peak within the next week.
+tracking the Lombardy curve).  It looks like the daily increase rate
+in London peaked on April 1st, with a second similar peak on April
+5th, though it is too early to be sure that the rate will not increase
+again.
 
 </UL>
 <hr><P><h3><a name="covid-uk-linear"></a>UK: England Regions</h3><P>
-<a href="6apr2020/covid-uk-linear-large.png">
-<img src="6apr2020/covid-uk-linear.png"><P>
+<a href="8apr2020/covid-uk-linear-large.png">
+<img src="8apr2020/covid-uk-linear.png"><P>
 </a>
 <br><a href="points.html#covid-uk-linear"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -621,12 +649,12 @@ by the amounts shown.</LI>
 <LI>This graph shows clearly that London has started to depart the Lombardy curve, and South West England is now dropping well below the Italy curve.
 </UL>
 <hr><P><h3><a name="covid-uk-all"></a>UK: England, Scotland, Wales, Northern Ireland</h3><P>
-<a href="6apr2020/covid-uk-all-large.png">
-<img src="6apr2020/covid-uk-all.png"><P>
+<a href="8apr2020/covid-uk-all-large.png">
+<img src="8apr2020/covid-uk-all.png"><P>
 </a>
 <br><a href="points.html#covid-uk-all"><small>SHOW DATA POINTS</small></a>
 <UL>
-<LI><I>Commentary updated: 5 Apr 2020</I></LI>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
 <LI>The graph shows cumulative number of <B>confirmed cases per million                                                                                       inhabitants</B>, plotted on a log scale, against time.  The
 country curves are shown offset by the amounts shown.</LI>
 <LI>England (excluding London), Scotland, Wales and Northern Island
@@ -634,12 +662,18 @@ were all experiencing daily increase rates close to the 22% curve that
 Italy followed, but in the last week all have experienced continued
 declines in the daily percentage increase (though not declines in the
 absolute number of new cases).
-<LI>The last few days London appears to have dropped off of the Lombardy curve.
-<LI>All the other nations continue to track along the curve that Italy followed.
+
+<LI>The last few days London appears
+to have dropped off of the Lombardy curve, and may have peaked.
+
+<LI>All the other nations continue to track close to the curve that
+Italy followed, although Scotland and Northern Ireland have recently
+dropped below the Italy curve, while Wales has climbed a little way
+above it.
 </UL>
 <hr><P><h3><a name="covid-world"></a>World: China, Italy, Iran, France, Spain, USA, South Korea, Japan</h3><P>
-<a href="6apr2020/covid-world-large.png">
-<img src="6apr2020/covid-world.png"><P>
+<a href="8apr2020/covid-world-large.png">
+<img src="8apr2020/covid-world.png"><P>
 </a>
 <br><a href="points.html#covid-world"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -687,8 +721,8 @@ amounts shown. </LI>
   have been accurate, but I won't speculate on this other than to note
   that the Japanese curve has always been an unusual outlier.</UL>
 <hr><P><h3><a name="covid-world-norm"></a>World: Italy, Iran, France, USA, Australia, South Korea, Singapore, Japan</h3><P>
-<a href="6apr2020/covid-world-norm-large.png">
-<img src="6apr2020/covid-world-norm.png"><P>
+<a href="8apr2020/covid-world-norm-large.png">
+<img src="8apr2020/covid-world-norm.png"><P>
 </a>
 <br><a href="points.html#covid-world-norm"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -715,8 +749,8 @@ to curve downwards to eventually parallel the Korean curve.
 
 </UL>
 <hr><P><h3><a name="covid-us-norm"></a>US States: Italy, Washington, New York, New Jersey, Louisiana, Massachusetts, Michigan, Colorado, Illinois, Florida, California, Texas, Oklahoma</h3><P>
-<a href="6apr2020/covid-us-norm-large.png">
-<img src="6apr2020/covid-us-norm.png"><P>
+<a href="8apr2020/covid-us-norm-large.png">
+<img src="8apr2020/covid-us-norm.png"><P>
 </a>
 <br><a href="points.html#covid-us-norm"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -756,9 +790,27 @@ country curves are shown offset by the amounts shown.</LI>
 <LI>New Jersey, Louisiana, Massachusetts and Michigan have tracked
 further up the 13.5% curve than Italy did.  None of these states are
 showing signs the exponential growth will end soon.</UL>
+<hr><P><h3><a name="rates-us"></a>US States: New York, New Jersey, Washington, Louisiana, Colorado</h3><P>
+<a href="8apr2020/rates-us-large.png">
+<img src="8apr2020/rates-us.png"><P>
+</a>
+<br><a href="points.html#rates-us"><small>SHOW DATA POINTS</small></a>
+<UL>
+<LI><I>Commentary updated: 9 Apr 2020</I></LI>
+<LI>The graph shows <B>daily increase in confirmed cases                                                                                   per million inhabitants</B>, plotted on a log scale, against time.
+  A Holt-Winters moving average filter with constants &alpha;=0.5 and
+  &beta;=0.5 has been applied to smooth the curves as differences are
+  very noisy.  This is a moderate amount of smoothing and it imposes a
+  about a days lag, but it does extract trends fairly well.  The
+  curves are not offset, today is Day 0 for all curves.</LI>
+<LI>The increase rate looks like it may have peaked in New York, New
+Jersey, Louisiana, California, Illinois, Michigan, Massachusetts and
+Washington State, though it is too early to say for sure.  Washington
+looks the most certain of these, and has not seen exponential growth for 11
+days.</UL>
 <hr><P><h3><a name="covid-world-norm2"></a>Italy, USA, UK, Canada, Australia, New Zealand</h3><P>
-<a href="6apr2020/covid-world-norm2-large.png">
-<img src="6apr2020/covid-world-norm2.png"><P>
+<a href="8apr2020/covid-world-norm2-large.png">
+<img src="8apr2020/covid-world-norm2.png"><P>
 </a>
 <br><a href="points.html#covid-world-norm2"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -780,8 +832,8 @@ remarkable accuracy, but in the last few days has started to see a
 significant decline in growth rate, similar to that of Australia a few
 days ago.</UL>
 <hr><P><h3><a name="covid-world-norm3"></a>Italy, Israel, Pakistan, Turkey, South Africa, Russia, Saudi Arabia</h3><P>
-<a href="6apr2020/covid-world-norm3-large.png">
-<img src="6apr2020/covid-world-norm3.png"><P>
+<a href="8apr2020/covid-world-norm3-large.png">
+<img src="8apr2020/covid-world-norm3.png"><P>
 </a>
 <br><a href="points.html#covid-world-norm3"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -812,8 +864,8 @@ within households would cause infections to continue to rise for many
 days or even weeks.  I will refrain from speculating about the cause
 of this sudden change in growth rate.</UL>
 <hr><P><h3><a name="deaths-us"></a>Deaths: USA: Italy, France, USA, Germany</h3><P>
-<a href="6apr2020/deaths-us-large.png">
-<img src="6apr2020/deaths-us.png"><P>
+<a href="8apr2020/deaths-us-large.png">
+<img src="8apr2020/deaths-us.png"><P>
 </a>
 <br><a href="points.html#deaths-us"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -836,8 +888,8 @@ high.  If this gap widens in the future, then this would be evidence
   <LI> To put this in perspective if Italy is identifying just the ~10% of infections that need ICU care, the US is probably identifying very roughly ~30% of infections. (1.35 ^ 4 ~= 3)
 </UL>
 <hr><P><h3><a name="covid-world-sa2"></a>South America (Andean): Italy, Chile, Ecuador, Peru, Bolivia, Argentina</h3><P>
-<a href="6apr2020/covid-world-sa2-large.png">
-<img src="6apr2020/covid-world-sa2.png"><P>
+<a href="8apr2020/covid-world-sa2-large.png">
+<img src="8apr2020/covid-world-sa2.png"><P>
 </a>
 <br><a href="points.html#covid-world-sa2"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -862,8 +914,8 @@ the last week, increase rates declined significantly, to less than
 15%.
 </UL>
 <hr><P><h3><a name="covid-world-sa3"></a>South America: Italy, Brazil, Colombia, Uruguay, Paraguay, Venezuela</h3><P>
-<a href="6apr2020/covid-world-sa3-large.png">
-<img src="6apr2020/covid-world-sa3.png"><P>
+<a href="8apr2020/covid-world-sa3-large.png">
+<img src="8apr2020/covid-world-sa3.png"><P>
 </a>
 <br><a href="points.html#covid-world-sa3"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -882,8 +934,8 @@ the 22% daily increase curve, roughly following the track taken by
 Italy.  The rest of South America seems to be fairing considerably better, with lower overall numbers of cases and lower increase rates.  Growth is still exponential though.
 </UL>
 <hr><P><h3><a name="covid-world-ca"></a>Central America: Italy, Panama, Dominican_republic, Mexico</h3><P>
-<a href="6apr2020/covid-world-ca-large.png">
-<img src="6apr2020/covid-world-ca.png"><P>
+<a href="8apr2020/covid-world-ca-large.png">
+<img src="8apr2020/covid-world-ca.png"><P>
 </a>
 <br><a href="points.html#covid-world-ca"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -904,8 +956,8 @@ this track.
 has a larger population; as the outbreak is not evenly distributed,
 this may underplay the severity in the outbreak clusters.</UL>
 <hr><P><h3><a name="covid-world-seasia"></a>South East Asia: Italy, Thailand, Taiwan, Philippines, Vietnam, Cambodia</h3><P>
-<a href="6apr2020/covid-world-seasia-large.png">
-<img src="6apr2020/covid-world-seasia.png"><P>
+<a href="8apr2020/covid-world-seasia-large.png">
+<img src="8apr2020/covid-world-seasia.png"><P>
 </a>
 <br><a href="points.html#covid-world-seasia"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -918,8 +970,8 @@ country curves are shown offset by the amounts shown.</LI>
 
 <LI>Since then, Taiwan has peaked, Thailand looks like it may peak soon, and the increase rates for Vietnam and Cambodia have dropped off greatly.</UL>
 <hr><P><h3><a name="covid-world-warm"></a>Warm Countries: Italy, France, USA, Australia, Brazil, Malaysia, India, Qatar, Thailand, Indonesia, Egypt, Bahrain, Kuwait</h3><P>
-<a href="6apr2020/covid-world-warm-large.png">
-<img src="6apr2020/covid-world-warm.png"><P>
+<a href="8apr2020/covid-world-warm-large.png">
+<img src="8apr2020/covid-world-warm.png"><P>
 </a>
 <br><a href="points.html#covid-world-warm"><small>SHOW DATA POINTS</small></a>
 <UL>
@@ -970,8 +1022,8 @@ COVID-19 progression.
   require relatively hot temperatures to have much effect.
 </UL>
 <hr><P><h3><a name="covid-world-linear"></a>World: China, Italy, Iran, France, USA, South Korea, Austria, Japan, Scenario 4</h3><P>
-<a href="6apr2020/covid-world-linear-large.png">
-<img src="6apr2020/covid-world-linear.png"><P>
+<a href="8apr2020/covid-world-linear-large.png">
+<img src="8apr2020/covid-world-linear.png"><P>
 </a>
 <br><a href="points.html#covid-world-linear"><small>SHOW DATA POINTS</small></a>
 <UL>
