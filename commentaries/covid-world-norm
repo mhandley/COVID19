@@ -2,17 +2,14 @@
   the overall picture compared to the previous graph.
 
 <LI>In this view, the US moves a few days further behind Italy.  This
-  is probably deceptive, and it might be better to show data for
-  New York State, for example, on this graph.
+  is probably deceptive, and it is better to examine the US on a
+  state-by-state basis.
 
-<LI>I've added a curve for Singapore, which contained the initial
-  imported cases very well through contact tracing.  However the graph
-  shows a worrying slow but steady super-exponential growth until
-  about a week ago.  This growth was due in part to contact tracing
-  losing its effectiveness, and recently Singapore announced more
-  isolation measures as the number of untraced cases was rising.
+<LI>Singapore contained the initial imported cases very well through
+  contact tracing.  However, for the last month Singapore has averaged
+  8% per day increase rates.  This growth was due in part to contact
+  tracing losing its effectiveness, and recently Singapore announced
+  more isolation measures as the number of untraced cases was rising.
 
-<LI>I have added a curve for Australia, which appears to be in the
-early stages of peaking.  If this continues, the curve will continue
-to curve downwards to eventually parallel the Korean curve.
+<LI>Australia peaked on 28th March and has seen declining numbers of new cases since then.  
 

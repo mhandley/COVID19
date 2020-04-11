@@ -1,0 +1,13 @@
+<LI>Data on this graph comes directly from the <a
+href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data">JHU
+dataset</a>, or from the Wikipedia dataset which is often better
+quality.  I have not double-checked the data, and it may lag by up to
+a day.
+
+<LI>Panama, Mexico and the Domincan Republic all seem to be following
+the track paved by Italy, though they are at different stages along
+this track.
+
+<LI>In part, the reason Mexico is further behind is simply because it
+has a larger population; as the outbreak is not evenly distributed,
+this may underplay the severity in the outbreak clusters.
