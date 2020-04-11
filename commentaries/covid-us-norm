@@ -4,9 +4,9 @@
     dataset</a>, which is much less noisy than the JHU dataset I was
     previously using.
 
-<LI>Most US states are a long way behind European countries, but
+<LI>Many US states are a long way behind European countries, but
     several now have comparable rates per million inhabitants and New
-    York and perhaps New Jersey are ahead. I have only plotted the 11
+    York, New Jersey and perhaps Louisiana are ahead. I have only plotted the 12
     states with most confirmed cases.
 
 <LI>European countries moved from a 35% daily increase curve to a 22%

@@ -1,10 +1,14 @@
 <LI>All the English regions converged onto the 35% daily increase
 curve that Italy followed, then transitioned to the 22% daily increase
-curve, though London and the Midlands spend longer at 35% than the
-other regions.  Since then, all the regions have seen further reductions.  I have aligned all the regions except South West directly with the Italy curve, as that all appear to be decreasing is a similar manner to Italy.
+curve, though London and the Midlands spent longer at 35% than the
+other regions.  Since then, all the regions have seen further reductions.  I have aligned all the regions except South West with the Italy curve at the point in which they reached 300 cases per million inhabitants.  This emphasizes recent differences in growth giving a better idea of where things are going, while deemphasizing older increases.
 
 <LI>South West is the exception here, as the daily increase rate there
-has been less than the rest of England for more than a week now.
+has been less than the rest of England for two weeks now.  I have
+aligned South West with Italy at the point in which they reached 100
+cases per million inhabitants.  Normally I prefer to align gradients
+if two curves share a common gradient (i.e. increase rate) for a
+while, but I cannot do this in this case.
 
 <LI>London is running around a week ahead of the UK, and is tracking
 along the curve that Italy followed (previously it looked like it was

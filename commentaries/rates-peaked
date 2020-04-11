@@ -1,0 +1,22 @@
+<LI>On this graph I show the countries that I believe have likely
+peaked, and I have aligned the day they peaked at day 0.
+
+<LI>It doesn't really make sense to show Chinese cases per million
+inhabitants, when 82% of the cases were in Hubei province.  I have
+therefore used the Hubei population as the China population when
+calculating cases per million inhabitants.  Really all I care about on
+this graph is the shape of the curve.
+
+<LI>It is notable that China and Korea rose faster to their peaks and
+declined faster from their peaks than western countries.
+
+<LI>Italy's peak appears to be rather broad.  In part this may be due
+to a large increase in testing just after the time of the peak, which
+might give the impression cases are not falling as fast as they really
+are.
+
+<LI>New Zealand appears to be exhibiting a broad peak, similar to a
+number of European countries, including Germany and the Netherlands.
+
+
+<LI>Finland was previously on this graph, but no longer looks to have peaked.

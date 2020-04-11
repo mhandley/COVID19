@@ -5,3 +5,11 @@
      them.  It has to be truncated, or you cannot see any information.
      It doesn't really show anything additional over the log graphs,
      except it looks scarier.  
+
+<LI><B>Be careful using this graph for prediction purposes</B>.  Conclusions
+you may draw from the trajectory on logscale graphs are much less
+sensitive to the fraction of infections being detected than on this
+linear graph.  For example, if the UK was detecting 10% of cases and
+Spain was detecting 15% of cases, their trajectories would appear
+similar on this graph.  On a logscale graph, the gradient is not
+affected by constant multiplicative differences in detection rate.
