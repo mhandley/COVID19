@@ -91,5 +91,7 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam

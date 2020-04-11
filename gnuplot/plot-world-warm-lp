@@ -91,6 +91,8 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 1200,600
@@ -98,15 +100,15 @@ set output "../graphs/covid-world-warm-lp.png"
 set logscale y
 #set key at -18,90000
 set key outside right
-set yrange [50:869396]
+set yrange [50:998504]
 set xrange [-50:]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from 8 April 2020)"
+set xlabel "Days (from 10 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 53
+offset = 55
 usoff = 12
-inoff = 8.5
+inoff = 7
 broff = 0
 thoff = 8
 idoff = 9.5

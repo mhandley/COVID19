@@ -5,12 +5,19 @@ quality.  I have not double-checked the data, and it may lag by up to
 a day.
 
 <LI>South American countries seem to be clustered into two: Andean
-states except for Columbia have recently been tracking roughly along
+states except for Columbia have  tracked roughly along
 the 22% daily increase curve, roughly following the track taken by
-Italy.
+Italy.  This trend stopped about two weeks ago in most countries.
 
-<LI>Cases in Ecuador were increasing significantly faster than 35% per
-day until a week ago.  This usually indicates that the epidemic has
-spread without being detected, and testing is now catching up.  For
-the last week, increase rates declined significantly, to less than
-15%.
+<LI>New cases in Argentina appear to have peaked on April 2nd, but do
+seem to have declined greatly since, so it is possible they may start
+increaseing again.
+
+<LI>New cases in Chile were fairly constant for about a week, but have
+been climbing again the last three days.
+
+<LI>The curves for Peru, Bolivia and Ecuador are all rather noisy.
+The Ecuador curve in particular is sufficiently noisy that it casts
+doubt on how acaccurately it is tracking the underlying infections, as
+the infection process at this scale is unlikely to be this variable.
+

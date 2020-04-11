@@ -91,20 +91,22 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-uk-linear.png"
 #set logscale y
-set key at -12,3700 box
+offset = (55 + 5.5)
+set key at (37-offset),6028.22*0.95
 #set key at -22,100
-set yrange [1:4000]
-set xrange [-40:0]
+set yrange [1:6028.22]
+set xrange [(5-offset):0]
 #set yrange [3:100]
 #set xrange [-3:-15]
 set ylabel "Confirmed COVID19 cases per million inhabitants"
-set xlabel "Days (from 8 April 2020)"
-offset = (53 + 5.5)
+set xlabel "Days (from 10 April 2020)"
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7

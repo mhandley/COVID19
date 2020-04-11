@@ -1,13 +1,13 @@
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-uk-all.png"
 set logscale y
-set key at -1,30 box
+offset = (OFFSET + 5.5)
+set key at -1,70 box
 #set key at -22,100
-set yrange [3:4500]
-set xrange [-40:]
+set yrange [3:YMAX]
+set xrange [(5-OFFSET):]
 set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
-offset = (OFFSET + 5.5)
 set mxtics
 set grid mxtics xtics ytics mytics
 ukpop = 67.7
@@ -30,7 +30,7 @@ nipop = 1.8
 scpop = 5.3
 wapop = 3.0
 
-lonoff = 19
+lonoff = 16
 scoff = 21.5
 waoff = 19.5
 nioff = 23
@@ -44,7 +44,9 @@ plot "../country_data/lombardy" using ($0 +10.5 - offset):($2/lompop) w l lw 2 l
 "../uk-data/uk-regions-cum" using ($0 +13.5 -nioff - offset):($10/nipop) w l lw 2 lc "brown" t sprintf("Northern Ireland (%d days behind Italy)", nioff - lomoff), \
 "../uk-data/uk-regions-cum" using ($0 +13.5 -roeoff - offset):(($2+$4+$5+$6+$7+$8)/(epop+midpop+nepop+nwpop+sepop+swpop)) w l lw 2 lc "magenta" t sprintf("Rest of England (%d days behind Italy)", roeoff - lomoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
-1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase", \
+1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase",\
+1.08**(x+offset + 53.3) lc "black" dashtype 3 t "8% daily increase"
 
 #"switzerland" using ($0+3.5-offset):($2/supop) w l lw 2 lc "brown" t "Switzerland (11 days behind Lombardy, see comment)", \
 #"austria" using ($0 +4.5 - offset):($2/atpop) w l lw 2 lc "orange" t "Austria (14 days behind Lombardy)", \

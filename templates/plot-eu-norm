@@ -1,9 +1,9 @@
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-eu-norm.png"
 set logscale y
-set key at 0,100 box
+set key at 1,500 box
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set yrange [10:YMAX]
+set yrange [100:YMAX]
 set xrange [-30:2]
 set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
@@ -20,11 +20,11 @@ atoff = 7
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/spain" using ($1 + esoff):($2/espop) w l lw 2 lc "orange" t sprintf("Spain (%d day ahead of Italy)", esoff), \
 "../aligned/country_data/switzerland" using ($1 - choff):($2/chpop) w l lw 2 lc "brown" t sprintf("Switzerland (%d days behind Italy)", choff), \
+"../aligned/country_data/austria" using ($1 - atoff):($2/atpop) w l lw 2 lc "#ff9090" t sprintf("Austria (%.1f days behind Italy)", atoff), \
 "../aligned/country_data/france" using ($1 - froff):($2/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
 "../aligned/country_data/germany" using ($1 - deoff):($2/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%.1f days behind Italy)", deoff), \
 "../aligned/country_data/netherlands" using ($1 - nloff):($2/nlpop) w l lw 2 lc "#a0a0a0" t sprintf("Netherlands (%.1f days behind Italy)", nloff), \
 "../aligned/country_data/uk" using ($1 - ukoff):($2/ukpop) w l lw 2 lc "blue" t sprintf("UK (%.1f days behind Italy)", ukoff), \
-"../aligned/country_data/austria" using ($1 - atoff):($2/atpop) w l lw 2 lc "#ff9090" t sprintf("Austria (%.1f days behind Italy)", atoff), \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase",\
 1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase",\
 1.08**(x+offset + 53.3) lc "black" dashtype 3 t "8% daily increase"

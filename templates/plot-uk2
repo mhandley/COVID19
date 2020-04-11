@@ -1,15 +1,15 @@
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-uk-linear.png"
 #set logscale y
-set key at -12,3700 box
+offset = (OFFSET + 5.5)
+set key at (37-offset),YMAX*0.95
 #set key at -22,100
-set yrange [1:4000]
-set xrange [-40:0]
+set yrange [1:YMAX]
+set xrange [(5-offset):0]
 #set yrange [3:100]
 #set xrange [-3:-15]
 set ylabel "Confirmed COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
-offset = (OFFSET + 5.5)
 ukpop = 67.7
 frpop = 65.2
 depop = 83.7

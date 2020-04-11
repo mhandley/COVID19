@@ -91,25 +91,28 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
+
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-world-norm2.png"
 set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at 0,20 box
-set yrange [2:4608.99173553719]
-set xrange [-40:3]
+offset = 55
+set key at 0,40 box
+set yrange [2:4878.578512396694]
+set xrange [5-offset:3]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 8 April 2020)"
-offset = 53
-usoff = 17
+set xlabel "Days (from 10 April 2020)"
+usoff = 14
 saoff = 27
-nzoff = 22.5
+nzoff = 21.5
 ruoff = 30.5
-auoff = 18.5
+auoff = 18
 ukoff = 16
 kroff = 4
 caoff = 18.5
@@ -120,5 +123,7 @@ plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/australia" using ($1 -auoff):($2/aupop) w l lw 2 lc "#00b0b0" t sprintf("Australia (%d days behind Italy)", auoff),\
 "../aligned/country_data/newzealand" using ($1 -nzoff):($2/nzpop) w l lw 2 lc "black" t sprintf("New Zealand (%d days behind Italy)", nzoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
-1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase", \
+1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase",\
+1.08**(x+offset + 53.3) lc "black" dashtype 3 t "8% daily increase"
 

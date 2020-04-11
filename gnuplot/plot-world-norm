@@ -91,6 +91,8 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
@@ -99,12 +101,12 @@ set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at 2,7 box font "Helvetica,11"
-set yrange [0.5:4608.99173553719]
-set xrange [-40:3]
+offset = 55
+set key at 2,10 box font "Helvetica,11"
+set yrange [0.5:4878.578512396694]
+set xrange [(5-offset):3]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 8 April 2020)"
-offset = 53
+set xlabel "Days (from 10 April 2020)"
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/iran" using ($1 - 2.5):($2/irpop) w l lw 2  lc "#6090ff" t "Iran (2.5 days behind Italy)", \
 "../aligned/country_data/france" using ($1 - 8.5):($2/frpop) w l lw 2 lc "red" t "France (8.5 days behind Italy)", \
@@ -114,7 +116,8 @@ plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/singapore" using ($1):($2/sgpop) w l lw 2 lc "#00b000" t "Singapore", \
 "../aligned/country_data/japan" using ($1):($2/jppop) w l lw 2 lc "#b08000" t "Japan", \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
-1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
+1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase", \
+1.08**(x+offset + 20) lc "black" dashtype 5 t "8% daily increase"
 
 #"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w l lw 2 t "Germany (9 days behind Italy)", \

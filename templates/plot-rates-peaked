@@ -2,12 +2,12 @@ set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set grid
 set output "../graphs/rates-peaked.png"
 set logscale y
-set key at 29,900
+set key at 34,900
 set yrange [0.2:]
-set xrange [-30:30]
+set xrange [-30:35]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
 set xlabel "Days (from date of peaking)"
-offset = (OFFSET - 18)
+offset = (OFFSET - 20)
 usoff = 0
 iroff = 0
 froff = 0
@@ -25,8 +25,9 @@ plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t
 "../increase_rates/spain" using ($0 +0 - offset):($3/espop) w l lw 2 lc "orange" t "Spain", \
 "../increase_rates/norway" using ($0 +6 - offset):($3/nopop) w l dt (5,3) lw 2 lc "red" t sprintf("Norway"), \
 "../increase_rates/czechrepublic" using ($0 +9 - offset):($3/czpop) w l lw 2 lc "blue" dt (5,3) t sprintf("Czech Republic", usoff), \
-"../increase_rates/slovenia" using ($0 +12 - offset):($3/sipop) w l lw 2 lc "#00b000" dt (5,3)t sprintf("Slovenia"), \
-"../increase_rates/thailand" using ($0 -25 - offset):($3/thpop) w l lw 2 lc "brown" dt (5,3)t sprintf("Thailand"), \
+"../increase_rates/slovenia" using ($0 +12 - offset):($3/sipop) w l lw 2 lc "#00b000" dt (5,3) t sprintf("Slovenia"), \
+"../increase_rates/thailand" using ($0 -25 - offset):($3/thpop) w l lw 2 lc "brown" dt (5,3) t sprintf("Thailand"), \
+"../increase_rates/newzealand" using ($0 +22 - offset):($3/nzpop) w l lw 2 lc "black" dt (5,3) t sprintf("New Zealand"), \
 
 
 

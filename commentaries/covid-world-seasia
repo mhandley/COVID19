@@ -1,5 +1,10 @@
   <LI>Data on this graph comes directly from the <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data">JHU dataset</a>.  I have not double-checked the data, and it may lag by up to a day.
 
-<LI>I included a graph for Vietnam, Cambodia, Taiwan and the Philippines, not because the situation there is bad (they all have a few weeks lead time to prepare), but because the trend for each had started to look worrying  a week ago.  
+<LI>I originally included a graph for Vietnam, Cambodia, Taiwan and
+the Philippines, not because the situation there is bad, but because
+the trend for each had started to look worrying.  Since then all these
+countries have peaked, and the situation appears to be in control.
 
-<LI>Since then, Taiwan has peaked, Thailand looks like it may peak soon, and the increase rates for Vietnam and Cambodia have dropped off greatly.
+<LI>Vietnam and Cambodia have very low counts of new confirmed cases -
+around one a day in Cambodia, and low single digits in Vietnam. It
+seems likely that these rates are in part due to hot humid weather.

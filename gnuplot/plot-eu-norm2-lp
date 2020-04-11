@@ -91,6 +91,8 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
@@ -100,11 +102,11 @@ set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key at 4,30 box
-set yrange [1:9505.882352941177]
+set yrange [1:9852.941176470587]
 set xrange [-45:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 8 April 2020)"
-offset = 53
+set xlabel "Days (from 10 April 2020)"
+offset = 55
 testpop=3
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w lp lw 2 t "Italy", \
 "../aligned/country_data/iceland" using ($1 -2):($2/ispop) w lp lw 2 lc "orange" t "Iceland (2 days ahead of Italy)" , \

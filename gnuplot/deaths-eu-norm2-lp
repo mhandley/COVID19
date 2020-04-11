@@ -91,17 +91,19 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/deaths-eu-norm2-lp.png"
 set logscale y
-set key at -1,2 box
-set yrange [0.5:584.099173553719]
-set xrange [-40:]
+set key at -1,10 box
+set yrange [2:623.1074380165289]
+offset = 55
+set xrange [(10-offset):]
 set ylabel "COVID19 deaths per million inhabitants"
-set xlabel "Days (from 8 April 2020)"
-offset = 53
+set xlabel "Days (from 10 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
 esoff = 8
@@ -109,7 +111,7 @@ froff = 12
 deoff = 23.5
 nloff = 12.5
 ukoff = 14.5
-luoff = 14
+luoff = 18
 plot "../country_data/italy" using ($0 +5 - offset):($3/itpop) w lp lw 2 t "Italy", \
      "../country_data/france" using ($0 + 10 - froff - offset):($3/frpop) w lp lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff),\
 "../country_data/germany" using ($0 + 9 - deoff - offset):($3/depop) w lp lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \

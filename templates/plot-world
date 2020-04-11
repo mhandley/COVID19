@@ -2,14 +2,14 @@ set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-world.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at 6,600 box font "Helvetica,11"
+offset = OFFSET
+set key at 6,800 box font "Helvetica,11"
 set yrange [30:YMAX]
-set xrange [-40:7]
+set xrange [(5-offset):7]
 set ylabel "Confirmed COVID19 cases"
 set xlabel "Days (from March DATEth 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = OFFSET
 esoff = 9
 plot "../country_data/china" using ($0 +6.5 - offset):2 w l lw 2 lc "black" t "China (early cases)",\
 "../country_data/italy" using ($0 +5 - offset):2 w l lw 2 lc "#a000a0" t "Italy", \

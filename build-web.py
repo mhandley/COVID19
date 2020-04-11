@@ -15,10 +15,12 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
 	  ("covid-eu-norm4.png","", "lognorm"),
 	  ("rates-eeu.png", "Eastern Europe, Daily Increases", "inc"),
 	  ("covid-eu-norm5.png","", "lognorm"),
+	  ("rates-eu-norm5.png","Daily Increases", "inc"),
 	  ("covid-eu-linear.png","Western Europe", "linear"),
 	  ("covid-uk.png", "*UK: England Regions", "lognorm"),
 	  ("covid-uk-linear.png","*UK: England Regions", "linear"),
 	  ("covid-uk-all.png", "*UK: England, Scotland, Wales, Northern Ireland", "lognorm"),
+	  ("rates-uk.png","*UK England Regions, Scotland, Wales, Northern Ireland", "inc"),
 	  ("covid-world.png", "World", "logabs"),
 	  ("covid-world-norm.png","World", "lognorm"),
 	  ("covid-us-norm.png","US States", "lognorm"),
@@ -206,7 +208,7 @@ print("</DL>", file=ofile)
 
 
 gnum = 1
-datedir = "8apr2020"
+datedir = "10apr2020"
 for graph,gname,gtype in graphs:
     make_graph(graph, gname, gtype, gnum, datedir)
     gnum+=1

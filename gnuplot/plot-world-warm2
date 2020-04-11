@@ -91,6 +91,8 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
@@ -100,10 +102,10 @@ set key at -12,2500 box
 set yrange [50:3000]
 set xrange [-26:]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from 8 April 2020)"
+set xlabel "Days (from 10 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 53
+offset = 55
 inoff = 8.5
 bhoff = 7
 bhoff = 0

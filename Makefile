@@ -1,9 +1,9 @@
 
-all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates-eu.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-norm-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png graphs/rates-peaked.png graphs/rates-level.png graphs/deathrates-eu.png graphs/deathrates-eu-raw.png graphs/rates-norm-peaked.png graphs/rates-us.png
+all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates-eu.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-norm-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png graphs/rates-peaked.png graphs/rates-level.png graphs/deathrates-eu.png graphs/deathrates-eu-raw.png graphs/rates-norm-peaked.png graphs/rates-us.png graphs/rates-eu-norm5.png graphs/rates-uk.png
 
-DATEDIR = www/8apr2020/
-DATE=8
-OFFSET=53
+DATEDIR = www/10apr2020/
+DATE=10
+OFFSET=55
 
 
 graphs/covid-world-linear.png: templates/plot-world-linear
@@ -69,15 +69,17 @@ graphs/covid-uk.png: templates/plot-uk increase_rates/uk
 	cp graphs/covid-uk*.png ${DATEDIR}
 	open graphs/covid-uk.png
 
-graphs/covid-uk-linear.png: templates/t-plot-uk2
-	cat populations templates/t-plot-uk2 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk2
+graphs/covid-uk-linear.png: templates/plot-uk2
+	cat populations templates/plot-uk2 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk2
+	python set_ymax.py gnuplot/plot-uk2 1.1
 	cat gnuplot/plot-uk2 | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-uk2-lp
 	cd gnuplot; gnuplot plot-uk2; gnuplot plot-uk2-lp
 	cp graphs/covid-uk-linear*.png ${DATEDIR}
 	open graphs/covid-uk-linear.png
 
-graphs/covid-uk-all.png: templates/t-plot-uk3
-	cat populations templates/t-plot-uk3 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk3
+graphs/covid-uk-all.png: templates/plot-uk3
+	cat populations templates/plot-uk3 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk3
+	python set_ymax.py gnuplot/plot-uk3
 	cat gnuplot/plot-uk3 | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-uk3-lp
 	cd gnuplot; gnuplot plot-uk3; gnuplot plot-uk3-lp
 	cp graphs/covid-uk-all*.png ${DATEDIR}

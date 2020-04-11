@@ -91,6 +91,8 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
@@ -99,13 +101,13 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
+offset = 55
 set key at -1,13 box
-set yrange [0.5:4608.99173553719]
-set xrange [-45:]
+set yrange [0.5:4878.578512396694]
+set xrange [(5-offset):]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 8 April 2020)"
-offset = 53
-jhuoffset = (53 + 24)
+set xlabel "Days (from 10 April 2020)"
+jhuoffset = (55 + 24)
 eeoff = 9
 ltoff = 18
 lvoff = 16

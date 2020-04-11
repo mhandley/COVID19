@@ -4,14 +4,15 @@ set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at -16,(YMAX*0.9) box
+offset = OFFSET
+#set key at -16,(YMAX*0.9) box
+set key bottom right
 set yrange [0.5:YMAX]
-set xrange [-50:]
+set xrange [0-offset:]
 set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
-offset = OFFSET
 jhuoffset = (OFFSET + 24)
-mxoff = 36.5
+mxoff = 34.5
 paoff = 17
 dooff = 22.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \

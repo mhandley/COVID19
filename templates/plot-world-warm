@@ -11,7 +11,7 @@ set mxtics
 set grid mxtics xtics ytics mytics
 offset = OFFSET
 usoff = 12
-inoff = 8.5
+inoff = 7
 broff = 0
 thoff = 8
 idoff = 9.5

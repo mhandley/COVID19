@@ -91,6 +91,8 @@ uscapop = 39.9 #US: california
 uscopop = 5.77 #US: colorado
 ustxpop = 25.1 #US: texas
 uswapop = 7.6 #US: washington
+usgepop = 10.6 #US: Georgia
+uspepop = 12.8 #US: Pennsylvania
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
@@ -98,12 +100,12 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set output "../graphs/covid-world-linear.png"
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at 19,(478167.80000000005*0.95) 
-set yrange [0:478167.80000000005]
+set key at 19,(549177.2000000001*0.95) 
+offset = 55
+set yrange [5-offset:549177.2000000001]
 set xrange [-45:20]
 set ylabel "Confirmed COVID-19 cases"
-set xlabel "Days (from 8 April 2020)"
-offset = 53
+set xlabel "Days (from 10 April 2020)"
 usoff = 10
 iroff = 0
 froff = 10
@@ -117,7 +119,7 @@ plot "../country_data/china" using ($0 +9.5 - offset):2 w l lw 2 lc "black" t "C
 "../aligned/country_data/southkorea" using ($1 + kroff):2 w l lw 2 t sprintf("S Korea (%d days ahead of Italy)", kroff), \
 "../aligned/country_data/austria" using ($1 - atoff):2 w l lw 2 lc "#ff9090" t sprintf("Austria (%d days ahead of Italy)", atoff), \
 "../aligned/country_data/japan" using ($1):2 w l lc "brown" lw 2 t "Japan",\
-"../scenario4" using ($1-1.5):2 w l lc "green" t "Scenario 4"
+"../scenario4" using ($1-(offset-51.5)):2 w l lc "green" t "Scenario 4"
 
 
 #"uk" using ($0 -1 - offset):2 w l lw 2 lc "blue" t "UK (13 days behind Italy)", \

@@ -3,38 +3,45 @@
   some typical "cool" countries and some "warm" ones.  
 
 <LI>India, Indonesia and Egypt are all warm countries and have all
-    been experiencing roughly 14% daily growth.  The last few days
-    Egypt has seen a significant decline in growth rate.
+    were experiencing roughly 14% daily growth.  The last few days
+    Egypt and Indonesia have seen a significant decline in growth
+    rate, and Egypt may be peaking, though we won't have confidence in
+    this for a few more days.
 
-<LI>Australia used to be on the 14% curve, but three weeks ago it
-  switched to the 22% curve.  The mean daytime
-  temperature in Sydney for the five days before March 3rd (17 days
-  ago) was 28.6C, whereas for the five days after March 3rd it was
-  23.8C.  More analysis is needed to know if this is significant.
-  There is no equivalent warming associated with the most recent
-  reduction in daily growth, so this is likely to be related to social
-  distancing measures. Australia now looks like it <a href="#rates-peaked"has peaked</a>.
+<LI>Australia was on the 14% curve, but then switched to the 22%
+  curve.  This appeared to correspong to temperatures reducing, but
+  more analysis would be needed to know if this is significant.  Since
+  then, Australia's daily confirmed case count <a
+  href="#rates-peaked"has peaked</a>, then declined significantly.
 
-<LI>Malaysia had been tracking close to 14%, but the last ten days seems
-to have transitioned to around 5-6% growth.
+<LI>Malaysia had been tracking close to 14%, but has not seen
+exponential growth since March 16th.  Malaysia peaked either on March
+26th or April 3rd (the two peaks are similar), but declines since have
+been slow and it is possible another peak may still occur.
 
 <LI>Brazil was tracking roughly along the 35% line for a while, which
 seems to run counter to warm weather inhibiting the spread of the
 virus, but recently it has moved to lower growth.  I have now aligned
-Brazil with the 14% curve experience by other warm countries, though
-the fit is imperfect.  Brazil actually has both tropical and
-equatorial climate zones, so it clear how this should manifest in
-COVID-19 progression.
+Brazil with the 14% curve experience by other warm countries, and
+Brazil has roughly followed this track for nearly three weeks.  Brazil
+actually has both tropical and equatorial climate zones, so it unclear
+how this should manifest in COVID-19 progression.
 
 <LI> Bahrain and Kuwait have very low recent increase levels. This
   may indicate that most cases were imports, and that local spread has
   been effectively contained.
 
-<LI>Qatar previously was following the same curve as Bahrain, but the last week has increased suddenly to match the 14% daily increase rate of Brazil.
+<LI>Qatar previously was following the same curve as Bahrain, but the
+last week has increased suddenly to match the 14% daily increase rate
+of Brazil.
 
 <LI>Although Singapore has a warm climate, I have omitted it from this
   graph, because strong contact tracing there dwarfs any
   climate-dependent effect we might observe.
+
+<LI>Vietnam and Cambodia are shown on <a
+href="#covid-world-seasia">this graph</a>; both have warm humid
+climates and very low recent growth.
 
 <LI> In general, it does appear that COVID19 may spread more slowly in
   warm climates, but the evidence is inconclusive, and it appears to
