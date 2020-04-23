@@ -1,9 +1,8 @@
+all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates-eu.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-norm-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png graphs/rates-peaked.png graphs/rates-level.png graphs/deathrates-eu.png graphs/deathrates-eu-raw.png graphs/rates-norm-peaked.png graphs/rates-us.png graphs/rates-eu-norm5.png graphs/rates-uk.png graphs/deaths-eu.png graphs/deaths-eu-nordic.png graphs/deaths-us.png graphs/rates-low.png graphs/rates-norm-low.png graphs/deathrates-eu-nonnorm.png graphs/deathrates-us.png graphs/deaths-eu-us-norm.png graphs/deaths-eu-us.png
 
-all: graphs/covid-eu.png graphs/covid-eu-norm.png graphs/rates-eu.png graphs/rates-eeu.png graphs/rates-nordic.png graphs/deaths-eu-norm.png graphs/deaths-eu-norm2.png graphs/deaths-us.png graphs/covid-eu-norm-lom.png graphs/covid-eu-norm2.png graphs/covid-eu-norm2b.png graphs/covid-eu-norm3.png graphs/covid-eu-norm4.png graphs/covid-eu-norm5.png graphs/covid-eu-linear.png graphs/covid-uk.png graphs/covid-uk-all.png graphs/covid-uk-linear.png graphs/covid-world.png graphs/covid-world-norm.png graphs/covid-us-norm.png graphs/covid-world-norm2.png graphs/covid-world-norm3.png graphs/covid-world-sa2.png graphs/covid-world-sa3.png graphs/covid-world-seasia.png graphs/covid-world-warm.png graphs/covid-world-warm2.png graphs/covid-world-linear.png graphs/covid-world-ca.png graphs/rates-seasia.png graphs/rates-asia.png graphs/rates-peaked.png graphs/rates-level.png graphs/deathrates-eu.png graphs/deathrates-eu-raw.png graphs/rates-norm-peaked.png graphs/rates-us.png graphs/rates-eu-norm5.png graphs/rates-uk.png
-
-DATEDIR = www/10apr2020/
-DATE=10
-OFFSET=55
+DATEDIR = www/22apr2020/
+DATE=22
+OFFSET=67
 
 
 graphs/covid-world-linear.png: templates/plot-world-linear
@@ -31,8 +30,8 @@ graphs/covid-%.png: templates/plot-%
 graphs/rates-%.png:	templates/plot-rates-% 
 	cat populations templates/plot-rates-$* | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-rates-$*
 	cat gnuplot/plot-rates-$* | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-rates-$*-lp
-	cat gnuplot/plot-rates-$* | sed -e "s/800,600/1280,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-rates-$*-large
-	cat gnuplot/plot-rates-$*-lp | sed -e "s/800,600/1280,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-rates-$*-lp-large
+	cat gnuplot/plot-rates-$* | sed -e "s/800,600/1280,1024/g" | sed -e "s/900,600/1440,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-rates-$*-large
+	cat gnuplot/plot-rates-$*-lp | sed -e "s/800,600/1280,1024/g" | sed -e "s/900,600/1440,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-rates-$*-lp-large
 	cd gnuplot; gnuplot plot-rates-$*; gnuplot plot-rates-$*-lp; gnuplot plot-rates-$*-large; gnuplot plot-rates-$*-lp-large; 
 	cp graphs/rates-$*.png graphs/rates-$*-lp.png ${DATEDIR}
 	cp graphs/rates-$*-large.png graphs/rates-$*-lp-large.png ${DATEDIR}
@@ -65,6 +64,8 @@ graphs/deaths-%.png:	templates/deaths-%
 graphs/covid-uk.png: templates/plot-uk increase_rates/uk
 	cat populations templates/plot-uk | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk
 	cat gnuplot/plot-uk | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-uk-lp
+	cat gnuplot/plot-uk | sed -e "s/800,600/1280,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-uk-large
+	cat gnuplot/plot-uk-lp | sed -e "s/800,600/1280,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-uk-lp-large
 	cd gnuplot; gnuplot plot-uk; gnuplot plot-uk-lp
 	cp graphs/covid-uk*.png ${DATEDIR}
 	open graphs/covid-uk.png
@@ -73,6 +74,8 @@ graphs/covid-uk-linear.png: templates/plot-uk2
 	cat populations templates/plot-uk2 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk2
 	python set_ymax.py gnuplot/plot-uk2 1.1
 	cat gnuplot/plot-uk2 | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-uk2-lp
+	cat gnuplot/plot-uk2 | sed -e "s/800,600/1280,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-uk2-large
+	cat gnuplot/plot-uk2-lp | sed -e "s/800,600/1280,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-uk2-lp-large
 	cd gnuplot; gnuplot plot-uk2; gnuplot plot-uk2-lp
 	cp graphs/covid-uk-linear*.png ${DATEDIR}
 	open graphs/covid-uk-linear.png
@@ -81,6 +84,8 @@ graphs/covid-uk-all.png: templates/plot-uk3
 	cat populations templates/plot-uk3 | sed -e "s/DATE/${DATE}/g" | sed -e "s/OFFSET/${OFFSET}/g" | sed -e "s/March/April/g"  > gnuplot/plot-uk3
 	python set_ymax.py gnuplot/plot-uk3
 	cat gnuplot/plot-uk3 | sed -e "s/ w l / w lp /g" | sed -e "s/\.png/-lp\.png/g"> gnuplot/plot-uk3-lp
+	cat gnuplot/plot-uk3 | sed -e "s/800,600/1280,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-uk3-large
+	cat gnuplot/plot-uk3-lp | sed -e "s/800,600/1280,1024/g" | sed -e "s/\.png/-large\.png/g" > gnuplot/plot-uk3-lp-large
 	cd gnuplot; gnuplot plot-uk3; gnuplot plot-uk3-lp
 	cp graphs/covid-uk-all*.png ${DATEDIR}
 	open graphs/covid-uk-all.png

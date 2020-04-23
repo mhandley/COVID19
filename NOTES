@@ -22,7 +22,15 @@ cd datasets
 python process-finland.py
 edit country_data/finland as appropriate
 
-5. update UK data manually
+5. update UK data
+download csv file from:
+https://coronavirus.data.gov.uk/
+cd uk-data
+./process-uk-new.sh
+
+5b. run uk-data script
+cd uk-data
+./process-uk.sh
 
 6. generate time-indexed data
    python process-time.py

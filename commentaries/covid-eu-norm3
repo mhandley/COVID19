@@ -1,13 +1,7 @@
-<LI>Ireland, Portugal and Belgium all appear to be roughly following
-the curve that Italy followed.  In the last week it appears that
-Portugal and Ireland are tracking slightly below the Italy curve and
-Belgium is tracking slightly above the Italy curve.
+<LI>As the curves level out, it is hard to infer from this graph what
+is happening.  A better understanding can be obtained by looking at <a
+href="#rates-eu">daily increases in confirmed cases on this graph</a>.
 
-<LI>Luxembourg has a very small population, so the curve is noisy.
-      However, the last three weeks have taken Luxembourg well above
-      the point even Lombardy reached at this stage of the infection.
-      As a result I am not showing any time offset between the
-      Luxembourg and Italy curves.  However, see the next graph for
-      why I am not confident Luxembourg really is quite so close
-      behind Italy as this graph would suggest.  Likely the large
-      number of cases reported is due to better testing in Luxembourg.
+<LI>Luxembourg showed one of the fastest increase rates in Europe, but
+since then has also shown one of the fastest decrease rates in Europe,
+and is now seeing low rates of new cases..

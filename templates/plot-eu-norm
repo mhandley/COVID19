@@ -3,11 +3,11 @@ set output "../graphs/covid-eu-norm.png"
 set logscale y
 set key at 1,500 box
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
+offset = OFFSET
 set yrange [100:YMAX]
-set xrange [-30:2]
+set xrange [20-offset:2]
 set ylabel "COVID19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
-offset = OFFSET
 set mxtics
 set grid mxtics xtics ytics mytics
 choff = 0.0
@@ -29,3 +29,4 @@ plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase",\
 1.08**(x+offset + 53.3) lc "black" dashtype 3 t "8% daily increase"
 
+#"../aligned/country_data/uk-pillar1" using ($1 - ukoff):($2/ukpop) w l lw 2 lc "blue" dt (15,3) t sprintf("UK (%.1f days behind Italy)", ukoff), \

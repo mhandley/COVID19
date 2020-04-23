@@ -2,7 +2,7 @@ countries = ["italy", "spain", "france", "uk", "germany", "netherlands", "greece
              "greece", "slovenia", "czechrepublic", "romania", "poland", "serbia", "hungary", "bulgaria", "slovakia",
              "denmark", "sweden", "finland", "norway", "iceland", "estonia", "belarus", "taiwan", "japan", "singapore",
              "luxembourg", "switzerland", "austria", "southkorea", "china", "australia", "thailand",
-             "newzealand", "london", "belgium", "egypt", "lithuania", "latvia", "NewYork", "Washington", "California", "NewJersey", "Colorado", "Louisiana", "Massachusetts", "Illinois", "Michigan", "Florida", "belarus", "latvia", "lithuania", "ukraine", "russia", "uk-east", "uk-mid", "uk-ne", "uk-nw", "uk-se", "uk-sw", "northernireland", "scotland", "wales", "israel", "argentina", "chile", "canada", "uruguay", "venezuela", "vietnam", "cambodia", "philippines", "malaysia", "iran"]
+             "newzealand", "london", "belgium", "egypt", "lithuania", "latvia", "NewYork", "Washington", "California", "NewJersey", "Colorado", "Louisiana", "Massachusetts", "Illinois", "Michigan", "Florida", "belarus", "latvia", "lithuania", "ukraine", "russia", "uk-e", "uk-emid", "uk-wmid", "uk-yorks", "uk-ne", "uk-nw", "uk-se", "uk-sw", "northernireland", "scotland", "wales", "israel", "argentina", "chile", "canada", "uruguay", "venezuela", "vietnam", "cambodia", "philippines", "malaysia", "iran", "uk-pillar1", "Oklahoma", "portugal", "belgium","ireland", "southafrica", "turkey"]
 foo = ["italy-lom", "hubei-china", "china2"]
 
 smooth = 3

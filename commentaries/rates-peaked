@@ -1,5 +1,8 @@
-<LI>On this graph I show the countries that I believe have likely
-peaked, and I have aligned the day they peaked at day 0.
+<LI>On this graph I show some of the earlier countries that peaked,
+and I have aligned the day they peaked at day 0.  Although the
+logscale makes it hard to see how far cases have declined, it allows
+us to see both the height of the peaks and the time taken to decline
+on the same graph.  
 
 <LI>It doesn't really make sense to show Chinese cases per million
 inhabitants, when 82% of the cases were in Hubei province.  I have
@@ -15,8 +18,3 @@ to a large increase in testing just after the time of the peak, which
 might give the impression cases are not falling as fast as they really
 are.
 
-<LI>New Zealand appears to be exhibiting a broad peak, similar to a
-number of European countries, including Germany and the Netherlands.
-
-
-<LI>Finland was previously on this graph, but no longer looks to have peaked.

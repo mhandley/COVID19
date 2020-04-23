@@ -1,12 +1,15 @@
 import subprocess
 from time import sleep
 urls = {}
-countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "ireland", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy", "newzealand", "australia", "us", "china", "panama", "poland", "qatar", "egypt", "kuwait"]
+countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy", "newzealand", "us", "china", "poland", "qatar", "egypt", "kuwait", "uae"]
 
 countries = ["us"]
 
 countries = sorted(countries)
+# panama doesn't seem to be updated
 #Bad countries: poland, switzerland
+urls["uae"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/United_Arab_Emirates_medical_cases_chart&action=edit"
+urls["venezuela"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Venezuela_medical_cases_chart&action=edit"
 urls["mexico"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Mexico_medical_cases_chart&action=edit"
 urls["qatar"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Qatar_medical_cases_chart&action=edit"
 urls["italy"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Italy_medical_cases_chart&action=edit"
@@ -36,9 +39,9 @@ base_url2 = "_medical_cases_chart&action=edit"
 
 
 #urls["switzerland"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Switzerland_medical_cases_chart/&action=edit"
-prev2date = "2020-04-08"
-prevdate = "2020-04-09"
-date = "2020-04-10"
+prev2date = "2020-04-20"
+prevdate = "2020-04-21"
+date = "2020-04-22"
 
 months = {}
 months["february"] = "02"
@@ -46,6 +49,7 @@ months["march"] = "03"
 months["april"] = "04"
 months["may"] = "05"
 months["june"] = "06"
+months["july"] = "07"
 
 def lookup_month(mon):
     return months[mon.lower()]
@@ -106,7 +110,7 @@ for country in countries:
         file = open("dump", "r")
         dump = False
         for line in file:
-            if "|data=" == "".join(line.strip().split(" ")) or \
+            if "|data=" == "".join(line.strip().split(" "))[:6] or \
                "|bars=" == line[:6]: 
                 #print("starting")
                 dump = True
@@ -119,15 +123,21 @@ for country in countries:
                             break
                         date2 = fix_date(parts[0].strip())
                         deaths = parts[1].strip()
+                        if deaths == "":
+                            deaths = "0"
                         recovered = parts[2].strip()
                         cases = parts[3].strip()
+                        cases2 = "".join(parts[6].split(",")).strip()
+     
                         if cases == "":
                             cases = parts[5].strip()
-                        print(date2, cases, deaths, recovered, file=ofile)
+                        print(date2, cases2, deaths, recovered, file=ofile)
                         if date == date2 or prevdate == date2 or prev2date == date2:
                             success = True
-                            print(date2, cases, deaths, recovered)
-                    elif line[:7] == "&lt;!--" or line[:1] == ";" or line.strip() == "":
+                            print(date2, cases2, deaths, recovered)
+                            if cases2 != cases:
+                                print("mismatch: " + cases + " != " + cases2)
+                    elif line[:7] == "&lt;!--" or line[:1] == ";" or line.strip() == "" or line.lstrip()[0]==';':
                         pass
                     else:
                         #print("stop: ", line)

@@ -1,13 +1,27 @@
 <LI>The number of deaths per day appears to have peaked in Italy and
 Spain.
 
-<LI>The last two days, the number of deaths per day appears to
-be showing hints of peaking in France and the Netherlands, but it is really too early
-to tell if this is a real peak or just noisy data.
+<LI>The number of deaths per day is no longer growing exponentially
+anywhere in Western Europe or Scandinavia.  Many countries are seeing
+what appears to be the early stages of a reduction in daily deaths.
 
 <LI>Although the number of new confirmed cases per day in Austria has
-clearly peaked about ten days ago, the number of deaths per day has
-not yet started to decline.  A similar pattern was seen in South
+clearly peaked on March 27th, the number of deaths per day has
+been slow to decline.  A similar pattern was seen in South
 Korea, where the peak in the death rate was nearly a month after the
 peak in the peak in new confirmed cases.
 
+<LI>See the comment on the previous graph regarding the Belgian
+numbers, and why the absolute values of these curves are in some
+doubt.  However, any measurement differences will be within a factor
+of two at most; they will not appear large on a logscale plot, so the
+overall shape of the curves is not really in doubt.
+
+<LI>Sweden seems unusual, not because the deaths per day have peaked,
+but because the deaths peaked before the confirmed cases peaked.  The
+UK also saw deaths peak on April 10th with confirmed cases peaking on
+April 11th.  In the UK there was a change in testing strategy; if we
+count only test results from hospitals, which is a consistent subset,
+then the UK confirmed cases appear to have peaked on April 5th.  This
+is more consistent with deaths peaking 6 days later.  Likely something
+similar happened in Sweden.

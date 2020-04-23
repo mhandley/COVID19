@@ -16,7 +16,7 @@ mxoff = 34.5
 paoff = 17
 dooff = 22.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
-"../aligned/wiki/panama-wiki" using ($1 - paoff):($2/papop) w l lw 2 lc "blue" t sprintf("Panama (%d days behind Italy)", paoff), \
+"../aligned/jhu/panama-jhu" using ($1 - paoff):($2/papop) w l lw 2 lc "blue" t sprintf("Panama (%d days behind Italy)", paoff), \
 "../aligned/jhu/dominican_republic-jhu" using ($1 - dooff):($2/dopop) w l lw 2 lc "#00a000" t sprintf("Domincan Republic (%d days behind Italy)", dooff), \
 "../aligned/wiki/mexico-wiki" using ($1 - mxoff):($2/mxpop) w l lw 2 lc "red" t sprintf("Mexico (%d days behind Italy)", mxoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \

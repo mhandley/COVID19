@@ -2,7 +2,8 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/covid-eu-linear.png"
 set grid
 #set logscale y
-set key at (35-OFFSET),((YMAX/1.7)*0.95)
+#set key at (35-OFFSET),((YMAX/1.7)*0.95)
+set key top left
 offset = OFFSET
 set yrange [0:(YMAX/1.7)]
 set xrange [(10-OFFSET):]

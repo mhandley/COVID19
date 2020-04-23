@@ -4,18 +4,23 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at 4,30 box
+offset = OFFSET
+#set key at 4,30 box
+set key bottom right
 set yrange [1:YMAX]
-set xrange [-45:]
+set xrange [5-offset:]
 set ylabel "COVID-19 cases per million inhabitants"
 set xlabel "Days (from DATE March 2020)"
-offset = OFFSET
 testpop=3
+seoff = 7.5
+isoff = 0.5
+nooff = 6.5
+dkoff = 6
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
-"../aligned/country_data/iceland" using ($1 -2):($2/ispop) w l lw 2 lc "orange" t "Iceland (2 days ahead of Italy)" , \
-"../aligned/country_data/denmark" using ($1 -4):($2/dapop) w l lw 2 lc "black" t "Denmark (4 days offset)", \
-"../aligned/country_data/norway" using ($1 -4.5):($2/nopop) w l lw 2 lc "red" t "Norway (4.5 days offset)", \
-"../aligned/country_data/sweden" using ($1 -9):($2/sepop) w l lw 2 lc "blue" t "Sweden (9 days offset)", \
+"../aligned/country_data/iceland" using ($1 --isoff):($2/ispop) w l lw 2 lc "orange" t sprintf("Iceland (%.1f days offset)", isoff) , \
+"../aligned/country_data/denmark" using ($1 -dkoff):($2/dapop) w l lw 2 lc "black" t sprintf("Denmark (%d days offset)", dkoff), \
+"../aligned/country_data/norway" using ($1 -nooff):($2/nopop) w l lw 2 lc "red" t sprintf("Norway (%d days offset)", nooff), \
+"../aligned/country_data/sweden" using ($1 -seoff):($2/sepop) w l lw 2 lc "blue" t sprintf("Sweden (%.1f days offset)", seoff), \
 "../aligned/country_data/finland" using ($1 -9):($2/fipop) w l lw 2 lc "#00a000" t "Finland (9 days offset)", \
 "../aligned/country_data/southkorea" using ($1 +4):($2/krpop) w l lw 2  lc 6 t "S Korea (4 days ahead of Italy)", \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\

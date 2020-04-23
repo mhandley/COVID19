@@ -1,19 +1,21 @@
+<LI>Public Health England has changed the way confirmed cases are
+reported.  Previously they were reported by the date test results were
+available.  Now they are reported by the test sample date, which
+removes some artifacts caused by reporting results in batches, but it
+means that the results are not stable for several days.  As a result,
+I am not showing the results for tests performed less than four days
+ago.  By this time, the most of the results are in for tests performed
+four or more days ago, though some do still trickle in after this
+time.
+
 <LI>All the English regions converged onto the 35% daily increase
 curve that Italy followed, then transitioned to the 22% daily increase
 curve, though London and the Midlands spent longer at 35% than the
-other regions.  Since then, all the regions have seen further reductions.  I have aligned all the regions except South West with the Italy curve at the point in which they reached 300 cases per million inhabitants.  This emphasizes recent differences in growth giving a better idea of where things are going, while deemphasizing older increases.
+other regions.  Since then, all the regions have seen further reductions.  I have aligned all the regions at the point in which they reached 200 cases per million inhabitants.  This emphasizes recent differences in growth giving a better idea of where things are going, while deemphasizing older increases.
 
-<LI>South West is the exception here, as the daily increase rate there
-has been less than the rest of England for two weeks now.  I have
-aligned South West with Italy at the point in which they reached 100
-cases per million inhabitants.  Normally I prefer to align gradients
-if two curves share a common gradient (i.e. increase rate) for a
-while, but I cannot do this in this case.
+<LI>London is running around a week ahead of the resst of the UK, and is tracking
+along the curve that Italy followed.  It looks like the daily increase rate
+in London peaked on April 2nd (as measured by samples taken that day).
 
-<LI>London is running around a week ahead of the UK, and is tracking
-along the curve that Italy followed (previously it looked like it was
-tracking the Lombardy curve).  It looks like the daily increase rate
-in London peaked on April 1st, with a second similar peak on April
-5th, though it is too early to be sure that the rate will not increase
-again.
-
+<LI>North East England and the Midlands also look to have peaked.
+This can be seen better on <a href="#rates-uk">this graph</a>.

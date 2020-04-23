@@ -2,26 +2,27 @@
     changes are inherently more noisy.  However, this view is better
     to see whether a country has peaked or not.
 
-<LI>I thought Slovakia had peaked 16 days ago, then again 7 days ago,
-but it appears I was wrong in both cases.  The increase in new cases
-the last three days after such a long period of constant growth is
-unusual, but I do not know if this is causes by better testing or an
-increase in the underlying epidemic.
+<LI>Increase were somewhat level in Bulgaria, which had appeared to
+have peaked on March 31st and then declined slowly since.  However the
+last three days saw a new surge, and it no longer looks like Bulgaria
+has peaked.
 
-<LI>Increase are roughly level in Bulgaria, which appears to have
-peaked on March 31st, and been declining slowly since.
-
-<LI>Greece appears to have peaked on April 2nd - the daily increase
-  had been nearly constant for two weeks, and has turned down more
-  significantly the last few days.
+<LI>Greece peaked on April 2nd - the daily increase
+  was nearly constant for two weeks, and has seen a substantial decline the last two weeks.
 
 <LI> Slovenia and the Czech Republic both appear to have peaked on
 March 27th, but the decrease since then has been rather slow, with
 both showing a smaller secondary peak.
 
-<LI>Hungary, Romania and Poland may be peaking now, but more data will
-be required to say this with confidence.
+<LI>Romania and Poland may be peaking now, but the curve is relatively
+level, so more data will be required to say whether this is a peak.
 
-<LI>Serbia dipped the last two days after a steady exponential
-increases the last three weeks.  It is too early to know if this is a
-peak.
+<LI>Serbia has seen another surge the last week, and no longer looks like it has peaked.
+
+<LI>Twice before, I had though Slovakia had peaked, and was wrong.
+The peak around April 8th is so sharp (cases doubled from 47 to 101, then
+dropped back to 19) that the smoothing function I usually apply
+misrepresents this peak.  I am showing the rate unsmoothed data for
+Slovakia instead.  It seems likely that the high noise on this curve
+is due to an artifact in now test results are released.
+

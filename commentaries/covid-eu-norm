@@ -6,51 +6,58 @@
 </UL>
 
 <LI> In contrast to graph 1, which highlights any divergence, <B>on this
-graph I'm showing these countries aligned with the 8% curve</B> as all
-of them now appear to have left both the 22% and 13.5% curves.  I'm also showing a shorter time interval.
+graph I'm showing these countries aligned with the 8% curve</B> as that is the last common exponential rate that these countries all seem to have followed.  I'm also showing a shorter time interval.
 
 <LI>Italy followed the 8% curve for about five days before
 peaking. Italy has now dropped off of exponential increases and the
 daily increase count appears to have peaked, though it has not declined greatly..
 
-<LI> For the last week France and Germany both appear to have been
-tracking close to the 8% daily increase curve that Italy followed.
-Once increases get this small, it is hard to distinguish constant
-increases from exponential increases on this graph.  France appears now to have peaked about 8 days ago.
-In the case of Germany, the daily increase in cases has been
-relatively constant, though it is not yet clear whether this represents
-a peak.
+<LI> France peaked on March 31st with 7578 new cases that day.  Since
+then new cases have declined to around 2000 cases per day, though
+individual days have been significantly lower or higher.
 
-<LI>The UK continues to follow most closely behind France, about 6
-days behind.  In general the UK curves have most closely resembled
-France for several weeks, so if the UK continues to do so, it should
-now be peaking.
+<LI>Germany peaked twice with the second peak on April 3rd.  New cases
+are now lower than 30% of the peak and declining.
 
-<LI> The Netherlands roughly followed the 8% curve for five days, but
-the last two days show lower increases. It is starting to look like
-cases in the Netherlands may have peaked 10 days ago, but the decrease rate since has been relatively show.
+<LI>For a long time the UK followed the French curve about one week
+behind.  For the last ten days the UK has tracked higher than France,
+Cases peaked on April 11th, but have not declined as fast as France
+did.  In part this may be due to a change in testing strategy.  Prior
+to April 10th, only hospitalized patients ended up in the confirmed
+test results.  As of April 21st, 35% of new cases were not
+hospitalized patients.  This change accounts for almost all of the
+difference between the current UK track and the French track.
+
+<LI> The Netherlands appears to have been holding a roughly constant
+daily increase rate for three weeks, with multiple similar peaks of
+1172 cases on March 27th, 1083 cases on April 2nd, 1335 cases on April
+10th and 1235 cases on April 17th.  This very broad peak may be due to
+the Netherlands adopting relatively mild containment measures compared
+to neighbouring countries.
 
 <LI>Switzerland has a relatively small population, and so the number
     of cases per million inhabitants is much higher.  Switzerland is
     shown with no time offset to Italy.  
     
-  <LI> See the <a href="#deaths-eu-norm">this death rates graph</a>
-    for why I am not confident in this placement for Switzerland. From
-    that graph Switzerland looks to be as much as 10 days behind
-    Italy.
+<LI> See the <a href="#deaths-eu-norm">this death rates graph</a> for
+  why I am not confident in this placement for Switzerland. From that
+  graph Switzerland looks to be as much as 10 days behind Italy.
 
-  <LI> For more than two weeks now, Switzerland has seen roughly constant daily
-  increases, which suggests Switzerland may have peaked, but is declining slowly since. 
+<LI> Switzerland also saw multiple peaks, with 1481 cases on March
+  20th, 1447 cases on March 27th, and 1128 cases on April 2nd.  Since
+  then cases have declined to around 30% of the peak.
     
-  <LI>Spain stayed at 35% daily increases for much longer than any
-    other large European country, which caused it to close on Italy,
-    then followed the 22% curve for a week. Spain only roughly aligned
-    with the 13.5% curve, although it joined this curve at roughly the
-    point where Italy departed it.  For the last two weeks the number
-    of new cases in Spain was roughly constant, with the last four 
-    days showing a marked decrease.  Spain how appears to have peaked about a week ago.
+<LI>Spain stayed at 35% daily increases for much longer than any other
+  large European country, which caused it to close on Italy, then
+  followed the 22% curve for a week. Spain only roughly aligned with
+  the 13.5% curve, although it joined this curve at roughly the point
+  where Italy departed it.  Spain saw peaks of 9372 cases on March
+  27th, 10724 cases on March 31st, with smaller peaks of 6278 cases on
+  April 8th and 6599 cases on April 15th.  New cases are currently at
+  about 40% of the peak.
 
-  <LI>Austria followed the Lombardy curve pretty faithfully about ten
+<LI>Austria followed the Lombardy curve pretty faithfully about ten
   days behind, staying at a higher increase rate for longer than
-  Italy.  Austria peaked ten days ago, and, unlike Italy, Austria has
-  seen a pronounced decrease in new cases since.
+  Italy.  Austria peaked at 992 cases per day on March 27th and,
+  unlike Italy, Austria has seen a fast decrease in new cases since,
+  to around 60 cases per day now..

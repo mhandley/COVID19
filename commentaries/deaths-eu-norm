@@ -33,5 +33,19 @@
 
 <LI>In the last few days, the UK and France have seen more deaths than
 Italy did at a similar point in the epidemic, whereas the Netherlands
-and Switzerland have seem fewer deaths, and Austria and Germany have
-significantly lower death rates.
+and Switzerland have see fewer deaths and Austria and Germany have
+significantly lower death rates.  However, any differences in reported
+data between France, UK, Italy and the Netherlands are less than
+possible differences due to <I>which</I> deaths are included in the statistics,
+so these statistics cannot be used to rank countries like this in any
+reliable way.  The shape of the curves is very similar though, so
+likely Italy can be used as a guide for how deaths will evolve over time for
+these countries, whatever the absolute counts end up being.
+
+<LI>The death rate in Belgium appears very high, but Belgium is
+including deaths in care homes in the statistics, whereas some other
+countries are not.  On April 11th, <a
+href="https://epidemio.wiv-isp.be/ID/Pages/2019-nCoV_epidemiological_situation.aspx?lcid=1036">42%
+of COVID19 deaths</a> in Belgium were reported to be in care homes.
+The Belgian and French data possibly are comparable though, as both
+include nursing home deaths.

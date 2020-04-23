@@ -26,7 +26,7 @@ plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/russia" using ($1 -ruoff):($2/rupop) w l lw 2 lc "orange" t sprintf("Russia (%d days behind Italy)", ruoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase",\
-1.10**(x+offset + 27) lc "black" dashtype 3 t "10% daily increase"
+1.16**(x+offset + 8) lc "black" dashtype 3 t "16% daily increase"
 
 #"france" using ($0 + 1 - offset):($2/frpop) w l lw 2 lc "red" t "France (9 days behind Italy)", \
 #"spain" using ($0 + 1  - offset):($2/espop) w l lw 2 t "Spain (9 days behind Italy)", \

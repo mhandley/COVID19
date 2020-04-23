@@ -66,33 +66,42 @@ thpop = 69.7 #Thailand
 trpop = 84 #Turkey
 twpop = 23.8 #Taiwan
 uapop = 43.8 #Ukraine
+uaepop = 9.87 #UAE
 ukpop = 67.7 #UK
 ukepop = 6.2 #UK: East
 uklonpop = 8.9 #UK: london
-ukmidpop = 10.7 #UK: Midlands
-uknepop = 8.1 #UK: NE
 uknipop = 1.8 #UK: Northern Ireland
-uknwpop = 7.2 #UK: NE
+uknwpop = 7.2 #UK: NW
 ukscpop = 5.3 #UK: Scotland
 uksepop = 9.1 #UK: SE
 ukswpop = 5.6 #UK: SW
 ukwapop = 3.0 #UK: Wales
+ukemidpop = 4.8 #UK: East Midlands
+ukwmidpop = 5.9 #UK: West Midlands
+ukyorkspop = 5.48 #UK: Yorks+Humber
+uknepop = 2.66 #UK: NE
 urpop = 35.3 #Uruguay
 uspop = 330 #USA
+uscapop = 39.9 #US: california
+uscopop = 5.77 #US: colorado
+usctpop = 3.56 #US: connecticut
+usgepop = 10.6 #US: Georgia
 usflpop = 21.5 #US: florida
 usilpop = 12.7 #US: illinois
 uslopop = 4.66 #US: louisiana
 usmapop = 6.95 #US: massachusetts
+usmepop = 1.34 #US: Maine
 usmipop = 9.88 #US: michigan
+usnhpop = 1.36 #US: New Hampshire
 usnjpop = 8.9 #US: New Jersey
 usnypop = 19.4 #US: new york
 usokpop = 3.95 # US: oklahoma
-uscapop = 39.9 #US: california
-uscopop = 5.77 #US: colorado
+usripop = 1.06 # US: Rhode Island
 ustxpop = 25.1 #US: texas
+usvtpop = 0.62 #US: Vermont
 uswapop = 7.6 #US: washington
-usgepop = 10.6 #US: Georgia
 uspepop = 12.8 #US: Pennsylvania
+uspopne = 56.0 #US: us_northeast
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
@@ -101,23 +110,26 @@ set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-offset = 55
-set key at 2,10 box font "Helvetica,11"
-set yrange [0.5:4878.578512396694]
-set xrange [(5-offset):3]
+offset = 67
+#set key at 2,10 box font "Helvetica,11"
+set key bottom right box font "Helvetica,11"
+set yrange [0.5:6192.628099173554]
+set xrange [(0-offset):3]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 10 April 2020)"
+set xlabel "Days (from 22 April 2020)"
+snoff = 27
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w lp lw 2 t "Italy", \
 "../aligned/country_data/iran" using ($1 - 2.5):($2/irpop) w lp lw 2  lc "#6090ff" t "Iran (2.5 days behind Italy)", \
 "../aligned/country_data/france" using ($1 - 8.5):($2/frpop) w lp lw 2 lc "red" t "France (8.5 days behind Italy)", \
 "../aligned/country_data/us" using ($1  -17):($2/uspop) w lp lw 2 lc "orange" t "USA (17 days behind Italy)", \
 "../aligned/country_data/australia" using ($1 -18):($2/aupop) w lp lw 2 lc "black" t "Australia (18 days behind Italy)", \
 "../aligned/country_data/southkorea" using ($1 + 3.5):($2/krpop) w lp lw 2  lc 6 t "S Korea (3.5 days ahead of Italy)", \
-"../aligned/country_data/singapore" using ($1):($2/sgpop) w lp lw 2 lc "#00b000" t "Singapore", \
+"../aligned/country_data/singapore" using ($1 - snoff):($2/sgpop) w lp lw 2 lc "#00b000" t sprintf("Singapore (%d days behind Italy)", snoff), \
 "../aligned/country_data/japan" using ($1):($2/jppop) w lp lw 2 lc "#b08000" t "Japan", \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase", \
-1.08**(x+offset + 20) lc "black" dashtype 5 t "8% daily increase"
+1.16**(x+offset - 16.3 +snoff) lc "black" dashtype 3 t "16% daily increase",\
+1.08**(x+offset -6) lc "black" dashtype 5 t "8% daily increase"
 
 #"uk" using ($0 -1 - offset):2 w lp lw 2 lc "blue" t "UK (13 days behind Italy)", \
 #"germany" using ($0 - offset):2 w lp lw 2 t "Germany (9 days behind Italy)", \

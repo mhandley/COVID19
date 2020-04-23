@@ -66,33 +66,42 @@ thpop = 69.7 #Thailand
 trpop = 84 #Turkey
 twpop = 23.8 #Taiwan
 uapop = 43.8 #Ukraine
+uaepop = 9.87 #UAE
 ukpop = 67.7 #UK
 ukepop = 6.2 #UK: East
 uklonpop = 8.9 #UK: london
-ukmidpop = 10.7 #UK: Midlands
-uknepop = 8.1 #UK: NE
 uknipop = 1.8 #UK: Northern Ireland
-uknwpop = 7.2 #UK: NE
+uknwpop = 7.2 #UK: NW
 ukscpop = 5.3 #UK: Scotland
 uksepop = 9.1 #UK: SE
 ukswpop = 5.6 #UK: SW
 ukwapop = 3.0 #UK: Wales
+ukemidpop = 4.8 #UK: East Midlands
+ukwmidpop = 5.9 #UK: West Midlands
+ukyorkspop = 5.48 #UK: Yorks+Humber
+uknepop = 2.66 #UK: NE
 urpop = 35.3 #Uruguay
 uspop = 330 #USA
+uscapop = 39.9 #US: california
+uscopop = 5.77 #US: colorado
+usctpop = 3.56 #US: connecticut
+usgepop = 10.6 #US: Georgia
 usflpop = 21.5 #US: florida
 usilpop = 12.7 #US: illinois
 uslopop = 4.66 #US: louisiana
 usmapop = 6.95 #US: massachusetts
+usmepop = 1.34 #US: Maine
 usmipop = 9.88 #US: michigan
+usnhpop = 1.36 #US: New Hampshire
 usnjpop = 8.9 #US: New Jersey
 usnypop = 19.4 #US: new york
 usokpop = 3.95 # US: oklahoma
-uscapop = 39.9 #US: california
-uscopop = 5.77 #US: colorado
+usripop = 1.06 # US: Rhode Island
 ustxpop = 25.1 #US: texas
+usvtpop = 0.62 #US: Vermont
 uswapop = 7.6 #US: washington
-usgepop = 10.6 #US: Georgia
 uspepop = 12.8 #US: Pennsylvania
+uspopne = 56.0 #US: us_northeast
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,13" size 800,600
@@ -101,13 +110,13 @@ set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at -1,20 box
-set yrange [1:4878.578512396694]
-set xrange [-45:]
+set key bottom right box
+offset = 67
+set yrange [1:6192.628099173554]
+set xrange [10-offset:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 10 April 2020)"
-offset = 55
-jhuoffset = (55 + 24)
+set xlabel "Days (from 22 April 2020)"
+jhuoffset = (67 + 24)
 usoff = 17
 nzoff = 22.5
 ruoff = 33.5
@@ -116,13 +125,15 @@ saoff = 24.5
 troff = 21.5
 pkoff = 31
 iloff = 12.5
+uaeoff = 31
 plot "../country_data/italy" using ($0 +5 - offset):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/israel" using ($1 - iloff):($2/ilpop) w l lw 2 lc "#b00000" t sprintf("Israel (%d days behind Italy)", iloff), \
 "../aligned/country_data/pakistan" using ($1 - pkoff):($2/pkpop) w l lw 2 lc "black" t sprintf("Pakistan (%d days behind Italy)", pkoff), \
 "../aligned/country_data/turkey" using ($1 - troff):($2/trpop) w l lw 2 lc "red" t sprintf("Turkey (%d days behind Italy)", troff), \
 "../jhu-data/southafrica-jhu" using ($0  - zaoff - jhuoffset):($2/zapop) w l lw 2 lc "#00a000" t sprintf("South Africa (%d days behind Italy)", zaoff), \
 "../country_data/russia" using ($0 +19.5 - ruoff - offset):($2/rupop) w l lw 2 lc "#80ba80" t sprintf("Russia (%d days behind Italy)", ruoff), \
-"../country_data/saudiarabia" using ($0 +18- saoff - offset):($2/sapop) w l lw 2 lc "blue" t sprintf("Saudi Arabia (%d days behind Italy)", saoff), \
+"../aligned/country_data/saudiarabia" using ($0 +18- saoff - offset):($2/sapop) w l lw 2 lc "blue" t sprintf("Saudi Arabia (%d days behind Italy)", saoff), \
+"../aligned/wiki/uae-wiki" using ($0 +18- uaeoff - offset):($2/uaepop) w l lw 2 lc "orange" t sprintf("UAE (%d days behind Italy)", uaeoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

@@ -5,7 +5,8 @@ set output "../graphs/rates-nordic.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.55,0.02 font "Helvetica,11" textcolor "#a0a0a0"
 offset = OFFSET
-set key at (22-offset),900 box
+#set key at (22-offset),900 box
+set key top left box
 set yrange [2:]
 set xrange [(10-offset):]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"

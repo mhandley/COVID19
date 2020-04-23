@@ -66,33 +66,42 @@ thpop = 69.7 #Thailand
 trpop = 84 #Turkey
 twpop = 23.8 #Taiwan
 uapop = 43.8 #Ukraine
+uaepop = 9.87 #UAE
 ukpop = 67.7 #UK
 ukepop = 6.2 #UK: East
 uklonpop = 8.9 #UK: london
-ukmidpop = 10.7 #UK: Midlands
-uknepop = 8.1 #UK: NE
 uknipop = 1.8 #UK: Northern Ireland
-uknwpop = 7.2 #UK: NE
+uknwpop = 7.2 #UK: NW
 ukscpop = 5.3 #UK: Scotland
 uksepop = 9.1 #UK: SE
 ukswpop = 5.6 #UK: SW
 ukwapop = 3.0 #UK: Wales
+ukemidpop = 4.8 #UK: East Midlands
+ukwmidpop = 5.9 #UK: West Midlands
+ukyorkspop = 5.48 #UK: Yorks+Humber
+uknepop = 2.66 #UK: NE
 urpop = 35.3 #Uruguay
 uspop = 330 #USA
+uscapop = 39.9 #US: california
+uscopop = 5.77 #US: colorado
+usctpop = 3.56 #US: connecticut
+usgepop = 10.6 #US: Georgia
 usflpop = 21.5 #US: florida
 usilpop = 12.7 #US: illinois
 uslopop = 4.66 #US: louisiana
 usmapop = 6.95 #US: massachusetts
+usmepop = 1.34 #US: Maine
 usmipop = 9.88 #US: michigan
+usnhpop = 1.36 #US: New Hampshire
 usnjpop = 8.9 #US: New Jersey
 usnypop = 19.4 #US: new york
 usokpop = 3.95 # US: oklahoma
-uscapop = 39.9 #US: california
-uscopop = 5.77 #US: colorado
+usripop = 1.06 # US: Rhode Island
 ustxpop = 25.1 #US: texas
+usvtpop = 0.62 #US: Vermont
 uswapop = 7.6 #US: washington
-usgepop = 10.6 #US: Georgia
 uspepop = 12.8 #US: Pennsylvania
+uspopne = 56.0 #US: us_northeast
 vepop = 28.4 #Venezuela
 vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
@@ -101,12 +110,13 @@ set grid mxtics xtics ytics mytics
 set output "../graphs/rates-eeu-lp.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.55,0.02 font "Helvetica,11" textcolor "#a0a0a0"
-offset = 55
-set key at (23-offset),280 box
+offset = 67
+#set key at (23-offset),280 box
+set key top left box
 set yrange [0.1:300]
 set xrange [(10-offset):]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
-set xlabel "Days (from 10 April 2020)"
+set xlabel "Days (from 22 April 2020)"
 usoff = 0
 iroff = 0
 froff = 0
@@ -116,7 +126,7 @@ plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w lp lw 2 lc 1 
 "../increase_rates/greece" using ($0 +12 - offset):($3/grpop) w lp lw 2 lc "#8080ff" t sprintf("Greece", usoff), \
 "../increase_rates/czechrepublic" using ($0 +16 - offset):($3/czpop) w lp lw 2 lc "blue" t sprintf("Czech Republic", usoff), \
 "../increase_rates/slovenia" using ($0 +19 - offset):($3/sipop) w lp lw 2 lc "#00b000" t sprintf("Slovenia"), \
-"../increase_rates/slovakia" using ($0 +25 - offset):($3/skpop) w lp lw 2 lc "black" t sprintf("Slovakia)"), \
+"../increase_rates/slovakia" using ($0 +25 - offset):($2/skpop) w lp lw 2 lc "black" t sprintf("Slovakia)"), \
 "../increase_rates/romania" using ($0 +18 - offset):($3/ropop) w lp lw 2 lc "orange" t sprintf("Romania"), \
 "../increase_rates/poland" using ($0 +19 - offset):($3/plpop) w lp lw 2 lc "red" t sprintf("Poland"), \
 "../increase_rates/hungary" using ($0 +19 - offset):($3/hupop) w lp lw 2 lc "#80a080" t sprintf("Hungary"), \

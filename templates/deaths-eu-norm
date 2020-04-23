@@ -17,6 +17,7 @@ deoff = 23
 nloff = 12
 ukoff = 16.5
 atoff = 19.5
+beoff = 14
 plot "../aligned/country_data/italy" using ($1):($3/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/spain" using ($1 - esoff):($3/espop) w l lw 2 lc "orange" t sprintf("Spain (%d days behind Italy)", esoff), \
 "../aligned/country_data/france" using ($1 - froff):($3/frpop) w l lw 2 lc "red" t sprintf("France (%d days behind Italy)", froff), \
@@ -25,6 +26,7 @@ plot "../aligned/country_data/italy" using ($1):($3/itpop) w l lw 2 t "Italy", \
 "../aligned/country_data/uk" using ($1 - ukoff):($3/ukpop) w l lw 2 lc "blue" t sprintf("UK (%.1f days behind Italy)", ukoff), \
 "../aligned/country_data/austria" using ($1 - atoff):($3/atpop) w l lw 2 lc "#ff9090" t sprintf("Austria (%.1f days behind Italy)", atoff), \
 "../aligned/country_data/germany" using ($1 - deoff):($3/depop) w l lw 2 lc "#00b000" t sprintf("Germany (%d days behind Italy)", deoff), \
+"../aligned/country_data/belgium" using ($1 - beoff):($3/bepop) w l lw 2 lc "black" t sprintf("Belgium (%d days behind Italy)", beoff), \
 1.35**(x+offset - 16) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset -11.9) lc "black" dashtype 2 t "22% daily increase"
 

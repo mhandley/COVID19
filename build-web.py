@@ -3,15 +3,16 @@ from glob import glob
 graphs = [("covid-eu.png", "Western Europe", "logabs"),
           ("covid-eu-norm.png", "Western Europe", "lognorm"),
           ("rates-peaked.png", "Daily Increases, Peaked Countries", "inc"),
-          ("rates-level.png", "Daily Increases, Countries with Constant Increases", "inc"),
           ("rates-eu.png", "Western Europe Daily Increases", "inc"),
           ("rates-norm-peaked.png", "Daily Increases, Peaked Countries", "norminc"),
-          ("deaths-eu-norm.png", "Deaths: Western Europe", "deaths"),
+          ("rates-norm-low.png", "Daily Increases, Successful Countries", "norminc"),
+          ("deaths-eu-norm.png", "Deaths: Western Europe", "deaths-eu"),
           ("deathrates-eu.png", "Death per day: Western Europe", "deathrates"),
           ("covid-eu-norm2.png", "Nordic Region", "lognorm"),
           ("rates-nordic.png", "Daily Increases", "inc"),
+          ("deaths-eu-nordic.png", "Deaths", "deaths-eu"),
           ("covid-eu-norm3.png","", "lognorm"),
-	  ("deaths-eu-norm2.png","Deaths", "lognorm"),
+	  ("deaths-eu-norm2.png","Deaths", "deaths-eu"),
 	  ("covid-eu-norm4.png","", "lognorm"),
 	  ("rates-eeu.png", "Eastern Europe, Daily Increases", "inc"),
 	  ("covid-eu-norm5.png","", "lognorm"),
@@ -19,15 +20,16 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
 	  ("covid-eu-linear.png","Western Europe", "linear"),
 	  ("covid-uk.png", "*UK: England Regions", "lognorm"),
 	  ("covid-uk-linear.png","*UK: England Regions", "linear"),
-	  ("covid-uk-all.png", "*UK: England, Scotland, Wales, Northern Ireland", "lognorm"),
+	  ("covid-uk-all.png", "*UK: Scotland, Wales, Northern Ireland", "lognorm"),
 	  ("rates-uk.png","*UK England Regions, Scotland, Wales, Northern Ireland", "inc"),
 	  ("covid-world.png", "World", "logabs"),
 	  ("covid-world-norm.png","World", "lognorm"),
 	  ("covid-us-norm.png","US States", "lognorm"),
 	  ("rates-us.png","US States", "inc"),
+	  ("deaths-us.png", "Deaths: USA", "deaths"),
+	  ("deathrates-us.png", "Deaths per day: USA", "deathrates"),
 	  ("covid-world-norm2.png","", "lognorm"),
 	  ("covid-world-norm3.png","", "lognorm"),
-	  ("deaths-us.png", "Deaths: USA", "deaths"),
 	  ("covid-world-sa2.png","South America (Andean)", "lognorm"),
 	  ("covid-world-sa3.png","South America", "lognorm"),
 	  ("covid-world-ca.png","Central America", "lognorm"),
@@ -37,9 +39,51 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
 
 
 # not used anymore
+#          ("rates-level.png", "Daily Increases, Countries with Constant Increases", "inc"),
 #          ("covid-eu-norm-lom.png", "",  "lognorm"),
 #          ("covid-eu-norm2b.png","Nordic Region (offset curves)", "lognorm"),
 #	  ("covid-world-warm2.png", "Warm Countries", "logabs"),
+
+
+deathfile = open("deaths", "r")
+deathtxt = deathfile.read()
+# deathtxt = """
+# <LI>Death statistics need to be interpreted with care, as no two countries have the same criteria for what is actually reported as a COVID19 death, or when those deaths are reported.  As far as I can tell, the death statistics on this graph are as follows:
+# <UL>
+# <LI>Italy: mostly does not include people who died outside hospitals. 
+
+# <LI>Spain: mostly does not include nursing homes, as only includes confirmed cases, and <a href="https://elpais.com/espana/madrid/2020-04-08/4750-ancianos-mueren-en-las-residencias-de-madrid-en-el-ultimo-mes.html">most nursing home deaths were not tested</a>.
+
+# <LI>France: does include nursing homes - as of 14th April, 29% of deaths occurred in nursing homes
+
+# <LI>UK: does not include nursing homes - as of 3rd April, at least 34% of deaths occured outside of hospitals.  Data is only available up til 3rd April because deaths outside hospitals take time to be registered.  
+
+# <LI>Belgium: does include nursing homes - as of 12th April, <a href="https://epidemio.wiv-isp.be/ID/Pages/2019-nCoV_epidemiological_situation.aspx?lcid=1036">42% of deaths</a> occured in nursing homes
+
+# <LI>Netherlands: <a href="https://www.rivm.nl/en/novel-coronavirus-covid-19/current-information-about-novel-coronavirus-covid-19">appears to only include hospital deaths</a>, but I have not been able to confirm this.
+
+# <LI>Ireland: includes nursing homes.  As of 14th April, <a href="https://www.rte.ie/news/2020/0414/1130463-irish-virus-figures/">46% of deaths</a> occurred in nursing homes.
+# </UL>
+
+# <LI><I>Help me update and/or complete this information for other countries.</I>
+
+# <LI>However they are being reported, if the reporting is consistent
+# (for example, only reporting hospital deaths) then we can at least
+# tell how fast deaths are rising or declining.  For this purpose, what
+# we really need is a fast and consistent count of deaths, even if it
+# misses half of deaths, than for a complete but delayed count, as this
+# lets us know what measures are working.  For other purposes, you
+# obviously want the comoplete count, but that takes a lot more
+# time to compile.
+
+# <LI>Comparing which country has the highest death count is not the
+# purpose of this graph: if you read it that way you will draw the wrong
+# conclusions: this is not a competition, and no-one can say the final
+# death rates until much later, if ever.
+# """
+
+
+
 
 
 types = {}
@@ -79,6 +123,11 @@ types["deathrates"] = (\
   about a days lag, but it does extract trends fairly well.  The
   curves are not offset, today is Day 0 for all curves.""",  "Deaths per day")
 
+types["deaths-eu"] = (\
+"""The graph shows cumulative number of <B>deaths per million
+      inhabitants</B>, plotted on a log scale, against time.  The
+      country curves are shown offset by the amounts shown.""" + deathtxt, "Deaths")
+
 types["deaths"] = (\
 """The graph shows cumulative number of <B>deaths per million
       inhabitants</B>, plotted on a log scale, against time.  The
@@ -89,6 +138,8 @@ filemap = {}
 def load_templates():
     templates = glob("templates/*")
     for tname in templates:
+        if "~" in tname:
+            continue
         file = open(tname, "r")
         for line in file:
             if "output" in line:
@@ -181,8 +232,11 @@ def make_graph(graph, gname, gtype, gnum, datedir):
     print('<UL>', file=ofile);
     commentfile = "commentaries/" + gprefix
     ls = subprocess.check_output("ls -l " + commentfile, shell=True).decode()
-    updatetime = " ".join(ls.split()[5:7])
-    print("<LI><I>Commentary updated: " + updatetime + " 2020</I></LI>", file=ofile)
+    updatetime = " ".join(ls.split()[5:7]) + " 2020, " + ls.split()[7]
+    ls = subprocess.check_output("ls -l graphs/" + graph, shell=True).decode()
+    gupdatetime = " ".join(ls.split()[5:7]) + " 2020, " + ls.split()[7]
+    print("<LI><I>Graph updated: " + gupdatetime + " BST</I></LI>", file=ofile)
+    print("<LI><I>Commentary updated: " + updatetime + " BST</I></LI>", file=ofile)
     txt, tag = types[gtype]
     print("<LI>" + txt + "</LI>",  file=ofile)
     try:
@@ -208,7 +262,7 @@ print("</DL>", file=ofile)
 
 
 gnum = 1
-datedir = "10apr2020"
+datedir = "22apr2020"
 for graph,gname,gtype in graphs:
     make_graph(graph, gname, gtype, gnum, datedir)
     gnum+=1

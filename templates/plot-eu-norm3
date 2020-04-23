@@ -15,7 +15,7 @@ ptoff = 12.5
 beoff = 6.5
 luxoff = 0
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
-"../aligned/country_data/belgium" using ($1 - beoff):($2/bepop) w l lw 2 lc "black" t sprintf("Belgium (%f days behind Italy)", beoff), \
+"../aligned/country_data/belgium" using ($1 - beoff):($2/bepop) w l lw 2 lc "black" t sprintf("Belgium (%.1f days behind Italy)", beoff), \
 "../aligned/country_data/ireland" using ($1 - iroff):($2/iepop) w l lw 2 lc "#00a000" t sprintf("Ireland (%d days behind Italy)", iroff), \
 "../aligned/country_data/portugal" using ($1 - ptoff):($2/ptpop) w l lw 2 lc "red" t sprintf("Portugal (%d days behind Italy)", ptoff),\
 "../aligned/country_data/luxembourg" using ($1 -luxoff):($2/lupop) w l lw 2 lc "#a0a0ff" t sprintf("Luxembourg", luxoff), \

@@ -5,7 +5,8 @@ set output "../graphs/rates-eeu.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.55,0.02 font "Helvetica,11" textcolor "#a0a0a0"
 offset = OFFSET
-set key at (23-offset),280 box
+#set key at (23-offset),280 box
+set key top left box
 set yrange [0.1:300]
 set xrange [(10-offset):]
 set ylabel "Daily increase in Confirmed COVID-19 cases per million inhabitants"
@@ -19,7 +20,7 @@ plot "../increase_rates/italy" using ($0 +6 - offset):($3/itpop) w l lw 2 lc 1 t
 "../increase_rates/greece" using ($0 +12 - offset):($3/grpop) w l lw 2 lc "#8080ff" t sprintf("Greece", usoff), \
 "../increase_rates/czechrepublic" using ($0 +16 - offset):($3/czpop) w l lw 2 lc "blue" t sprintf("Czech Republic", usoff), \
 "../increase_rates/slovenia" using ($0 +19 - offset):($3/sipop) w l lw 2 lc "#00b000" t sprintf("Slovenia"), \
-"../increase_rates/slovakia" using ($0 +25 - offset):($3/skpop) w l lw 2 lc "black" t sprintf("Slovakia)"), \
+"../increase_rates/slovakia" using ($0 +25 - offset):($2/skpop) w l lw 2 lc "black" t sprintf("Slovakia)"), \
 "../increase_rates/romania" using ($0 +18 - offset):($3/ropop) w l lw 2 lc "orange" t sprintf("Romania"), \
 "../increase_rates/poland" using ($0 +19 - offset):($3/plpop) w l lw 2 lc "red" t sprintf("Poland"), \
 "../increase_rates/hungary" using ($0 +19 - offset):($3/hupop) w l lw 2 lc "#80a080" t sprintf("Hungary"), \
