@@ -109,14 +109,14 @@ set output "../graphs/covid-world-seasia.png"
 set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 67
+offset = 71
 #set key at -18.5,1900 box
 set key bottom right
 set yrange [0.5:2000]
 set xrange [-5-offset:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 22 April 2020)"
-jhuoffset = (67 + 24)
+set xlabel "Days (from 26 April 2020)"
+jhuoffset = (71 + 24)
 vnoff = 37
 twoff = 27
 phoff = 31

@@ -81,6 +81,8 @@ for filename in filenames:
             maxday = dnum
 
 for filename in filenames:
+    if "#" in filename or "~" in filename:
+        continue
     try:
         ifile = open(filename, "r")
     except:

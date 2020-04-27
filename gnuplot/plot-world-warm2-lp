@@ -111,10 +111,10 @@ set key at -12,2500 box
 set yrange [50:3000]
 set xrange [-26:]
 set ylabel "Confirmed COVID19 cases"
-set xlabel "Days (from 22 April 2020)"
+set xlabel "Days (from 26 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-offset = 67
+offset = 71
 inoff = 8.5
 bhoff = 7
 bhoff = 0

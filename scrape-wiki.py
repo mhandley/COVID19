@@ -3,7 +3,7 @@ from time import sleep
 urls = {}
 countries = ["iran", "france", "spain", "germany", "singapore", "southkorea", "netherlands", "ecuador", "chile", "peru", "ecuador", "colombia", "uruguay", "paraguay", "bolivia", "venezuela", "argentina", "vietnam", "philippines", "austria", "portugal", "canada", "norway", "brazil", "sweden", "israel", "turkey", "malaysia", "denmark", "ireland", "luxembourg", "iceland", "pakistan", "thailand", "romania", "indonesia", "finland", "russia", "greece", "slovenia", "slovakia", "estonia", "india", "serbia", "bulgaria", "hungary", "croatia", "australia", "japan", "switzerland", "czechrepublic", "saudiarabia", "iraq", "lithuania", "belarus", "belgium", "italy", "newzealand", "us", "china", "poland", "qatar", "egypt", "kuwait", "uae"]
 
-countries = ["us"]
+#countries = ["singapore", "us"]
 
 countries = sorted(countries)
 # panama doesn't seem to be updated
@@ -39,9 +39,9 @@ base_url2 = "_medical_cases_chart&action=edit"
 
 
 #urls["switzerland"] = "https://en.wikipedia.org/w/index.php?title=Template:2019%E2%80%9320_coronavirus_pandemic_data/Switzerland_medical_cases_chart/&action=edit"
-prev2date = "2020-04-20"
-prevdate = "2020-04-21"
-date = "2020-04-22"
+prev2date = "2020-04-24"
+prevdate = "2020-04-25"
+date = "2020-04-26"
 
 months = {}
 months["february"] = "02"

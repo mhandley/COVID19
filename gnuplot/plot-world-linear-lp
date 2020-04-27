@@ -110,12 +110,12 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set output "../graphs/covid-world-linear-lp.png"
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-set key at 19,(881226.5000000001*0.95) 
-offset = 67
-set yrange [0:881226.5000000001]
+set key at 19,(1027640.9000000001*0.95) 
+offset = 71
+set yrange [0:1027640.9000000001]
 set xrange [10-offset:20]
 set ylabel "Confirmed COVID-19 cases"
-set xlabel "Days (from 22 April 2020)"
+set xlabel "Days (from 26 April 2020)"
 usoff = 10
 iroff = 0
 froff = 10

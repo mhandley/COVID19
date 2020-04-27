@@ -111,12 +111,12 @@ set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
 set key bottom right box
-offset = 67
-set yrange [1:6192.628099173554]
+offset = 71
+set yrange [1:6534.710743801653]
 set xrange [10-offset:]
 set ylabel "COVID-19 cases per million inhabitants"
-set xlabel "Days (from 22 April 2020)"
-jhuoffset = (67 + 24)
+set xlabel "Days (from 26 April 2020)"
+jhuoffset = (71 + 24)
 usoff = 17
 nzoff = 22.5
 ruoff = 33.5

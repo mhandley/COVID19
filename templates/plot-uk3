@@ -31,10 +31,10 @@ nipop = 1.8
 scpop = 5.3
 wapop = 3.0
 
-scoff = 16.5
+scoff = 18.5
 waoff = 13
-nioff = 17.5
-ukoff = 16.5
+nioff = 20.5
+ukoff = 18
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lc "#a0a0a0" lw 2 t "Italy", \
 "../aligned/country_data/uk-pillar1" using ($1 - ukoff):($2/ukpop) w l lc "red" lw 2 t sprintf("UK P1 (%d days behind Italy)", ukoff), \
 "../aligned/uk/uk-regions-cum" using ($1 -waoff):($12/wapop) w l lw 2 lc "#00b000" t sprintf("Wales (%d days behind Italy)", waoff), \

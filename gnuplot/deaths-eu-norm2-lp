@@ -108,11 +108,11 @@ set terminal pngcairo dashed font "Helvetica,13" size 800,600
 set output "../graphs/deaths-eu-norm2-lp.png"
 set logscale y
 set key at -1,10 box
-set yrange [2:829.2561983471074]
-offset = 67
+set yrange [2:880.7933884297521]
+offset = 71
 set xrange [(10-offset):]
 set ylabel "COVID19 deaths per million inhabitants"
-set xlabel "Days (from 22 April 2020)"
+set xlabel "Days (from 26 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
 esoff = 8

@@ -110,21 +110,21 @@ set logscale y
 set mxtics
 set grid mxtics xtics ytics mytics
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-offset = 67
-#set key at -16,(6192.628099173554*0.9) box
+offset = 71
+#set key at -16,(6534.710743801653*0.9) box
 set key bottom right
-set yrange [0.5:6192.628099173554]
+set yrange [0.5:6534.710743801653]
 set xrange [0-offset:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 22 April 2020)"
-jhuoffset = (67 + 24)
+set xlabel "Days (from 26 April 2020)"
+jhuoffset = (71 + 24)
 mxoff = 34.5
 paoff = 17
 dooff = 22.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/jhu/panama-jhu" using ($1 - paoff):($2/papop) w l lw 2 lc "blue" t sprintf("Panama (%d days behind Italy)", paoff), \
 "../aligned/jhu/dominican_republic-jhu" using ($1 - dooff):($2/dopop) w l lw 2 lc "#00a000" t sprintf("Domincan Republic (%d days behind Italy)", dooff), \
-"../aligned/wiki/mexico-wiki" using ($1 - mxoff):($2/mxpop) w l lw 2 lc "red" t sprintf("Mexico (%d days behind Italy)", mxoff), \
+"../aligned/jhu/mexico-jhu" using ($1 - mxoff):($2/mxpop) w l lw 2 lc "red" t sprintf("Mexico (%d days behind Italy)", mxoff), \
 1.35**(x+offset -4) lc "black"  dt 4 t "35% daily increase", \
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase"
 

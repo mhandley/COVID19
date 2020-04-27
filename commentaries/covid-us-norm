@@ -4,30 +4,10 @@
     dataset</a>, which is much less noisy than the JHU dataset I was
     previously using.
 
-<LI>Many US states are a long way behind European countries, but
-    several now have comparable rates per million inhabitants and New
-    York, New Jersey and perhaps Louisiana are ahead. I have only plotted the 12
-    states with most confirmed cases.
+<LI>I have aligned the states by a 4.5% daily increase curve.  Italy
+did not show sustained 4.5% increases, but a number of US states did
+so, and aligning in this way shows more clearly how common their
+growth rates are, or have recently been.
 
-<LI>European countries moved from a 35% daily increase curve to a 22%
-    daily increase curve, and then to a 13.5% curve as isolation
-    measures started to work. In the last few days almost all the
-    states I'm tracking have transitioned to the 13.5% curve so I have
-    aligned them with the curve that Italy and France followed.
-
-<LI>New York was growing at close to the 35% daily increase rate seen
-    in Europe, but then had very large increases over a week.  This
-    usually happens when cases have been spreading undetected and
-    suddenly testing starts catching up. Since then the increase rate
-    has declined significantly and in the last few days, cases in NY
-    have been growing exponentially at the much lower rate of around
-    13.5% per day.  I have placed New York so as to align it with the
-    13.5% curve, though it is much further along that curve than
-    either Italy or Lombardy reached.  As Italy seems to have peaked
-    and New York has more cases per head of population than Italy, it
-    makes no sense saying where New York is on Italy's track: New York
-    is forming its own track.
-
-<LI>New Jersey, Louisiana, Massachusetts and Michigan have tracked
-further up the 13.5% curve than Italy did.  None of these states are
-showing signs the exponential growth will end soon.
+<LI>New York, Louisiana, Washington State and Oklahome have all
+dropped below 4.5% daily increase rates.

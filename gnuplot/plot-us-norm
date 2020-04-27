@@ -108,29 +108,29 @@ set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-us-norm.png"
 set logscale y
 set label "Updates at http://nrg.cs.ucl.ac.uk/mjh/covid19" at graph 0.02,0.98 font "Helvetica,11" textcolor "#a0a0a0"
-offset = 67
-set key at 1,250 font "Helvetica,10"
-set yrange [5:25950.515463917527]
-set xrange [(10-offset):2]
+offset = 71
+set key bottom right font "Helvetica,10"
+set yrange [5:29090.10309278351]
+set xrange [(0-offset):]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 22 April 2020)"
+set xlabel "Days (from 26 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
-jhuoffset = (67 - 27)
-nyoff = 2
-waoff = 10.5
-maoff = 9
-cooff = 14
-njoff = 2.5
-caoff = 21
-floff = 18
-looff = 6
-mioff = 10
-iloff = 14.5
-txoff = 23.5
-okoff = 22.5
-peoff = 15
-geoff = 16
+jhuoffset = (71 - 27)
+nyoff = 26.5
+waoff = 14.5
+maoff = -7.5
+cooff = 19
+njoff = -19.5
+caoff = 36
+floff = 27
+looff = -10
+mioff = 4.5
+iloff = 11.5
+txoff = 38
+okoff = 39.5
+peoff = 10.5
+geoff = 19.5
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/nyt/Washington" using ($1 - waoff):($2/uswapop) w l lw 2 lc "orange" t sprintf("Washington  State (%d days behind Italy)", waoff), \
 "../aligned/nyt/NewYork" using ($1 + nyoff):($2/usnypop) w l lw 2 lc "blue" t sprintf("New York (%d days offset from Italy)", nyoff),\
@@ -148,7 +148,8 @@ plot "../aligned/country_data/italy" using ($1):($2/itpop) w l lw 2 t "Italy", \
 "../aligned/nyt/Oklahoma" using ($1 - okoff):($2/usokpop) w l lw 2 lc "green" t sprintf("Oklahoma (%d days behind Italy)", okoff), \
 1.35**(x+offset - 4) lc "black"  dt 4 t "35% daily increase",\
 1.22**(x+offset + 2) lc "black" dashtype 2 t "22% daily increase", \
-1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase"
+1.135**(x+offset + 18.5) lc "black" dashtype 5 t "13.5% daily increase",\
+1.045**(x+offset + 124.5) lc "black" dashtype 3 t "4.5% daily increase"
 
 #"switzerland" using ($0-3-offset):2 w l lw 2 lc "brown" t "Switzerland (13 days behind Italy)", \
 #"../country_data/switzerland" using ($0+3.5-offset):($2/chpop) w l lw 2 lc "purple" t "Switzerland (6.5 days behind Italy)", \

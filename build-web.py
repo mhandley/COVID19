@@ -28,6 +28,8 @@ graphs = [("covid-eu.png", "Western Europe", "logabs"),
 	  ("rates-us.png","US States", "inc"),
 	  ("deaths-us.png", "Deaths: USA", "deaths"),
 	  ("deathrates-us.png", "Deaths per day: USA", "deathrates"),
+	  ("deaths-eu-us.png", "Deaths: EU and US North East region", "deaths-since"),
+	  ("deaths-eu-us-norm.png", "Deaths: EU and US North East region", "deaths-since-norm"),
 	  ("covid-world-norm2.png","", "lognorm"),
 	  ("covid-world-norm3.png","", "lognorm"),
 	  ("covid-world-sa2.png","South America (Andean)", "lognorm"),
@@ -132,6 +134,13 @@ types["deaths"] = (\
 """The graph shows cumulative number of <B>deaths per million
       inhabitants</B>, plotted on a log scale, against time.  The
       country curves are shown offset by the amounts shown.""", "Deaths")
+
+types["deaths-since"] = (\
+"""The graph shows cumulative number of deaths, plotted on a log scale, against time, since the day 100 deaths first occurred""", "Deaths")
+
+types["deaths-since-norm"] = (\
+"""The graph shows cumulative number of <B>deaths per million
+      inhabitants</B>, plotted on a log scale, against time since 10 deaths per million inhabitants first occurred.""", "Deaths")
 
 subprocess.call("cat wwwparts/header.html wwwparts/update.html wwwparts/explain.html > www/index.html", shell=True)
 filemap = {}
@@ -262,7 +271,7 @@ print("</DL>", file=ofile)
 
 
 gnum = 1
-datedir = "22apr2020"
+datedir = "26apr2020"
 for graph,gname,gtype in graphs:
     make_graph(graph, gname, gtype, gnum, datedir)
     gnum+=1

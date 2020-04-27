@@ -107,13 +107,13 @@ vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-uk-lp.png"
 set logscale y
-offset = 67
+offset = 71
 #set key at -1,150 box
 set key bottom right box
 set yrange [10:4500]
-set xrange [10 - 67:]
+set xrange [10 - 71:]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 22 April 2020)"
+set xlabel "Days (from 26 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
 ukpop = 67.7

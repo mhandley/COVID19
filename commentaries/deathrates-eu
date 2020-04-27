@@ -17,11 +17,6 @@ doubt.  However, any measurement differences will be within a factor
 of two at most; they will not appear large on a logscale plot, so the
 overall shape of the curves is not really in doubt.
 
-<LI>Sweden seems unusual, not because the deaths per day have peaked,
-but because the deaths peaked before the confirmed cases peaked.  The
-UK also saw deaths peak on April 10th with confirmed cases peaking on
-April 11th.  In the UK there was a change in testing strategy; if we
-count only test results from hospitals, which is a consistent subset,
-then the UK confirmed cases appear to have peaked on April 5th.  This
-is more consistent with deaths peaking 6 days later.  Likely something
-similar happened in Sweden.
+<LI>I have removed Sweden from this graph, as the way deaths are
+attributed to days makes it impossible to present in this form in a
+way that is not misleading.

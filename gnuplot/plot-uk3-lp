@@ -107,14 +107,14 @@ vnpop = 96.2 #Vietnam
 set terminal pngcairo dashed font "Helvetica,12" size 800,600
 set output "../graphs/covid-uk-all-lp.png"
 set logscale y
-offset = (67 + 5.5)
+offset = (71 + 5.5)
 #set key at -1,70 box
 set key bottom right box
 #set key at -22,100
-set yrange [10:6192.628099173554]
-set xrange [(10-67):]
+set yrange [10:6534.710743801653]
+set xrange [(10-71):]
 set ylabel "COVID19 cases per million inhabitants"
-set xlabel "Days (from 22 April 2020)"
+set xlabel "Days (from 26 April 2020)"
 set mxtics
 set grid mxtics xtics ytics mytics
 ukpop = 67.7
@@ -137,10 +137,10 @@ nipop = 1.8
 scpop = 5.3
 wapop = 3.0
 
-scoff = 16.5
+scoff = 18.5
 waoff = 13
-nioff = 17.5
-ukoff = 16.5
+nioff = 20.5
+ukoff = 18
 plot "../aligned/country_data/italy" using ($1):($2/itpop) w lp lc "#a0a0a0" lw 2 t "Italy", \
 "../aligned/country_data/uk-pillar1" using ($1 - ukoff):($2/ukpop) w lp lc "red" lw 2 t sprintf("UK P1 (%d days behind Italy)", ukoff), \
 "../aligned/uk/uk-regions-cum" using ($1 -waoff):($12/wapop) w lp lw 2 lc "#00b000" t sprintf("Wales (%d days behind Italy)", waoff), \
